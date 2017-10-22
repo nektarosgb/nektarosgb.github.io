@@ -36,9 +36,9 @@
   <div class="login-box-body">
     <p class="login-box-msg">Kullanıcı Girişi</p>
 
-    <form action="../../index2.html" method="post">
+    <form action="../../index.html" method="post">
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input id="email" type="email" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
@@ -81,5 +81,21 @@
     });
   });
 </script>
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAM_em5H7MVcaCsYfJrLWUrZvRXZ190_y4",
+    authDomain: "nektarosgb-22-10-17.firebaseapp.com",
+    databaseURL: "https://nektarosgb-22-10-17.firebaseio.com",
+    projectId: "nektarosgb-22-10-17",
+    storageBucket: "nektarosgb-22-10-17.appspot.com",
+    messagingSenderId: "1020460976423"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
 </body>
 </html>
