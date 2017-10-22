@@ -8,16 +8,16 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 $(".btnlogin").on('click',new function(){
-    checkLogin();
-});
-
-
-function checkLogin(){
-    var email=$(".btnlogin").val();
+    var email=$(".txtemail").val();
     var passwd=$(".txtpasswd").val();
     alert("login başladım :"+email+"-"+ passwd);
     firebase.auth().signInWithEmailAndPassword(email, passwd)
     .catch(function(err) {
       // Handle errors
     });
-}
+});
+
+
+// function checkLogin(){
+
+// }
