@@ -1,3 +1,23 @@
+$(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+
+    $(".btnlogin").on('click',new function(){
+        var email=$(".txtemail").val();
+        var passwd=$(".txtpasswd").val();
+        alert("login başladım :"+email+"-"+ passwd);
+        firebase.auth().signInWithEmailAndPassword(email, passwd)
+        .catch(function(err) {
+          // Handle errors
+        });
+    });
+
+
+  });
+
 firebase.auth().onAuthStateChanged(function (user) {
     if(user!=null){
         alert("Login Başarılı");
@@ -7,17 +27,4 @@ firebase.auth().onAuthStateChanged(function (user) {
     window.user = user; // user is undefined if no user signed in
 });
 
-$(".btnlogin").on('click',new function(){
-    var email=$(".txtemail").val();
-    var passwd=$(".txtpasswd").val();
-    alert("login başladım :"+email+"-"+ passwd);
-    firebase.auth().signInWithEmailAndPassword(email, passwd)
-    .catch(function(err) {
-      // Handle errors
-    });
-});
 
-
-// function checkLogin(){
-
-// }
