@@ -9,7 +9,9 @@ firebase.auth().onAuthStateChanged(function (user) {
 
 
 function checkLogin(){
-    firebase.auth().signInWithEmailAndPassword(email, password)
+    var email=$(".btnlogin").text;
+    var passwd=$(".txtpasswd").text;
+    firebase.auth().signInWithEmailAndPassword(email, passwd)
     .catch(function(err) {
       // Handle errors
     });
