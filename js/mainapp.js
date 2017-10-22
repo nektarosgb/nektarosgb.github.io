@@ -7,10 +7,15 @@ firebase.auth().onAuthStateChanged(function (user) {
     window.user = user; // user is undefined if no user signed in
 });
 
+$(".btnlogin").on('click',new function(){
+    checkLogin();
+});
+
 
 function checkLogin(){
-    var email=$(".btnlogin").text;
-    var passwd=$(".txtpasswd").text;
+    var email=$(".btnlogin").val();
+    var passwd=$(".txtpasswd").val();
+    alert("login başladım :"+email+"-"+ passwd);
     firebase.auth().signInWithEmailAndPassword(email, passwd)
     .catch(function(err) {
       // Handle errors
