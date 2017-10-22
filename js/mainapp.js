@@ -5,15 +5,15 @@ $(function () {
       increaseArea: '20%' // optional
     });
 
-    $(".btnlogin").on('click',new function(){
-        var email=$(".txtemail").val();
-        var passwd=$(".txtpasswd").val();
-        alert("login başladım :"+email+"-"+ passwd);
-        firebase.auth().signInWithEmailAndPassword(email, passwd)
-        .catch(function(err) {
-          // Handle errors
-        });
-    });
+    // $(".btnlogin").on('click',new function(){
+    //     var email=$(".txtemail").val();
+    //     var passwd=$(".txtpasswd").val();
+    //     alert("login başladım :"+email+"-"+ passwd);
+    //     firebase.auth().signInWithEmailAndPassword(email, passwd)
+    //     .catch(function(err) {
+    //       // Handle errors
+    //     });
+    // });
 
 
   });
@@ -26,5 +26,15 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
     window.user = user; // user is undefined if no user signed in
 });
+
+function test (){
+    var email=$(".txtemail").val();
+    var passwd=$(".txtpasswd").val();
+    alert("login başladım :"+email+"-"+ passwd);
+    firebase.auth().signInWithEmailAndPassword(email, passwd)
+    .catch(function(err) {
+      // Handle errors
+    });
+}
 
 
