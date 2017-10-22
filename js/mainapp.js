@@ -33,7 +33,7 @@ function test (){
     
     firebase.auth().signInWithEmailAndPassword(email, passwd)
     .catch(function(err) {
-        alert("lo bi get lo :"+email+"-"+ passwd);
+        alert("lo bi get lo :"+email+"- Err:"+err);
     });
 }
 
