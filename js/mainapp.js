@@ -30,10 +30,10 @@ firebase.auth().onAuthStateChanged(function (user) {
 function test (){
     var email=$(".txtemail").val();
     var passwd=$(".txtpasswd").val();
-    alert("login başladım :"+email+"-"+ passwd);
+    
     firebase.auth().signInWithEmailAndPassword(email, passwd)
     .catch(function(err) {
-      // Handle errors
+        alert("lo bi get lo :"+email+"-"+ passwd);
     });
 }
 
