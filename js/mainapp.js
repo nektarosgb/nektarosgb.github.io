@@ -1,9 +1,11 @@
 $(function () {
 
+    
 
     if (window.user == null) {
 
-        if (window.location != "login.html") {
+        var host = window.location.hostname;
+        if (window.location != host+"/login.html") {
             alert("Girişe yönlendiriliyorsunuz..."+window.location);
             window.location = "login.html";
         }
