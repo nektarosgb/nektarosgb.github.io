@@ -35,7 +35,7 @@ $(function () {
 firebase.auth().onAuthStateChanged(function (user) {
     if (user != null) {
         if (window.location.href.indexOf("index.html")==-1) {
-            alert("Login Başarılı"+JSON.stringify(user));
+            //alert("Login Başarılı");
 
             window.location = "index.html";
         }
