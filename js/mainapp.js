@@ -26,10 +26,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             window.location = "index.html";
         }
     }else{
-
-        
         if (window.location.href.indexOf("login")==-1) {
-            alert("Girişe yönlendiriliyorsunuz..."+host+"/login.html");
             window.location = "login.html";
         }
     }
