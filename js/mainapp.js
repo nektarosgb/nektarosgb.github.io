@@ -1,16 +1,18 @@
 $(function () {
 
 
-    if(window.location!="login.html" && window.user==null){
+    if (window.user == null) {
 
-        alert("Girişe yönlendiriliyorsunuz...");
-        window.location="login.html";
+        if (window.location != "login.html") {
+            alert("Girişe yönlendiriliyorsunuz...");
+            window.location = "login.html";
+        }
     }
 
     $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
     });
 
     // $(".btnlogin").on('click',new function(){
@@ -24,25 +26,28 @@ $(function () {
     // });
 
 
-  });
+});
+
+
 
 firebase.auth().onAuthStateChanged(function (user) {
-    if(user!=null){
-        alert("Login Başarılı");
-    }else{
-        alert("Kullanıcı adı veya parola bulunamadı!");
+    if (user != null) {
+        if (window.location != "index.html") {
+            alert("Login Başarılı");
+            window.location = "index.html";
+        }
     }
     window.user = user; // user is undefined if no user signed in
 });
 
-function test (){
-    var email=$(".txtemail").val();
-    var passwd=$(".txtpasswd").val();
-    
+function test() {
+    var email = $(".txtemail").val();
+    var passwd = $(".txtpasswd").val();
+
     firebase.auth().signInWithEmailAndPassword(email, passwd)
-    .catch(function(err) {
-        //alert("lo bi get lo :"+email+"- Err:"+err);
-    });
+        .catch(function (err) {
+            alert("Kullanıcı adı veya parola bulunamadı!");
+        });
 }
 
 
