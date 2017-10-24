@@ -1,18 +1,4 @@
 $(function () {
-
-    
-
-    if (window.user == null) {
-
-        alert("Kullanıcı bulunamadı:"+JSON.stringify(window.user));
-
-        var host = window.location.hostname;
-        if (window.location.href.indexOf("login.html")==-1) {
-            alert("Girişe yönlendiriliyorsunuz..."+host+"/login.html");
-            window.location = "login.html";
-        }
-    }
-
     $('input').iCheck({
         checkboxClass: 'icheckbox_square-blue',
         radioClass: 'iradio_square-blue',
@@ -40,6 +26,12 @@ firebase.auth().onAuthStateChanged(function (user) {
             //alert("Login Başarılı");
 
             window.location = "index.html";
+        }
+    }else{
+
+        if (window.location.href.indexOf("login.html")==-1) {
+            alert("Girişe yönlendiriliyorsunuz..."+host+"/login.html");
+            window.location = "login.html";
         }
     }
     window.user = user; // user is undefined if no user signed in
