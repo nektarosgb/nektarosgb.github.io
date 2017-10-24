@@ -2,6 +2,8 @@ $(function () {
 
 
     if(window.location!="login.html" && window.user==null){
+
+        alert("Girişe yönlendiriliyorsunuz...");
         window.location="login.html";
     }
 
@@ -39,7 +41,7 @@ function test (){
     
     firebase.auth().signInWithEmailAndPassword(email, passwd)
     .catch(function(err) {
-        alert("lo bi get lo :"+email+"- Err:"+err);
+        //alert("lo bi get lo :"+email+"- Err:"+err);
     });
 }
 
