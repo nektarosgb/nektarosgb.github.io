@@ -4,6 +4,8 @@ $(function () {
 
     if (window.user == null) {
 
+        alert("Kullanıcı bulunamadı:"+JSON.stringify(window.user));
+
         var host = window.location.hostname;
         if (window.location.href.indexOf("login.html")==-1) {
             alert("Girişe yönlendiriliyorsunuz..."+host+"/login.html");
