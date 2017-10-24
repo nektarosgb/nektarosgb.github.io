@@ -1,4 +1,10 @@
 $(function () {
+
+
+    if(window.location!="login.html" && window.user==null){
+        window.location="login.html";
+    }
+
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
       radioClass: 'iradio_square-blue',
