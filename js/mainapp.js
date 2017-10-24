@@ -27,8 +27,8 @@ firebase.auth().onAuthStateChanged(function (user) {
         }
     }else{
 
-        alert("Giriş yapmalısınız...");
-        if (window.location.href.indexOf("login.html")==-1) {
+        
+        if (window.location.href.indexOf("login")==-1) {
             alert("Girişe yönlendiriliyorsunuz..."+host+"/login.html");
             window.location = "login.html";
         }
