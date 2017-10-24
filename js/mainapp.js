@@ -5,8 +5,8 @@ $(function () {
     if (window.user == null) {
 
         var host = window.location.hostname;
-        if (window.location != host+"/login.html") {
-            alert("Girişe yönlendiriliyorsunuz..."+window.location);
+        if (window.location.href.indexOf("login.html")==-1) {
+            alert("Girişe yönlendiriliyorsunuz..."+host+"/login.html");
             window.location = "login.html";
         }
     }
@@ -34,7 +34,7 @@ $(function () {
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user != null) {
-        if (window.location != "index.html") {
+        if (window.location.href.indexOf("index.html")==-1) {
             alert("Login Başarılı"+JSON.stringify(user));
 
             window.location = "index.html";
