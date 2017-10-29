@@ -2,6 +2,9 @@ $('a').on('click', function(e){
 
     var pageRef = $(this).attr('href');
 
+    if(pageRef==="#")
+        return true;
+
     if(pageRef.indexOf("index.html")>-1){
         return true;
     }
