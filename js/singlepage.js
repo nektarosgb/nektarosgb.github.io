@@ -1,6 +1,12 @@
 $('a').on('click', function(e){  
-    e.preventDefault( );
+
     var pageRef = $(this).attr('href');
+
+    if(pageRef.indexOf("index.html")>-1){
+        return true;
+    }
+    e.preventDefault( );
+    
   
 callPage(pageRef);
 })
