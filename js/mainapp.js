@@ -34,10 +34,10 @@ function kaydetVeritabani(tablo, id, veri) {
 
 function listTable(tablo)
 {
-    var ref = firebase.database().ref();
-    ref.on(tablo,function(snapshot){
-        console.log(snapshot.val());
-    })
+    // var ref = firebase.database().ref();
+    // ref.on(tablo,function(snapshot){
+    //     console.log(snapshot.val());
+    // })
 
     return firebase.database().ref(tablo).once('value').then(function(snapshot) {
         console.log(snapshot.val());
