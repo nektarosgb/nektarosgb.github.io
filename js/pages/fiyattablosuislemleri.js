@@ -5,15 +5,21 @@ function kaydetMuayeneUcret() {
     var muayene=$("#txtMuayene").val();    
     var idmuayene=muayene.replace(/[^\x00-\x7F]/g, "")+n;
     var muayeneUcret=$("#txtFiyat").val();    
+    var uygulamaturu =$("input:radio[name='rdUygulamaTuru']:checked").val()
 
-    //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
 
     var veri={
         "idmuayene":idmuayene,
         "muayene":muayene,
-        "muayeneUcret":muayeneUcret
+        "muayeneUcret":muayeneUcret,
+        "uygulamaturu":uygulamaturu
     }
 
     kaydetVeritabani("muayeneUcret",idmuayene,veri);
+
+}
+
+function listMuayene()
+{
 
 }
