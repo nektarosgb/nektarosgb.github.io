@@ -13,11 +13,16 @@ initLoadedPage() ;
         firebase.database().ref('sirketler').once('value').then(function(snapshot) {
            
             
-
+            var rows=[];
             snapshot.forEach(function(element) {
+                //alert(JSON.stringify(element));
+                rows.push(element);
                 
-                $("#grid-basic").bootgrid("append",element);
             });
+
+
+            alert(JSON.stringify(rows));
+            $("#grid-basic").bootgrid("append",rows);
       });
     }
 
@@ -35,11 +40,6 @@ initLoadedPage() ;
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>10238</td>
-                    <td>eduardo@pingpong.com</td>
-                    <td>14.10.2013</td>
-                </tr>
             </tbody>
         </table>
     </div>
