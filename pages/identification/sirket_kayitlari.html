@@ -1,6 +1,12 @@
 <script type="text/javascript">
     function initLoadedPage() {
         $("#grid-basic").bootgrid();
+        var dataSource={
+            "id":20,
+            "sender":"kivanc",
+            "receiver":"yusuf"
+        };
+        $("#grid-basic").bootgrid("append",dataSource);
     }
 
 </script>
