@@ -4,18 +4,18 @@ $(function () {
 
 
 
-// firebase.auth().onAuthStateChanged(function (user) {
-//     if (user != null) {
-//         if (window.location.href.indexOf("index.html") == -1) {
-//             window.location = "index.html";
-//         }
-//     } else {
-//         if (window.location.href.indexOf("login") == -1) {
-//             window.location = "login.html";
-//         }
-//     }
-//     window.user = user; // user is undefined if no user signed in
-// });
+ firebase.auth().onAuthStateChanged(function (user) {
+     if (user != null) {
+         if (window.location.href.indexOf("index.html") == -1) {
+             window.location = "index.html";
+         }
+     } else {
+         if (window.location.href.indexOf("login") == -1) {
+             window.location = "login.html";
+         }
+     }
+     window.user = user; // user is undefined if no user signed in
+ });
 
 function checkLogin() {
     var email = $(".txtemail").val();
@@ -34,10 +34,6 @@ function kaydetVeritabani(tablo, id, veri) {
 
 function listTable(tablo)
 {
-    // var ref = firebase.database().ref();
-    // ref.on(tablo,function(snapshot){
-    //     console.log(snapshot.val());
-    // })
 
     return firebase.database().ref(tablo).once('value').then(function(snapshot) {
         console.log(snapshot.val());
