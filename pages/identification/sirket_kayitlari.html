@@ -12,6 +12,7 @@ initLoadedPage() ;
 
         firebase.database().ref('sirketler').once('value').then(function(snapshot) {
             snapshot.forEach(function(element) {
+                alert(JSON.stringify(element));
                 $("#grid-basic").bootgrid("append",element);
             }, this);
       });
