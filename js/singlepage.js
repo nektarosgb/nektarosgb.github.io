@@ -23,7 +23,7 @@ $.ajax({
     success:function(response){
         $(".mypages").html(response);
 
-        initLoadedPage();
+        //initLoadedPage();
         // $("<h1/>").text(json.title).appendTo("body");
         // $("<div class\"content\"/>").html(json.html).appendTo("body");
     },
