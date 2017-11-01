@@ -16,6 +16,7 @@ initLoadedPage() ;
             var rows=[];
             snapshot.forEach(function(element) {
                 //alert(JSON.stringify(element));
+                element['id']=rows.length;
                 rows.push(element);
                 
             });
