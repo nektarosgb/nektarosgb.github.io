@@ -4,9 +4,9 @@ initLoadedPage() ;
     function initLoadedPage() {
         $("#grid-basic").bootgrid();
         var dataSource={
-            "id":20,
-            "sender":"kivanc",
-            "receiver":"yusuf"
+            "idSirket":20,
+            "sirketAdi":"kivanc",
+            "sirketAdresi":"yusuf"
         };
         
 
@@ -20,7 +20,7 @@ initLoadedPage() ;
                 rows.push(element);
                 
             });
-
+            rows.push(datasource);
 
             //alert(JSON.stringify(rows));
             
