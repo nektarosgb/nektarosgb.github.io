@@ -22,8 +22,14 @@ initLoadedPage() ;
             });
 
 
-            alert(JSON.stringify(rows));
-            $("#grid-basic").bootgrid("append",rows[0]);
+            //alert(JSON.stringify(rows));
+            
+            var datasrc={
+             "current":1,
+             "rowcount":rows.length,
+                "rows":rows
+            };
+            $("#grid-basic").bootgrid("append",datasrc);
       });
     }
 
@@ -35,7 +41,7 @@ initLoadedPage() ;
         <table id="grid-basic" class="table table-condensed table-hover table-striped">
             <thead>
                 <tr>
-                    <th data-column-id="idSirket">ID</th>
+                    <th data-column-id="idSirket" data-identifier="true">ID</th>
                     <th data-column-id="sirketAdi">Şirket Adı</th>
                     <th data-column-id="sirketAdresi">Şirket Adresi</th>
                 </tr>
