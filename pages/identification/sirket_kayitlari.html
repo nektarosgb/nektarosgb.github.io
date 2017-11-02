@@ -1,32 +1,24 @@
 <script type="text/javascript">
-initLoadedPage() ;
+    initLoadedPage();
 
     function initLoadedPage() {
-        $("#grid-basic").bootgrid();
-        var dataSource={
-            "idSirket":20,
-            "sirketAdi":"kivanc",
-            "sirketAdresi":"yusuf"
-        };
-        
+        var grid = $("#grid-sirketler").bootgrid({
+            ajax: false,
+        });
 
-        firebase.database().ref('sirketler').once('value').then(function(snapshot) {
-           
-            
-            var rows=[];
-            snapshot.forEach(function(element) {
-                //alert(JSON.stringify(element));
-                element['id']=rows.length;
-                rows.push(element);
+        firebase.database().ref('sirketler').once('value').then(function (snapshot) {
+
+
+            var rows = [];
+            snapshot.forEach(function (element) {
                 
+                var cleanelement = JSON.parse(JSON.stringify(element));
+                cleanelement['id'] = rows.length + 1;
+                rows.push(cleanelement);
             });
-            rows.push(datasource);
 
-            //alert(JSON.stringify(rows));
-            
-            
-            $("#grid-basic").bootgrid("append",rows);
-      });
+            grid.bootgrid("append", rows);
+        });
     }
 
 </script>
@@ -34,12 +26,19 @@ initLoadedPage() ;
 <div class="page_container">
 
     <div class="row">
-        <table id="grid-basic" class="table table-condensed table-hover table-striped">
+        <table id="grid-sirketler" class="table table-condensed table-hover table-striped">
             <thead>
                 <tr>
-                    <th data-column-id="idSirket" id="idSirket" data-identifier="true">ID</th>
-                    <th data-column-id="sirketAdi" id="sirketAdi">Şirket Adı</th>
-                    <th data-column-id="sirketAdresi" id="sirketAdresi">Şirket Adresi</th>
+                    <th data-column-id="idSirket" >Şirket Kodu</th>
+                    <th data-column-id="sirketAdi">Şirket Adı</th>
+                    <th data-column-id="sirketAdresi">Adresi</th>
+                    <th data-column-id="sirketTelefon">Telefon</th>
+                    <th data-column-id="sirketSGKSicilNo">SGKSicilNo</th>
+                    <th data-column-id="sirketIlgiliKisi">İlgili Kişi</th>
+                    <th data-column-id="sirketTelefonCep">Cep Telefonu</th>
+                    <th data-column-id="sirketEposta">E-posta</th>
+                    <th data-column-id="sirketIsyeriHekimi">İşyeri Hekimi</th>
+                    <th data-column-id="sirketIsGuvenligiUzmani">İşGüvenliği Uzmanı</th>
                 </tr>
             </thead>
             <tbody>
