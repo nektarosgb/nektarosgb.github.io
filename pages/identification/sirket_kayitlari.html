@@ -4,6 +4,13 @@
     function initLoadedPage() {
         var grid = $("#grid-sirketler").bootgrid({
             ajax: false,
+            formatters: {
+        "commands": function(column, row)
+        {
+            return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " + 
+                "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
+        }
+    }
         });
 
         firebase.database().ref('sirketler').once('value').then(function (snapshot) {
