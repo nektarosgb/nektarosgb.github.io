@@ -16,18 +16,16 @@
             }
         }).on("loaded.rs.jquery.bootgrid", function()
         {
-            var dialog;
-        dialog = $("#page_sirket_islemleri").dialog();
             /* Executes after data is loaded and rendered */
             grid.find(".command-edit").on("click", function(e)
             {
+                modal.style.display = "block";
                 alert("You pressed edit on row: " + $(this).data("row-id"));
 
-                dialog.dialog( "open" );
             }).end().find(".command-delete").on("click", function(e)
             {
+                modal.style.display = "block";
                 alert("You pressed delete on row: " + $(this).data("row-id"));
-                dialog.dialog( "open" );
             });
         });
 
