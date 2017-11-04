@@ -218,7 +218,7 @@ $(function () {
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
         }
     
-        kaydetVeritabani("uygulama_turleri", idUygulamaTuru, veri);
+        kaydetVeritabani("meslekler", idMeslek, veri);
     
     }
 
