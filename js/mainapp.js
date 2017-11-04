@@ -202,3 +202,24 @@ $(function () {
     }
 
 
+
+    function kaydetMeslekBilgileri() {
+        var d = new Date();
+        var n = d.getTime()
+    
+        var meslek = $("#txtMeslek").val();
+        var idMeslek = meslek.replace(/[^\x00-\x7F]/g, "") + n;
+        var meslekAciklama = $("#txtMeslekAciklama").val();       
+           
+        var veri = {
+            "idMeslek": idMeslek,
+            "meslek": meslek,
+            "meslekAciklama": meslekAciklama,       
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+        }
+    
+        kaydetVeritabani("uygulama_turleri", idUygulamaTuru, veri);
+    
+    }
+
+
