@@ -42,8 +42,8 @@ $(function () {
             $("#modalmessage").addClass("text-success");
             $("#modalTitle").removeClass("text-danger");
             $("#modalTitle").addClass("text-success");
-            $("#modalAlert").modal({ backdrop: 'static' });
-            $("#modalAlert").modal({ backdrop: 'static', show: 'show' });
+            $("#modalAlert").modal({ backdrop: 'true' });
+            $("#modalAlert").modal({ backdrop: 'true', show: 'show' });
         
         }
         
@@ -230,14 +230,16 @@ $(function () {
         var idTetkik=tetkik.replace(/[^\x00-\x7F]/g, "")+n;
         var fiyat=$("#txtFiyat").val();    
         var uygulamaTuru =$("input:radio[name='rdUygulamaTuru']:checked").val();
-        var uygulamaTuruAdi =$("input:radio[name='rdUygulamaTuru']:checked").text();
+        var $input = $('input[name="rdUygulamaTuru"]:checked');
+        var text = $('label[for='+$input.attr('id')+']').text();
+        var uygulamaTuruAdi =""+text;
     
     
         var veri={
             "idTetkik":idTetkik,
             "tetkik":tetkik,
             "fiyat":fiyat,
-            "uygulamaturu":uygulamaturu,
+            "uygulamaTuru":uygulamaTuru,
             "uygulamaTuruAdi":uygulamaTuruAdi,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
         }
