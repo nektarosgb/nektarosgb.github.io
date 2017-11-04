@@ -32,7 +32,6 @@ $(function () {
         
             $("#modalTitle").text(title);
             $("#modalMessage").text(msg);
-            //$("#modalBtnClose").addClass("hide");
             $("#modalBtnClose2").addClass("hide");
             $("#modalAlert div.modal-body").removeClass('bg-warning');
             $("#modalAlert div.modal-body").addClass('bg-success');
@@ -53,7 +52,7 @@ $(function () {
             $("#modalTitle").text(title);
             $("#modalMessage").text(msg);
             $("#modalBtnClose").removeClass("hide");
-            $("#modalBtnClose2").removeClass("hide");
+            //$("#modalBtnClose2").removeClass("hide");
             $("#modalAlert div.modal-body").removeClass('bg-success');
             $("#modalAlert div.modal-body").addClass('bg-warning');
             $("#modalAlert div.modal-header").removeClass("text-success");
