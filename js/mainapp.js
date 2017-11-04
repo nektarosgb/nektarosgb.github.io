@@ -230,14 +230,16 @@ $(function () {
         var idTetkik=tetkik.replace(/[^\x00-\x7F]/g, "")+n;
         var fiyat=$("#txtFiyat").val();    
         var uygulamaTuru =$("input:radio[name='rdUygulamaTuru']:checked").val();
-        var uygulamaTuruAdi =""+uygulamaTuru;
+        var $input = $('input[name="rdUygulamaTuru"]:checked');
+        var text = $('label[for='+$input.attr('id')+']').text();
+        var uygulamaTuruAdi =""+text;
     
     
         var veri={
             "idTetkik":idTetkik,
             "tetkik":tetkik,
             "fiyat":fiyat,
-            "uygulamaturu":uygulamaturu,
+            "uygulamaTuru":uygulamaTuru,
             "uygulamaTuruAdi":uygulamaTuruAdi,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
         }
