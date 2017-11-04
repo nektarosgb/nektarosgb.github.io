@@ -146,5 +146,35 @@ $(function () {
         kaydetVeritabani("calisanlar", idCalisan, veri);
     
     }
+
+
+    function kaydetPersonelBilgileri() {
+        var d = new Date();
+        var n = d.getTime()
+    
+        var personelAdi = $("#txtCalisanAdi").val();
+        var idPersonel = personelAdi.replace(/[^\x00-\x7F]/g, "") + n;
+        var personelGorevi = $("#txtPersonelGorevi").val();
+        var personelAdresi = $("#txtPersonelAdresi").val();
+        var personelTelefon = $("#txtPersonelTelefon").val();
+        var personelTCNo = $("#txtPersonelTCNo").val();
+        var personelTelefonCep = $("#txtPersonelTelefonCep").val();
+        var personelEposta = $("#txtPersonelEposta").val();
+           
+        var veri = {
+            "idPersonel": idPersonel,
+            "personelAdi": personelAdi,
+            "personelGorevi": personelGorevi,
+            "personelAdresi": personelAdresi,
+            "personelTelefon": personelTelefon,
+            "personelTCNo": personelTCNo,
+            "personelTelefonCep": personelTelefonCep,
+            "personelEposta": personelEposta,           
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+        }
+    
+        kaydetVeritabani("personeller", idPersonel, veri);
+    
+    }
     
     
