@@ -1,107 +1,150 @@
 $(function () {
-
-});
-
-
-
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user != null) {
-        if (window.location.href.indexOf("index.html") == -1) {
-            window.location = "index.html";
-        }
-    } else {
-        if (window.location.href.indexOf("login") == -1) {
-            window.location = "login.html";
-        }
-    }
-    window.user = user; // user is undefined if no user signed in
-});
-
-function checkLogin() {
-    var email = $(".txtemail").val();
-    var passwd = $(".txtpasswd").val();
-
-    firebase.auth().signInWithEmailAndPassword(email, passwd)
-        .catch(function (err) {
-            alert("Kullanıcı adı veya parola bulunamadı!");
-        });
-}
-
-function kaydetVeritabani(tablo, id, veri) {
-    firebase.database().ref(tablo + '/' + id).set(veri);
-    listTable(tablo);
-}
-
-function listTable(tablo) {
-
-    return firebase.database().ref(tablo).once('value').then(function (snapshot) {
-        console.log(snapshot.val());
+    
     });
-}
-
-function kaydetSirketBilgileri() {
-    var d = new Date();
-    var n = d.getTime()
-
-    var sirketAdi = $("#txtSirketAdi").val();
-    var idSirket = sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    var sirketAdresi = $("#txtSirketAdresi").val();
-    var sirketTelefon = $("#txtSirketTelefon").val();
-    var sirketSGKSicilNo = $("#txtSirketSGKSicilNo").val();
-    var sirketIlgiliKisi = $("#txtSirketIlgiliKisi").val();
-    var sirketTelefonCep = $("#txtSirketTelefonCep").val();
-    var sirketEposta = $("#txtSirketEposta").val();
-    var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
-    var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
-
-    //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
-
-    var veri = {
-        "idSirket": idSirket,
-        "sirketAdi": sirketAdi,
-        "sirketAdresi": sirketAdresi,
-        "sirketTelefon": sirketTelefon,
-        "sirketSGKSicilNo": sirketSGKSicilNo,
-        "sirketIlgiliKisi": sirketIlgiliKisi,
-        "sirketTelefonCep": sirketTelefonCep,
-        "sirketEposta": sirketEposta,
-        "sirketIsyeriHekimi": sirketIsyeriHekimi,
-        "sirketIsGuvenligiUzmani": sirketIsGuvenligiUzmani,
-        "kayitEden": firebase.auth().currentUser.uid
+    
+    
+    
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user != null) {
+            if (window.location.href.indexOf("index.html") == -1) {
+                window.location = "index.html";
+            }
+        } else {
+            if (window.location.href.indexOf("login") == -1) {
+                window.location = "login.html";
+            }
+        }
+        window.user = user; // user is undefined if no user signed in
+    });
+    
+    function checkLogin() {
+        var email = $(".txtemail").val();
+        var passwd = $(".txtpasswd").val();
+    
+        firebase.auth().signInWithEmailAndPassword(email, passwd)
+            .catch(function (err) {
+                alert("Kullanıcı adı veya parola bulunamadı!");
+            });
     }
 
-    kaydetVeritabani("sirketler", idSirket, veri);
-
-}
-
-function kaydetCalisanBilgileri() {
-    var d = new Date();
-    var n = d.getTime()
-
-    var calisanAdi = $("#txtCalisanAdi").val();
-    var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    var calisanAdresi = $("#txtCalisanAdresi").val();
-    var calisanTelefon = $("#txtCalisanTelefon").val();
-    var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
-    var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
-    var calisanEposta = $("#txtCalisanEposta").val();
-    var calisanIsyeri = $("#txtCalisanIsyeri").val();
-
-    //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
-
-    var veri = {
-        "idCalisan": idCalisan,
-        "calisanAdi": calisanAdi,
-        "calisanAdresi": calisanAdresi,
-        "calisanTelefon": calisanTelefon,
-        "calisanSGKSicilNo": calisanSGKSicilNo,
-        "calisanTelefonCep": calisanTelefonCep,
-        "calisanEposta": calisanEposta,
-        "calisanIsyeri": calisanIsyeri,
-        "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+    function msgInfo(title, msg) {
+        
+        
+            $("#modalTitle").text(title);
+            $("#modalMessage").text(msg);
+            $("#modalBtnClose").addClass("hide");
+            $("#modalBtnClose2").addClass("hide");
+            $("div.modal-body").removeClass('bg-warning');
+            $("div.modal-body").addClass('bg-success');
+            $("div.modal-header").removeClass("text-danger");
+            $("div.modal-header").addClass("text-success");
+            $("#modalmessage").removeClass("text-danger");
+            $("#modalmessage").addClass("text-success");
+            $("#modalTitle").removeClass("text-danger");
+            $("#modalTitle").addClass("text-success");
+            $("#modalAlert").modal({ backdrop: 'static' });
+            $("#modalAlert").modal({ backdrop: 'static', show: 'show' });
+        
+        }
+        
+        function msgWarning(title, msg) {
+        
+        
+            $("#modalTitle").text(title);
+            $("#modalMessage").text(msg);
+            $("#modalBtnClose").removeClass("hide");
+            $("#modalBtnClose2").removeClass("hide");
+            $("div.modal-body").removeClass('bg-success');
+            $("div.modal-body").addClass('bg-warning');
+            $("div.modal-header").removeClass("text-success");
+            $("div.modal-header").addClass("text-danger");
+            $("#modalmessage").removeClass("text-success");
+            $("#modalmessage").addClass("text-danger");
+            $("#modalTitle").removeClass("text-success");
+            $("#modalTitle").addClass("text-danger");
+            $("#modalAlert").modal({ backdrop: 'true', show: 'show' });
+        }
+    
+    function kaydetVeritabani(tablo, id, veri) {
+        firebase.database().ref(tablo + '/' + id).set(veri).then(function(deneme){
+            msgInfo("Başarılı","Kayıt tamamlandı. İşleminize devam edebilirsiniz..")
+        });
+        listTable(tablo);
     }
-
-    kaydetVeritabani("calisanlar", idCalisan, veri);
-
-}
-
+    
+    function listTable(tablo) {
+    
+        return firebase.database().ref(tablo).once('value').then(function (snapshot) {
+            console.log(snapshot.val());
+        });
+    }
+    
+    function kaydetSirketBilgileri() {
+        var d = new Date();
+        var n = d.getTime()
+    
+        var sirketAdi = $("#txtSirketAdi").val();
+        var idSirket = sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
+        var sirketAdresi = $("#txtSirketAdresi").val();
+        var sirketTelefon = $("#txtSirketTelefon").val();
+        var sirketSGKSicilNo = $("#txtSirketSGKSicilNo").val();
+        var sirketIlgiliKisi = $("#txtSirketIlgiliKisi").val();
+        var sirketTelefonCep = $("#txtSirketTelefonCep").val();
+        var sirketEposta = $("#txtSirketEposta").val();
+        var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
+        var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
+    
+        //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
+    
+        var veri = {
+            "idSirket": idSirket,
+            "sirketAdi": sirketAdi,
+            "sirketAdresi": sirketAdresi,
+            "sirketTelefon": sirketTelefon,
+            "sirketSGKSicilNo": sirketSGKSicilNo,
+            "sirketIlgiliKisi": sirketIlgiliKisi,
+            "sirketTelefonCep": sirketTelefonCep,
+            "sirketEposta": sirketEposta,
+            "sirketIsyeriHekimi": sirketIsyeriHekimi,
+            "sirketIsGuvenligiUzmani": sirketIsGuvenligiUzmani,
+            "kayitEden": firebase.auth().currentUser.uid
+        }
+    
+        kaydetVeritabani("sirketler", idSirket, veri);
+    
+    }
+    
+    function kaydetCalisanBilgileri() {
+        var d = new Date();
+        var n = d.getTime()
+    
+        var calisanAdi = $("#txtCalisanAdi").val();
+        var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
+        var calisanAdresi = $("#txtCalisanAdresi").val();
+        var calisanTelefon = $("#txtCalisanTelefon").val();
+        var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
+        var calisanTCNo = $("#txtCalisanTCNo").val();
+        var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
+        var calisanEposta = $("#txtCalisanEposta").val();
+        var calisanIsyeri = $("#txtCalisanIsyeri").val();
+    
+        //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
+    
+        var veri = {
+            "idCalisan": idCalisan,
+            "calisanAdi": calisanAdi,
+            "calisanAdresi": calisanAdresi,
+            "calisanTelefon": calisanTelefon,
+            "calisanSGKSicilNo": calisanSGKSicilNo,
+            "calisanTCNo": calisanTCNo,
+            "calisanTelefonCep": calisanTelefonCep,
+            "calisanEposta": calisanEposta,
+            "calisanIsyeri": calisanIsyeri,
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+        }
+    
+        kaydetVeritabani("calisanlar", idCalisan, veri);
+    
+    }
+    
+    
