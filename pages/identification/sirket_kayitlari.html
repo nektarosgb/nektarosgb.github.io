@@ -19,16 +19,7 @@
         }).on("loaded.rs.jquery.bootgrid", function()
         {
             var dialog;
-        dialog = $("#page_sirket_islemleri").dialog({
-          autoOpen: false,
-          height: "100%",
-          width: "100%",
-          modal: true,
-          close: function() {
-            // form[ 0 ].reset();
-            allFields.removeClass( "ui-state-error" );
-          }
-        });
+        dialog = $("#page_sirket_islemleri").dialog();
             /* Executes after data is loaded and rendered */
             grid.find(".command-edit").on("click", function(e)
             {
