@@ -32,7 +32,7 @@ $(function () {
         
             $("#modalTitle").text(title);
             $("#modalMessage").text(msg);
-            $("#modalBtnClose").addClass("hide");
+            //$("#modalBtnClose").addClass("hide");
             $("#modalBtnClose2").addClass("hide");
             $("div.modal-body").removeClass('bg-warning');
             $("div.modal-body").addClass('bg-success');
