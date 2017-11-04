@@ -222,4 +222,27 @@ $(function () {
     
     }
 
+    function kaydetTetkikBilgisi() {
+        var d = new Date();
+        var n = d.getTime()
+    
+        var tetkik=$("#txtTetkik").val();    
+        var idTetkik=tetkik.replace(/[^\x00-\x7F]/g, "")+n;
+        var fiyat=$("#txtFiyat").val();    
+        var uygulamaTuru =$("input:radio[name='rdUygulamaTuru']:checked").val();
+        var uygulamaTuruAdi =$("input:radio[name='rdUygulamaTuru']:checked").text();
+    
+    
+        var veri={
+            "idTetkik":idTetkik,
+            "tetkik":tetkik,
+            "fiyat":fiyat,
+            "uygulamaturu":uygulamaturu,
+            "uygulamaTuruAdi":uygulamaTuruAdi,
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+        }
+    
+        kaydetVeritabani("tetkikler",idTetkik,veri);
+    
+    }
 
