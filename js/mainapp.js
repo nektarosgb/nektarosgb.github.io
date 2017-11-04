@@ -74,7 +74,7 @@ function kaydetSirketBilgileri() {
 
 }
 
-function kaydetÇalışanBilgileri() {
+function kaydetCalisanBilgileri() {
     var d = new Date();
     var n = d.getTime()
 
