@@ -85,3 +85,92 @@
 
 
 </div>
+<style>
+        label, input { display:block; }
+        input.text { margin-bottom:12px; width:95%; padding: .4em; }
+        fieldset { padding:0; border:0; margin-top:25px; }
+        h1 { font-size: 1.2em; margin: .6em 0; }
+        div#page_sirket_islemleri { width: 350px; margin: 20px 0; }
+        div#page_sirket_islemleri table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+        div#page_sirket_islemleri table td, div#page_sirket_islemleri table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+        .ui-dialog .ui-state-error { padding: .3em; }
+        .validateTips { border: 1px solid transparent; padding: 0.3em; }
+      </style>
+<div class="page_container" id="page_sirket_islemleri">
+
+    <div class="row">
+
+        <div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Şirket Yeni Kayıt ve Güncelleme</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="txtSirketAdi">Şirket Adı</label>
+                        <input type="text" class="form-control" id="txtSirketAdi" placeholder="ABC San. Tic. Aş.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketAdresi">Şirket Adresi</label>
+                        <input type="text" class="form-control" id="txtSirketAdresi" placeholder="Sk. Cd. Organize Sanayi Bölgesi...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketTelefon">Telefon</label>
+                        <input type="telephone" class="form-control" id="txtSirketTelefon" placeholder="(+90 232) 111 22 33">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketSGKSicilNo">SGK Sicil No</label>
+                        <input type="text" class="form-control" id="txtSirketSGKSicilNo" placeholder="SGK Sicil Numarası...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketIlgiliKisi">İlgili Kişi</label>
+                        <input type="text" class="form-control" id="txtSirketIlgiliKisi" placeholder="İlgili Kişi Adı Soyadı">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketTelefonCep">Mobil</label>
+                        <input type="telephone" class="form-control" id="txtSirketTelefonCep" placeholder="(+90 232) 111 22 33">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketEposta">E-posta</label>
+                        <input type="email" class="form-control" id="txtSirketEposta" placeholder="E-mail">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketIsyeriHekimi">İşyeri Hekimi</label>
+                        <input type="text" class="form-control" id="txtSirketIsyeriHekimi" placeholder="İşyeri Hekimi Adı Soyadı">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtSirketIsyeriGuvenlikUzmani">İşyeri Hekimi</label>
+                        <input type="text" class="form-control" id="txtSirketIsyeriGuvenlikUzmani" placeholder="İşyeri Güvenlik Uzamnı Adı">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="txtSirketIsGuvenligiUzmani">İlgili Kişi</label>
+                        <input type="text" class="form-control" id="txtSirketIsGuvenligiUzmani" placeholder="İş Güvenliği Uzmanı Adı Soyadı">
+                    </div>
+
+
+                </div>
+                <div class="panel-footer">
+                    <button onclick="kaydetSirketBilgileri();return false;" class="btn btn-success btn-block">Kaydet</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-md-6"></div>
+
+    </div>
+
+
+</div>
