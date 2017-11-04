@@ -12,12 +12,6 @@
           height: "100%",
           width: "100%",
           modal: true,
-          buttons: {
-            "Create an account": addUser,
-            Cancel: function() {
-              dialog.dialog( "close" );
-            }
-          },
           close: function() {
             // form[ 0 ].reset();
             allFields.removeClass( "ui-state-error" );
