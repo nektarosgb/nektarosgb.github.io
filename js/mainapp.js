@@ -230,7 +230,9 @@ $(function () {
         var idTetkik=tetkik.replace(/[^\x00-\x7F]/g, "")+n;
         var fiyat=$("#txtFiyat").val();    
         var uygulamaTuru =$("input:radio[name='rdUygulamaTuru']:checked").val();
-        var uygulamaTuruAdi =$("input:radio[name='rdUygulamaTuru']:checked").text();
+        var $input = $('input[name="rdUygulamaTuru"]:checked');
+        var text = $('label[for='+$input.attr('id')+']').text();
+        var uygulamaTuruAdi =text;
     
     
         var veri={
