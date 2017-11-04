@@ -180,4 +180,25 @@ $(function () {
     
     }
     
+
     
+    function kaydetUygulamaTuruBilgileri() {
+        var d = new Date();
+        var n = d.getTime()
+    
+        var uygulamaTuru = $("#txtUygulamaTuru").val();
+        var idUygulamaTuru = uygulamaTuru.replace(/[^\x00-\x7F]/g, "") + n;
+        var uygulamaTuruAciklama = $("#txtUygulamaTuruAciklama").val();       
+           
+        var veri = {
+            "idUygulamaTuru": idUygulamaTuru,
+            "uygulamaTuru": uygulamaTuru,
+            "uygulamaTuruAciklama": uygulamaTuruAciklama,       
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+        }
+    
+        kaydetVeritabani("uygulama_turleri", idUygulamaTuru, veri);
+    
+    }
+
+
