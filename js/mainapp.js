@@ -67,7 +67,10 @@ $(function () {
     
     function kaydetVeritabani(tablo, id, veri) {
         firebase.database().ref(tablo + '/' + id).set(veri).then(function(deneme){
-            msgInfo("Başarılı","Kayıt tamamlandı. İşleminize devam edebilirsiniz..")
+            msgInfo("Başarılı","Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
+        }).catch(function(error) {
+            msgInfo("Uyarı","Kayıt tamamlanamadı. Lütfen girişlerinizi kontrol ediniz.");
+            console.error("ERROR: " + error);
         });
         listTable(tablo);
     }
@@ -152,7 +155,7 @@ $(function () {
         var d = new Date();
         var n = d.getTime()
     
-        var personelAdi = $("#txtCalisanAdi").val();
+        var personelAdi = $("#txtPersonelAdi").val();
         var idPersonel = personelAdi.replace(/[^\x00-\x7F]/g, "") + n;
         var personelGorevi = $("#txtPersonelGorevi").val();
         var personelAdresi = $("#txtPersonelAdresi").val();
