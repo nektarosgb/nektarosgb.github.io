@@ -1,3 +1,24 @@
+
+<script>
+        var dialog;
+        dialog = $( "#page_sirket_islemleri" ).dialog({
+          autoOpen: false,
+          height: "100%",
+          width: "100%",
+          modal: true,
+          buttons: {
+            "Create an account": addUser,
+            Cancel: function() {
+              dialog.dialog( "close" );
+            }
+          },
+          close: function() {
+            // form[ 0 ].reset();
+            allFields.removeClass( "ui-state-error" );
+          }
+        });
+     
+    </script>
 <script type="text/javascript">
     initLoadedPage();
 
@@ -17,9 +38,11 @@
             grid.find(".command-edit").on("click", function(e)
             {
                 alert("You pressed edit on row: " + $(this).data("row-id"));
+                dialog.dialog( "open" );
             }).end().find(".command-delete").on("click", function(e)
             {
                 alert("You pressed delete on row: " + $(this).data("row-id"));
+                dialog.dialog( "open" );
             });
         });
 
@@ -38,9 +61,6 @@
         });
     }
 
-</script>
-<script>
-    
 </script>
 
 <div class="page_container">
