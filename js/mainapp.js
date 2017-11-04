@@ -78,7 +78,7 @@ function kaydetCalisanBilgileri() {
     var d = new Date();
     var n = d.getTime()
 
-    var calisanAdi = $("#txtSirketAdi").val();
+    var calisanAdi = $("#txtCalisanAdi").val();
     var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
     var calisanAdresi = $("#txtCalisanAdresi").val();
     var calisanTelefon = $("#txtCalisanTelefon").val();
