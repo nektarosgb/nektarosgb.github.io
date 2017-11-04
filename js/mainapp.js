@@ -42,8 +42,8 @@ $(function () {
             $("#modalmessage").addClass("text-success");
             $("#modalTitle").removeClass("text-danger");
             $("#modalTitle").addClass("text-success");
-            $("#modalAlert").modal({ backdrop: 'static' });
-            $("#modalAlert").modal({ backdrop: 'static', show: 'show' });
+            $("#modalAlert").modal({ backdrop: 'true' });
+            $("#modalAlert").modal({ backdrop: 'true', show: 'show' });
         
         }
         
