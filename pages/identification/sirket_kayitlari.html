@@ -4,32 +4,6 @@
 
     function initLoadedPage() {
 
-        
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
         var grid = $("#grid-sirketler").bootgrid({
             ajax: false,
             formatters: {
@@ -44,12 +18,20 @@ window.onclick = function(event) {
             /* Executes after data is loaded and rendered */
             grid.find(".command-edit").on("click", function(e)
             {
-                modal.style.display = "block";
+                $("#hdnId").val($(this).data("idSirket"));
+                $("#txtSirketAdi").val($(this).data("sirketAdi"));
+                $("#txtSirketAdresi").val($(this).data("sirketAdresi"));
+                $("#txtSirketTelefon").val($(this).data("sirketTelefon"));
+                $("#txtSirketSGKSicilNo").val($(this).data("sirketSGKSicilNo"));
+                $("#txtSirketIlgiliKisi").val($(this).data("sirketIlgiliKisi"));
+                $("#txtSirketTelefonCep").val($(this).data("sirketTelefonCep"));
+                $("#txtSirketEposta").val($(this).data("sirketEposta"));
+                $("#txtSirketIsyeriHekimi").val($(this).data("sirketIsyeriHekimi"));
+                $("#txtSirketIsyeriGuvenlikUzmani").val($(this).data("sirketIsGuvenligiUzmani"));
                 alert("You pressed edit on row: " + $(this).data("row-id"));
 
             }).end().find(".command-delete").on("click", function(e)
             {
-                modal.style.display = "block";
                 alert("You pressed delete on row: " + $(this).data("row-id"));
             });
         });
@@ -72,7 +54,7 @@ window.onclick = function(event) {
 </script>
 
 <div class="page_container">
-        <button id="myBtn"  data-toggle="modal" data-target="#myModal">Yeni Kayıt</button>
+        <button id="myBtn"  data-toggle="modal" data-target="#myModal" class="btn-warning">Yeni Kayıt</button>
     <div class="row">
         <table id="grid-sirketler" class="table table-condensed table-hover table-striped">
             <thead>
@@ -111,6 +93,7 @@ window.onclick = function(event) {
                         <div class="form-group">
                             <label for="txtSirketAdi">Şirket Adı</label>
                             <input type="text" class="form-control" id="txtSirketAdi" placeholder="ABC San. Tic. Aş.">
+                            <input type="hidden" id="hdnId"/>
                         </div>
     
                         <div class="form-group">
