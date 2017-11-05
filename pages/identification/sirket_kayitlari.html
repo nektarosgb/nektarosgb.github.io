@@ -20,6 +20,7 @@
             {
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
+                alert(id);
                 setEditRow(id);
                 // console.log(lstVeri);
                 // $("#hdnId").val(lstVeri.idSirket);
@@ -33,7 +34,6 @@
                 // $("#txtSirketIsyeriHekimi").val(lstVeri.sirketIsyeriHekimi);
                 // $("#txtSirketIsyeriGuvenlikUzmani").val(lstVeri.sirketIsGuvenligiUzmani);
                 // $('#myModal').modal('show');
-                alert(lstVeri[id].sirketAdresi+"--ddd");
                 // alert("You pressed edit on row: " + $(this).data("row-id"));
 
             }).end().find(".command-delete").on("click", function(e)
@@ -58,29 +58,32 @@
     }
 
     function setEditRow(id){
-        firebase.database().ref('sirketler').child('idSirket').once(id).then(function (snapshot) {
+         firebase.database().ref('/sirketler/' + id).once('value').then(function(snapshot) {
+        alert(snapshot.val().sirketAdi);
+  // ...
+});
 
-
-            var rows = [];
-            snapshot.forEach(function (element) {
+        // firebase.database().ref('sirketler').child('idSirket').once(id).then(function (snapshot) {
+        //     var rows = [];
+        //     snapshot.forEach(function (element) {
                 
-                var cleanelement = JSON.parse(JSON.stringify(element));
-                cleanelement['id'] = rows.length + 1;
-                $("#hdnId").val(cleanelement[idSirket]);
-                $("#txtSirketAdi").val(cleanelement[sirketAdi]);
-                $("#txtSirketAdresi").val(cleanelement[sirketAdresi]);
-                $("#txtSirketTelefon").val(cleanelement[sirketTelefon]);
-                $("#txtSirketSGKSicilNo").val(cleanelement[sirketSGKSicilNo]);
-                $("#txtSirketIlgiliKisi").val(cleanelement[sirketIlgiliKisi]);
-                $("#txtSirketTelefonCep").val(cleanelement[sirketTelefonCep]);
-                $("#txtSirketEposta").val(cleanelement[sirketEposta]);
-                $("#txtSirketIsyeriHekimi").val(cleanelement[sirketIsyeriHekimi]);
-                $("#txtSirketIsyeriGuvenlikUzmani").val(cleanelement[sirketIsGuvenligiUzmani]);
-                $('#myModal').modal('show');
-            });
+        //         var cleanelement = JSON.parse(JSON.stringify(element));
+        //         cleanelement['id'] = rows.length + 1;
+        //         $("#hdnId").val(cleanelement[idSirket]);
+        //         $("#txtSirketAdi").val(cleanelement[sirketAdi]);
+        //         $("#txtSirketAdresi").val(cleanelement[sirketAdresi]);
+        //         $("#txtSirketTelefon").val(cleanelement[sirketTelefon]);
+        //         $("#txtSirketSGKSicilNo").val(cleanelement[sirketSGKSicilNo]);
+        //         $("#txtSirketIlgiliKisi").val(cleanelement[sirketIlgiliKisi]);
+        //         $("#txtSirketTelefonCep").val(cleanelement[sirketTelefonCep]);
+        //         $("#txtSirketEposta").val(cleanelement[sirketEposta]);
+        //         $("#txtSirketIsyeriHekimi").val(cleanelement[sirketIsyeriHekimi]);
+        //         $("#txtSirketIsyeriGuvenlikUzmani").val(cleanelement[sirketIsGuvenligiUzmani]);
+        //         $('#myModal').modal('show');
+        //     });
 
-            grid.bootgrid("append", rows);
-        });
+        //     // grid.bootgrid("append", rows);
+        // });
     }
 
 </script>
