@@ -20,16 +20,16 @@
             {
                 var lstVeri= listTable("sirketler");
                 console.log(lstVeri);
-                $("#hdnId").val($(this).data("idSirket"));
-                $("#txtSirketAdi").val($(this).data("sirketAdi"));
-                $("#txtSirketAdresi").val($(this).data("sirketAdresi"));
-                $("#txtSirketTelefon").val($(this).data("sirketTelefon"));
-                $("#txtSirketSGKSicilNo").val($(this).data("sirketSGKSicilNo"));
-                $("#txtSirketIlgiliKisi").val($(this).data("sirketIlgiliKisi"));
-                $("#txtSirketTelefonCep").val($(this).data("sirketTelefonCep"));
-                $("#txtSirketEposta").val($(this).data("sirketEposta"));
-                $("#txtSirketIsyeriHekimi").val($(this).data("sirketIsyeriHekimi"));
-                $("#txtSirketIsyeriGuvenlikUzmani").val($(this).data("sirketIsGuvenligiUzmani"));
+                $("#hdnId").val(lstVeri.idSirket);
+                $("#txtSirketAdi").val(lstVeri.sirketAdi);
+                $("#txtSirketAdresi").val(lstVeri.sirketAdresi);
+                $("#txtSirketTelefon").val(lstVeri.sirketTelefon);
+                $("#txtSirketSGKSicilNo").val(lstVeri.sirketSGKSicilNo);
+                $("#txtSirketIlgiliKisi").val(lstVeri.sirketIlgiliKisi);
+                $("#txtSirketTelefonCep").val(lstVeri.sirketTelefonCep);
+                $("#txtSirketEposta").val(lstVeri.sirketEposta);
+                $("#txtSirketIsyeriHekimi").val(lstVeri.sirketIsyeriHekimi);
+                $("#txtSirketIsyeriGuvenlikUzmani").val(lstVeri.sirketIsGuvenligiUzmani);
                 $('#myModal').modal('show');
                 alert()
                 // alert("You pressed edit on row: " + $(this).data("row-id"));
