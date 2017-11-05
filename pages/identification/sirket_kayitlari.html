@@ -28,7 +28,8 @@
                 $("#txtSirketEposta").val($(this).data("sirketEposta"));
                 $("#txtSirketIsyeriHekimi").val($(this).data("sirketIsyeriHekimi"));
                 $("#txtSirketIsyeriGuvenlikUzmani").val($(this).data("sirketIsGuvenligiUzmani"));
-                alert("You pressed edit on row: " + $(this).data("row-id"));
+                $('#myModal').modal('show');
+                // alert("You pressed edit on row: " + $(this).data("row-id"));
 
             }).end().find(".command-delete").on("click", function(e)
             {
