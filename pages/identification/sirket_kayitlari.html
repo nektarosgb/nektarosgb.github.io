@@ -18,6 +18,8 @@
             /* Executes after data is loaded and rendered */
             grid.find(".command-edit").on("click", function(e)
             {
+                var lstVeri= listTable(sirketler);
+                console.log(lstVeri);
                 $("#hdnId").val($(this).data("idSirket"));
                 $("#txtSirketAdi").val($(this).data("sirketAdi"));
                 $("#txtSirketAdresi").val($(this).data("sirketAdresi"));
@@ -29,6 +31,7 @@
                 $("#txtSirketIsyeriHekimi").val($(this).data("sirketIsyeriHekimi"));
                 $("#txtSirketIsyeriGuvenlikUzmani").val($(this).data("sirketIsGuvenligiUzmani"));
                 $('#myModal').modal('show');
+                alert()
                 // alert("You pressed edit on row: " + $(this).data("row-id"));
 
             }).end().find(".command-delete").on("click", function(e)
