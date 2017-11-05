@@ -18,7 +18,7 @@
             /* Executes after data is loaded and rendered */
             grid.find(".command-edit").on("click", function(e)
             {
-                var lstVeri= listTable(sirketler);
+                var lstVeri= listTable("sirketler");
                 console.log(lstVeri);
                 $("#hdnId").val($(this).data("idSirket"));
                 $("#txtSirketAdi").val($(this).data("sirketAdi"));
