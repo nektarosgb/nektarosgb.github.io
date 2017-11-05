@@ -20,19 +20,20 @@
             {
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
-                console.log(lstVeri);
-                $("#hdnId").val(lstVeri.idSirket);
-                $("#txtSirketAdi").val(lstVeri.sirketAdi);
-                $("#txtSirketAdresi").val(lstVeri.sirketAdresi);
-                $("#txtSirketTelefon").val(lstVeri.sirketTelefon);
-                $("#txtSirketSGKSicilNo").val(lstVeri.sirketSGKSicilNo);
-                $("#txtSirketIlgiliKisi").val(lstVeri.sirketIlgiliKisi);
-                $("#txtSirketTelefonCep").val(lstVeri.sirketTelefonCep);
-                $("#txtSirketEposta").val(lstVeri.sirketEposta);
-                $("#txtSirketIsyeriHekimi").val(lstVeri.sirketIsyeriHekimi);
-                $("#txtSirketIsyeriGuvenlikUzmani").val(lstVeri.sirketIsGuvenligiUzmani);
-                $('#myModal').modal('show');
-                alert(lstVeri[id].sirketAdresi+"--hhh");
+                setEditRow(id);
+                // console.log(lstVeri);
+                // $("#hdnId").val(lstVeri.idSirket);
+                // $("#txtSirketAdi").val(lstVeri.sirketAdi);
+                // $("#txtSirketAdresi").val(lstVeri.sirketAdresi);
+                // $("#txtSirketTelefon").val(lstVeri.sirketTelefon);
+                // $("#txtSirketSGKSicilNo").val(lstVeri.sirketSGKSicilNo);
+                // $("#txtSirketIlgiliKisi").val(lstVeri.sirketIlgiliKisi);
+                // $("#txtSirketTelefonCep").val(lstVeri.sirketTelefonCep);
+                // $("#txtSirketEposta").val(lstVeri.sirketEposta);
+                // $("#txtSirketIsyeriHekimi").val(lstVeri.sirketIsyeriHekimi);
+                // $("#txtSirketIsyeriGuvenlikUzmani").val(lstVeri.sirketIsGuvenligiUzmani);
+                // $('#myModal').modal('show');
+                alert(lstVeri[id].sirketAdresi+"--ddd");
                 // alert("You pressed edit on row: " + $(this).data("row-id"));
 
             }).end().find(".command-delete").on("click", function(e)
@@ -50,6 +51,32 @@
                 var cleanelement = JSON.parse(JSON.stringify(element));
                 cleanelement['id'] = rows.length + 1;
                 rows.push(cleanelement);
+            });
+
+            grid.bootgrid("append", rows);
+        });
+    }
+
+    function setEditRow(id){
+        firebase.database().ref('sirketler').child('idSirket').once(id).then(function (snapshot) {
+
+
+            var rows = [];
+            snapshot.forEach(function (element) {
+                
+                var cleanelement = JSON.parse(JSON.stringify(element));
+                cleanelement['id'] = rows.length + 1;
+                $("#hdnId").val(cleanelement[idSirket]);
+                $("#txtSirketAdi").val(cleanelement[sirketAdi]);
+                $("#txtSirketAdresi").val(cleanelement[sirketAdresi]);
+                $("#txtSirketTelefon").val(cleanelement[sirketTelefon]);
+                $("#txtSirketSGKSicilNo").val(cleanelement[sirketSGKSicilNo]);
+                $("#txtSirketIlgiliKisi").val(cleanelement[sirketIlgiliKisi]);
+                $("#txtSirketTelefonCep").val(cleanelement[sirketTelefonCep]);
+                $("#txtSirketEposta").val(cleanelement[sirketEposta]);
+                $("#txtSirketIsyeriHekimi").val(cleanelement[sirketIsyeriHekimi]);
+                $("#txtSirketIsyeriGuvenlikUzmani").val(cleanelement[sirketIsGuvenligiUzmani]);
+                $('#myModal').modal('show');
             });
 
             grid.bootgrid("append", rows);
