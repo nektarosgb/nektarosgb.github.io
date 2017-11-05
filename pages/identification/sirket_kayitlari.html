@@ -59,9 +59,20 @@
 
     function setEditRow(id){
          firebase.database().ref('/sirketler/' + id).once('value').then(function(snapshot) {
-        alert(snapshot.val().sirketAdi);
+                $("#hdnId").val(snapshot.val().idSirket);
+                $("#txtSirketAdi").val(snapshot.val().sirketAdi);
+                $("#txtSirketAdresi").val(snapshot.val().sirketAdresi);
+                $("#txtSirketTelefon").val(snapshot.val().sirketTelefon);
+                $("#txtSirketSGKSicilNo").val(snapshot.val().sirketSGKSicilNo);
+                $("#txtSirketIlgiliKisi").val(snapshot.val().sirketIlgiliKisi);
+                $("#txtSirketTelefonCep").val(snapshot.val().sirketTelefonCep);
+                $("#txtSirketEposta").val(snapshot.val().sirketEposta);
+                $("#txtSirketIsyeriHekimi").val(snapshot.val().sirketIsyeriHekimi);
+                $("#txtSirketIsyeriGuvenlikUzmani").val(snapshot.val().sirketIsGuvenligiUzmani);
+                $('#myModal').modal('show');
+            });
   // ...
-});
+};
 
         // firebase.database().ref('sirketler').child('idSirket').once(id).then(function (snapshot) {
         //     var rows = [];
