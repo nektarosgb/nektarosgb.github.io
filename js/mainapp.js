@@ -67,8 +67,18 @@ function msgWarning(title, msg) {
 function dosyaYukle(dosya,klasor,id){
     var storageRef = firebase.storage().ref();
     storageRef.child(klasor).child(id).put(dosya).then(function(snapshot) {
-        msgInfo("Başarılı", "Dosyanız yüklendi. İşleminize devam edebilirsiniz..");
+        msgInfo("Başarılı", "Dosyanız yüklendi. İşleminize devam edebilirsiniz..");        
     });
+}
+
+function resimGoster(klasor,id,imgID){
+    var storageRef = firebase.storage().ref();   
+    storageRef.child(klasor).child(id).getDownloadURL().then(function(url) {
+        var img = $("#"+imgID);
+        img.src = url;
+      }).catch(function(error) {
+        // Handle any errors
+      });
 }
 
 function kaydetVeritabani(tablo, id, veri) {
