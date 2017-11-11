@@ -136,7 +136,7 @@ function kaydetCalisanBilgileri() {
     var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
     var calisanEposta = $("#txtCalisanEposta").val();
     var calisanIsyeri = $("#txtCalisanIsyeri").val();
-    var dosya=$("#fileCalisan").files[0];
+    var dosya=$("#fileCalisan").val();
 
     //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
 
