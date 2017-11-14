@@ -21,6 +21,8 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
+                
+            $('#grid-sirketler').bootgrid('reload');
                 // console.log(lstVeri);
                 // $("#hdnId").val(lstVeri.idSirket);
                 // $("#txtSirketAdi").val(lstVeri.sirketAdi);

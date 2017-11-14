@@ -133,7 +133,6 @@ function kaydetSirketBilgileri() {
     }
 
     kaydetVeritabani("sirketler", idSirket, veri);
-    initLoadedPage();
 }
 
 function kaydetCalisanBilgileri() {
