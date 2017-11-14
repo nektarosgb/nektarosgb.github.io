@@ -133,7 +133,7 @@ function kaydetSirketBilgileri() {
     }
 
     kaydetVeritabani("sirketler", idSirket, veri);
-
+    $("#grid-sirketler").bootgrid("reload");
 }
 
 function kaydetCalisanBilgileri() {
@@ -142,6 +142,8 @@ function kaydetCalisanBilgileri() {
 
     var calisanAdi = $("#txtCalisanAdi").val();
     var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
+    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    idCalisan=$("#hdnId").val();
     var calisanAdresi = $("#txtCalisanAdresi").val();
     var calisanTelefon = $("#txtCalisanTelefon").val();
     var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
@@ -179,6 +181,11 @@ function kaydetPersonelBilgileri() {
 
     var personelAdi = $("#txtPersonelAdi").val();
     var idPersonel = personelAdi.replace(/[^\x00-\x7F]/g, "") + n;
+
+    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    idPersonel=$("#hdnId").val();
+
+
     var personelGorevi = $("#txtPersonelGorevi").val();
     var personelAdresi = $("#txtPersonelAdresi").val();
     var personelTelefon = $("#txtPersonelTelefon").val();
@@ -209,7 +216,15 @@ function kaydetUygulamaTuruBilgileri() {
     var n = d.getTime()
 
     var uygulamaTuru = $("#txtUygulamaTuru").val();
+
+
+
     var idUygulamaTuru = uygulamaTuru.replace(/[^\x00-\x7F]/g, "") + n;
+
+    
+    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    idUygulamaTuru=$("#hdnId").val();
+
     var uygulamaTuruAciklama = $("#txtUygulamaTuruAciklama").val();
 
     var veri = {
@@ -231,6 +246,11 @@ function kaydetMeslekBilgileri() {
 
     var meslek = $("#txtMeslek").val();
     var idMeslek = meslek.replace(/[^\x00-\x7F]/g, "") + n;
+
+    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    idMeslek=$("#hdnId").val();
+
+
     var meslekAciklama = $("#txtMeslekAciklama").val();
 
     var veri = {
@@ -250,6 +270,10 @@ function kaydetTetkikBilgisi() {
 
     var tetkik = $("#txtTetkik").val();
     var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
+    
+    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    idTetkik=$("#hdnId").val();
+
     var fiyat = $("#txtFiyat").val();
     var uygulamaTuru = $("input:radio[name='rdUygulamaTuru']:checked").val();
     var $input = $('input[name="rdUygulamaTuru"]:checked');
