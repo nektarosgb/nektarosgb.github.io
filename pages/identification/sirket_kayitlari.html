@@ -21,7 +21,20 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
-                window.location.href= "pages/identification/sirket_kayitlari.html";
+                
+        firebase.database().ref('sirketler').once('value').then(function (snapshot) {
+
+
+            var rows = [];
+            snapshot.forEach(function (element) {
+                
+                var cleanelement = JSON.parse(JSON.stringify(element));
+                cleanelement['id'] = rows.length + 1;
+                rows.push(cleanelement);
+            });
+
+            grid.bootgrid("append", rows);
+        });
                 
             // $('#grid-sirketler').bootgrid('reload');
                 // console.log(lstVeri);
@@ -40,7 +53,12 @@
 
             }).end().find(".command-delete").on("click", function(e)
             {
-                alert("You pressed delete on row: " + $(this).data("row-id"));
+                var id=$(this).data("row-id");
+                firebase.database().ref('/sirketler/' + id).delete().then(function() {
+                    console.log("Document successfully deleted!");
+                }).catch(function(error) {
+                    console.error("Error removing document: ", error);
+                });
             });
         });
 
