@@ -19,8 +19,6 @@
             grid.find(".command-edit").on("click", function(e)
             {
                 var lstVeri= listTable("sirketler");
-                var id=$(this).data("row-id");
-                alert(id);
                 setEditRow(id);
                 // console.log(lstVeri);
                 // $("#hdnId").val(lstVeri.idSirket);
@@ -125,7 +123,7 @@
     <div id="myModal" class="modal fade" role="document">
     <div class="modal-dialog">
             <div class="modal-content">
-    <div class="modal-header"> <h4 class="modal-title">Kayıt İşlemleri</h4></div>
+    <div class="modal-header"> <h4 class="modal-title"><button type="button" class="close" data-dismiss="modal">&times;</button>Kayıt İşlemleri</h4></div>
         <div class="row modal-body">
     
             <div>
