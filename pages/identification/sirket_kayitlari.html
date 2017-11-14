@@ -21,8 +21,9 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
+                window.location.href= "pages/identification/sirket_kayitlari.html";
                 
-            $('#grid-sirketler').bootgrid('reload');
+            // $('#grid-sirketler').bootgrid('reload');
                 // console.log(lstVeri);
                 // $("#hdnId").val(lstVeri.idSirket);
                 // $("#txtSirketAdi").val(lstVeri.sirketAdi);
