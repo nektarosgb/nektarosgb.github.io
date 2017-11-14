@@ -133,7 +133,7 @@ function kaydetSirketBilgileri() {
     }
 
     kaydetVeritabani("sirketler", idSirket, veri);
-    $("#grid-sirketler").bootgrid("reload");
+    initLoadedPage();
 }
 
 function kaydetCalisanBilgileri() {
