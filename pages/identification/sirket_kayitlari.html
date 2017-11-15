@@ -54,8 +54,7 @@
             }).end().find(".command-delete").on("click", function(e)
             {
                 var id=$(this).data("row-id");
-                firebase.database().ref().child("sirketler").child(id).remove();
-                
+                firebase.database().ref().child("sirketler").child(id).$remove();
             });
         });
 
