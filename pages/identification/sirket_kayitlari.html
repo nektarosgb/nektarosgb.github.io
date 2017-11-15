@@ -21,9 +21,6 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
-            
-                
-            // $('#grid-sirketler').bootgrid('reload');
                 // console.log(lstVeri);
                 // $("#hdnId").val(lstVeri.idSirket);
                 // $("#txtSirketAdi").val(lstVeri.sirketAdi);
@@ -40,8 +37,7 @@
 
             }).end().find(".command-delete").on("click", function(e)
             {
-                var id=$(this).data("row-id");
-                firebase.database().ref().child("sirketler").child(id).remove();
+                alert("You pressed delete on row: " + $(this).data("row-id"));
             });
         });
 
