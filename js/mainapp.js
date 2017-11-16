@@ -81,16 +81,6 @@ function resimGoster(klasor,id,imgID){
       });
 }
 
-// function kaydetVeritabani(tablo, id, veri) {
-//     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
-//         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
-//     }).catch(function (error) {
-//         msgInfo("Uyarı", "Kayıt tamamlanamadı. Lütfen girişlerinizi kontrol ediniz.");
-//         console.error("ERROR: " + error);
-//     });
-//     listTable(tablo);
-//     $("#myModal").modal('hide');
-// }
 function kaydetVeritabani(tablo, id, veri) {
     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
@@ -110,47 +100,7 @@ function listTable(tablo) {
 }
 
 //Şirket Bilgileri
-function kaydetSirketBilgileri() {
-    var d = new Date();
-    var n = d.getTime()
 
-    var sirketAdi = $("#txtSirketAdi").val();
-    var idSirket = firebase.database().ref("sirketler").push().key; //sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    console.log("hdn",$("#hdnId").val());
-    console.log("idSirket",idSirket);
-    
-    if($("#hdnId").val()!="" && $("#hdnId").val()!=null )
-    {
-        idSirket=$("#hdnId").val();
-        $("#hdnId").val('');
-    }
-    var sirketAdresi = $("#txtSirketAdresi").val();
-    var sirketTelefon = $("#txtSirketTelefon").val();
-    var sirketSGKSicilNo = $("#txtSirketSGKSicilNo").val();
-    var sirketIlgiliKisi = $("#txtSirketIlgiliKisi").val();
-    var sirketTelefonCep = $("#txtSirketTelefonCep").val();
-    var sirketEposta = $("#txtSirketEposta").val();
-    var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
-    var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
-
-    //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
-
-    var veri = {
-        "idSirket": idSirket,
-        "sirketAdi": sirketAdi,
-        "sirketAdresi": sirketAdresi,
-        "sirketTelefon": sirketTelefon,
-        "sirketSGKSicilNo": sirketSGKSicilNo,
-        "sirketIlgiliKisi": sirketIlgiliKisi,
-        "sirketTelefonCep": sirketTelefonCep,
-        "sirketEposta": sirketEposta,
-        "sirketIsyeriHekimi": sirketIsyeriHekimi,
-        "sirketIsGuvenligiUzmani": sirketIsGuvenligiUzmani,
-        "kayitEden": firebase.auth().currentUser.uid
-    }
-
-    kaydetVeritabani("sirketler", idSirket, veri);
-}
 
 //********************** */
 function kaydetCalisanBilgileri() {
