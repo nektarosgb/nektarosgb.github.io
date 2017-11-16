@@ -21,23 +21,11 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
-                // console.log(lstVeri);
-                // $("#hdnId").val(lstVeri.idSirket);
-                // $("#txtSirketAdi").val(lstVeri.sirketAdi);
-                // $("#txtSirketAdresi").val(lstVeri.sirketAdresi);
-                // $("#txtSirketTelefon").val(lstVeri.sirketTelefon);
-                // $("#txtSirketSGKSicilNo").val(lstVeri.sirketSGKSicilNo);
-                // $("#txtSirketIlgiliKisi").val(lstVeri.sirketIlgiliKisi);
-                // $("#txtSirketTelefonCep").val(lstVeri.sirketTelefonCep);
-                // $("#txtSirketEposta").val(lstVeri.sirketEposta);
-                // $("#txtSirketIsyeriHekimi").val(lstVeri.sirketIsyeriHekimi);
-                // $("#txtSirketIsyeriGuvenlikUzmani").val(lstVeri.sirketIsGuvenligiUzmani);
-                // $('#myModal').modal('show');
-                // alert("You pressed edit on row: " + $(this).data("row-id"));
 
             }).end().find(".command-delete").on("click", function(e)
             {
-                alert("You pressed delete on row: " + $(this).data("row-id"));
+                var id=$(this).data("row-id");
+                firebase.database().ref().child("sirketler").child(id).remove();
             });
         });
 

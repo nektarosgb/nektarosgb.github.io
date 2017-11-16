@@ -81,6 +81,16 @@ function resimGoster(klasor,id,imgID){
       });
 }
 
+// function kaydetVeritabani(tablo, id, veri) {
+//     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
+//         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
+//     }).catch(function (error) {
+//         msgInfo("Uyarı", "Kayıt tamamlanamadı. Lütfen girişlerinizi kontrol ediniz.");
+//         console.error("ERROR: " + error);
+//     });
+//     listTable(tablo);
+//     $("#myModal").modal('hide');
+// }
 function kaydetVeritabani(tablo, id, veri) {
     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
@@ -90,6 +100,18 @@ function kaydetVeritabani(tablo, id, veri) {
     });
     listTable(tablo);
     $("#myModal").modal('hide');
+}
+function guncelleVeritabani(tablo,id,veri)
+{
+    firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
+        msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
+    }).catch(function (error) {
+        msgInfo("Uyarı", "Kayıt tamamlanamadı. Lütfen girişlerinizi kontrol ediniz.");
+        console.error("ERROR: " + error);
+    });
+    listTable(tablo);
+    $("#myModal").modal('hide');
+    $("#hdnId").val(null);
 }
 
 function listTable(tablo) {
@@ -105,15 +127,15 @@ function kaydetSirketBilgileri() {
     var n = d.getTime()
 
     var sirketAdi = $("#txtSirketAdi").val();
-    var idSirket = sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
+    var idSirket = firebase.database().ref("sirketler").push().key; //sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
     console.log("hdn",$("#hdnId").val());
     console.log("idSirket",idSirket);
     
-    // if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-    // {
-    //     idSirket=$("#hdnId").val();
-    //     $("#hdnId").val('');
-    // }
+    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    {
+        idSirket=$("#hdnId").val();
+        $("#hdnId").val('');
+    }
     var sirketAdresi = $("#txtSirketAdresi").val();
     var sirketTelefon = $("#txtSirketTelefon").val();
     var sirketSGKSicilNo = $("#txtSirketSGKSicilNo").val();
