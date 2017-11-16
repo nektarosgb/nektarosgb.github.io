@@ -21,6 +21,8 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
+                $("#grid-sirketler").bootgrid("reload");
+                // $(this).bootgrid("reload");
 
             }).end().find(".command-delete").on("click", function(e)
             {
