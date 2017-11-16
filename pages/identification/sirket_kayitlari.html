@@ -41,15 +41,16 @@
             });
         });
 
-        firebase.database().ref('sirketler').on('value').then(function (snapshot) {
+        firebase.database().ref('sirketler').once('value').then(function (snapshot) {
 
-
+            console.log('test',snapshot);
             var rows = [];
             snapshot.forEach(function (element) {
                 
                 var cleanelement = JSON.parse(JSON.stringify(element));
                 cleanelement['id'] = rows.length + 1;
                 rows.push(cleanelement);
+                 console.log('cleanelement',cleanelement);
             });
 
             grid.bootgrid("append", rows);
