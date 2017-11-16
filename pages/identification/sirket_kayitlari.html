@@ -43,16 +43,12 @@
 
         firebase.database().ref('sirketler').once('value').then(function (snapshot) {
 
-            console.log('test',snapshot);
             var rows = [];
             snapshot.forEach(function (element) {
-                console.log('element',element);
                 var cleanelement = JSON.parse(JSON.stringify(element));
                 cleanelement['id'] = rows.length + 1;
                 rows.push(cleanelement);
-                 console.log('cleanelement',cleanelement);
             });
-            console.log('rows',rows);
             grid.bootgrid("append", rows);
         });
     }
