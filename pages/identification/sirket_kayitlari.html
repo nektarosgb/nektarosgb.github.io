@@ -22,12 +22,14 @@
                 var id=$(this).data("row-id");
                 setEditRow(id);
                 $("#grid-sirketler").bootgrid("reload");
+                initLoadedPage();
                 // $(this).bootgrid("reload");
 
             }).end().find(".command-delete").on("click", function(e)
             {
                 var id=$(this).data("row-id");
                 firebase.database().ref().child("sirketler").child(id).remove();
+                initLoadedPage();
             });
         });
 
