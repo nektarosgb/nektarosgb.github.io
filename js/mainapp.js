@@ -116,7 +116,7 @@ function guncelleVeritabani(tablo,id,veri)
 
 function listTable(tablo) {
 
-    return firebase.database().ref(tablo).once('value').then(function (snapshot) {
+    return firebase.database().ref(tablo).on('value').then(function (snapshot) {
         console.log(snapshot.val());
     });
 }
@@ -131,7 +131,7 @@ function kaydetSirketBilgileri() {
     console.log("hdn",$("#hdnId").val());
     console.log("idSirket",idSirket);
     
-    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    if($("#hdnId").val()!=="" ||$("#hdnId").val()!==null )
     {
         idSirket=$("#hdnId").val();
         $("#hdnId").val('');
