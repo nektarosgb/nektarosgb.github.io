@@ -21,14 +21,14 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
-                // initLoadedPage();
+                initLoadedPage();
                 // $(this).bootgrid("reload");
 
             }).end().find(".command-delete").on("click", function(e)
             {
                 var id=$(this).data("row-id");
                 firebase.database().ref().child("sirketler").child(id).remove();
- 
+                initLoadedPage();
             });
         });
 
