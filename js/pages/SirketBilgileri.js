@@ -97,7 +97,6 @@ function kaydetSirketBilgileri() {
 
     kaydetVeritabani("sirketler", idSirket, veri);
     initLoadedPage();
-    clearAllFields();
 }
 function clearAllFields()
 {
