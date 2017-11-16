@@ -99,14 +99,15 @@ function listTable(tablo) {
     });
 }
 
+//Şirket Bilgileri
 function kaydetSirketBilgileri() {
     var d = new Date();
     var n = d.getTime()
 
     var sirketAdi = $("#txtSirketAdi").val();
     var idSirket = sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-        idSirket=$("#hdnId").val();
+    // if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    //     idSirket=$("#hdnId").val();
     var sirketAdresi = $("#txtSirketAdresi").val();
     var sirketTelefon = $("#txtSirketTelefon").val();
     var sirketSGKSicilNo = $("#txtSirketSGKSicilNo").val();
@@ -135,6 +136,7 @@ function kaydetSirketBilgileri() {
     kaydetVeritabani("sirketler", idSirket, veri);
 }
 
+//********************** */
 function kaydetCalisanBilgileri() {
     var d = new Date();
     var n = d.getTime()
