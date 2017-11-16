@@ -97,6 +97,18 @@ function kaydetSirketBilgileri() {
 
     kaydetVeritabani("sirketler", idSirket, veri);
     initLoadedPage();
+    clearAllFields();
+}
+function clearAllFields()
+{
+    $("#txtSirketAdresi").val("");
+    $("#txtSirketTelefon").val("");
+    $("#txtSirketSGKSicilNo").val("");
+    $("#txtSirketIlgiliKisi").val("");
+    $("#txtSirketTelefonCep").val("");
+    $("#txtSirketEposta").val("");
+    $("#txtSirketIsyeriHekimi").val("");
+    $("#txtSirketIsGuvenligiUzmani").val("");
 }
 
 
