@@ -111,7 +111,7 @@ function guncelleVeritabani(tablo,id,veri)
     });
     listTable(tablo);
     $("#myModal").modal('hide');
-    $("#hdnId").val(null);
+    $("#hdnId").val("");
 }
 
 function listTable(tablo) {
