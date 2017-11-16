@@ -100,14 +100,16 @@ function kaydetSirketBilgileri() {
 }
 function clearAllFields()
 {
+    $("#hdnId").val('');
     $("#txtSirketAdresi").val("");
-    $("#txtSirketTelefon").val("");
-    $("#txtSirketSGKSicilNo").val("");
-    $("#txtSirketIlgiliKisi").val("");
-    $("#txtSirketTelefonCep").val("");
-    $("#txtSirketEposta").val("");
-    $("#txtSirketIsyeriHekimi").val("");
-    $("#txtSirketIsGuvenligiUzmani").val("");
+    $("#txtSirketAdi").val('');
+    $("#txtSirketTelefon").val('');
+    $("#txtSirketSGKSicilNo").val('');
+    $("#txtSirketIlgiliKisi").val('');
+    $("#txtSirketTelefonCep").val('');
+    $("#txtSirketEposta").val('');
+    $("#txtSirketIsyeriHekimi").val('');
+    $("#txtSirketIsGuvenligiUzmani").val('');
 }
 
 
