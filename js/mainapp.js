@@ -106,6 +106,7 @@ function listTable(tablo) {
 
     return firebase.database().ref(tablo).once('value').then(function (snapshot) {
         console.log(snapshot.val());
+        initLoadedPage();
     });
 }
 
