@@ -46,7 +46,7 @@
             console.log('test',snapshot);
             var rows = [];
             snapshot.forEach(function (element) {
-                
+                console.log('element',element);
                 var cleanelement = JSON.parse(JSON.stringify(element));
                 cleanelement['id'] = rows.length + 1;
                 rows.push(cleanelement);
