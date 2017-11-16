@@ -1,5 +1,6 @@
  function initLoadedPage() {
 
+    $("#hdnId").val('');
         var grid = $("#grid-sirketler").bootgrid({
             ajax: false,
             formatters: {
@@ -64,13 +65,10 @@ function kaydetSirketBilgileri() {
 
     var sirketAdi = $("#txtSirketAdi").val();
     var idSirket = firebase.database().ref("sirketler").push().key; //sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    console.log("hdn",$("#hdnId").val());
-    console.log("idSirket",idSirket);
     
     if($("#hdnId").val()!="" && $("#hdnId").val()!=null )
     {
         idSirket=$("#hdnId").val();
-        $("#hdnId").val('');
     }
     var sirketAdresi = $("#txtSirketAdresi").val();
     var sirketTelefon = $("#txtSirketTelefon").val();
