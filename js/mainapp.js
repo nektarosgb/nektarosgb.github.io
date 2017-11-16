@@ -106,12 +106,14 @@ function kaydetSirketBilgileri() {
 
     var sirketAdi = $("#txtSirketAdi").val();
     var idSirket = sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    console.log($("#hdnId").val());
-    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-    {
-        idSirket=$("#hdnId").val();
-        $("#hdnId").val('');
-    }
+    console.log("hdn",$("#hdnId").val());
+    console.log("idSirket",idSirket);
+    
+    // if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+    // {
+    //     idSirket=$("#hdnId").val();
+    //     $("#hdnId").val('');
+    // }
     var sirketAdresi = $("#txtSirketAdresi").val();
     var sirketTelefon = $("#txtSirketTelefon").val();
     var sirketSGKSicilNo = $("#txtSirketSGKSicilNo").val();
