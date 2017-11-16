@@ -131,7 +131,7 @@ function kaydetSirketBilgileri() {
     console.log("hdn",$("#hdnId").val());
     console.log("idSirket",idSirket);
     
-    if($("#hdnId").val()!=="" ||$("#hdnId").val()!==null )
+    if($("#hdnId").val()!="" ||$("#hdnId").val()!=null )
     {
         idSirket=$("#hdnId").val();
         $("#hdnId").val('');
