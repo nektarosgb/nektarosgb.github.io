@@ -101,22 +101,10 @@ function kaydetVeritabani(tablo, id, veri) {
     listTable(tablo);
     $("#myModal").modal('hide');
 }
-function guncelleVeritabani(tablo,id,veri)
-{
-    firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
-        msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
-    }).catch(function (error) {
-        msgInfo("Uyarı", "Kayıt tamamlanamadı. Lütfen girişlerinizi kontrol ediniz.");
-        console.error("ERROR: " + error);
-    });
-    listTable(tablo);
-    $("#myModal").modal('hide');
-    $("#hdnId").val("");
-}
 
 function listTable(tablo) {
 
-    return firebase.database().ref(tablo).on('value').then(function (snapshot) {
+    return firebase.database().ref(tablo).once('value').then(function (snapshot) {
         console.log(snapshot.val());
     });
 }
