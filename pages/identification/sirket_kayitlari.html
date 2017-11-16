@@ -21,7 +21,6 @@
                 var lstVeri= listTable("sirketler");
                 var id=$(this).data("row-id");
                 setEditRow(id);
-                $("#grid-sirketler").bootgrid("reload");
                 // initLoadedPage();
                 // $(this).bootgrid("reload");
 
@@ -35,7 +34,7 @@
 
         firebase.database().ref('sirketler').once('value').then(function (snapshot) {
 
-            grid.bootgrid("append", rows);
+            grid.bootgrid("clear");
             var rows = [];
             snapshot.forEach(function (element) {
                 var cleanelement = JSON.parse(JSON.stringify(element));
