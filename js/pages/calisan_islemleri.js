@@ -111,5 +111,5 @@ function clearAllFields() {
     $("#txtCalisanEposta").val('');
     $("#txtCalisanIsyeri").val('');
     $("#fileCalisan").val('');
-    resimTemizle("imgCalisan")
+    resimTemizle("imgCalisan");
 }
