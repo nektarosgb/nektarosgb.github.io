@@ -19,7 +19,7 @@ function initLoadedPage_meslek_islemleri() {
     
             }).end().find(".command-delete").on("click", function (e) {
                 var id = $(this).data("row-id");
-                firebase.database().ref().child("calisanlar").child(id).remove();
+                firebase.database().ref().child("meslekler").child(id).remove();
                 initLoadedPage_meslek_islemleri();
             });
         });
