@@ -40,6 +40,9 @@ function initLoadedPage_calisan_islemleri() {
 
 function setEditRow(id) {
     firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
+        if(snapshot==null){
+            return;
+        }
         $("#hdnId").val(snapshot.val().idCalisan);
         $("#txtCalisanAdi").val(snapshot.val().calisanAdi);
         $("#txtCalisanAdresi").val(snapshot.val().calisanAdresi);
