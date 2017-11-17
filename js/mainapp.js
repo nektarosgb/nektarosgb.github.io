@@ -149,60 +149,6 @@ function kaydetPersonelBilgileri() {
 }
 
 
-
-function kaydetUygulamaTuruBilgileri() {
-    var d = new Date();
-    var n = d.getTime()
-
-    var uygulamaTuru = $("#txtUygulamaTuru").val();
-
-
-
-    var idUygulamaTuru = uygulamaTuru.replace(/[^\x00-\x7F]/g, "") + n;
-
-    
-    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-    idUygulamaTuru=$("#hdnId").val();
-
-    var uygulamaTuruAciklama = $("#txtUygulamaTuruAciklama").val();
-
-    var veri = {
-        "idUygulamaTuru": idUygulamaTuru,
-        "uygulamaTuru": uygulamaTuru,
-        "uygulamaTuruAciklama": uygulamaTuruAciklama,
-        "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
-    }
-
-    kaydetVeritabani("uygulama_turleri", idUygulamaTuru, veri);
-
-}
-
-
-
-function kaydetMeslekBilgileri() {
-    var d = new Date();
-    var n = d.getTime()
-
-    var meslek = $("#txtMeslek").val();
-    var idMeslek = meslek.replace(/[^\x00-\x7F]/g, "") + n;
-
-    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-    idMeslek=$("#hdnId").val();
-
-
-    var meslekAciklama = $("#txtMeslekAciklama").val();
-
-    var veri = {
-        "idMeslek": idMeslek,
-        "meslek": meslek,
-        "meslekAciklama": meslekAciklama,
-        "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
-    }
-
-    kaydetVeritabani("meslekler", idMeslek, veri);
-
-}
-
 function kaydetTetkikBilgisi() {
     var d = new Date();
     var n = d.getTime()
