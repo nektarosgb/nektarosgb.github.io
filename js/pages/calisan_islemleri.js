@@ -1,4 +1,4 @@
-function initLoadedPage() {
+function initLoadedPage_calisan_islemleri() {
     
         $("#hdnId").val('');
         var grid = $("#grid-calisanlar").bootgrid({
