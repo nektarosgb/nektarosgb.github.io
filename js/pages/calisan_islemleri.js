@@ -110,6 +110,6 @@ function clearAllFields() {
     $("#txtCalisanTelefonCep").val('');
     $("#txtCalisanEposta").val('');
     $("#txtCalisanIsyeri").val('');
-    $("#fileCalisan").val('');
+    $("#fileCalisan").val("");
     resimTemizle("imgCalisan")
 }
