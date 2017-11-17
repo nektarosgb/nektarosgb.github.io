@@ -64,8 +64,10 @@ function kaydetCalisanBilgileri() {
 
     var calisanAdi = $("#txtCalisanAdi").val();
     var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    if ($("#hdnId").val() !== '' || $("#hdnId").val() !== null)
+    if ($("#hdnId").val() !== '' || $("#hdnId").val() !== null){
         idCalisan = $("#hdnId").val();
+    }
+        
     var calisanAdresi = $("#txtCalisanAdresi").val();
     var calisanTelefon = $("#txtCalisanTelefon").val();
     var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
@@ -92,7 +94,7 @@ function kaydetCalisanBilgileri() {
 
     kaydetVeritabani("calisanlar", idCalisan, veri);
     dosyaYukle(dosya, 'calisanlar', idCalisan);
-    
+
     initLoadedPage_calisan_islemleri();
 
 }
