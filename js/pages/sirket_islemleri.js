@@ -62,7 +62,7 @@ function kaydetSirketBilgileri() {
     var sirketAdi = $("#txtSirketAdi").val();
     var idSirket = firebase.database().ref("sirketler").push().key; //sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
 
-    if ($("#hdnId").val() != "" && $("#hdnId").val() != null) {
+    if ($("#hdnId").val().trim().length >0){
         idSirket = $("#hdnId").val();
     }
     var sirketAdresi = $("#txtSirketAdresi").val();
