@@ -65,6 +65,9 @@ function msgWarning(title, msg) {
 }
 
 function dosyaYukle(dosya,klasor,id){
+    if(dosya==null){
+        return;
+    }
     var storageRef = firebase.storage().ref();
     storageRef.child(klasor).child(id).put(dosya).then(function(snapshot) {
         msgInfo("Başarılı", "Dosyanız yüklendi. İşleminize devam edebilirsiniz..");        
