@@ -53,7 +53,7 @@ function setEditRowCalisan(id) {
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
         $("#fileCalisan").val('');  
-        resimGoster(calisanlar,snapshot.val().idCalisan,"imgCalisan");     
+        resimGoster("calisanlar",snapshot.val().idCalisan,"imgCalisan");     
         $('#myModal').modal('show');
     });
 }
