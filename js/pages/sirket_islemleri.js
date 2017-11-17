@@ -14,7 +14,7 @@ function initLoadedPage() {
         grid.find(".command-edit").on("click", function (e) {
             var lstVeri = listTable("sirketler");
             var id = $(this).data("row-id");
-            setEditRow(id);
+            setSirketEditRow(id);
             // $(this).bootgrid("reload");
 
         }).end().find(".command-delete").on("click", function (e) {
@@ -38,7 +38,7 @@ function initLoadedPage() {
 }
 
 
-function setEditRow(id) {
+function setSirketEditRow(id) {
     firebase.database().ref('/sirketler/' + id).once('value').then(function (snapshot) {
         $("#hdnId").val(snapshot.val().idSirket);
         $("#txtSirketAdi").val(snapshot.val().sirketAdi);
