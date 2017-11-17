@@ -90,9 +90,10 @@ function kaydetCalisanBilgileri() {
         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
     }
 
-    dosyaYukle(dosya, 'calisanlar', idCalisan);
-
     kaydetVeritabani("calisanlar", idCalisan, veri);
+    dosyaYukle(dosya, 'calisanlar', idCalisan);
+    
+    initLoadedPage_calisan_islemleri();
 
 }
 
