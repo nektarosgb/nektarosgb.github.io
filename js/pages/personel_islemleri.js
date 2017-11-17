@@ -20,7 +20,7 @@ function initLoadedPage_personel_islemleri() {
         }).end().find(".command-delete").on("click", function (e) {
             var id = $(this).data("row-id");
             firebase.database().ref().child("personeller").child(id).remove();
-            initLoadedPage_meslek_islemleri();
+            initLoadedPage_personel_islemleri();
         });
     });
 
@@ -85,7 +85,7 @@ function kaydetPersonelBilgileri() {
     }
 
     kaydetVeritabani("personeller", idPersonel, veri);
-
+    initLoadedPage_personel_islemleri();
 }
 
 
