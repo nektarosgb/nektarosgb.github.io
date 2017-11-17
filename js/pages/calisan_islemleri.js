@@ -52,7 +52,7 @@ function setEditRow(id) {
         $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
-        $("#fileCalisan").val(snapshot.val());  
+        $("#fileCalisan").val('');  
         resimGoster(calisanlar,snapshot.val().idCalisan,"imgCalisan");     
         $('#myModal').modal('show');
     });
@@ -110,6 +110,6 @@ function clearAllFields() {
     $("#txtCalisanTelefonCep").val('');
     $("#txtCalisanEposta").val('');
     $("#txtCalisanIsyeri").val('');
-    $("#fileCalisan").val("");
+    $("#fileCalisan").val('');
     resimTemizle("imgCalisan")
 }
