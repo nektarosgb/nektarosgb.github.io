@@ -14,7 +14,7 @@ function initLoadedPage_calisan_islemleri() {
             grid.find(".command-edit").on("click", function (e) {
                 var lstVeri = listTable("calisanlar");
                 var id = $(this).data("row-id");
-                setCalisanEditRow(id);
+                setEditRowCalisan(id);
                 // $(this).bootgrid("reload");
     
             }).end().find(".command-delete").on("click", function (e) {
@@ -38,9 +38,9 @@ function initLoadedPage_calisan_islemleri() {
     }
 
 
-function setCalisanEditRow(id) {
+function setEditRowCalisan(id) {
     firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
-        if(snapshot.val()==null){
+        if(snapshot==null){
             return;
         }
         $("#hdnId").val(snapshot.val().idCalisan);
@@ -53,7 +53,7 @@ function setCalisanEditRow(id) {
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
         $("#fileCalisan").val('');  
-        resimGoster(calisanlar,snapshot.val().idCalisan,"imgCalisan");     
+        resimGoster("calisanlar",snapshot.val().idCalisan,"imgCalisan");     
         $('#myModal').modal('show');
     });
 }
@@ -100,7 +100,7 @@ function kaydetCalisanBilgileri() {
 }
 
 
-function clearAllFields() {
+function clearAllFieldsCalisan() {
     $("#hdnId").val('');
     $("#txtCalisanAdi").val("");
     $("#txtCalisanAdresi").val('');
@@ -111,5 +111,5 @@ function clearAllFields() {
     $("#txtCalisanEposta").val('');
     $("#txtCalisanIsyeri").val('');
     $("#fileCalisan").val('');
-    resimTemizle("imgCalisan")
+    resimTemizle("imgCalisan");
 }
