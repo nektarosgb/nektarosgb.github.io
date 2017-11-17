@@ -20,7 +20,7 @@ function initLoadedPage_calisan_islemleri() {
             }).end().find(".command-delete").on("click", function (e) {
                 var id = $(this).data("row-id");
                 firebase.database().ref().child("calisanlar").child(id).remove();
-                initLoadedPage();
+                initLoadedPage_calisan_islemleri();
             });
         });
     
