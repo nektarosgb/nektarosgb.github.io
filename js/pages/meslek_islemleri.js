@@ -14,7 +14,7 @@ function initLoadedPage_meslek_islemleri() {
             grid.find(".command-edit").on("click", function (e) {
                 var lstVeri = listTable("meslekler");
                 var id = $(this).data("row-id");
-                setEditRow(id);
+                setEditRowMeslek(id);
                 // $(this).bootgrid("reload");
     
             }).end().find(".command-delete").on("click", function (e) {
@@ -38,7 +38,7 @@ function initLoadedPage_meslek_islemleri() {
     }
 
 
-function setEditRow(id) {
+function setEditRowMeslek(id) {
     firebase.database().ref('/meslekler/' + id).once('value').then(function (snapshot) {
         if(snapshot==null){
             return;
@@ -77,7 +77,7 @@ function kaydetMeslekBilgileri() {
 }
 
 
-function clearAllFields() {
+function clearAllFieldsMeslek() {
     $("#hdnId").val('');
     $("#txtMeslek").val("");
     $("#txtMeslekAciklama").val('');    

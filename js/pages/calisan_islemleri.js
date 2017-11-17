@@ -14,7 +14,7 @@ function initLoadedPage_calisan_islemleri() {
             grid.find(".command-edit").on("click", function (e) {
                 var lstVeri = listTable("calisanlar");
                 var id = $(this).data("row-id");
-                setEditRow(id);
+                setEditRowCalisan(id);
                 // $(this).bootgrid("reload");
     
             }).end().find(".command-delete").on("click", function (e) {
@@ -38,7 +38,7 @@ function initLoadedPage_calisan_islemleri() {
     }
 
 
-function setEditRow(id) {
+function setEditRowCalisan(id) {
     firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
         if(snapshot==null){
             return;
@@ -100,7 +100,7 @@ function kaydetCalisanBilgileri() {
 }
 
 
-function clearAllFields() {
+function clearAllFieldsCalisan() {
     $("#hdnId").val('');
     $("#txtCalisanAdi").val("");
     $("#txtCalisanAdresi").val('');
