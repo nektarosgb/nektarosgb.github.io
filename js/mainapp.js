@@ -81,6 +81,11 @@ function resimGoster(klasor,id,imgID){
       });
 }
 
+function resimTemizle(imgID){
+    var img = $("#"+imgID);
+    img.src = "";
+}
+
 function kaydetVeritabani(tablo, id, veri) {
     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
@@ -103,43 +108,7 @@ function listTable(tablo) {
 
 
 //********************** */
-function kaydetCalisanBilgileri() {
-    var d = new Date();
-    var n = d.getTime()
 
-    var calisanAdi = $("#txtCalisanAdi").val();
-    var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
-    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-    idCalisan=$("#hdnId").val();
-    var calisanAdresi = $("#txtCalisanAdresi").val();
-    var calisanTelefon = $("#txtCalisanTelefon").val();
-    var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
-    var calisanTCNo = $("#txtCalisanTCNo").val();
-    var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
-    var calisanEposta = $("#txtCalisanEposta").val();
-    var calisanIsyeri = $("#txtCalisanIsyeri").val();
-    var dosya=$("#fileCalisan")[0].files[0];
-
-    //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
-
-    var veri = {
-        "idCalisan": idCalisan,
-        "calisanAdi": calisanAdi,
-        "calisanAdresi": calisanAdresi,
-        "calisanTelefon": calisanTelefon,
-        "calisanSGKSicilNo": calisanSGKSicilNo,
-        "calisanTCNo": calisanTCNo,
-        "calisanTelefonCep": calisanTelefonCep,
-        "calisanEposta": calisanEposta,
-        "calisanIsyeri": calisanIsyeri,
-        "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
-    }
-
-    dosyaYukle(dosya,'calisanlar',idCalisan);
-
-    kaydetVeritabani("calisanlar", idCalisan, veri);
-
-}
 
 
 function kaydetPersonelBilgileri() {

@@ -1,17 +1,14 @@
-
 <script type="text/javascript">
-
-
-initLoadedPage();
+    initLoadedPage();
 </script>
 
 <div class="page_container">
-        <button id="myBtn" onclick="clearAllFields();return false;"  data-toggle="modal" data-target="#myModal" class="btn-warning">Yeni Kayıt</button>
+    <button id="btnNew" onclick="clearAllFields();return false;" data-toggle="modal" data-target="#myModal" class="btn-primary">Yeni Kayıt</button>
     <div class="row">
         <table id="grid-sirketler" class="table table-condensed table-hover table-striped">
             <thead>
                 <tr>
-                    <th data-column-id="idSirket" >Şirket Kodu</th>
+                    <th data-column-id="idSirket">Şirket Kodu</th>
                     <th data-column-id="sirketAdi">Şirket Adı</th>
                     <th data-column-id="sirketAdresi">Adresi</th>
                     <th data-column-id="sirketTelefon">Telefon</th>
@@ -20,7 +17,7 @@ initLoadedPage();
                     <th data-column-id="sirketTelefonCep">Cep Telefonu</th>
                     <th data-column-id="sirketEposta">E-posta</th>
                     <th data-column-id="sirketIsyeriHekimi">İşyeri Hekimi</th>
-                    <th data-column-id="sirketIsGuvenligiUzmani">İşGüvenliği Uzmanı</th> 
+                    <th data-column-id="sirketIsGuvenligiUzmani">İşGüvenliği Uzmanı</th>
                     <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
                 </tr>
             </thead>
@@ -29,86 +26,89 @@ initLoadedPage();
         </table>
     </div>
     <div id="myModal" class="modal fade" role="document">
-    <div class="modal-dialog">
+        <div class="modal-dialog">
             <div class="modal-content">
-    <div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button> <h4 class="modal-title">Kayıt İşlemleri</h4></div>
-        <div class="row modal-body">
-    
-            <div>
-    
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Şirket Yeni Kayıt ve Güncelleme</h3>
-                    </div>
-    
-                    <div class="panel-body">
-                        <div class="form-group">
-                            <label for="txtSirketAdi">Şirket Adı</label>
-                            <input type="text" class="form-control" id="txtSirketAdi" placeholder="ABC San. Tic. Aş.">
-                            <input type="hidden" id="hdnId"/>
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketAdresi">Şirket Adresi</label>
-                            <input type="text" class="form-control" id="txtSirketAdresi" placeholder="Sk. Cd. Organize Sanayi Bölgesi...">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketTelefon">Telefon</label>
-                            <input type="telephone" class="form-control" id="txtSirketTelefon" placeholder="(+90 232) 111 22 33">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketSGKSicilNo">SGK Sicil No</label>
-                            <input type="text" class="form-control" id="txtSirketSGKSicilNo" placeholder="SGK Sicil Numarası...">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketIlgiliKisi">İlgili Kişi</label>
-                            <input type="text" class="form-control" id="txtSirketIlgiliKisi" placeholder="İlgili Kişi Adı Soyadı">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketTelefonCep">Mobil</label>
-                            <input type="telephone" class="form-control" id="txtSirketTelefonCep" placeholder="(+90 232) 111 22 33">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketEposta">E-posta</label>
-                            <input type="email" class="form-control" id="txtSirketEposta" placeholder="E-mail">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketIsyeriHekimi">İşyeri Hekimi</label>
-                            <input type="text" class="form-control" id="txtSirketIsyeriHekimi" placeholder="İşyeri Hekimi Adı Soyadı">
-                        </div>
-    
-                        <div class="form-group">
-                            <label for="txtSirketIsyeriGuvenlikUzmani">İşyeri Hekimi</label>
-                            <input type="text" class="form-control" id="txtSirketIsyeriGuvenlikUzmani" placeholder="İşyeri Güvenlik Uzamnı Adı">
-                        </div>
-    
-    
-                        <div class="form-group">
-                            <label for="txtSirketIsGuvenligiUzmani">İlgili Kişi</label>
-                            <input type="text" class="form-control" id="txtSirketIsGuvenligiUzmani" placeholder="İş Güvenliği Uzmanı Adı Soyadı">
-                        </div>
-    
-    
-                    </div>
-                    <div class="panel-footer">
-                        <button onclick="kaydetSirketBilgileri();return false;" class="btn btn-success btn-block">Kaydet</button>
-                    </div>
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Kayıt İşlemleri</h4>
                 </div>
-    
+                <div class="row modal-body">
+
+                    <div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Şirket Yeni Kayıt ve Güncelleme</h3>
+                            </div>
+
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="txtSirketAdi">Şirket Adı</label>
+                                    <input type="text" class="form-control" id="txtSirketAdi" placeholder="ABC San. Tic. Aş.">
+                                    <input type="hidden" id="hdnId" />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketAdresi">Şirket Adresi</label>
+                                    <input type="text" class="form-control" id="txtSirketAdresi" placeholder="Sk. Cd. Organize Sanayi Bölgesi...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketTelefon">Telefon</label>
+                                    <input type="telephone" class="form-control" id="txtSirketTelefon" placeholder="(+90 232) 111 22 33">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketSGKSicilNo">SGK Sicil No</label>
+                                    <input type="text" class="form-control" id="txtSirketSGKSicilNo" placeholder="SGK Sicil Numarası...">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketIlgiliKisi">İlgili Kişi</label>
+                                    <input type="text" class="form-control" id="txtSirketIlgiliKisi" placeholder="İlgili Kişi Adı Soyadı">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketTelefonCep">Mobil</label>
+                                    <input type="telephone" class="form-control" id="txtSirketTelefonCep" placeholder="(+90 232) 111 22 33">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketEposta">E-posta</label>
+                                    <input type="email" class="form-control" id="txtSirketEposta" placeholder="E-mail">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketIsyeriHekimi">İşyeri Hekimi</label>
+                                    <input type="text" class="form-control" id="txtSirketIsyeriHekimi" placeholder="İşyeri Hekimi Adı Soyadı">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtSirketIsyeriGuvenlikUzmani">İşyeri Hekimi</label>
+                                    <input type="text" class="form-control" id="txtSirketIsyeriGuvenlikUzmani" placeholder="İşyeri Güvenlik Uzamnı Adı">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="txtSirketIsGuvenligiUzmani">İlgili Kişi</label>
+                                    <input type="text" class="form-control" id="txtSirketIsGuvenligiUzmani" placeholder="İş Güvenliği Uzmanı Adı Soyadı">
+                                </div>
+
+
+                            </div>
+                            <div class="panel-footer">
+                                <button onclick="kaydetSirketBilgileri();return false;" class="btn btn-success btn-block">Kaydet</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-3"></div>
+
+                </div>
+
             </div>
-    
-            <div class="col-md-3"></div>
-    
         </div>
-    
-            </div>
-    </div>
     </div>
 
 </div>
