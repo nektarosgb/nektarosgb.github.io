@@ -12,7 +12,7 @@ function initLoadedPage_uygulama_turleri_islemleri() {
         }).on("loaded.rs.jquery.bootgrid", function () {
             /* Executes after data is loaded and rendered */
             grid.find(".command-edit").on("click", function (e) {
-                var lstVeri = listTable("meslekler");
+                var lstVeri = listTable("uygulama_turleri");
                 var id = $(this).data("row-id");
                 setEditRowUygulamaTurleri(id);
                 // $(this).bootgrid("reload");
@@ -24,7 +24,7 @@ function initLoadedPage_uygulama_turleri_islemleri() {
             });
         });
     
-        firebase.database().ref('meslekler').once('value').then(function (snapshot) {
+        firebase.database().ref('uygulama_turleri').once('value').then(function (snapshot) {
     
             grid.bootgrid("clear");
             var rows = [];
