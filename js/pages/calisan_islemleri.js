@@ -35,6 +35,8 @@ function initLoadedPage_calisan_islemleri() {
             });
             grid.bootgrid("append", rows);
         });
+        
+        $("#topheaderId").val("Çalışan Bilgileri");
     }
 
 

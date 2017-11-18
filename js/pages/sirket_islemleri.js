@@ -38,6 +38,8 @@ function initLoadedPage() {
         });
         //Drop Down doldurma
         LoadDrop('drptest','idSirket','sirketAdi','sirketler','');
+        //Başlık Bilgisi
+        $("#topheaderId").val("Firma Bilgileri");
     }
     
     
