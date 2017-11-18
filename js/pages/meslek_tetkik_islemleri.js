@@ -37,7 +37,7 @@ function initLoadedPage_tetkik_islemleri() {
         });
         
         LoadDrop('drpUygulamaTuru','idTetkik','tetkik','tetkikler','');
-        $("#topheaderId").append("<h1>Tetkik İşlemleri</h1>");
+        setHeader("Tetkik İşlemleri");
     }
 
 

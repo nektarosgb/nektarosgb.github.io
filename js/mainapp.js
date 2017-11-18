@@ -27,6 +27,11 @@ function checkLogin() {
         });
 }
 
+function setHeader(value)
+{
+    $("#topheaderId").empty();
+    $("#topheaderId").append("<p>"+value+"</p>");
+}
 function msgInfo(title, msg) {
 
 
