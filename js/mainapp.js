@@ -120,6 +120,10 @@ function LoadDrop(dropId,id,text,tablo,selected)
             });
 }
 
+function exceleAktar(gridID){
+    $('#'+gridID).tableExport({type:'excel'});
+}
+
 
 function kaydetTetkikBilgisi() {
     var d = new Date();
