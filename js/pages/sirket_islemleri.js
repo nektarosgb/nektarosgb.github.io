@@ -39,7 +39,7 @@ function initLoadedPage() {
         //Drop Down doldurma
         LoadDrop('drptest','idSirket','sirketAdi','sirketler','');
         //Başlık Bilgisi
-        $("#topheaderId").val("Firma Bilgileri");
+        $("#topheaderId").append("<p>Firma Bilgileri</p>");
     }
     
     
