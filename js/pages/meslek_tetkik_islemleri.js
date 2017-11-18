@@ -36,7 +36,7 @@ function initLoadedPage_tetkik_islemleri() {
             grid.bootgrid("append", rows);
         });
         
-        LoadDrop('drpUygulamaTuru','idTetkik','tetkik','tetkikler','');
+        LoadDrop('drpUygulamaTuru','idUygulamaTuru','uygulamaTuru','uygulama_turleri','');
         setHeader("Tetkik İşlemleri");
     }
 
