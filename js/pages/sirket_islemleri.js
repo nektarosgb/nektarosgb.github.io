@@ -37,7 +37,7 @@ function initLoadedPage() {
             grid.bootgrid("append", rows);
         });
         //Drop Down doldurma
-        LoadDrop('idSirket','sirketAdi','sirketler','');
+        LoadDrop('drptest','idSirket','sirketAdi','sirketler','');
     }
     
     
