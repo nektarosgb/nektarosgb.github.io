@@ -32,11 +32,12 @@ function initLoadedPage() {
                 var cleanelement = JSON.parse(JSON.stringify(element));
                 cleanelement['id'] = rows.length + 1;
                 rows.push(cleanelement);
-                $("#drptest").append("<option value="+cleanelement['id']+">"+cleanelement['sirketAdi']+"</option>")
+                
             });
             grid.bootgrid("append", rows);
         });
-        
+        //Drop Down doldurma
+        LoadDrop('idSirket','sirketAdi','sirketler','');
     }
     
     

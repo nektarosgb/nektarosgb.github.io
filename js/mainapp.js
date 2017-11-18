@@ -107,11 +107,18 @@ function listTable(tablo) {
     });
 }
 
-//Şirket Bilgileri
-
-
-//********************** */
-
+function LoadDrop(id,text,tablo,selected)
+{
+    firebase.database().ref(tablo).once('value').then(function (snapshot) {
+                snapshot.forEach(function (element) {
+                    var cleanelement = JSON.parse(JSON.stringify(element));
+                    if(selected===cleanelement[id])
+                        $("#"+id).append("<option value="+cleanelement[id]+" selected>"+cleanelement[text]+"</option>");
+                    else
+                         $("#"+id).append("<option value="+cleanelement[id]+">"+cleanelement[text]+"</option>");
+                });
+            });
+}
 
 
 function kaydetPersonelBilgileri() {
