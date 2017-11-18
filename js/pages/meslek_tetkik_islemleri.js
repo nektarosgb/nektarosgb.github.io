@@ -51,7 +51,7 @@ function setEditTetkik(id) {
         $("#txtFiyat").val(snapshot.val().fiyat);
         // $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
         // $("#drpUygulamaTuru select[value='"+snapshot.val().uygulamaTuru +"']").attr("selected",true);
-         $("#drpUygulamaTuru").val(snapshot.val().uygulamaTuru ).find("option[value=" + optionValue +"]").attr('selected', true);
+         $("#drpUygulamaTuru").val(snapshot.val().uygulamaTuru ).find("option[value=" + snapshot.val().uygulamaTuru +"]").attr('selected', true);
         $('#myModal').modal('show');
     });
 }
