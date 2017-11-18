@@ -1,8 +1,34 @@
 
 <div class="page_container">
         <button id="btnNew" onclick="clearAllFields();return false;" data-toggle="modal" data-target="#myModal" class="btn-primary">Yeni Kayıt</button>
+        <div class="dropdown pull-right">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="true">
+                Dışa Aktar
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li>
+                    <a href="#" onclick="exceleAktar('grid-tetkikler');return false;">Excel'e Aktar</a>
+                </li>
+                <li>
+                    <a href="#" onclick="pdfeAktar('grid-tetkikler');return false;">PDF'e Aktar</a>
+                </li>
+                <li>
+                    <a href="#" onclick="wordeAktar('grid-tetkikler');return false;">Word'e Aktar</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="#" onclick="pngyeAktar('grid-tetkikler');return false;">PNG'ye Aktar</a>
+                </li>
+                <li>
+                    <a href="#" onclick="csvyeAktar('grid-tetkikler');return false;">CSV'ye Aktar</a>
+                </li>
+            </ul>
+        </div>
+
         <div class="row">
-            <table id="grid-sirketler" class="table table-condensed table-hover table-striped">
+            <table id="grid-tetkikler" class="table table-condensed table-hover table-striped">
                 <thead>
                     <tr>
                         <th data-column-id="idTetkik">Tetkik ID</th>
