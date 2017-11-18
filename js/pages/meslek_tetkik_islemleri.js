@@ -1,30 +1,30 @@
-function initLoadedPage_calisan_islemleri() {
+function initLoadedPage_tetkik_islemleri() {
     
         $("#hdnId").val('');
-        var grid = $("#grid-calisanlar").bootgrid({
+        var grid = $("#grid-tetkikler").bootgrid({
             ajax: false,
             formatters: {
                 "commands": function (column, row) {
-                    return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-pencil\"></span></button> " +
-                        "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-trash-o\"></span></button>";
+                    return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkik + "\"><span class=\"fa fa-pencil\"></span></button> " +
+                        "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idTetkik + "\"><span class=\"fa fa-trash-o\"></span></button>";
                 }
             }
         }).on("loaded.rs.jquery.bootgrid", function () {
             /* Executes after data is loaded and rendered */
             grid.find(".command-edit").on("click", function (e) {
-                var lstVeri = listTable("calisanlar");
+                var lstVeri = listTable("tetkikler");
                 var id = $(this).data("row-id");
-                setEditRowCalisan(id);
+                setEditTetkik(id);
                 // $(this).bootgrid("reload");
     
             }).end().find(".command-delete").on("click", function (e) {
                 var id = $(this).data("row-id");
-                firebase.database().ref().child("calisanlar").child(id).remove();
-                initLoadedPage_calisan_islemleri();
+                firebase.database().ref().child("tetkikler").child(id).remove();
+                initLoadedPage_tetkik_islemleri();
             });
         });
     
-        firebase.database().ref('calisanlar').once('value').then(function (snapshot) {
+        firebase.database().ref('tetkikler').once('value').then(function (snapshot) {
     
             grid.bootgrid("clear");
             var rows = [];
@@ -36,26 +36,20 @@ function initLoadedPage_calisan_islemleri() {
             grid.bootgrid("append", rows);
         });
         
-        $("#topheaderId").val("Çalışan Bilgileri");
+        LoadDrop('drpUygulamaTuru','idTetkik','tetkik','tetkikler','');
+        $("#topheaderId").append("<h1>Tetkik İşlemleri</h1>");
     }
 
 
-function setEditRowCalisan(id) {
-    firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
+function setEditTetkik(id) {
+    firebase.database().ref('/tetkikler/' + id).once('value').then(function (snapshot) {
         if(snapshot==null){
             return;
         }
-        $("#hdnId").val(snapshot.val().idCalisan);
-        $("#txtCalisanAdi").val(snapshot.val().calisanAdi);
-        $("#txtCalisanAdresi").val(snapshot.val().calisanAdresi);
-        $("#txtCalisanTelefon").val(snapshot.val().calisanTelefon);
-        $("#txtCalisanSGKSicilNo").val(snapshot.val().calisanSGKSicilNo);
-        $("#txtCalisanTCNo").val(snapshot.val().calisanTCNo);
-        $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
-        $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
-        $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
-        $("#fileCalisan").val('');  
-        resimGoster("calisanlar",snapshot.val().idCalisan,"imgCalisan");     
+        $("#hdnId").val(snapshot.val().idTetkik);
+        $("#txtTetkik").val(snapshot.val().tetkik);
+        $("#txtFiyat").val(snapshot.val().fiyat);
+        $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
         $('#myModal').modal('show');
     });
 }
@@ -64,54 +58,35 @@ function kaydetCalisanBilgileri() {
     var d = new Date();
     var n = d.getTime()
 
-    var calisanAdi = $("#txtCalisanAdi").val();
-    var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
+    var tetkik = $("#txtTetkik").val();
+    var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
     if ($("#hdnId").val().trim().length >0){
-        idCalisan = $("#hdnId").val();
+        idTetkik = $("#hdnId").val();
     }
         
-    var calisanAdresi = $("#txtCalisanAdresi").val();
-    var calisanTelefon = $("#txtCalisanTelefon").val();
-    var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
-    var calisanTCNo = $("#txtCalisanTCNo").val();
-    var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
-    var calisanEposta = $("#txtCalisanEposta").val();
-    var calisanIsyeri = $("#txtCalisanIsyeri").val();
-    var dosya = $("#fileCalisan")[0].files[0];
+    var fiyat = $("#txtFiyat").val();
+    var uygulamaTuru = $("#drpUygulamaTuru").val();
 
     //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
 
     var veri = {
-        "idCalisan": idCalisan,
-        "calisanAdi": calisanAdi,
-        "calisanAdresi": calisanAdresi,
-        "calisanTelefon": calisanTelefon,
-        "calisanSGKSicilNo": calisanSGKSicilNo,
-        "calisanTCNo": calisanTCNo,
-        "calisanTelefonCep": calisanTelefonCep,
-        "calisanEposta": calisanEposta,
-        "calisanIsyeri": calisanIsyeri,
+        "idTetkik": idTetkik,
+        "tetkik": tetkik,
+        "fiyat": fiyat,
+        "uygulamaTuru": uygulamaTuru,
         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
     }
 
-    kaydetVeritabani("calisanlar", idCalisan, veri);
-    dosyaYukle(dosya, 'calisanlar', idCalisan);
+    kaydetVeritabani("tetkikler", idTetkik, veri);
 
-    initLoadedPage_calisan_islemleri();
+    initLoadedPage_tetkik_islemleri();
 
 }
 
 
 function clearAllFieldsCalisan() {
     $("#hdnId").val('');
-    $("#txtCalisanAdi").val("");
-    $("#txtCalisanAdresi").val('');
-    $("#txtCalisanTelefon").val('');
-    $("#txtCalisanSGKSicilNo").val('');
-    $("#txtCalisanTCNo").val('');
-    $("#txtCalisanTelefonCep").val('');
-    $("#txtCalisanEposta").val('');
-    $("#txtCalisanIsyeri").val('');
-    $("#fileCalisan").val('');
-    resimTemizle("imgCalisan");
+    $("#txtTetkik").val("");
+    $("#txtFiyat").val('');
+    $("#drpUygulamaTuru select").val("Seçiniz");   
 }
