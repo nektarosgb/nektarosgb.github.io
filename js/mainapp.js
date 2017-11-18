@@ -124,6 +124,22 @@ function exceleAktar(gridID){
     $('#'+gridID).tableExport({type:'excel'});
 }
 
+function pdfeAktar(gridID){
+    $('#'+gridID).tableExport({type:'pdf'});
+}
+
+function wordeAktar(gridID){
+    $('#'+gridID).tableExport({type:'doc'});
+}
+
+function pngyeAktar(gridID){
+    $('#'+gridID).tableExport({type:'png'});
+}
+
+function csvyeAktar(gridID){
+    $('#'+gridID).tableExport({type:'csv'});
+}
+
 
 function kaydetTetkikBilgisi() {
     var d = new Date();
