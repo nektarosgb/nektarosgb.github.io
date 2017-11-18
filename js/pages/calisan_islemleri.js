@@ -36,7 +36,7 @@ function initLoadedPage_calisan_islemleri() {
         grid.bootgrid("append", rows);
     });
 
-    $("#topheaderId").append("<h1>Çalışan İşlemleri</h1>");
+    setHeader("Çalışan İşlemleri");
 }
 
 
