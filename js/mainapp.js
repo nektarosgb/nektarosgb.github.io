@@ -94,6 +94,11 @@ function resimTemizle(imgID) {
     img.src = "";
 }
 
+function generateID(text){
+    text.replace(/[^\x00-\x7F]/g, "").split(' ').join(''); + n;
+    return text;
+}
+
 function kaydetVeritabani(tablo, id, veri) {
     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
@@ -166,7 +171,7 @@ function csvyeAktar(gridID) {
 //     var n = d.getTime()
 
 //     var tetkik = $("#txtTetkik").val();
-//     var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
+//     var idTetkik = generateID(tetkik);
 
 //     if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
 //     idTetkik=$("#hdnId").val();

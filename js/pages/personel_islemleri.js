@@ -61,7 +61,7 @@ function kaydetPersonelBilgileri() {
     var n = d.getTime()
 
     var personelAdi = $("#txtPersonelAdi").val();
-    var idPersonel = personelAdi.replace(/[^\x00-\x7F]/g, "") + n;
+    var idPersonel = generateID(personelAdi);
 
     if ($("#hdnId").val().trim().length > 0) {
         idPersonel = $("#hdnId").val();

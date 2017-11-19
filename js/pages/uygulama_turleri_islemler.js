@@ -60,7 +60,7 @@ function kaydetUygulamaTuruBilgileri() {
 
 
 
-    var idUygulamaTuru = uygulamaTuru.replace(/[^\x00-\x7F]/g, "") + n;
+    var idUygulamaTuru = generateID(uygulamaTuru);
     if ($("#hdnId").val().trim().length >0){
         idUygulamaTuru = $("#hdnId").val();
     }

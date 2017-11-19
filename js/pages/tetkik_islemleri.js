@@ -61,7 +61,7 @@ function kaydetTetkikBilgisi() {
     var n = d.getTime()
 
     var tetkik = $("#txtTetkik").val();
-    var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
+    var idTetkik = generateID(tetkik);;
     if ($("#hdnId").val().trim().length >0){
         idTetkik = $("#hdnId").val();
     }

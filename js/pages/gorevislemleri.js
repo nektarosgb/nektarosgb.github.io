@@ -3,7 +3,7 @@ function kaydetMeslek() {
     var n = d.getTime()
 
     var meslek=$("#txtMeslek").val();    
-    var idmeslek=meslek.replace(/[^\x00-\x7F]/g, "")+n;
+    var idmeslek=generateID(meslek);
 
     var veri={
         "idmeslek":idmeslek,

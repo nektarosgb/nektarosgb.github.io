@@ -65,7 +65,7 @@ function initLoadedPage() {
         var n = d.getTime()
     
         var sirketAdi = $("#txtSirketAdi").val();
-        var idSirket = firebase.database().ref("sirketler").push().key; //sirketAdi.replace(/[^\x00-\x7F]/g, "") + n;
+        var idSirket = generateID(sirketAdi);
     
         if ($("#hdnId").val().trim().length >0){
             idSirket = $("#hdnId").val();
