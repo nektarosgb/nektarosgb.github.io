@@ -36,7 +36,7 @@ function initLoadedPage_tetkik_islemleri() {
             grid.bootgrid("append", rows);
         });
         
-        LoadDrop('drpUygulamaTuru','idTetkik','tetkik','tetkikler','');
+        LoadDrop('drpUygulamaTuru','idUygulamaTuru','uygulamaTuru','uygulama_turleri','');
         setHeader("Tetkik İşlemleri");
     }
 
@@ -49,7 +49,9 @@ function setEditTetkik(id) {
         $("#hdnId").val(snapshot.val().idTetkik);
         $("#txtTetkik").val(snapshot.val().tetkik);
         $("#txtFiyat").val(snapshot.val().fiyat);
-        $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
+        // $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
+        // $("#drpUygulamaTuru select[value='"+snapshot.val().uygulamaTuru +"']").attr("selected",true);
+         $("#drpUygulamaTuru").val(snapshot.val().uygulamaTuru ).find("option[value=" + snapshot.val().uygulamaTuru +"]").attr('selected', true);
         $('#myModal').modal('show');
     });
 }
