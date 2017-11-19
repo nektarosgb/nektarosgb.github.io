@@ -81,11 +81,11 @@ function dosyaYukle(dosya, klasor, id) {
 function resimGoster(klasor, id, imgID) {
     var storageRef = firebase.storage().ref();
     storageRef.child(klasor).child(id).getDownloadURL().then(function (url) {
-        var img = $("#" + imgID);
-        img.src = url;
+        var img = $("#" + imgID);        
+        img.attr("src",url);
     }).catch(function (error) {
         console.log(error);
-        img.src="/css/images/no-picture.png";
+        img.attr("src","/css/images/no-picture.png");
     });
 }
 
