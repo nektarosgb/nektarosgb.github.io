@@ -128,12 +128,12 @@ function LoadDrop(dropId, id, text, tablo, selected) {
     });
 }
 
-function loadCheckBoxList(lstChkID, id, text, tablo, selected) {
+function loadCheckBoxList(lstChkID, idColumn, column, tablo) {
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            var li = $('<li class="list-group-item">Akciğer Grafisi<div class="material-switch pull-left"><input id="chkSuccess1" name="chkTetkikler" type="checkbox" /><label for="chkSuccess1" class="label-success"></label></div></li>');
-            $("#" + lstChkID).append("<option value=" + cleanelement[id] + " selected>" + cleanelement[text] + "</option>");
+            var li = $('<li class="list-group-item">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '" name="chk' + tablo+ '" type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
+            $("#" + lstChkID).append(li);
 
         });
     });
