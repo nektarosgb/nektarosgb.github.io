@@ -84,7 +84,8 @@ function resimGoster(klasor, id, imgID) {
         var img = $("#" + imgID);
         img.src = url;
     }).catch(function (error) {
-        // Handle any errors
+        console.log(error);
+        img.src="/css/images/no-picture.png";
     });
 }
 
