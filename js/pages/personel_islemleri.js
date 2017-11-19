@@ -35,6 +35,8 @@ function initLoadedPage_personel_islemleri() {
         });
         grid.bootgrid("append", rows);
     });
+    
+    setHeader("Personel İşlemleri");
 }
 
 

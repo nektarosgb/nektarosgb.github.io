@@ -56,7 +56,7 @@ function setEditTetkik(id) {
     });
 }
 
-function kaydetCalisanBilgileri() {
+function kaydetTetkikBilgisi() {
     var d = new Date();
     var n = d.getTime()
 
@@ -80,15 +80,16 @@ function kaydetCalisanBilgileri() {
     }
 
     kaydetVeritabani("tetkikler", idTetkik, veri);
-
+    clearAllFieldsTetkik()
     initLoadedPage_tetkik_islemleri();
 
 }
 
 
-function clearAllFieldsCalisan() {
+function clearAllFieldsTetkik() {
     $("#hdnId").val('');
     $("#txtTetkik").val("");
     $("#txtFiyat").val('');
     $("#drpUygulamaTuru select").val("Seçiniz");   
+    $("#drpUygulamaTuru").val("Seçiniz").find("option[value=0]").attr('selected', true);
 }

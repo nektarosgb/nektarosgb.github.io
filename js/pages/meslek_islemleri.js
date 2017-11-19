@@ -35,6 +35,8 @@ function initLoadedPage_meslek_islemleri() {
             });
             grid.bootgrid("append", rows);
         });
+        
+        setHeader("Meslek Kaydı İşlemleri");
     }
 
 

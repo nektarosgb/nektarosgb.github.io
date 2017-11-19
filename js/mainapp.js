@@ -114,6 +114,11 @@ function listTable(tablo) {
 
 function LoadDrop(dropId,id,text,tablo,selected)
 {
+    $('#'+dropId)
+    .find('option')
+    .remove()
+    .end()
+    .append('<option value="0">Seçiniz</option>');
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
                 snapshot.forEach(function (element) {
                     var cleanelement = JSON.parse(JSON.stringify(element));
@@ -146,33 +151,33 @@ function csvyeAktar(gridID){
 }
 
 
-function kaydetTetkikBilgisi() {
-    var d = new Date();
-    var n = d.getTime()
+// function kaydetTetkikBilgisi() {
+//     var d = new Date();
+//     var n = d.getTime()
 
-    var tetkik = $("#txtTetkik").val();
-    var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
+//     var tetkik = $("#txtTetkik").val();
+//     var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
     
-    if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-    idTetkik=$("#hdnId").val();
+//     if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
+//     idTetkik=$("#hdnId").val();
 
-    var fiyat = $("#txtFiyat").val();
-    var uygulamaTuru = $("input:radio[name='rdUygulamaTuru']:checked").val();
-    var $input = $('input[name="rdUygulamaTuru"]:checked');
-    var text = $('label[for=' + $input.attr('id') + ']').text();
-    var uygulamaTuruAdi = "" + text;
+//     var fiyat = $("#txtFiyat").val();
+//     var uygulamaTuru = $("input:radio[name='rdUygulamaTuru']:checked").val();
+//     var $input = $('input[name="rdUygulamaTuru"]:checked');
+//     var text = $('label[for=' + $input.attr('id') + ']').text();
+//     var uygulamaTuruAdi = "" + text;
 
 
-    var veri = {
-        "idTetkik": idTetkik,
-        "tetkik": tetkik,
-        "fiyat": fiyat,
-        "uygulamaTuru": uygulamaTuru,
-        "uygulamaTuruAdi": uygulamaTuruAdi,
-        "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
-    }
+//     var veri = {
+//         "idTetkik": idTetkik,
+//         "tetkik": tetkik,
+//         "fiyat": fiyat,
+//         "uygulamaTuru": uygulamaTuru,
+//         "uygulamaTuruAdi": uygulamaTuruAdi,
+//         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+//     }
 
-    kaydetVeritabani("tetkikler", idTetkik, veri);
+//     kaydetVeritabani("tetkikler", idTetkik, veri);
 
-}
+// }
 
