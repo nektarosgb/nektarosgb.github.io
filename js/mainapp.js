@@ -126,23 +126,23 @@ function LoadDrop(dropId,id,text,tablo,selected)
 }
 
 function exceleAktar(gridID){
-    $('#'+gridID).tableExport({type:'excel'});
+    $('#'+gridID).tableExport({type:'excel',fileName: 'NEKTAR'});
 }
 
 function pdfeAktar(gridID){
-    $('#'+gridID).tableExport({type:'pdf'});
+    $('#'+gridID).tableExport({type:'pdf',fileName: 'NEKTAR'});
 }
 
 function wordeAktar(gridID){
-    $('#'+gridID).tableExport({type:'doc'});
+    $('#'+gridID).tableExport({type:'doc',fileName: 'NEKTAR'});
 }
 
 function pngyeAktar(gridID){
-    $('#'+gridID).tableExport({type:'png'});
+    $('#'+gridID).tableExport({type:'png',fileName: 'NEKTAR'});
 }
 
 function csvyeAktar(gridID){
-    $('#'+gridID).tableExport({type:'csv'});
+    $('#'+gridID).tableExport({type:'csv',fileName: 'NEKTAR'});
 }
 
 
