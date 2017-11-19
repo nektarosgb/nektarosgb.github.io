@@ -95,6 +95,8 @@ function resimTemizle(imgID) {
 }
 
 function generateID(text){
+    var d = new Date();
+    var n = d.getTime()
     text.replace(/[^\x00-\x7F]/g, "").split(' ').join(''); + n;
     return text;
 }
