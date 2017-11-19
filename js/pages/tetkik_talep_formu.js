@@ -3,7 +3,7 @@ function initLoadedPage_tetkik_talep_formu() {
     LoadDrop('drpUygulamaTuru', 'idUygulamaTuru', 'uygulamaTuru', 'uygulama_turleri', 'Birimde Yaplacak1511085852689');
     LoadDrop('drpCalisan', 'idCalisan', 'calisanAdi', 'calisanlar', '0');
     $("#drpCalisan").change(function () {
-        alert("Secilen:"+this.val());
+        alert("Secilen:"+this.selectedOptions[0].value);
     });
 
 }
