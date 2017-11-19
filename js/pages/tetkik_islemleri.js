@@ -56,7 +56,7 @@ function setEditTetkik(id) {
     });
 }
 
-function kaydetCalisanBilgileri() {
+function kaydetTetkikBilgisi() {
     var d = new Date();
     var n = d.getTime()
 
