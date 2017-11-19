@@ -80,13 +80,13 @@ function kaydetTetkikBilgisi() {
     }
 
     kaydetVeritabani("tetkikler", idTetkik, veri);
-
+    clearAllFieldsTetkik()
     initLoadedPage_tetkik_islemleri();
 
 }
 
 
-function clearAllFieldsCalisan() {
+function clearAllFieldsTetkik() {
     $("#hdnId").val('');
     $("#txtTetkik").val("");
     $("#txtFiyat").val('');
