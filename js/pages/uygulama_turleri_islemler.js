@@ -20,7 +20,7 @@ function initLoadedPage_uygulama_turleri_islemleri() {
             }).end().find(".command-delete").on("click", function (e) {
                 var id = $(this).data("row-id");
                 firebase.database().ref().child("meslekler").child(id).remove();
-                initLoadedPage_meslek_islemleri();
+                initLoadedPage_uygulama_turleri_islemleri();
             });
         });
     
@@ -35,6 +35,7 @@ function initLoadedPage_uygulama_turleri_islemleri() {
             });
             grid.bootgrid("append", rows);
         });
+        setHeader("Uygulama Türleri");
     }
 
 

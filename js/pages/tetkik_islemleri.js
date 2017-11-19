@@ -91,4 +91,5 @@ function clearAllFieldsTetkik() {
     $("#txtTetkik").val("");
     $("#txtFiyat").val('');
     $("#drpUygulamaTuru select").val("Seçiniz");   
+    $("#drpUygulamaTuru").val("Seçiniz").find("option[value=0]").attr('selected', true);
 }
