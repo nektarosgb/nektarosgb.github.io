@@ -3,8 +3,17 @@ function initLoadedPage_tetkik_talep_formu() {
     LoadDrop('drpUygulamaTuru', 'idUygulamaTuru', 'uygulamaTuru', 'uygulama_turleri', 'Birimde Yaplacak1511085852689');
     LoadDrop('drpCalisan', 'idCalisan', 'calisanAdi', 'calisanlar', '0');
     $("#drpCalisan").change(function () {
-        firebase.database().ref('/calisanlar/' + this.selectedOptions[0].value).once('value').then(function (snapshot) {
 
+        var selectedID=this.selectedOptions[0].value;
+
+        if(selectedID=='0'){
+            $("#hdnIdCalisan").val('');
+            clearAllFieldsCalisan();
+            return;
+        }
+
+        firebase.database().ref('/calisanlar/' + selectedID).once('value').then(function (snapshot) {
+            
             $("#hdnIdCalisan").val(snapshot.val().idCalisan);
             $("#txtCalisanAdi").val(snapshot.val().calisanAdi);
             $("#txtCalisanAdresi").val(snapshot.val().calisanAdresi);
