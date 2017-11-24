@@ -65,7 +65,7 @@ function kaydetCalisanBilgileri() {
     var n = d.getTime()
 
     var calisanAdi = $("#txtCalisanAdi").val();
-    var idCalisan = calisanAdi.replace(/[^\x00-\x7F]/g, "") + n;
+    var idCalisan =generateID(calisanAdi);
     if ($("#hdnId").val().trim().length > 0) {
         idCalisan = $("#hdnId").val();
     }

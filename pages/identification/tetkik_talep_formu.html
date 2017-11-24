@@ -1,3 +1,6 @@
+<script type="text/javascript">
+    initLoadedPage_tetkik_talep_formu();
+</script>
 <div class="page_container">
     <div class="row">
         <div class="panel panel-default">
@@ -37,39 +40,100 @@
                 </div>
 
                 <div class="panel panel-default">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading">Tetkikler</div>
+                    <div class="panel-heading">Seçili Çalışan Bilgileri</div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="txtCalisanAdi">Çalışan Adı Soyadı</label>
+                                    <input type="text" class="form-control" id="txtCalisanAdi" placeholder="" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCalisanTCNo">TC Kimlik Numarası</label>
+                                    <input type="text" class="form-control" id="txtCalisanTCNo" placeholder="TC Kimlik Numarası" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCalisanEposta">E-posta</label>
+                                    <input type="email" class="form-control" id="txtCalisanEposta" placeholder="E-mail" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCalisanTelefon">Telefon</label>
+                                    <input type="telephone" class="form-control" id="txtCalisanTelefon" placeholder="(+90 232) 111 22 33" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="txtCalisanIsyeri">İşyeri</label>
+                                    <input type="text" class="form-control" id="txtCalisanIsyeri" placeholder="İşyeri" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCalisanSGKSicilNo">SGK Sicil No</label>
+                                    <input type="text" class="form-control" id="txtCalisanSGKSicilNo" placeholder="SGK Sicil Numarası..." readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCalisanTelefonCep">Mobil</label>
+                                    <input type="telephone" class="form-control" id="txtCalisanTelefonCep" placeholder="(+90 232) 111 22 33" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="txtCalisanAdresi">Adresi</label>
+                                    <input type="text" class="form-control" id="txtCalisanAdresi" placeholder="Kapı No. Mh. Sk." readonly>
+                                </div>
+                            </div>
 
-                    <!-- List group -->
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            Akciğer Grafisi
-                            <div class="material-switch pull-left">
-                                <input id="chkSuccess1" name="chkTetkikler" type="checkbox" />
-                                <label for="chkSuccess1" class="label-success"></label>
+                            <div class="col-md-4">
+                                <img id="imgCalisan" class="img-thumbnail" />
                             </div>
-                        </li>
-                        <li class="list-group-item">
-                            Akciğer Grafisi
-                            <div class="material-switch pull-left">
-                                <input id="chkSuccess2" name="chkTetkikler" type="checkbox" />
-                                <label for="chkSuccess2" class="label-success"></label>
+                            <input type="hidden" id="hdnIdCalisan" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                
                             </div>
-                        </li>
-                        <li class="list-group-item">
-                            Akciğer Grafisi
-                            <div class="material-switch pull-left">
-                                <input id="chkSuccess3" name="chkTetkikler" type="checkbox" />
-                                <label for="chkSuccess3" class="label-success"></label>
+                            <div class="col-md-3">
+                                
                             </div>
-                        </li>
-                        <li class="list-group-item">
-                            Akciğer Grafisi
-                            <div class="material-switch pull-left">
-                                <input id="chkSuccess4" name="chkTetkikler" type="checkbox" />
-                                <label for="chkSuccess4" class="label-success"></label>
+                            <div class="col-md-3">
+                                
                             </div>
-                        </li>
+                            <div class="col-md-3">
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-md-3">
+
+                            </div>
+
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3"></div>
+                            <div class="col-md-3"></div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Tetkikler</div>
+                    <ul id="lstTetkikler" class="list-group">
                     </ul>
                 </div>
 

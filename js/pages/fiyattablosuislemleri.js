@@ -3,7 +3,7 @@ function kaydetMuayeneUcret() {
     var n = d.getTime()
 
     var muayene=$("#txtMuayene").val();    
-    var idmuayene=muayene.replace(/[^\x00-\x7F]/g, "")+n;
+    var idmuayene=generateID(muayene);
     var muayeneUcret=$("#txtFiyat").val();    
     var uygulamaturu =$("input:radio[name='rdUygulamaTuru']:checked").val()
 

@@ -57,7 +57,7 @@ function kaydetMeslekBilgileri() {
     var n = d.getTime()
 
     var meslek = $("#txtMeslek").val();
-    var idMeslek = meslek.replace(/[^\x00-\x7F]/g, "") + n;
+    var idMeslek = generateID(meslek);
 
     if ($("#hdnId").val().trim().length >0){
         idMeslek = $("#hdnId").val();

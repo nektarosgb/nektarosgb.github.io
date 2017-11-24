@@ -27,10 +27,9 @@ function checkLogin() {
         });
 }
 
-function setHeader(value)
-{
+function setHeader(value) {
     $("#topheaderId").empty();
-    $("#topheaderId").append("<p>"+value+"</p>");
+    $("#topheaderId").append("<p>" + value + "</p>");
 }
 function msgInfo(title, msg) {
 
@@ -69,29 +68,37 @@ function msgWarning(title, msg) {
     $("#modalAlert").modal({ backdrop: 'true', show: 'show' });
 }
 
-function dosyaYukle(dosya,klasor,id){
-    if(dosya==null){
+function dosyaYukle(dosya, klasor, id) {
+    if (dosya == null) {
         return;
     }
     var storageRef = firebase.storage().ref();
-    storageRef.child(klasor).child(id).put(dosya).then(function(snapshot) {
-        msgInfo("Başarılı", "Dosyanız yüklendi. İşleminize devam edebilirsiniz..");        
+    storageRef.child(klasor).child(id).put(dosya).then(function (snapshot) {
+        msgInfo("Başarılı", "Dosyanız yüklendi. İşleminize devam edebilirsiniz..");
     });
 }
 
-function resimGoster(klasor,id,imgID){
-    var storageRef = firebase.storage().ref();   
-    storageRef.child(klasor).child(id).getDownloadURL().then(function(url) {
-        var img = $("#"+imgID);
-        img.src = url;
-      }).catch(function(error) {
-        // Handle any errors
-      });
+function resimGoster(klasor, id, imgID) {
+    var storageRef = firebase.storage().ref();
+    storageRef.child(klasor).child(id).getDownloadURL().then(function (url) {
+        var img = $("#" + imgID);        
+        img.attr("src",url);
+    }).catch(function (error) {
+        console.log(error);
+        img.attr("src","/css/images/no-picture.png");
+    });
 }
 
-function resimTemizle(imgID){
-    var img = $("#"+imgID);
+function resimTemizle(imgID) {
+    var img = $("#" + imgID);
     img.src = "";
+}
+
+function generateID(text){
+    var d = new Date();
+    var n = d.getTime()
+    text=text.replace(/[^\x00-\x7F]/g, "").split(' ').join('')+ n;
+    return text;
 }
 
 function kaydetVeritabani(tablo, id, veri) {
@@ -112,42 +119,52 @@ function listTable(tablo) {
     });
 }
 
-function LoadDrop(dropId,id,text,tablo,selected)
-{
-    $('#'+dropId)
-    .find('option')
-    .remove()
-    .end()
-    .append('<option value="0">Seçiniz</option>');
+function LoadDrop(dropId, id, text, tablo, selected) {
+    $('#' + dropId)
+        .find('option')
+        .remove()
+        .end()
+        .append('<option value="0">Seçiniz</option>');
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
-                snapshot.forEach(function (element) {
-                    var cleanelement = JSON.parse(JSON.stringify(element));
-                    if(selected===cleanelement[id])
-                        $("#"+dropId).append("<option value="+cleanelement[id]+" selected>"+cleanelement[text]+"</option>");
-                    else
-                         $("#"+dropId).append("<option value="+cleanelement[id]+">"+cleanelement[text]+"</option>");
-                });
-            });
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+            if (selected === cleanelement[id])
+                $("#" + dropId).append("<option value=" + cleanelement[id] + " selected>" + cleanelement[text] + "</option>");
+            else
+                $("#" + dropId).append("<option value=" + cleanelement[id] + ">" + cleanelement[text] + "</option>");
+        });
+    });
 }
 
-function exceleAktar(gridID){
-    $('#'+gridID).tableExport({type:'excel',fileName: 'NEKTAR'});
+function loadCheckBoxList(lstChkID, idColumn, column, tablo) {
+    firebase.database().ref(tablo).once('value').then(function (snapshot) {
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+            var li = $('<li class="list-group-item">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '" name="chk' + tablo+ '" type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
+            $("#" + lstChkID).append(li);
+
+        });
+    });
 }
 
-function pdfeAktar(gridID){
-    $('#'+gridID).tableExport({type:'pdf',fileName: 'NEKTAR'});
+function exceleAktar(gridID) {
+    $('#' + gridID).tableExport({ type: 'excel', fileName: 'NEKTAR' });
 }
 
-function wordeAktar(gridID){
-    $('#'+gridID).tableExport({type:'doc',fileName: 'NEKTAR'});
+function pdfeAktar(gridID) {
+    $('#' + gridID).tableExport({ type: 'pdf', fileName: 'NEKTAR' });
 }
 
-function pngyeAktar(gridID){
-    $('#'+gridID).tableExport({type:'png',fileName: 'NEKTAR'});
+function wordeAktar(gridID) {
+    $('#' + gridID).tableExport({ type: 'doc', fileName: 'NEKTAR' });
 }
 
-function csvyeAktar(gridID){
-    $('#'+gridID).tableExport({type:'csv',fileName: 'NEKTAR'});
+function pngyeAktar(gridID) {
+    $('#' + gridID).tableExport({ type: 'png', fileName: 'NEKTAR' });
+}
+
+function csvyeAktar(gridID) {
+    $('#' + gridID).tableExport({ type: 'csv', fileName: 'NEKTAR' });
 }
 
 
@@ -156,8 +173,8 @@ function csvyeAktar(gridID){
 //     var n = d.getTime()
 
 //     var tetkik = $("#txtTetkik").val();
-//     var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
-    
+//     var idTetkik = generateID(tetkik);
+
 //     if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
 //     idTetkik=$("#hdnId").val();
 
