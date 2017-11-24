@@ -1,23 +1,20 @@
-// function initLoadedPage_meslek_tetkik_islemleri() {
+function initLoadedPage_meslek_tetkik_islemleri() {
     
-//         $("#hdnId").val('');
-
+        firebase.database().ref('meslektetkikler').once('value').then(function (snapshot) {
     
-//         firebase.database().ref('tetkikler').once('value').then(function (snapshot) {
-    
-//             grid.bootgrid("clear");
-//             var rows = [];
-//             snapshot.forEach(function (element) {
-//                 var cleanelement = JSON.parse(JSON.stringify(element));
-//                 cleanelement['id'] = rows.length + 1;
-//                 rows.push(cleanelement);
-//             });
-//             grid.bootgrid("append", rows);
-//         });
+            grid.bootgrid("clear");
+            var rows = [];
+            snapshot.forEach(function (element) {
+                var cleanelement = JSON.parse(JSON.stringify(element));
+                cleanelement['id'] = rows.length + 1;
+                rows.push(cleanelement);
+            });
+            grid.bootgrid("append", rows);
+        });
         
-//         LoadDrop('drpMeslek','idMeslek','meslek','meslekler','');
-//         setHeader("Mesleğe Göre Tetkik Belirleme İşlemleri");
-//     }
+        LoadDrop('drpMeslek','idMeslek','meslek','meslekler','');
+        setHeader("Mesleğe Göre Tetkik Belirleme İşlemleri");
+    }
 
 function ShowTetkik()
 {
@@ -29,7 +26,6 @@ function setEditTetkikMeslek(id) {
         if(snapshot==null){
             return;
         }
-        $("#hdnId").val(snapshot.val().idTetkik);
         $("#txtTetkik").val(snapshot.val().tetkik);
         $("#txtFiyat").val(snapshot.val().fiyat);
         // $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
