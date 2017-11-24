@@ -19,7 +19,7 @@ function initLoadedPage_uygulama_turleri_islemleri() {
     
             }).end().find(".command-delete").on("click", function (e) {
                 var id = $(this).data("row-id");
-                firebase.database().ref().child("meslekler").child(id).remove();
+                firebase.database().ref().child("uygulama_turleri").child(id).remove();
                 initLoadedPage_uygulama_turleri_islemleri();
             });
         });
