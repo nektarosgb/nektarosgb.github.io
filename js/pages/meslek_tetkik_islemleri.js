@@ -39,28 +39,20 @@ function kaydetTetkikBilgisi() {
     var d = new Date();
     var n = d.getTime()
 
-    var tetkik = $("#txtTetkik").val();
-    var idTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
-    if ($("#hdnId").val().trim().length >0){
-        idTetkik = $("#hdnId").val();
-    }
-        
-    var fiyat = $("#txtFiyat").val();
-    var uygulamaTuru = $("#drpUygulamaTuru").val();
+    var meslek = $("#drpMeslek").val();
+    var idMeslekTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
 
-    //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
-
+    $('#mt_TetkikListe input:checked').each(function() {
     var veri = {
-        "idTetkik": idTetkik,
-        "tetkik": tetkik,
-        "fiyat": fiyat,
-        "uygulamaTuru": uygulamaTuru,
+        "idMeslekTetkik": idMeslekTetkik,
+        "tetkik": this.val(),
+        "meslek":meslek,
         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
     }
 
-    kaydetVeritabani("tetkikler", idTetkik, veri);
-    clearAllFieldsTetkik()
-    initLoadedPage_tetkik_islemleri();
+    kaydetVeritabani("Meslektetkikler", idMeslekTetkik, veri);
+});
+    // clearAllFieldsTetkik()
 
 }
 
