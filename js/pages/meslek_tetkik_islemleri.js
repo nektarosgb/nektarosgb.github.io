@@ -1,15 +1,12 @@
 function initLoadedPage_meslek_tetkik_islemleri() {
     loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler');
         firebase.database().ref('Meslektetkikler').once('value').then(function (snapshot) {
-    
-            grid.bootgrid("clear");
             var rows = [];
             snapshot.forEach(function (element) {
                 var cleanelement = JSON.parse(JSON.stringify(element));
                 cleanelement['id'] = rows.length + 1;
                 rows.push(cleanelement);
             });
-            grid.bootgrid("append", rows);
         });
         
         LoadDrop('drpMeslek','idMeslek','meslek','meslekler','');
@@ -45,7 +42,7 @@ function kaydetTetkikBilgisi() {
     $('#mt_TetkikListe input:checked').each(function() {
     var veri = {
         "idMeslekTetkik": idMeslekTetkik,
-        "tetkik": this.val(),
+        "tetkik": this.name,
         "meslek":meslek,
         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
     }
