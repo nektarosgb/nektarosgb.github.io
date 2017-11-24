@@ -1,5 +1,5 @@
 function initLoadedPage_meslek_tetkik_islemleri() {
-    
+    loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler');
         firebase.database().ref('meslektetkikler').once('value').then(function (snapshot) {
     
             grid.bootgrid("clear");
