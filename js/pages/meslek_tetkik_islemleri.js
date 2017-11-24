@@ -1,6 +1,6 @@
 function initLoadedPage_meslek_tetkik_islemleri() {
     loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler');
-        firebase.database().ref('meslektetkikler').once('value').then(function (snapshot) {
+        firebase.database().ref('Meslektetkikler').once('value').then(function (snapshot) {
     
             grid.bootgrid("clear");
             var rows = [];
@@ -40,7 +40,7 @@ function kaydetTetkikBilgisi() {
     var n = d.getTime()
 
     var meslek = $("#drpMeslek").val();
-    var idMeslekTetkik = tetkik.replace(/[^\x00-\x7F]/g, "") + n;
+    var idMeslekTetkik = meslek.replace(/[^\x00-\x7F]/g, "") + n;
 
     $('#mt_TetkikListe input:checked').each(function() {
     var veri = {
