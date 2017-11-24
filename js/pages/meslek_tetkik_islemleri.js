@@ -1,4 +1,4 @@
-function initLoadedPage_tetkik_islemleri() {
+function initLoadedPage_meslek_tetkik_islemleri() {
     
         $("#hdnId").val('');
 
