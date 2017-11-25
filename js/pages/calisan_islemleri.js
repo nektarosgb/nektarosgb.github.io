@@ -14,7 +14,7 @@ function initLoadedPage_calisan_islemleri() {
             return;
         }else{
             $("#hdnIdSirket").val(selectedID);
-            $("#txtCalisanIsyeri").val($("#drpIsyeri").text());
+            $("#txtCalisanIsyeri").val($("#drpIsyeri").children("option:selected").text());
         }
     });
 
@@ -73,8 +73,7 @@ function setEditRowCalisan(id) {
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
         
         
-        $("#drpSirket select").val(snapshot.val().calisanIsyeri);   
-        $("#drpSirket").val(snapshot.val().calisanIsyeri).find("option[value='"+snapshot.val().calisanIsyeriKodu+"']").attr('selected', true);
+        $("#drpSirket").find("option[value='"+snapshot.val().calisanIsyeriKodu+"']").attr('selected', true);
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
 
         $("#fileCalisan").val('');
