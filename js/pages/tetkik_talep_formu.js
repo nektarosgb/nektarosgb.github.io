@@ -9,7 +9,10 @@ function initLoadedPage_tetkik_talep_formu() {
         if(selectedID=='0'){
             $("#hdnIdCalisan").val('');
             clearAllFieldsCalisan();
+            $("#pnlIsciBilgileri").addClass("hide");
             return;
+        }else{
+            $("#pnlIsciBilgileri").removeClass("hide");
         }
 
         firebase.database().ref('/calisanlar/' + selectedID).once('value').then(function (snapshot) {
