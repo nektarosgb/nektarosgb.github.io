@@ -42,7 +42,7 @@ function kaydetTetkikBilgisi() {
     $('#mt_TetkikListe input:checked').each(function() {
     var veri = {
         "idMeslekTetkik": idMeslekTetkik,
-        "tetkik": this.name,
+        "tetkik": this.value,
         "meslek":meslek,
         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
     }
