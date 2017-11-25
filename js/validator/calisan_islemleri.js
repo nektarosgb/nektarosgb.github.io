@@ -1,4 +1,4 @@
-jQuery.validator.setDefaults({
+$('#contact-form').validate({
     rules: {
         txtCalisanAdi: {
             minlength: 2,
@@ -13,5 +13,4 @@ jQuery.validator.setDefaults({
             required: true
         }
     }
-    
-  });
+});
