@@ -119,8 +119,6 @@ function setEditRowCalisan(id) {
 $("#btn_CalisanKaydet").click( function() {
     alert("sddsfdf");
     $("#frm_calisan").valid();
-});
-function kaydetCalisanBilgileri() {
     var d = new Date();
     var n = d.getTime()
 
@@ -162,6 +160,9 @@ function kaydetCalisanBilgileri() {
     dosyaYukle(dosya, 'calisanlar', idCalisan);
 
     initLoadedPage_calisan_islemleri();
+});
+function kaydetCalisanBilgileri() {
+
 
 }
 
