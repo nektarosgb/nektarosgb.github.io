@@ -17,7 +17,7 @@ function initLoadedPage_meslek_tetkik_islemleri() {
     }
 
 function setEditTetkikMeslek(id) {
-    firebase.database().ref('/Meslektetkikler/meslek/'+id).once('value').then(function (snapshot) {
+    firebase.database().ref('/Meslektetkikler/meslek').startAt(id).endAt(id).once('value').then(function (snapshot) {
         if(snapshot==null){
             return;
         }

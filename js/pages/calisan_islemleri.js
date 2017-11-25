@@ -72,7 +72,8 @@ function setEditRowCalisan(id) {
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
                 
-        $("#drpSirket").val(snapshot.val().calisanIsyeriKodu).change();
+        // $("#drpSirket").val(snapshot.val().calisanIsyeriKodu).change();
+        $("#drpSirket").val(snapshot.val().calisanIsyeriKodu ).find("option[value=" + snapshot.val().calisanIsyeriKodu +"]").attr('selected', true);
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
 
         $("#fileCalisan").val('');
