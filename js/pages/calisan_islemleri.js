@@ -72,7 +72,7 @@ function setEditRowCalisan(id) {
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
                 
-        $("#drpSirket").val(snapshot.val().calisanIsyeriKodu);
+        $("#drpSirket").val(snapshot.val().calisanIsyeriKodu).change();
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
 
         $("#fileCalisan").val('');
