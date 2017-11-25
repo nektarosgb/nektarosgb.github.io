@@ -14,7 +14,7 @@ function initLoadedPage_calisan_islemleri() {
             return;
         }else{
             $("#hdnIdSirket").val(selectedID);
-            $("#txtCalisanIsyeri").val($("#drpIsyeri").val());
+            $("#txtCalisanIsyeri").val($("#drpIsyeri").text());
         }
     });
 
