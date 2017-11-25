@@ -3,6 +3,7 @@ function initLoadedPage_calisan_islemleri() {
     $("#hdnId").val('');
 
     LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', '0');
+    LoadDrop('drpMeslek', 'idMeslek', 'meslekAdi', 'meslekler', '0');
 
     $("#drpIsyeri").change(function () {
 
@@ -12,11 +13,26 @@ function initLoadedPage_calisan_islemleri() {
             $("#hdnIdSirket").val('');
             clearAllFieldsCalisan();
             return;
-        }else{
+        } else {
             $("#hdnIdSirket").val(selectedID);
             $("#txtCalisanIsyeri").val($("#drpIsyeri").children("option:selected").text());
         }
     });
+
+    $("#drpMeslek").change(function () {
+
+        var selectedID = this.selectedOptions[0].value;
+
+        if (selectedID == '0') {
+            $("#hdnIdMeslek").val('');
+            clearAllFieldsCalisan();
+            return;
+        } else {
+            $("#hdnIdMeslek").val(selectedID);
+        }
+    });
+
+
 
     var grid = $("#grid-calisanlar").bootgrid({
         ajax: false,
@@ -60,6 +76,7 @@ function initLoadedPage_calisan_islemleri() {
 function setEditRowCalisan(id) {
     firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
         if (snapshot == null) {
+
             return;
         }
         $("#hdnId").val(snapshot.val().idCalisan);
@@ -71,10 +88,14 @@ function setEditRowCalisan(id) {
         $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
-                
+
+
         // $("#drpSirket").val(snapshot.val().calisanIsyeriKodu).change();
-        $("#drpSirket").find("option[value=" + snapshot.val().calisanIsyeriKodu +"]").attr('selected', true);
+        ///$("#drpSirket").find("option[value=" + snapshot.val().calisanIsyeriKodu +"]").attr('selected', true);
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
+
+        LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', snapshot.val().calisanIsyeriKodu);
+        LoadDrop('drpMeslek', 'idMeslek', 'meslekAdi', 'meslekler', snapshot.val().calisanMeslekKodu);
 
         $("#fileCalisan").val('');
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
@@ -92,6 +113,7 @@ function kaydetCalisanBilgileri() {
         idCalisan = $("#hdnId").val();
     }
 
+    var calisanMeslekKodu = $("#hdnIdMeslek").val();
     var calisanAdresi = $("#txtCalisanAdresi").val();
     var calisanTelefon = $("#txtCalisanTelefon").val();
     var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
@@ -107,6 +129,7 @@ function kaydetCalisanBilgileri() {
     var veri = {
         "idCalisan": idCalisan,
         "calisanAdi": calisanAdi,
+        "calisanMeslekKodu": calisanMeslekKodu,
         "calisanAdresi": calisanAdresi,
         "calisanTelefon": calisanTelefon,
         "calisanSGKSicilNo": calisanSGKSicilNo,
