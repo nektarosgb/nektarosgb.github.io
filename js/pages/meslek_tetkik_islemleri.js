@@ -13,25 +13,22 @@ function initLoadedPage_meslek_tetkik_islemleri() {
         setHeader("Mesleğe Göre Tetkik Belirleme İşlemleri");
     }
 
-function ShowTetkik()
-{
-    var meslekId=$("#drpMeslek").val();
-    setEditTetkikMeslek(meslekId);
-}
 function setEditTetkikMeslek(id) {
-    firebase.database().ref('/tetkikler/').once('value').then(function (snapshot) {
+    firebase.database().ref('/Meslektetkikler/tetkik/'+id).once('value').then(function (snapshot) {
         if(snapshot==null){
             return;
         }
-        $("#txtTetkik").val(snapshot.val().tetkik);
-        $("#txtFiyat").val(snapshot.val().fiyat);
+        $("#chkitem"+snapshot.val().idTetkik).setAttribute("checked", "checked");
         // $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
         // $("#drpUygulamaTuru select[value='"+snapshot.val().uygulamaTuru +"']").attr("selected",true);
-         $("#drpUygulamaTuru").val(snapshot.val().uygulamaTuru ).find("option[value=" + snapshot.val().uygulamaTuru +"]").attr('selected', true);
+        //  $("#drpMeslek").val(snapsh  ot.val().uygulamaTuru ).find("option[value=" + snapshot.val().uygulamaTuru +"]").attr('selected', true);
         $('#myModal').modal('show');
     });
 }
-
+$("#drpMeslek").change(function () {
+    var meslekId=$("#drpMeslek").val();
+    setEditTetkikMeslek(meslekId);
+});
 function kaydetTetkikBilgisi() {
     var d = new Date();
     var n = d.getTime()
