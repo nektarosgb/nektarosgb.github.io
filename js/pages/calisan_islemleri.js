@@ -14,6 +14,7 @@ function initLoadedPage_calisan_islemleri() {
             return;
         }else{
             $("#hdnIdSirket").val(selectedID);
+            $("#txtCalisanIsyeri").val($("#drpIsyeri").val());
         }
     });
 
@@ -75,7 +76,7 @@ function setEditRowCalisan(id) {
         $("#drpSirket select").val(snapshot.val().calisanIsyeri);   
         $("#drpSirket").val(snapshot.val().calisanIsyeri).find("option[value='"+snapshot.val().calisanIsyeriKodu+"']").attr('selected', true);
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
-        
+
         $("#fileCalisan").val('');
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
         $('#myModal').modal('show');
