@@ -2,64 +2,64 @@
     initLoadedPage_meslek_tetkik_islemleri();
 </script>
 <div class="page_container">
-        <div class="dropdown pull-right">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="true">
-                Dışa Aktar
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li>
-                    <a href="#" onclick="exceleAktar('grid-tetkikler');return false;">Excel'e Aktar</a>
-                </li>
-                <li>
-                    <a href="#" onclick="pdfeAktar('grid-tetkikler');return false;">PDF'e Aktar</a>
-                </li>
-                <li>
-                    <a href="#" onclick="wordeAktar('grid-tetkikler');return false;">Word'e Aktar</a>
-                </li>
-                <li role="separator" class="divider"></li>
-                <li>
-                    <a href="#" onclick="pngyeAktar('grid-tetkikler');return false;">PNG'ye Aktar</a>
-                </li>
-                <li>
-                    <a href="#" onclick="csvyeAktar('grid-tetkikler');return false;">CSV'ye Aktar</a>
-                </li>
-            </ul>
-        </div>
-        
+    <div class="dropdown pull-right">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true">
+            Dışa Aktar
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li>
+                <a href="#" onclick="exceleAktar('grid-tetkikler');return false;">Excel'e Aktar</a>
+            </li>
+            <li>
+                <a href="#" onclick="pdfeAktar('grid-tetkikler');return false;">PDF'e Aktar</a>
+            </li>
+            <li>
+                <a href="#" onclick="wordeAktar('grid-tetkikler');return false;">Word'e Aktar</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+                <a href="#" onclick="pngyeAktar('grid-tetkikler');return false;">PNG'ye Aktar</a>
+            </li>
+            <li>
+                <a href="#" onclick="csvyeAktar('grid-tetkikler');return false;">CSV'ye Aktar</a>
+            </li>
+        </ul>
+    </div>
 
 
-        <div>
 
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Tetkik Tanımlama İşlemleri</h3>
-                    <input type="hidden" id="hdnId" />
-                </div>
+    <div>
 
-                <div class="panel-body">
-                    <div class="form-group">
-                            <label for="txtTetkik">Meslek</label>
-                            
-                            <select class="form-control" id="drpMeslek">
-                                    <option value="0">Seçiniz</option>
-                                </select>
-                    </div>
-                    <div class="form-group" id="mt_TetkikListe">
-                        <div class="panel-heading">Tetkikler</div>
-                        <br>
-                        <ul id="lstTetkikler" class="list-group">
-                        </ul>
-                    </div>
-
-                </div>
-                <div class="panel-footer">
-                    <button onclick="kaydetMeslekTetkikBilgisi();return false;" class="btn btn-success btn-block">Kaydet</button>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Tetkik Tanımlama İşlemleri</h3>
+                <input type="hidden" id="hdnId" />
             </div>
 
+            <div class="panel-body">
+                <div class="form-group">
+                    <label for="txtTetkik">Meslek</label>
+
+                    <select class="form-control" id="drpMeslek">
+                        <option value="0">Seçiniz</option>
+                    </select>
+                </div>
+                <div class="form-group" id="mt_TetkikListe">
+                    <div class="panel-heading">Tetkikler</div>
+                    <br>
+                    <ul id="lstTetkikler" class="list-group">
+                    </ul>
+                </div>
+
+            </div>
+            <div class="panel-footer">
+                <button onclick="kaydetMeslekTetkikBilgisi();return false;" class="btn btn-success btn-block">Kaydet</button>
+            </div>
         </div>
 
-
     </div>
+
+
+</div>
