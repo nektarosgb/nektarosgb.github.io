@@ -3,7 +3,7 @@ function initLoadedPage_calisan_islemleri() {
     $("#hdnId").val('');
 
     LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', '0');
-    LoadDrop('drpMeslek', 'idMeslek', 'meslekAdi', 'meslekler', '0');
+    LoadDrop('drpMeslek', 'idMeslek', 'meslek', 'meslekler', '0');
 
     $("#drpIsyeri").change(function () {
 
@@ -95,7 +95,7 @@ function setEditRowCalisan(id) {
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
 
         LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', snapshot.val().calisanIsyeriKodu);
-        LoadDrop('drpMeslek', 'idMeslek', 'meslekAdi', 'meslekler', snapshot.val().calisanMeslekKodu);
+        LoadDrop('drpMeslek', 'idMeslek', 'meslek', 'meslekler', snapshot.val().calisanMeslekKodu);
 
         $("#fileCalisan").val('');
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
