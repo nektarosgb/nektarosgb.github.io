@@ -23,6 +23,21 @@ function initLoadedPage_tetkik_talep_formu() {
             $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
             $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
             $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
+
+            var isyeriKodu=snapshot.val().calisanIsyeriKodu;
+
+            firebase.database().ref('/sirketler/' + isyeriKodu).once('value').then(function (sirket) {
+                $("#txtSirketAdi").val(sirket.val().sirketAdi);
+                $("#txtSirketAdresi").val(sirket.val().sirketAdresi);
+                $("#txtSirketTelefon").val(sirket.val().sirketTelefon);
+                $("#txtSirketSGKSicilNo").val(sirket.val().sirketSGKSicilNo);
+                $("#txtSirketIlgiliKisi").val(sirket.val().sirketIlgiliKisi);
+                $("#txtSirketTelefonCep").val(sirket.val().sirketTelefonCep);
+                $("#txtSirketEposta").val(sirket.val().sirketEposta);
+                $("#txtSirketIsyeriHekimi").val(sirket.val().sirketIsyeriHekimi);
+                $("#txtSirketIsyeriGuvenlikUzmani").val(sirket.val().sirketIsGuvenligiUzmani);
+            });
+
             resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
         });
     });
