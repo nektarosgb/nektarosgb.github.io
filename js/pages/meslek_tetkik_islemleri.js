@@ -17,8 +17,6 @@ function initLoadedPage_meslek_tetkik_islemleri() {
 
                 snapshot.forEach(function (element) {
                     var cleanelement = JSON.parse(JSON.stringify(element));
-                    cleanelement['id'] = rows.length + 1;
-
                     $("#chkitem"+element.tetkik).setAttribute("checked", "checked");
                 });
 
