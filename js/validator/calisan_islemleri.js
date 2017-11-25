@@ -1,4 +1,4 @@
-$('#contact-form').validate({
+$('#frm_calisan').validate({
     rules: {
         txtCalisanAdi: {
             minlength: 2,
