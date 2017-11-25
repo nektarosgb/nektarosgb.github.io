@@ -10,7 +10,7 @@ function initLoadedPage_meslek_tetkik_islemleri() {
         });
         $("#drpMeslek").change(function () {
             var meslekId=$("#drpMeslek").val();
-            firebase.database().ref('Meslektetkikler').orderBy('meslek').equalTo(meslekId).once('value').then(function (snapshot) {
+            firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekId).once('value').then(function (snapshot) {
                 if(snapshot==null){
                     return;
                 }
