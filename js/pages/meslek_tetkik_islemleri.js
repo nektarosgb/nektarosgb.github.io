@@ -29,7 +29,7 @@ function setEditTetkikMeslek(id) {
 
 }
 
-function kaydetTetkikBilgisi() {
+function kaydetMeslekTetkikBilgisi() {
     var d = new Date();
     var n = d.getTime()
 
