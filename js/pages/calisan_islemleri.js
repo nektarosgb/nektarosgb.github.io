@@ -70,6 +70,20 @@ function initLoadedPage_calisan_islemleri() {
     });
 
     setHeader("Çalışan İşlemleri");
+
+    $("#frm_calisan").validate();
+    $("#frm_calisan").validate({
+        rules: {
+            txtCalisanAdi: "required",
+            drpMeslek: "required",
+            txtCalisanTCNo:"required"
+        },
+        messages: {
+            txtCalisanAdi: "Lütfen Çalışan İsmi Giriniz",
+            drpMeslek: "Lütfen Çalışana Ait Meslek Seçiniz",
+            txtCalisanTCNo:"Lütfen Çalışana Ait TC No Giriniz"
+        }
+    });
 }
 
 
