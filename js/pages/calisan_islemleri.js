@@ -116,7 +116,8 @@ function setEditRowCalisan(id) {
         $('#myModal').modal('show');
     });
 }
-$('#btn_CalisanKaydet').on('click', function() {
+$("#btn_CalisanKaydet").on("click", function() {
+    alert("sddsfdf");
     $("#frm_calisan").valid();
 });
 function kaydetCalisanBilgileri() {
