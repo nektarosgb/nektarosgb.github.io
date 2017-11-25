@@ -14,7 +14,7 @@ function initLoadedPage_meslek_tetkik_islemleri() {
                 if(snapshot==null){
                     return;
                 }
-                $("#chkitem"+snapshot.val().idTetkik).setAttribute("checked", "checked");
+                $("#chkitem"+snapshot.val().tetkik).setAttribute("checked", "checked");
                 // $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
                 // $("#drpUygulamaTuru select[value='"+snapshot.val().uygulamaTuru +"']").attr("selected",true);
                 //  $("#drpMeslek").val(snapsh  ot.val().uygulamaTuru ).find("option[value=" + snapshot.val().uygulamaTuru +"]").attr('selected', true);
