@@ -1,6 +1,22 @@
 function initLoadedPage_calisan_islemleri() {
 
     $("#hdnId").val('');
+
+    LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', '0');
+
+    $("#drpIsyeri").change(function () {
+
+        var selectedID = this.selectedOptions[0].value;
+
+        if (selectedID == '0') {
+            $("#hdnIdSirket").val('');
+            clearAllFieldsCalisan();
+            return;
+        }else{
+            $("#hdnIdSirket").val(selectedID);
+        }
+    });
+
     var grid = $("#grid-calisanlar").bootgrid({
         ajax: false,
         formatters: {
@@ -54,6 +70,12 @@ function setEditRowCalisan(id) {
         $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
+        
+        
+        $("#drpSirket select").val(snapshot.val().calisanIsyeri);   
+        $("#drpSirket").val(snapshot.val().calisanIsyeri).find("option[value='"+snapshot.val().calisanIsyeriKodu+"']").attr('selected', true);
+        $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
+        
         $("#fileCalisan").val('');
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
         $('#myModal').modal('show');
@@ -65,7 +87,7 @@ function kaydetCalisanBilgileri() {
     var n = d.getTime()
 
     var calisanAdi = $("#txtCalisanAdi").val();
-    var idCalisan =generateID(calisanAdi);
+    var idCalisan = generateID(calisanAdi);
     if ($("#hdnId").val().trim().length > 0) {
         idCalisan = $("#hdnId").val();
     }
@@ -76,6 +98,7 @@ function kaydetCalisanBilgileri() {
     var calisanTCNo = $("#txtCalisanTCNo").val();
     var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
     var calisanEposta = $("#txtCalisanEposta").val();
+    var calisanIsyeriKodu = $("#hdnIdSirket").val();
     var calisanIsyeri = $("#txtCalisanIsyeri").val();
     var dosya = $("#fileCalisan")[0].files[0];
 
@@ -91,6 +114,7 @@ function kaydetCalisanBilgileri() {
         "calisanTelefonCep": calisanTelefonCep,
         "calisanEposta": calisanEposta,
         "calisanIsyeri": calisanIsyeri,
+        "calisanIsyeriKodu": calisanIsyeriKodu,
         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
     }
 
@@ -113,5 +137,6 @@ function clearAllFieldsCalisan() {
     $("#txtCalisanEposta").val('');
     $("#txtCalisanIsyeri").val('');
     $("#fileCalisan").val('');
+    $("#hdnIdSirket").val('');
     resimTemizle("imgCalisan");
 }
