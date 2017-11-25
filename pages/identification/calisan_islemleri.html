@@ -68,13 +68,16 @@
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label for="txtCalisanAdi">Çalışan Adı Soyadı</label>
-                                    <input type="text" class="form-control" id="txtCalisanAdi" placeholder="">
+                                    <input type="text" class="form-control" id="txtCalisanAdi" placeholder="" required>
                                     <input type="hidden" id="hdnId" />
+                                    <div class="invalid-feedback">
+                                        Lütfen Çalışan Adını Giriniz
+                                      </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="drpMeslek">Meslek</label>
-                                    <select class="form-control" id="drpMeslek">
+                                    <select class="form-control" id="drpMeslek" required>
                                         <option value="0">Seçiniz</option>
                                     </select>
 
@@ -88,7 +91,7 @@
 
                                 <div class="form-group">
                                     <label for="txtCalisanTelefon">Telefon</label>
-                                    <input type="telephone" class="form-control" id="txtCalisanTelefon" placeholder="(+90 232) 111 22 33">
+                                    <input type="telephone" class="form-control" id="txtCalisanTelefon" placeholder="(+90 232) 111 22 33" >
                                 </div>
 
                                 <div class="form-group">
@@ -98,13 +101,13 @@
 
                                 <div class="form-group">
                                     <label for="txtCalisanTCNo">TC Kimlik Numarası</label>
-                                    <input type="text" class="form-control" id="txtCalisanTCNo" placeholder="TC Kimlik Numarası">
+                                    <input type="text" class="form-control" id="txtCalisanTCNo" placeholder="TC Kimlik Numarası" required>
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="txtCalisanTelefonCep">Mobil</label>
-                                    <input type="telephone" class="form-control" id="txtCalisanTelefonCep" placeholder="(+90 232) 111 22 33">
+                                    <input type="telephone" class="form-control" id="txtCalisanTelefonCep" placeholder="(+90 232) 111 22 33" required>
                                 </div>
 
                                 <div class="form-group">
@@ -114,7 +117,7 @@
 
                                 <div class="form-group">
                                     <label for="drpIsyeri">İşyeri</label>
-                                    <select class="form-control" id="drpIsyeri">
+                                    <select class="form-control" id="drpIsyeri" required>
                                         <option value="0">Seçiniz</option>
                                     </select>
                                     <input type="hidden" id="hdnIdSirket" />
