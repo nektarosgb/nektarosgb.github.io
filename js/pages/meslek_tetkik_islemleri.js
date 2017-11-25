@@ -14,7 +14,15 @@ function initLoadedPage_meslek_tetkik_islemleri() {
                 if(snapshot==null){
                     return;
                 }
-                $("#chkitem"+snapshot.val().tetkik).setAttribute("checked", "checked");
+
+                snapshot.forEach(function (element) {
+                    var cleanelement = JSON.parse(JSON.stringify(element));
+                    cleanelement['id'] = rows.length + 1;
+
+                    $("#chkitem"+element.tetkik).setAttribute("checked", "checked");
+                });
+
+               
                 // $("#drpUygulamaTuru select").val(snapshot.val().uygulamaTuru);    
                 // $("#drpUygulamaTuru select[value='"+snapshot.val().uygulamaTuru +"']").attr("selected",true);
                 //  $("#drpMeslek").val(snapsh  ot.val().uygulamaTuru ).find("option[value=" + snapshot.val().uygulamaTuru +"]").attr('selected', true);

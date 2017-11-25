@@ -41,8 +41,20 @@ function initLoadedPage_tetkik_talep_formu() {
                 $("#txtSirketIsyeriGuvenlikUzmani").val(sirket.val().sirketIsGuvenligiUzmani);
             });
 
+            var meslekKodu=snapshot.val().calisanMeslekKodu;
+
+            secTetkiktlerMeslegeGore(meslekKodu);
+
+            firebase.database().ref('/meslekler/' + meslekKodu).once('value').then(function (meslek) {
+                $("#txtCalisanMeslek").val(meslek.val().meslek);
+            });
+
             resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
         });
     });
 
+}
+
+function secTetkiktlerMeslegeGore(meslekKodu){
+    
 }
