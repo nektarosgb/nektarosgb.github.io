@@ -56,5 +56,13 @@ function initLoadedPage_tetkik_talep_formu() {
 }
 
 function secTetkiktlerMeslegeGore(meslekKodu){
-    
+
+    $("input[type='checkbox']").prop("checked", false);
+    firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekKodu).once('value').then(function (snapshot) {
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+
+            $("#chkitem" + cleanelement.tetkik).prop("checked", true);
+        });
+    });
 }
