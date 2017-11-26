@@ -74,7 +74,7 @@ function hesaplaToplam() {
 
         var idTetkik = this.value;
 
-        var fiyat = chkListVerileri["tetkikler"][idTetkik][fiyat];
+        var fiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
 
         toplam = toplam + fiyat;
 
