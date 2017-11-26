@@ -47,8 +47,8 @@ function kaydetMeslekTetkikBilgisi() {
 
     $('#mt_TetkikListe input[type="checkbox"]:checked').each(function () {
 
-        meslek=meslek+this.value;
-        var idMeslekTetkik = meslek.replace(/[^\x00-\x7F]/g, "") + n;
+        var idstr=meslek+this.value;
+        var idMeslekTetkik = idstr.replace(/[^\x00-\x7F]/g, "") + n;
 
         var veri = {
             "idMeslekTetkik": idMeslekTetkik,
