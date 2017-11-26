@@ -54,6 +54,12 @@
     border: solid 1px black;
     float: left;
 }
+.calisan-bilgileri-label-container{
+    width: 50%;
+    height: 25px;
+    border-left: solid 1px black;
+    float: left;
+}
 .calisan-bilgileri-isegiris{
     width: 50%;
     height: 10px;
