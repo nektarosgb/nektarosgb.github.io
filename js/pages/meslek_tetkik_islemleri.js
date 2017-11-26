@@ -43,9 +43,13 @@ function kaydetMeslekTetkikBilgisi() {
     var n = d.getTime()
 
     var meslek = $("#drpMeslek").val();
-    var idMeslekTetkik = meslek.replace(/[^\x00-\x7F]/g, "") + n;
+    
 
     $('#mt_TetkikListe input[type="checkbox"]:checked').each(function () {
+
+        meslek=meslek+this.value;
+        var idMeslekTetkik = meslek.replace(/[^\x00-\x7F]/g, "") + n;
+
         var veri = {
             "idMeslekTetkik": idMeslekTetkik,
             "tetkik": this.value,
