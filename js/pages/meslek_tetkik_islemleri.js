@@ -38,9 +38,9 @@ function setEditTetkikMeslek(id) {
 
 function silMeslekTetkikKayitlari(meslek) {
 
-    var ref = firebase.database().ref("Meslektetkikler");
+    //var ref = firebase.database().ref("Meslektetkikler");
 
-    ref.orderByChild("meslek").equalTo(meslek).remove();
+    //ref.orderByChild("meslek").equalTo(meslek).remove();
 }
 
 function kaydetMeslekTetkikBilgisi() {
