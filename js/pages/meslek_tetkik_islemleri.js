@@ -10,13 +10,11 @@ function initLoadedPage_meslek_tetkik_islemleri() {
     });
     $("#drpMeslek").change(function () {
         var meslekId = $("#drpMeslek").val();
+        $("input[type='checkbox']").prop("checked", false);
         firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekId).once('value').then(function (snapshot) {
             if (snapshot == null) {
                 return;
             }
-
-            $("input[type='checkbox']").prop("checked", false);
-
             snapshot.forEach(function (element) {
                 var cleanelement = JSON.parse(JSON.stringify(element));
 
