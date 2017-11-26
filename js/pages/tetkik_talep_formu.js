@@ -75,7 +75,7 @@ function hesaplaToplam() {
         var idTetkik = this.value;
 
         var txtfiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
-        var num = parseFloat(txtfiyat).toFixed(2);
+        var fiyat = parseFloat(txtfiyat).toFixed(2);
 
         toplam = toplam + fiyat;
 
