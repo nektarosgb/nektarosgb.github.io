@@ -63,6 +63,8 @@ function secTetkiktlerMeslegeGore(meslekKodu) {
 
             $("#chkitem" + cleanelement.tetkik).prop("checked", true);
         });
+
+        hesaplaToplam() ;
     });
 }
 
