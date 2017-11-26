@@ -112,6 +112,21 @@ function kaydetVeritabani(tablo, id, veri) {
     $("#myModal").modal('hide');
 }
 
+function silVeritabani(tablo, kolon,deger) {
+
+    var ref=firebase.database().ref(tablo);
+
+    ref.orderByChild(kolon).equalTo(deger).once('value').then(function (snapshot) {
+
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+
+            $("#chkitem" + cleanelement.tetkik).prop("checked", true);
+        });
+    });
+}
+
+
 function listTable(tablo) {
 
     return firebase.database().ref(tablo).once('value').then(function (snapshot) {

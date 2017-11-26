@@ -38,16 +38,24 @@ function setEditTetkikMeslek(id) {
 
 }
 
+function silMeslekTetkikKayitlari(meslek) {
+
+    var ref = firebase.database().ref("Meslektetkikler");
+
+    ref.orderByChild("meslek").equalTo(meslek).remove();
+}
+
 function kaydetMeslekTetkikBilgisi() {
     var d = new Date();
     var n = d.getTime()
 
     var meslek = $("#drpMeslek").val();
-    
+
+    silMeslekTetkikKayitlari( meslek);
 
     $('#mt_TetkikListe input[type="checkbox"]:checked').each(function () {
 
-        var idstr=meslek+this.value;
+        var idstr = meslek + this.value;
         var idMeslekTetkik = idstr.replace(/[^\x00-\x7F]/g, "") + n;
 
         var veri = {
