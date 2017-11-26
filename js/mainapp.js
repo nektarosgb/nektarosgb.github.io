@@ -98,6 +98,9 @@ function generateID(text){
     var d = new Date();
     var n = d.getTime()
     text=text.replace(/[^\x00-\x7F]/g, "").split(' ').join('')+ n;
+    text = text.replace(/[{()}]/g, '');
+    text = text.replace(/[\[\]']+/g, '');
+    text = text.replace(/\(|\)/g,'')
     return text;
 }
 
@@ -112,19 +115,7 @@ function kaydetVeritabani(tablo, id, veri) {
     $("#myModal").modal('hide');
 }
 
-function silVeritabani(tablo, kolon,deger) {
 
-    var ref=firebase.database().ref(tablo);
-
-    ref.orderByChild(kolon).equalTo(deger).once('value').then(function (snapshot) {
-
-        snapshot.forEach(function (element) {
-            var cleanelement = JSON.parse(JSON.stringify(element));
-
-            $("#chkitem" + cleanelement.tetkik).prop("checked", true);
-        });
-    });
-}
 
 
 function listTable(tablo) {
