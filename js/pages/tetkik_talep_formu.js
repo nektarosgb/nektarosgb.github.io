@@ -68,7 +68,7 @@ function secTetkiktlerMeslegeGore(meslekKodu) {
 
 function hesaplaToplam() {
 
-    var toplam = parseFloat("0.00").toFixed(2);
+    var toplam = parseFloat("0.00");
 
     $('input[type="checkbox"]:checked').each(function () {
 
