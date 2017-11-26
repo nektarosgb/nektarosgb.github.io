@@ -4,19 +4,19 @@ function initLoadedPage_tetkik_talep_formu() {
     LoadDrop('drpCalisan', 'idCalisan', 'calisanAdi', 'calisanlar', '0');
     $("#drpCalisan").change(function () {
 
-        var selectedID=this.selectedOptions[0].value;
+        var selectedID = this.selectedOptions[0].value;
 
-        if(selectedID=='0'){
+        if (selectedID == '0') {
             $("#hdnIdCalisan").val('');
             clearAllFieldsCalisan();
             $("#pnlIsciBilgileri").addClass("hide");
             return;
-        }else{
+        } else {
             $("#pnlIsciBilgileri").removeClass("hide");
         }
 
         firebase.database().ref('/calisanlar/' + selectedID).once('value').then(function (snapshot) {
-            
+
             $("#hdnIdCalisan").val(snapshot.val().idCalisan);
             $("#txtCalisanAdi").val(snapshot.val().calisanAdi);
             $("#txtCalisanAdresi").val(snapshot.val().calisanAdresi);
@@ -27,7 +27,7 @@ function initLoadedPage_tetkik_talep_formu() {
             $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
             $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
 
-            var isyeriKodu=snapshot.val().calisanIsyeriKodu;
+            var isyeriKodu = snapshot.val().calisanIsyeriKodu;
 
             firebase.database().ref('/sirketler/' + isyeriKodu).once('value').then(function (sirket) {
                 $("#txtSirketAdi").val(sirket.val().sirketAdi);
@@ -41,7 +41,7 @@ function initLoadedPage_tetkik_talep_formu() {
                 $("#txtSirketIsyeriGuvenlikUzmani").val(sirket.val().sirketIsGuvenligiUzmani);
             });
 
-            var meslekKodu=snapshot.val().calisanMeslekKodu;
+            var meslekKodu = snapshot.val().calisanMeslekKodu;
 
             secTetkiktlerMeslegeGore(meslekKodu);
 
@@ -55,7 +55,7 @@ function initLoadedPage_tetkik_talep_formu() {
 
 }
 
-function secTetkiktlerMeslegeGore(meslekKodu){
+function secTetkiktlerMeslegeGore(meslekKodu) {
     $("input[type='checkbox']").prop("checked", false);
     firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekKodu).once('value').then(function (snapshot) {
         snapshot.forEach(function (element) {
@@ -65,3 +65,21 @@ function secTetkiktlerMeslegeGore(meslekKodu){
         });
     });
 }
+
+function hesaplaToplam() {
+
+    var toplam = 0;
+
+    $('input[type="checkbox"]:checked').each(function () {
+
+        var idTetkik = this.value;
+
+        var fiyat = chkListVerileri["tetkikler"][idTetkik][fiyat];
+
+        toplam = toplam + fiyat;
+
+    });
+
+    $("#txtUcretToplami").val(toplam);
+}
+

@@ -142,8 +142,17 @@
                 </div>
 
                 <div class="panel panel-default">
-                    <div class="panel-heading">Tetkikler</div>
+                    <div class="panel-heading" onclick="hesaplaToplam();return false;">Tetkikler</div>
                     <ul id="lstTetkikler" class="list-group">
+                    </ul>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Genel Toplam</div>
+                    <div class="form-group">
+                        <label for="txtUcretToplami">Ücret Toplamı</label>
+                        <input type="text" class="form-control" id="txtUcretToplami" placeholder="0.00" readonly>
+                    </div>
                     </ul>
                 </div>
 
