@@ -15,6 +15,8 @@ function initLoadedPage_meslek_tetkik_islemleri() {
                     return;
                 }
 
+                $("input[type='checkbox']").prop("checked",false);
+
                 snapshot.forEach(function (element) {
                     var cleanelement = JSON.parse(JSON.stringify(element));
 
