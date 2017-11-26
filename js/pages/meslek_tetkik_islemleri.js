@@ -38,9 +38,18 @@ function setEditTetkikMeslek(id) {
 
 function silMeslekTetkikKayitlari(meslek) {
 
-    //var ref = firebase.database().ref("Meslektetkikler");
+    var ref = firebase.database().ref("Meslektetkikler");
 
     //ref.orderByChild("meslek").equalTo(meslek).remove();
+
+
+    ref.orderByChild('meslek').equalTo(meslekId).once('value').then(function (snapshot) {
+
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+            firebase.database().ref("Meslektetkikler/"+cleanelement.idMeslekTetkik).child(cleanelement.idMeslekTetkik);
+        });
+    });
 }
 
 function kaydetMeslekTetkikBilgisi() {
