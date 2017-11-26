@@ -68,18 +68,19 @@ function secTetkiktlerMeslegeGore(meslekKodu) {
 
 function hesaplaToplam() {
 
-    var toplam = 0;
+    var toplam = parseFloat("0.00").toFixed(2);;
 
     $('input[type="checkbox"]:checked').each(function () {
 
         var idTetkik = this.value;
 
-        var fiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
+        var txtfiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
+        var num = parseFloat(txtfiyat).toFixed(2);
 
         toplam = toplam + fiyat;
 
     });
 
-    $("#txtUcretToplami").val(toplam);
+    $("#txtUcretToplami").val(""+toplam);
 }
 
