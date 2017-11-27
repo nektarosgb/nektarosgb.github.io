@@ -97,13 +97,13 @@
     height: 25px;
     width: 40%;
     float: left;
-    border-left: solid apx black;
+    border-left: solid 1px black;
 }
 .calisan-tetkikler-group-container > .group-tetkikler-cevap{
     height: 25px;
     width: 10%;
     float: left;
-    border-left: solid apx black;
+    border-left: solid 1px black;
     padding-right: 2px;
 }
 .kase-imza{
@@ -112,143 +112,3 @@
     border: solid 1px black;
     float: left;
 }
-
-
-/*
-<div class="nektar-talep-container">
-
-    <div class="calisan-tetkiler-container">
-        <div class="calisan-tetkikler-group-container">
-            <div class="group-tetkikler-label">
-                AKCİĞER GRAFİSİ
-            </div>
-            <div class="group-tetkikler-cevap">
-                <label id="lbl_grp_tetkikler_akcgrf"></label>
-            </div>
-
-            
-            <div class="group-tetkikler-label">
-                    SFT
-                </div>
-                <div class="group-tetkikler-cevap">
-                    <label id="lbl_grp_tetkikler_sft"></label>
-                </div>
-
-                
-            <div class="group-tetkikler-label">
-                    ODİYOMETRİ
-                </div>
-                <div class="group-tetkikler-cevap">
-                    <label id="lbl_grp_tetkikler_akcgrf"></label>
-                </div>
-
-                
-            <div class="group-tetkikler-label">
-                    HEMOGRAM
-                </div>
-                <div class="group-tetkikler-cevap">
-                    <label id="lbl_grp_tetkikler_akcgrf"></label>
-                </div>
-        </div>
-        <div class="calisan-tetkikler-group-container">
-                <div class="group-tetkikler-label">
-                    AKCİĞER GRAFİSİ
-                </div>
-                <div class="group-tetkikler-cevap">
-                    <label id="lbl_grp_tetkikler_akcgrf"></label>
-                </div>
-    
-                
-                <div class="group-tetkikler-label">
-                        SFT
-                    </div>
-                    <div class="group-tetkikler-cevap">
-                        <label id="lbl_grp_tetkikler_sft"></label>
-                    </div>
-    
-                    
-                <div class="group-tetkikler-label">
-                        ODİYOMETRİ
-                    </div>
-                    <div class="group-tetkikler-cevap">
-                        <label id="lbl_grp_tetkikler_akcgrf"></label>
-                    </div>
-    
-                    
-                <div class="group-tetkikler-label">
-                        HEMOGRAM
-                    </div>
-                    <div class="group-tetkikler-cevap">
-                        <label id="lbl_grp_tetkikler_akcgrf"></label>
-                    </div>
-            </div>
-            <div class="calisan-tetkikler-group-container">
-                    <div class="group-tetkikler-label">
-                        AKCİĞER GRAFİSİ
-                    </div>
-                    <div class="group-tetkikler-cevap">
-                        <label id="lbl_grp_tetkikler_akcgrf"></label>
-                    </div>
-        
-                    
-                    <div class="group-tetkikler-label">
-                            SFT
-                        </div>
-                        <div class="group-tetkikler-cevap">
-                            <label id="lbl_grp_tetkikler_sft"></label>
-                        </div>
-        
-                        
-                    <div class="group-tetkikler-label">
-                            ODİYOMETRİ
-                        </div>
-                        <div class="group-tetkikler-cevap">
-                            <label id="lbl_grp_tetkikler_akcgrf"></label>
-                        </div>
-        
-                        
-                    <div class="group-tetkikler-label">
-                            HEMOGRAM
-                        </div>
-                        <div class="group-tetkikler-cevap">
-                            <label id="lbl_grp_tetkikler_akcgrf"></label>
-                        </div>
-                </div>
-                <div class="calisan-tetkikler-group-container">
-                        <div class="group-tetkikler-label">
-                            AKCİĞER GRAFİSİ
-                        </div>
-                        <div class="group-tetkikler-cevap">
-                            <label id="lbl_grp_tetkikler_akcgrf"></label>
-                        </div>
-            
-                        
-                        <div class="group-tetkikler-label">
-                                SFT
-                            </div>
-                            <div class="group-tetkikler-cevap">
-                                <label id="lbl_grp_tetkikler_sft"></label>
-                            </div>
-            
-                            
-                        <div class="group-tetkikler-label">
-                                ODİYOMETRİ
-                            </div>
-                            <div class="group-tetkikler-cevap">
-                                <label id="lbl_grp_tetkikler_akcgrf"></label>
-                            </div>
-            
-                            
-                        <div class="group-tetkikler-label">
-                                HEMOGRAM
-                            </div>
-                            <div class="group-tetkikler-cevap">
-                                <label id="lbl_grp_tetkikler_akcgrf"></label>
-                            </div>
-                    </div>
-    </div>
-    <div class="kase-imza">
-
-    </div>
-</div>
-*/
