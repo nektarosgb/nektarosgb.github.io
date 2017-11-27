@@ -1,16 +1,16 @@
 
 .nektar-talep-container{
-    width:490px;
+    width:341px;
     height: 500px;
 }
 .nektar-logo{
     height: 40px;
-    width: 60px;
+    width: 140px;
     float: left;
 }
 .nektar-header-container{
-    width: 430px;
-    height: 60px;
+    width: 290px;
+    height: 50px;
     float: left;
     color: white;
     background-color: #1d8bca;
@@ -33,12 +33,14 @@
     font-size: 24px;
     float: left;
     font-weight: bold;
+    text-align: center;
 }
 .nektar-header-container > .nektar-header-desc{
     width: 100%;
     height: 10px;
     font-size: 18px;
     float: left;
+    text-align: center;
 }
 .calisan-bilgileri-container{
     width: 100%;
@@ -48,21 +50,20 @@
 .nektar-topik{
     width: 100%;
     height: 32px;
-    font-size: 18px;
+    font-size: 13px;
     float: left;
     background-color: yellow;
     font-weight: bold;
+    text-align: center;
 }
 .nektar-topik #hospital-name{
     color: red;
     float: left;
-    width: 27%;
     text-align: left;
     padding-right: 2px;
 }
 .nektar-topik #form-name{
     float: left;
-    width: 70%;
     text-align: left;
 }
 .calisan-bilgileri-header{
