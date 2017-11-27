@@ -1,6 +1,6 @@
 
 .nektar-talep-container{
-    width:600px;
+    width:490px;
     height: 500px;
     border:solid 1px black;
 }
@@ -10,7 +10,7 @@
     float: left;
 }
 .nektar-header-container{
-    width: 540px;
+    width: 430px;
     height: 60px;
     float: left;
     color: white;
@@ -31,7 +31,7 @@
 }
 .calisan-bilgileri-container{
     width: 100%;
-    height: 92px;
+    height: 101px;
     border: solid 1px black;
     float: left;
 }
@@ -59,9 +59,10 @@
     width: 100%;
     height: 30px;
     text-align: center;
-    border: solid 1px black;
+    border-bottom: solid 1px black;
     float: left;
     font-size: 18px;
+    font-weight: bold;
 }
 .calisan-bilgileri-label-container{
     width: 50%;
@@ -71,9 +72,11 @@
 }
 .calisan-bilgileri-isegiris{
     width: 50%;
-    height: 10px;
+    height: 20px;
     text-align: left;
     float: left;
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
 }
 .calisan-bilgileri-isegiris > #lbl_form_basvuruturu{
     width: 80%;
@@ -86,6 +89,7 @@
     margin-top: 5px;
     border: none;
     height: auto;
+    float: left;
 }
 .calisan-tetkikler-group-container{
     width: 50%;
