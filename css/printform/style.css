@@ -10,7 +10,7 @@
     float: left;
 }
 .nektar-header-container{
-    width: 538px;
+    width: 540px;
     height: 60px;
     float: left;
     color: white;
@@ -45,8 +45,8 @@
 }
 .nektar-topik #hospital-name{
     color: red;
-    float: right;
-    width: 30%;
+    float: left;
+    width: 22%;
     text-align: left;
     padding-right: 2px;
 }
