@@ -26,7 +26,8 @@ function initLoadedPage_tetkik_talep_formu() {
         /* Executes after data is loaded and rendered */
         gridCalisanlar.find(".command-edit").on("click", function (e) {
             var lstVeri = listTable("calisanlar");
-            var id = $(this).data("row-id");            
+            var id = $(this).data("row-id");      
+            $("#pnlIsciBilgileri").removeClass("hide");      
             doldurCalisanBilgileri(id);
 
         }).end().find(".command-delete").on("click", function (e) {
