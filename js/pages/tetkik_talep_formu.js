@@ -1,7 +1,22 @@
 function initLoadedPage_tetkik_talep_formu() {
-    loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler',' onClick="hesaplaToplam();"');
-    
+    loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler', ' onClick="hesaplaToplam();"');
+
     LoadDrop('drpCalisan', 'idCalisan', 'calisanAdi', 'calisanlar', '0');
+
+    $("#drpMuayeneTuru").change(function () {
+        var selectedID = this.selectedOptions[0].value;
+        $("#hdnIdMuayeneTuru").val(selectedID);
+        $("#hdnMuayeneTuru").val($("#drpMuayeneTuru").children("option:selected").text());
+    });
+
+    $("#drpCariTuru").change(function () {
+        var selectedID = this.selectedOptions[0].value;
+        $("#hdnIdCariTuru").val(selectedID);
+        $("#hdnCariTuru").val($("#drpCariTuru").children("option:selected").text());
+    });
+
+
+
     $("#drpCalisan").change(function () {
 
         var selectedID = this.selectedOptions[0].value;
@@ -53,11 +68,54 @@ function initLoadedPage_tetkik_talep_formu() {
         });
     });
 
-    $("#btn_CalisanKaydet").click( function() {
+    $("#btn_TetkikTalepFormuKaydet").click(function () {
 
-        var muayeneTuruId= 
+        var muayeneTuruKodu = $("#hdnIdMuayeneTuru").val();
+        var muayeneTuru = $("#hdnMuayeneTuru").val();
+
+        var cariHesapTuruKodu = $("#hdnIdCariHesapTuru").val();
+        var cariHesapTuru = $("#hdnCariHesapTuru").val();
+
+        var calisanKodu = $("#hdnIdCalisan").val();
         var calisanAdi = $("#txtCalisanAdi").val();
-        var idCalisan = generateID(calisanAdi);
+
+        var isyeriKodu = $("#hdnIdSirket").val();
+        var isyeriAdi = $("#txtSirketAdi").val();
+
+        var ucretToplami = parseFloat($("#txtUcretToplami").val());
+
+        var seciliTetkikler = [];
+
+        $('input[type="checkbox"]:checked').each(function () {
+
+            var idTetkik = this.value;
+
+            var tetkik = chkListVerileri["tetkikler"][idTetkik];
+            
+            seciliTetkikler.push(tetkik);
+
+        });
+
+
+        var idTetkikTalepFormu = generateID(calisanAdi+muayeneTuru);
+
+
+        var veri = {
+            "idTetkikTalepFormu":idTetkikTalepFormu,
+            "muayeneTuruKodu":muayeneTuruKodu,
+            "cariHesapTuruKodu":cariHesapTuruKodu,
+            "cariHesapTuru":cariHesapTuru,
+            "calisanKodu":calisanKodu,
+            "calisanAdi":calisanAdi,
+            "isyeriKodu":isyeriKodu,
+            "isyeriAdi":isyeriAdi,
+            "ucretToplami":ucretToplami,
+            "seciliTetkikler":seciliTetkikler
+
+        }
+
+        kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
+
     });
 
 }
@@ -71,7 +129,7 @@ function secTetkiktlerMeslegeGore(meslekKodu) {
             $("#chkitem" + cleanelement.tetkik).prop("checked", true);
         });
 
-        hesaplaToplam() ;
+        hesaplaToplam();
     });
 }
 
@@ -90,6 +148,6 @@ function hesaplaToplam() {
 
     });
 
-    $("#txtUcretToplami").val(""+toplam.toFixed(2));
+    $("#txtUcretToplami").val("" + toplam.toFixed(2));
 }
 
