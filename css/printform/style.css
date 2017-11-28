@@ -127,6 +127,7 @@
     width: 6%;
     height: auto;
     float: left;
+    min-height: 1px;
 }
 .calisan-tetkikler-group-container > .group-tetkikler-label{
     height: 25px;
