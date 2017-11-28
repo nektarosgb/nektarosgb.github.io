@@ -79,7 +79,7 @@
 }
 .calisan-bilgileri-label-container{
     width: 50%;
-    height: 25px;
+    height: 22px;
     border: solid 1px black;
     float: left;
 }
@@ -117,11 +117,16 @@
     float: left;
 }
 .calisan-tetkikler-group-container{
-    width: 50%;
+    width: 47%;
     height: auto;
     float: left;
     padding-bottom: 5px;
     border: none;
+}
+.takoz{
+    width: 6%;
+    height: auto;
+    float: left;
 }
 .calisan-tetkikler-group-container > .group-tetkikler-label{
     height: 25px;
