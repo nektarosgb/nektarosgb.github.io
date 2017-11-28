@@ -49,21 +49,6 @@ function initLoadedPage_tetkik_talep_formu() {
     });
 
 
-    $("#drpCalisan").change(function () {
-
-        var selectedID = this.selectedOptions[0].value;
-
-        if (selectedID == '0') {
-            $("#hdnIdCalisan").val('');
-            clearAllFieldsCalisan();
-            $("#pnlIsciBilgileri").addClass("hide");
-            return;
-        } else {
-            $("#pnlIsciBilgileri").removeClass("hide");
-        }
-
-        doldurCalisanBilgileri(selectedID);
-    });
 
     $("#btn_TetkikTalepFormuKaydet").click(function () {
 
