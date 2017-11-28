@@ -2,6 +2,10 @@
 .nektar-talep-container{
     width:430px;
     height: 500px;
+    font-size: 14px;
+}
+.nektar-talep-container > .row>div{
+    border: solid 1px black;
 }
 .nektar-logo{
     height: 40px;
