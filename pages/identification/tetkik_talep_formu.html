@@ -36,6 +36,37 @@
                 </div>
             </div>
 
+            <div class="panel panel-default" id="pnlIsciBilgileri">
+                <div class="panel-body">
+                    <div class="row">
+                        <button class="btn btn-success btn-block" data-toggle="collapse" data-target="#calisanlarListesi">Çalışan Seçiniz</button>
+                    </div>
+                    <div class="row">
+                        <div id="calisanlarListesi" class="collapsible">
+                            <table id="grid-calisanlar" class="table table-condensed table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th data-column-id="idCalisan">Çalışan Kodu</th>
+                                        <th data-column-id="calisanAdi">Çalışan Adı</th>
+                                        <th data-column-id="calisanAdresi">Adresi</th>
+                                        <th data-column-id="calisanTelefon">Telefon</th>
+                                        <th data-column-id="calisanSGKSicilNo">SGKSicilNo</th>
+                                        <th data-column-id="calisanTCNo">TC Kimlik No</th>
+                                        <th data-column-id="calisanTelefonCep">Cep Telefonu</th>
+                                        <th data-column-id="calisanEposta">E-posta</th>
+                                        <th data-column-id="calisanIsyeri">İşyeri</th>
+                                        <th data-column-id="kayitEden">Kayıt Eden</th>
+                                        <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <div class="panel panel-default hide" id="pnlIsciBilgileri">
                 <div class="panel-heading">Seçili Çalışan Bilgileri</div>
                 <div class="panel-body">
@@ -153,7 +184,9 @@
             </div>
 
             <div class="panel panel-default">
-                <div class="panel-body"><button id="btn_TetkikTalepFormuKaydet" class="btn btn-success btn-block">Kaydet</button></div>
+                <div class="panel-body">
+                    <button id="btn_TetkikTalepFormuKaydet" class="btn btn-success btn-block">Kaydet</button>
+                </div>
 
             </div>
         </div>
