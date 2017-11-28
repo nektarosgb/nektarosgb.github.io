@@ -116,6 +116,7 @@ function initLoadedPage_tetkik_talep_formu() {
 
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
 
+        return false;
     });
 
 }
