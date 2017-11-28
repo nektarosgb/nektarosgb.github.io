@@ -111,8 +111,8 @@ function kaydetVeritabani(tablo, id, veri) {
         msgInfo("Uyarı", "Kayıt tamamlanamadı. Lütfen girişlerinizi kontrol ediniz.");
         console.error("ERROR: " + error);
     });
-    listTable(tablo);
-    $("#myModal").modal('hide');
+    //listTable(tablo);
+    //$("#myModal").modal('hide');
 }
 
 
