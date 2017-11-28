@@ -99,6 +99,7 @@ function initLoadedPage_tetkik_talep_formu() {
 
         var idTetkikTalepFormu = generateID(calisanAdi+muayeneTuru);
 
+        var bugun= new Date();
 
         var veri = {
             "idTetkikTalepFormu":idTetkikTalepFormu,
@@ -110,8 +111,9 @@ function initLoadedPage_tetkik_talep_formu() {
             "isyeriKodu":isyeriKodu,
             "isyeriAdi":isyeriAdi,
             "ucretToplami":ucretToplami,
-            "seciliTetkikler":seciliTetkikler
-
+            "seciliTetkikler":seciliTetkikler,
+            "tarih":bugun,
+            "kayitEden":firebase.auth().currentUser.providerData[0]["email"]
         }
 
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
