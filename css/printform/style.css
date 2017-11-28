@@ -85,7 +85,7 @@
 }
 .calisan-label{
     width:50%;
-    border-left: solid 1px black;
+    border-right: solid 1px black;
     float: left;
 }
 .calisan-label-aciklama{
@@ -117,14 +117,14 @@
     float: left;
 }
 .calisan-tetkikler-group-container{
-    width: 47%;
+    width: 49%;
     height: auto;
     float: left;
     padding-bottom: 5px;
     border: none;
 }
 .takoz{
-    width: 6%;
+    width: 2%;
     height: auto;
     float: left;
     min-height: 1px;
