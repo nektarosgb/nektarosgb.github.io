@@ -110,7 +110,7 @@ function initLoadedPage_tetkik_talep_formu() {
             "isyeriKodu":isyeriKodu,
             "isyeriAdi":isyeriAdi,
             "ucretToplami":ucretToplami,
-            "seciliTetkikler":seciliTetkikler
+           // "seciliTetkikler":seciliTetkikler
 
         }
 
