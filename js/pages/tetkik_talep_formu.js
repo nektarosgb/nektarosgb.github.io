@@ -156,6 +156,8 @@ function doldurCalisanBilgileri(selectedID) {
         });
 
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
+
+        $("#pnlIsciBilgileri").removeClass("hide");
     });
 }
 
