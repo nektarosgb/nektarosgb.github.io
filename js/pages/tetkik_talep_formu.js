@@ -57,6 +57,7 @@ function initLoadedPage_tetkik_talep_formu() {
             var lstVeri = listTable("tetkiktalepformlari");
             var id = $(this).data("row-id");      
             doldurTalepBilgileri(id);
+            $('#myModal').modal('show');
 
         }).end().find(".command-delete").on("click", function (e) {
             var id = $(this).data("row-id");
