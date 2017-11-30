@@ -1,7 +1,5 @@
 function initLoadedPage_tetkik_talep_formu() {
-    loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler', ' onClick="hesaplaToplam();"');
-
-    LoadDrop('drpCalisan', 'idCalisan', 'calisanAdi', 'calisanlar', '0');
+    loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler', ' onClick="hesaplaToplam();"');    
 
     $("#drpMuayeneTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
@@ -30,11 +28,7 @@ function initLoadedPage_tetkik_talep_formu() {
             $("#pnlIsciBilgileri").removeClass("hide");      
             doldurCalisanBilgileri(id);
 
-        }).end().find(".command-delete").on("click", function (e) {
-            var id = $(this).data("row-id");
-            firebase.database().ref().child("calisanlar").child(id).remove();
-            initLoadedPage_calisan_islemleri();
-        });
+        }).end();
     });
 
     firebase.database().ref('calisanlar').once('value').then(function (snapshot) {
@@ -47,6 +41,40 @@ function initLoadedPage_tetkik_talep_formu() {
             rows.push(cleanelement);
         });
         gridCalisanlar.bootgrid("append", rows);
+    });
+
+    var gridTalepler = $("#grid-tetkiktalepformlari").bootgrid({
+        ajax: false,
+        formatters: {
+            "commands": function (column, row) {
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-pencil\"></span></button> " +
+                "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-trash-o\"></span></button>";
+            }
+        }
+    }).on("loaded.rs.jquery.bootgrid", function () {
+        /* Executes after data is loaded and rendered */
+        gridTalepler.find(".command-edit").on("click", function (e) {
+            var lstVeri = listTable("tetkiktalepformlari");
+            var id = $(this).data("row-id");      
+            doldurTalepBilgileri(id);
+
+        }).end().find(".command-delete").on("click", function (e) {
+            var id = $(this).data("row-id");
+            firebase.database().ref().child("tetkiktalepformlari").child(id).remove();
+            initLoadedPage_tetkik_talep_formu();
+        });
+    });
+
+    firebase.database().ref('tetkiktalepformlari').once('value').then(function (snapshot) {
+
+        gridTalepler.bootgrid("clear");
+        var rows = [];
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+            cleanelement['id'] = rows.length + 1;
+            rows.push(cleanelement);
+        });
+        gridTalepler.bootgrid("append", rows);
     });
 
 
@@ -144,6 +172,27 @@ function doldurCalisanBilgileri(selectedID) {
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
 
         $("#pnlIsciBilgileri").removeClass("hide");
+    });
+}
+
+function doldurTalepBilgileri(selectedID){
+    firebase.database().ref('/tetkiktalepformlari/' + selectedID).once('value').then(function (snapshot) {
+            var talepformu=snapshot.val();
+
+            $("#drpMuayeneTuru option").selected=false;
+            $("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
+
+            $("#drpCariHesapTuru option").selected=false;
+            $("#drpCariHesapTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
+
+            doldurCalisanBilgileri(talepformu.calisanKodu);
+
+
+            talepformu.seciliTetkikler.forEach(function(tetkik) {
+                $("#chkitem" + tetkik.tetkik).prop("checked", true);
+            });
+
+            hesaplaToplam();
     });
 }
 
