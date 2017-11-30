@@ -112,7 +112,7 @@ function kaydetVeritabani(tablo, id, veri) {
         console.error("ERROR: " + error);
     });
     //listTable(tablo);
-    //$("#myModal").modal('hide');
+    $("#myModal").modal('hide');
 }
 
 
