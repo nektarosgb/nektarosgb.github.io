@@ -227,3 +227,7 @@ function hesaplaToplam() {
     $("#txtUcretToplami").val("" + toplam.toFixed(2));
 }
 
+
+function clearAllFieldsTetkikTalepFormu(){
+    return false;
+}
