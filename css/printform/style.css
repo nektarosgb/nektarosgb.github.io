@@ -7,6 +7,8 @@
 .nektar-talep-container > .row>div{
     border: solid 1px black;
     height: auto;
+    padding: 0px;
+    min-height: 22px;
 }
 .nektar-logo{
     height: 50px;
