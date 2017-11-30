@@ -134,14 +134,14 @@
     min-height: 1px;
 }
 .calisan-tetkikler-group-container > .group-tetkikler-label{
-    height: 25px;
+    height: 19px;
     width: 87%;
     float: left;
     border: solid 1px black;
     font-size: 12px;
 }
 .calisan-tetkikler-group-container > .group-tetkikler-cevap{
-    height: 25px;
+    height: 19px;
     width: 13%;
     float: left;
     border: solid 1px black;
