@@ -20,6 +20,10 @@
     color: white;
     background-color: #1d8bca;
 }
+.nektar-talep-container > .row{
+    margin-right: 0px;
+    margin-left: 0px;
+}
 .noborder-l{
     border-left:none;
 }
