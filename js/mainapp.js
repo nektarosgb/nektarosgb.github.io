@@ -178,55 +178,6 @@ function csvyeAktar(gridID) {
 }
 
 
-function validateRequiredFields(){
-    var allright=true;
-    $(".required").each(function(r){
-        if(this.value===""){
-            $("#"+this.id).addClass("invalid");
-            allright=false;
-        }else{
-            $("#"+this.id).removeClass("invalid");
-        }
-    }); 
-
-    $(".requireddrp").each(function(r){
-        if(this.value==="0"){
-            $("#"+this.id).addClass("invalid");
-            allright=false;
-        }else{
-            $("#"+this.id).removeClass("invalid");
-        }
-    }); 
-    
-    return allright;
-}
-
-function validateNumberFields(){
-
-    var allright=true;
-
-
-    $(".isnumber").each(function(n){
-        var num=parseFloat(this.value);
-        if(isNan(this.value) || num==0){
-            $("#"+this.id).addClass("invalid");
-            allright = false;
-        }else{
-            $("#"+this.id).removeClass("invalid");
-        }
-    });
-
-    return allright;
-}
-
-function validateFields(){
-    var statusreq=validateRequiredFields();
-    var statusnum=validateRequiredFields();
-
-    return statusreq && statusnum;
-}
-
-
 // function kaydetTetkikBilgisi() {
 //     var d = new Date();
 //     var n = d.getTime()

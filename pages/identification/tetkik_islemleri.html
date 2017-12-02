@@ -65,17 +65,17 @@
                 <div class="panel-body">
                     <div class="form-group">
                         <label for="txtTetkik">Tetkik</label>
-                        <input type="text" class="form-control required" id="txtTetkik" placeholder="Akciğer Grafisi">
+                        <input type="text" class="form-control" id="txtTetkik" placeholder="Akciğer Grafisi">
                     </div>
 
                     <div class="form-group">
                         <label for="txtFiyat">Tetkik Fiyatı (TL)</label>
-                        <input type="text" class="form-control isnumber" id="txtFiyat" placeholder="100">
+                        <input type="text" class="form-control" id="txtFiyat" placeholder="100">
                     </div>
 
                     <div class="form-group">
                             <label for="drpUygulamaTuru">Uygulama Türü</label>
-                            <select class="form-control requireddrp" id="drpUygulamaTuru">
+                            <select class="form-control" id="drpUygulamaTuru">
                                 <option value="0">Seçiniz</option>
                             </select>
                                   
@@ -84,7 +84,7 @@
 
                 </div>
                 <div class="panel-footer">
-                    <button onclick="if(validateFields()){kaydetTetkikBilgisi()};return false;" class="btn btn-success btn-block">Kaydet</button>
+                    <button onclick="kaydetTetkikBilgisi();return false;" class="btn btn-success btn-block">Kaydet</button>
                 </div>
             </div>
 
