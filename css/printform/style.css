@@ -3,6 +3,8 @@
     width:430px;
     height: 500px;
     font-size: 14px;
+    background-color: white;
+    border: solid 1px black;
 }
 .nektar-talep-container > .row>div{
     border: solid 1px black;
