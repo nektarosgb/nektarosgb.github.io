@@ -181,7 +181,7 @@ function csvyeAktar(gridID) {
 function validateRequiredFields(){
     var allright=true;
     $(".required").each(function(r){
-        if(this.val()===""){
+        if(this.value===""){
             this.addClass("invalid");
             allright=false;
         }else{
@@ -198,7 +198,7 @@ function validateNumberFields(){
 
 
     $(".isnumber").each(function(n){
-        if(isNan(this.val())){
+        if(isNan(this.value)){
             this.addClass("invalid");
             allright = false;
         }else{
