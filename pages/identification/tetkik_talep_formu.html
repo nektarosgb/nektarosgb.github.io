@@ -4,7 +4,8 @@
 
 <div class="page_container">
     <button id="btnNew" onclick="clearAllFieldsTetkikTalepFormu();return false;" data-toggle="modal" data-target="#myModal" class="btn-primary">Yeni Kayıt</button>
-
+    <button id="btnHastane"  data-toggle="modal" data-target="#modalHastane" class="btn-primary">Hastane Formu</button>
+    
     <div class="dropdown pull-right">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="true">
@@ -243,5 +244,236 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="modalHastane">
+        <div class="nektar-talep-container">
+            
+                <div class="nektar-logo">
+                    
+                </div>
+                <div class="nektar-header-container">
+                    <div class="nektar-header">NEKTAR</div>
+                    <div class="nektar-header-desc">ORTAK SAĞLIK GÜVENLİK BİRİMİ</div>
+                </div>
+                <div class="nektar-topik">
+                    <div id="hospital-name">GAZİ HASTANESİ</div>
+                    <div id="form-name">SAĞLIK TETKİKLERİ TALEP FORMU</div>
+                </div>
+                <div class="calisan-bilgileri-container" style="height:220px">
+            
+                    <div class="calisan-bilgileri-label-container  noborder-r">
+                        <label id="lbl_form_basvuruturu">İŞE GİRİŞ</label>
+                    </div>
+                    <div class="calisan-bilgileri-label-container">
+                        <label id="lbl_firmacari">FİRMA CARİ</label>
+                    </div>
+                    <div class="calisan-bilgileri-label-container  noborder-r">
+                        <label id="lbl_firmacarivalue">x</label>
+                    </div>
+                    <div class="calisan-bilgileri-label-container">
+                        <label id="lbl_tutar">TUTAR</label>
+                    </div>
+                    <div class="calisan-bilgileri-label-container">
+                        <label id="lbl_firmabilgileri">FİRMA BİLGİLERİ</label>
+                    </div>
+                    <div class="calisan-bilgileri-label-container  noborder-r">
+                        <label id="lbl_calisanbilgileri">ÇALIŞAN BİLGİLERİ</label>
+                    </div>
+                    <div class="calisan-bilgileri-label-container  noborder-r">
+                        <div class="calisan-label">FİRMA ADI</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_firmaadi"></label> </div>
+                    </div>
+                    <div class="calisan-bilgileri-label-container">
+                            <div class="calisan-label">TARİH</div>
+                            <div class="calisan-label-aciklama"><label id="lbl_tarih"></label> </div>
+                    </div>
+                    <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                        <div class="calisan-label">SGK SİCİL NO</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_sgksicilno"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  border-b">
+                        <div class="calisan-label">AD SOYAD</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_adsoyad"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                        <div class="calisan-label">ADRES</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_adres"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  border-b">
+                        <div class="calisan-label">TC</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_tckimlikno"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                        <div class="calisan-label">TELEFON</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_telefon"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  border-b">
+                        <div class="calisan-label">GSM</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_gsm"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                        <div class="calisan-label">E-POSTA</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_eposta"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  border-b">
+                        <div class="calisan-label">GÖREVİ</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_gorevi"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                        <div class="calisan-label">YETKİLİ ADI</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_yetkiliadi"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  border-b">
+                        <div class="calisan-label">TELEFON</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_telefon"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                        <div class="calisan-label">İŞ YERİ HEKİMİ</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_isyerihekimi"></label> </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  border-b">
+                        <div class="calisan-label">İGU</div>
+                        <div class="calisan-label-aciklama"><label id="lbl_igu"></label> </div>
+                </div>
+            </div>
+            
+            
+            <div class="calisan-tetkiler-container">
+                    <div class="calisan-tetkikler-group-container">
+                        <div class="group-tetkikler-label">
+                            AKCİĞER GRAFİSİ
+                        </div>
+                        <div class="group-tetkikler-cevap">
+                            <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                        </div>
+            
+                        
+                        <div class="group-tetkikler-label">
+                                SFT
+                            </div>
+                            <div class="group-tetkikler-cevap">
+                                <label id="lbl_grp_tetkikler_sft1"></label>
+                            </div>
+            
+                            
+                        <div class="group-tetkikler-label">
+                                ODİYOMETRİ
+                            </div>
+                            <div class="group-tetkikler-cevap">
+                                <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                            </div>
+            
+                            
+                        <div class="group-tetkikler-label">
+                                HEMOGRAM
+                            </div>
+                            <div class="group-tetkikler-cevap">
+                                <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                            </div>
+                    </div>
+                    <div class="takoz"></div>
+                    <div class="calisan-tetkikler-group-container">
+                            <div class="group-tetkikler-label">
+                                AKCİĞER GRAFİSİ
+                            </div>
+                            <div class="group-tetkikler-cevap">
+                                <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                            </div>
+                
+                            
+                            <div class="group-tetkikler-label">
+                                    SFT
+                                </div>
+                                <div class="group-tetkikler-cevap">
+                                    <label id="lbl_grp_tetkikler_sft1"></label>
+                                </div>
+                
+                                
+                            <div class="group-tetkikler-label">
+                                    ODİYOMETRİ
+                                </div>
+                                <div class="group-tetkikler-cevap">
+                                    <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                                </div>
+                
+                                
+                            <div class="group-tetkikler-label">
+                                    HEMOGRAM
+                                </div>
+                                <div class="group-tetkikler-cevap">
+                                    <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                                </div>
+                        </div>
+                        <div class="calisan-tetkikler-group-container">
+                                <div class="group-tetkikler-label">
+                                    AKCİĞER GRAFİSİ
+                                </div>
+                                <div class="group-tetkikler-cevap">
+                                    <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                                </div>
+                    
+                                
+                                <div class="group-tetkikler-label">
+                                        SFT
+                                    </div>
+                                    <div class="group-tetkikler-cevap">
+                                        <label id="lbl_grp_tetkikler_sft1"></label>
+                                    </div>
+                    
+                                    
+                                <div class="group-tetkikler-label">
+                                        ODİYOMETRİ
+                                    </div>
+                                    <div class="group-tetkikler-cevap">
+                                        <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                                    </div>
+                    
+                                    
+                                <div class="group-tetkikler-label">
+                                        HEMOGRAM
+                                    </div>
+                                    <div class="group-tetkikler-cevap">
+                                        <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                                    </div>
+                            </div>
+                            <div class="takoz"></div>
+                            <div class="calisan-tetkikler-group-container">
+                                    <div class="group-tetkikler-label">
+                                        AKCİĞER GRAFİSİ
+                                    </div>
+                                    <div class="group-tetkikler-cevap">
+                                        <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                                    </div>
+                        
+                                    
+                                    <div class="group-tetkikler-label">
+                                            SFT
+                                        </div>
+                                        <div class="group-tetkikler-cevap">
+                                            <label id="lbl_grp_tetkikler_sft1"></label>
+                                        </div>
+                        
+                                        
+                                    <div class="group-tetkikler-label">
+                                            ODİYOMETRİ
+                                        </div>
+                                        <div class="group-tetkikler-cevap">
+                                            <label id="lbl_grp_tetkikler_akcgrf1"></label>
+                                        </div>
+                        
+                                        
+                                    <div class="group-tetkikler-label">
+                                            HEMOGRAM
+                                        </div>
+                                        <div class="group-tetkikler-cevap">
+                                            <label id="lbl_grp_tetkikler_akcgrf"></label>
+                                        </div>
+                                </div>
+                </div>
+                <div class="kase-imza">
+            
+                </div>
+            </div>
     </div>
 </div>
