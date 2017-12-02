@@ -58,7 +58,7 @@ function initLoadedPage_tetkik_talep_formu() {
             var id = $(this).data("row-id");      
             doldurTalepBilgileri(id);
             $('#myModal').modal('show');
-            $('#btnHastane').modal('show');
+            // $('#btnHastane').modal('show');
         }).end().find(".command-delete").on("click", function (e) {
             var id = $(this).data("row-id");
             firebase.database().ref().child("tetkiktalepformlari").child(id).remove();
