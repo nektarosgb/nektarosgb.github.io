@@ -182,10 +182,10 @@ function validateRequiredFields(){
     var allright=true;
     $(".required").each(function(r){
         if(this.value===""){
-            this.addClass("invalid");
+            $("#"+this.id).addClass("invalid");
             allright=false;
         }else{
-            this.removeClass("invalid");
+            $("#"+this.id).removeClass("invalid");
         }
     }); 
     
@@ -199,10 +199,10 @@ function validateNumberFields(){
 
     $(".isnumber").each(function(n){
         if(isNan(this.value)){
-            this.addClass("invalid");
+            $("#"+this.id).addClass("invalid");
             allright = false;
         }else{
-            this.removeClass("invalid");
+            $("#"+this.id).removeClass("invalid");
         }
     });
 
