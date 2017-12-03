@@ -5,7 +5,7 @@
 <div class="page_container">
     <button id="btnNew" onclick="clearAllFieldsTetkikTalepFormu();return false;" data-toggle="modal" data-target="#myModal" class="btn-primary">Yeni Kayıt</button>
 
-    
+
     <div class="dropdown pull-right">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
             aria-expanded="true">
@@ -62,292 +62,326 @@
                     <h4 class="modal-title">Tetkik Talep Formu Yeni Kayıt ve Güncelleme</h4>
                 </div>
                 <div class="row modal-body">
-                        <div class="panel panel-default">
-                                <div class="panel-heading">Genel Bilgiler</div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <label for="drpMuayeneTuru">Muayene Türü</label>
-                                        <select class="form-control requireddrp" id="drpMuayeneTuru">
-                                            <option value="0">Seçiniz</option>
-                                            <option value="1">İşe Giriş</option>
-                                            <option value="2">Periyodik Muayene</option>
-                                            <option value="99">Boş</option>
-                                        </select>
-                                        <input type="hidden" id="hdnIdMuayeneTuru" />
-                                        <input type="hidden" id="hdnMuayeneTuru" />
-                                    </div>
-                    
-                                    <div class="form-group">
-                                        <label for="drpCariTuru">Cari Hesap Türü</label>
-                                        <select class="form-control requireddrp" id="drpCariTuru">
-                                            <option value="0">Seçiniz</option>
-                                            <option value="1">Firma</option>
-                                            <option value="2">Nakit</option>
-                                            <option value="99">Boş</option>
-                                        </select>
-                                        <input type="hidden" id="hdnIdCariHesapTuru" />
-                                        <input type="hidden" id="hdnCariHesapTuru" />
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Genel Bilgiler</div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="drpMuayeneTuru">Muayene Türü</label>
+                                <select class="form-control requireddrp" id="drpMuayeneTuru">
+                                    <option value="0">Seçiniz</option>
+                                    <option value="1">İşe Giriş</option>
+                                    <option value="2">Periyodik Muayene</option>
+                                    <option value="99">Boş</option>
+                                </select>
+                                <input type="hidden" id="hdnIdMuayeneTuru" />
+                                <input type="hidden" id="hdnMuayeneTuru" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="drpCariTuru">Cari Hesap Türü</label>
+                                <select class="form-control requireddrp" id="drpCariTuru">
+                                    <option value="0">Seçiniz</option>
+                                    <option value="1">Firma</option>
+                                    <option value="2">Nakit</option>
+                                    <option value="99">Boş</option>
+                                </select>
+                                <input type="hidden" id="hdnIdCariHesapTuru" />
+                                <input type="hidden" id="hdnCariHesapTuru" />
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" id="pnlIsciBilgileri2">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <button class="btn btn-info btn-block" onclick="return false;" data-toggle="collapse" data-target="#calisanlarListesiPanel">Çalışan Seçiniz</button>
+                                </div>
+                                <div class="row">
+                                    <div id="calisanlarListesiPanel" class="collapse">
+                                        <table id="grid-calisanlar" class="table table-condensed table-hover table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th data-column-id="idCalisan">Çalışan Kodu</th>
+                                                    <th data-column-id="calisanAdi">Çalışan Adı</th>
+                                                    <th data-column-id="calisanSGKSicilNo">SGKSicilNo</th>
+                                                    <th data-column-id="calisanTCNo">TC Kimlik No</th>
+                                                    <th data-column-id="calisanTelefonCep">Cep Telefonu</th>
+                                                    <th data-column-id="calisanEposta">E-posta</th>
+                                                    <th data-column-id="calisanIsyeri">İşyeri</th>
+                                                    <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
-                    
-                                <div class="panel panel-default" id="pnlIsciBilgileri2">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <button class="btn btn-info btn-block" onclick="return false;" data-toggle="collapse" data-target="#calisanlarListesiPanel">Çalışan Seçiniz</button>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default hide" id="pnlIsciBilgileri">
+                            <div class="panel-heading">Seçili Çalışan Bilgileri</div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="txtCalisanAdi">Çalışan Adı Soyadı</label>
+                                            <input type="text" class="form-control" id="txtCalisanAdi" placeholder="" readonly>
+                                            <input type="hidden" id="hdnIdCalisan" />
                                         </div>
-                                        <div class="row">
-                                            <div id="calisanlarListesiPanel" class="collapse">
-                                                <table id="grid-calisanlar" class="table table-condensed table-hover table-striped">
-                                                    <thead>
-                                                        <tr>
-                                                            <th data-column-id="idCalisan">Çalışan Kodu</th>
-                                                            <th data-column-id="calisanAdi">Çalışan Adı</th>
-                                                            <th data-column-id="calisanSGKSicilNo">SGKSicilNo</th>
-                                                            <th data-column-id="calisanTCNo">TC Kimlik No</th>
-                                                            <th data-column-id="calisanTelefonCep">Cep Telefonu</th>
-                                                            <th data-column-id="calisanEposta">E-posta</th>
-                                                            <th data-column-id="calisanIsyeri">İşyeri</th>
-                                                            <th data-column-id="commands" data-formatter="commands" data-sortable="false">Commands</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                    </tbody>
-                                                </table>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="txtCalisanTCNo">TC Kimlik Numarası</label>
+                                            <input type="text" class="form-control" id="txtCalisanTCNo" placeholder="TC Kimlik Numarası" readonly>
                                         </div>
-                    
-                                    </div>
-                                </div>
-                                <div class="panel panel-default hide" id="pnlIsciBilgileri">
-                                    <div class="panel-heading">Seçili Çalışan Bilgileri</div>
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="txtCalisanAdi">Çalışan Adı Soyadı</label>
-                                                    <input type="text" class="form-control" id="txtCalisanAdi" placeholder="" readonly>
-                                                    <input type="hidden" id="hdnIdCalisan" />
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtCalisanTCNo">TC Kimlik Numarası</label>
-                                                    <input type="text" class="form-control" id="txtCalisanTCNo" placeholder="TC Kimlik Numarası" readonly>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtCalisanEposta">E-posta</label>
-                                                    <input type="email" class="form-control" id="txtCalisanEposta" placeholder="E-mail" readonly>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtCalisanTelefon">Telefon</label>
-                                                    <input type="telephone" class="form-control" id="txtCalisanTelefon" placeholder="(+90 232) 111 22 33" readonly>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtSirketAdi">Şirket Adı</label>
-                                                    <input type="text" class="form-control" id="txtSirketAdi" placeholder="ABC San. Tic. Aş." readonly>
-                                                    <input type="hidden" id="hdnIdSirket" />
-                                                </div>
-                    
-                                                <div class="form-group">
-                                                    <label for="txtSirketAdresi">Şirket Adresi</label>
-                                                    <input type="text" class="form-control" id="txtSirketAdresi" placeholder="Sk. Cd. Organize Sanayi Bölgesi..." readonly>
-                                                </div>
-                    
-                                                <div class="form-group">
-                                                    <label for="txtSirketTelefon">Şirket Telefon</label>
-                                                    <input type="telephone" class="form-control" id="txtSirketTelefon" placeholder="(+90 232) 111 22 33" readonly>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="txtCalisanMeslek">Meslek</label>
-                                                    <input type="text" class="form-control" id="txtCalisanMeslek" placeholder="Meslek" readonly>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtCalisanSGKSicilNo">SGK Sicil No</label>
-                                                    <input type="text" class="form-control" id="txtCalisanSGKSicilNo" placeholder="SGK Sicil Numarası..." readonly>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtCalisanTelefonCep">Mobil</label>
-                                                    <input type="telephone" class="form-control" id="txtCalisanTelefonCep" placeholder="(+90 232) 111 22 33" readonly>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtCalisanAdresi">Adresi</label>
-                                                    <input type="text" class="form-control" id="txtCalisanAdresi" placeholder="Kapı No. Mh. Sk." readonly>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="txtSirketSGKSicilNo">Şirket SGK Sicil No</label>
-                                                    <input type="text" class="form-control" id="txtSirketSGKSicilNo" placeholder="SGK Sicil Numarası..." readonly>
-                                                </div>
-                    
-                                                <div class="form-group">
-                                                    <label for="txtSirketIlgiliKisi">Şirket İlgili Kişi</label>
-                                                    <input type="text" class="form-control" id="txtSirketIlgiliKisi" placeholder="İlgili Kişi Adı Soyadı" readonly>
-                                                </div>
-                    
-                                                <div class="form-group">
-                                                    <label for="txtSirketTelefonCep">Şirket Mobil</label>
-                                                    <input type="telephone" class="form-control" id="txtSirketTelefonCep" placeholder="(+90 232) 111 22 33" readonly>
-                                                </div>
-                                            </div>
-                    
-                                            <div class="col-md-4">
-                                                <img id="imgCalisan" class="img-thumbnail" />
-                                            </div>
-                    
-                    
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="txtSirketEposta">Şirket E-posta</label>
-                                                    <input type="email" class="form-control" id="txtSirketEposta" placeholder="E-mail" readonly>
-                                                </div>
-                    
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="txtSirketIsyeriHekimi">İşyeri Hekimi</label>
-                                                    <input type="text" class="form-control" id="txtSirketIsyeriHekimi" placeholder="İşyeri Hekimi Adı Soyadı" readonly>
-                                                </div>
-                    
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label for="txtSirketIsGuvenligiUzmani">İş Güvenliği Uzmanı</label>
-                                                    <input type="text" class="form-control" id="txtSirketIsGuvenligiUzmani" placeholder="İş Güvenliği Uzmanı Adı Soyadı" readonly>
-                                                </div>
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="txtCalisanEposta">E-posta</label>
+                                            <input type="email" class="form-control" id="txtCalisanEposta" placeholder="E-mail" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtCalisanTelefon">Telefon</label>
+                                            <input type="telephone" class="form-control" id="txtCalisanTelefon" placeholder="(+90 232) 111 22 33" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtSirketAdi">Şirket Adı</label>
+                                            <input type="text" class="form-control" id="txtSirketAdi" placeholder="ABC San. Tic. Aş." readonly>
+                                            <input type="hidden" id="hdnIdSirket" />
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="txtSirketAdresi">Şirket Adresi</label>
+                                            <input type="text" class="form-control" id="txtSirketAdresi" placeholder="Sk. Cd. Organize Sanayi Bölgesi..." readonly>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="txtSirketTelefon">Şirket Telefon</label>
+                                            <input type="telephone" class="form-control" id="txtSirketTelefon" placeholder="(+90 232) 111 22 33" readonly>
                                         </div>
                                     </div>
-                                </div>
-                    
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Tetkikler</div>
-                                    <div class="panel-body">
-                                        <ul id="lstTetkikler" class="list-group">
-                                        </ul>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="txtCalisanMeslek">Meslek</label>
+                                            <input type="text" class="form-control" id="txtCalisanMeslek" placeholder="Meslek" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtCalisanSGKSicilNo">SGK Sicil No</label>
+                                            <input type="text" class="form-control" id="txtCalisanSGKSicilNo" placeholder="SGK Sicil Numarası..." readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtCalisanTelefonCep">Mobil</label>
+                                            <input type="telephone" class="form-control" id="txtCalisanTelefonCep" placeholder="(+90 232) 111 22 33" readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtCalisanAdresi">Adresi</label>
+                                            <input type="text" class="form-control" id="txtCalisanAdresi" placeholder="Kapı No. Mh. Sk." readonly>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtSirketSGKSicilNo">Şirket SGK Sicil No</label>
+                                            <input type="text" class="form-control" id="txtSirketSGKSicilNo" placeholder="SGK Sicil Numarası..." readonly>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="txtSirketIlgiliKisi">Şirket İlgili Kişi</label>
+                                            <input type="text" class="form-control" id="txtSirketIlgiliKisi" placeholder="İlgili Kişi Adı Soyadı" readonly>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="txtSirketTelefonCep">Şirket Mobil</label>
+                                            <input type="telephone" class="form-control" id="txtSirketTelefonCep" placeholder="(+90 232) 111 22 33" readonly>
+                                        </div>
                                     </div>
-                                </div>
-                                <br/>
-                                <button id="btnHastane"  onclick="$('#myModal').modal('hide');" data-toggle="modal" data-target="#modalHastane" class="btn-primary">Hastane Formu</button>
-                                <br/>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">Genel Toplam</div>
-                                    <div class="form-group">
-                                        <label for="txtUcretToplami">Ücret Toplamı</label>
-                                        <input type="text" class="form-control" id="txtUcretToplami" placeholder="0.00" readonly>
+
+                                    <div class="col-md-4">
+                                        <img id="imgCalisan" class="img-thumbnail" />
                                     </div>
-                                </div>
-                    
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <button id="btn_TetkikTalepFormuKaydet" class="btn btn-success btn-block">Kaydet</button>
+
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="txtSirketEposta">Şirket E-posta</label>
+                                            <input type="email" class="form-control" id="txtSirketEposta" placeholder="E-mail" readonly>
+                                        </div>
+
                                     </div>
-                    
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="txtSirketIsyeriHekimi">İşyeri Hekimi</label>
+                                            <input type="text" class="form-control" id="txtSirketIsyeriHekimi" placeholder="İşyeri Hekimi Adı Soyadı" readonly>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label for="txtSirketIsGuvenligiUzmani">İş Güvenliği Uzmanı</label>
+                                            <input type="text" class="form-control" id="txtSirketIsGuvenligiUzmani" placeholder="İş Güvenliği Uzmanı Adı Soyadı" readonly>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Tetkikler</div>
+                            <div class="panel-body">
+                                <ul id="lstTetkikler" class="list-group">
+                                </ul>
+                            </div>
+                        </div>
+                        <br/>
+                        <button id="btnHastane" onclick="$('#myModal').modal('hide');" data-toggle="modal" data-target="#modalHastane" class="btn-primary">Hastane Formu</button>
+                        <br/>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Genel Toplam</div>
+                            <div class="form-group">
+                                <label for="txtUcretToplami">Ücret Toplamı</label>
+                                <input type="text" class="form-control" id="txtUcretToplami" placeholder="0.00" readonly>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <button id="btn_TetkikTalepFormuKaydet" class="btn btn-success btn-block">Kaydet</button>
+
+                                <button class="btn btn-large btn-primary" data-toggle="confirmation" data-btn-ok-label="Continue" data-btn-ok-icon="glyphicon glyphicon-share-alt"
+                                    data-btn-ok-class="btn-success" data-btn-cancel-label="Stoooop!" data-btn-cancel-icon="glyphicon glyphicon-ban-circle"
+                                    data-btn-cancel-class="btn-danger" data-title="Is it ok?" data-content="This might be dangerous">
+                                    Confirmation
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <div id="modalHastane" class="modal fade" role="document">
-            <button id="btnYazdirHastane" class="btn-primary">Yazdır</button>
+        <button id="btnYazdirHastane" class="btn-primary">Yazdır</button>
         <div class="nektar-talep-container" id="hastaneprint">
-            
-                <div class="nektar-logo">
-                    
+
+            <div class="nektar-logo">
+
+            </div>
+            <div class="nektar-header-container">
+                <div class="nektar-header">NEKTAR</div>
+                <div class="nektar-header-desc">ORTAK SAĞLIK GÜVENLİK BİRİMİ</div>
+            </div>
+            <div class="nektar-topik">
+                <div id="hospital-name">GAZİ HASTANESİ</div>
+                <div id="form-name">SAĞLIK TETKİKLERİ TALEP FORMU</div>
+            </div>
+            <div class="calisan-bilgileri-container" style="height:220px">
+
+                <div class="calisan-bilgileri-label-container  noborder-r">
+                    <label id="lbl_form_basvuruturu">İŞE GİRİŞ</label>
                 </div>
-                <div class="nektar-header-container">
-                    <div class="nektar-header">NEKTAR</div>
-                    <div class="nektar-header-desc">ORTAK SAĞLIK GÜVENLİK BİRİMİ</div>
+                <div class="calisan-bilgileri-label-container">
+                    <label id="lbl_firmacari">FİRMA CARİ</label>
                 </div>
-                <div class="nektar-topik">
-                    <div id="hospital-name">GAZİ HASTANESİ</div>
-                    <div id="form-name">SAĞLIK TETKİKLERİ TALEP FORMU</div>
+                <div class="calisan-bilgileri-label-container  noborder-r">
+                    <label id="lbl_firmacarivalue">x</label>
                 </div>
-                <div class="calisan-bilgileri-container" style="height:220px">
-            
-                    <div class="calisan-bilgileri-label-container  noborder-r">
-                        <label id="lbl_form_basvuruturu">İŞE GİRİŞ</label>
-                    </div>
-                    <div class="calisan-bilgileri-label-container">
-                        <label id="lbl_firmacari">FİRMA CARİ</label>
-                    </div>
-                    <div class="calisan-bilgileri-label-container  noborder-r">
-                        <label id="lbl_firmacarivalue">x</label>
-                    </div>
-                    <div class="calisan-bilgileri-label-container">
-                        <label id="lbl_tutar">TUTAR</label>
-                    </div>
-                    <div class="calisan-bilgileri-label-container">
-                        <label id="lbl_firmabilgileri">FİRMA BİLGİLERİ</label>
-                    </div>
-                    <div class="calisan-bilgileri-label-container  noborder-r">
-                        <label id="lbl_calisanbilgileri">ÇALIŞAN BİLGİLERİ</label>
-                    </div>
-                    <div class="calisan-bilgileri-label-container  noborder-r">
-                        <div class="calisan-label">FİRMA ADI</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_firmaadi"></label> </div>
-                    </div>
-                    <div class="calisan-bilgileri-label-container">
-                            <div class="calisan-label">TARİH</div>
-                            <div class="calisan-label-aciklama"><label id="lbl_tarih"></label> </div>
-                    </div>
-                    <div class="calisan-bilgileri-label-container  noborder-r  border-b">
-                        <div class="calisan-label">SGK SİCİL NO</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_sgksicilno"></label> </div>
+                <div class="calisan-bilgileri-label-container">
+                    <label id="lbl_tutar">TUTAR</label>
                 </div>
-                <div class="calisan-bilgileri-label-container  border-b">
-                        <div class="calisan-label">AD SOYAD</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_adsoyad"></label> </div>
+                <div class="calisan-bilgileri-label-container">
+                    <label id="lbl_firmabilgileri">FİRMA BİLGİLERİ</label>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r">
+                    <label id="lbl_calisanbilgileri">ÇALIŞAN BİLGİLERİ</label>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r">
+                    <div class="calisan-label">FİRMA ADI</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_firmaadi"></label>
+                    </div>
+                </div>
+                <div class="calisan-bilgileri-label-container">
+                    <div class="calisan-label">TARİH</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_tarih"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  noborder-r  border-b">
-                        <div class="calisan-label">ADRES</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_adres"></label> </div>
+                    <div class="calisan-label">SGK SİCİL NO</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_sgksicilno"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  border-b">
-                        <div class="calisan-label">TC</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_tckimlikno"></label> </div>
+                    <div class="calisan-label">AD SOYAD</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_adsoyad"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  noborder-r  border-b">
-                        <div class="calisan-label">TELEFON</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_telefon"></label> </div>
+                    <div class="calisan-label">ADRES</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_adres"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  border-b">
-                        <div class="calisan-label">GSM</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_gsm"></label> </div>
+                    <div class="calisan-label">TC</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_tckimlikno"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  noborder-r  border-b">
-                        <div class="calisan-label">E-POSTA</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_eposta"></label> </div>
+                    <div class="calisan-label">TELEFON</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_telefon"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  border-b">
-                        <div class="calisan-label">GÖREVİ</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_gorevi"></label> </div>
+                    <div class="calisan-label">GSM</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_gsm"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  noborder-r  border-b">
-                        <div class="calisan-label">YETKİLİ ADI</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_yetkiliadi"></label> </div>
+                    <div class="calisan-label">E-POSTA</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_eposta"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  border-b">
-                        <div class="calisan-label">TELEFON</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_telefon"></label> </div>
+                    <div class="calisan-label">GÖREVİ</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_gorevi"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  noborder-r  border-b">
-                        <div class="calisan-label">İŞ YERİ HEKİMİ</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_isyerihekimi"></label> </div>
+                    <div class="calisan-label">YETKİLİ ADI</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_yetkiliadi"></label>
+                    </div>
                 </div>
                 <div class="calisan-bilgileri-label-container  border-b">
-                        <div class="calisan-label">İGU</div>
-                        <div class="calisan-label-aciklama"><label id="lbl_igu"></label> </div>
+                    <div class="calisan-label">TELEFON</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_telefon"></label>
+                    </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                    <div class="calisan-label">İŞ YERİ HEKİMİ</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_isyerihekimi"></label>
+                    </div>
+                </div>
+                <div class="calisan-bilgileri-label-container  border-b">
+                    <div class="calisan-label">İGU</div>
+                    <div class="calisan-label-aciklama">
+                        <label id="lbl_igu"></label>
+                    </div>
                 </div>
             </div>
-            
-            
+
+
             <div class="calisan-tetkiler-container" id="prnt_hastane">
-                    
-                </div>
-                <div class="kase-imza">
-            
-                </div>
+
             </div>
+            <div class="kase-imza">
+
+            </div>
+        </div>
     </div>
 </div>
