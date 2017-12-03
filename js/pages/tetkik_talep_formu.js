@@ -61,8 +61,8 @@ function initLoadedPage_tetkik_talep_formu() {
         ajax: false,
         formatters: {
             "commands": function (column, row) {
-                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-pencil\"></span></button> " +
-                "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-trash-o\"></span></button>"+
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-pencil\"></span></button> " +               
+                popoverBtnDeleteCommandHtml(row.idTetkikTalepFormu)+
                 "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-trash-o\"></span></button>";
             }
         }
@@ -74,7 +74,7 @@ function initLoadedPage_tetkik_talep_formu() {
             doldurTalepBilgileri(id);
             $('#myModal').modal('show');
             // $('#btnHastane').modal('show');
-        }).end().find(".command-delete").on("click", function (e) {
+        }).end().find(".command-delete").on("click", function (e) {            
             var id = $(this).data("row-id");
             firebase.database().ref().child("tetkiktalepformlari").child(id).remove();
             initLoadedPage_tetkik_talep_formu();
