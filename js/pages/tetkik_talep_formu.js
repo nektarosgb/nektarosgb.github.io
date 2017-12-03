@@ -6,6 +6,7 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnIdMuayeneTuru").val(selectedID);
         $("#hdnMuayeneTuru").val($("#drpMuayeneTuru").children("option:selected").text());
     });
+    loadPrintTetkikler();
 
     $("#drpCariTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
