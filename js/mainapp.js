@@ -167,7 +167,7 @@ function loadPrintTetkikler(){
                 contain+="<div class='group-tetkikler-label'>"+cleanelement["tetkik"]+"</div>";
                 contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_"+cleanelement["idTetkik"]+"'1></label> </div>";
 
-                if(sayac%4==0)
+                if(sayac%4==0 && sayac!=0)
                 {
                     contain+="</div>";
                     if(sayac==4 || sayac2%2==0)
