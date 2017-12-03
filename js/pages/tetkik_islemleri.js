@@ -38,6 +38,7 @@ function initLoadedPage_tetkik_islemleri() {
         
         LoadDrop('drpUygulamaTuru','idUygulamaTuru','uygulamaTuru','uygulama_turleri','');
         setHeader("Tetkik İşlemleri");
+        loadPrintTetkikler();
     }
 
 
