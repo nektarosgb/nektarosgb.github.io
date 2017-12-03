@@ -163,22 +163,23 @@ function loadPrintTetkikler(){
         var contain="<div class='calisan-tetkikler-group-container'>";
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            if(sayac%4 !=0 || sayac==0)
-            {
+        
                 contain+="<div class='group-tetkikler-label'>"+cleanelement["tetkik"]+"</div>";
                 contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_"+cleanelement["idTetkik"]+"'1></label> </div>";
-            }
-            else{
-                contain+="</div>";
-                if(sayac==4 || sayac2%2==0)
+
+                if(sayac%4==0)
                 {
-                    contain+="<div class='takoz'></div><div class='calisan-tetkikler-group-container'>"
+                    contain+="</div>";
+                    if(sayac==4 || sayac2%2==0)
+                    {
+                        contain+="<div class='takoz'></div><div class='calisan-tetkikler-group-container'>"
+                    }
+                    else{
+                        contain +="<div class='calisan-tetkikler-group-container'>";
+                    }
+                    sayac2++;
                 }
-                else{
-                    contain +="<div class='calisan-tetkikler-group-container'>";
-                }
-                sayac2++;
-            }
+            
             sayac++;
         });
                 // var li = $('<li class="list-group-item checkboxfit">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"'+event+' name="chk' + tablo+ '" value='+cleanelement[idColumn]+' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
