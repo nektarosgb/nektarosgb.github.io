@@ -166,10 +166,10 @@ function doldurCalisanBilgileri(selectedID) {
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
 
         //Hastane Print Form
-        $("#lbl_grp_calisan_adsoyad").val(sirket.val().calisanAdi);
-        $("#lbl_grp_calisan_tckimlikno").val(sirket.val().calisanTCNo);
-        $("#lbl_grp_calisan_gsm").val(sirket.val().calisanTelefonCep);
-        $("#lbl_grp_calisan_telefon").val(sirket.val().calisanTelefon);
+        $("#lbl_grp_calisan_adsoyad").val(snapshot.val().calisanAdi);
+        $("#lbl_grp_calisan_tckimlikno").val(snapshot.val().calisanTCNo);
+        $("#lbl_grp_calisan_gsm").val(snapshot.val().calisanTelefonCep);
+        $("#lbl_grp_calisan_telefon").val(snapshot.val().calisanTelefon);
         //$("#lbl_grp_calisan_gorevi").val(sirket.val().calisanTelefonCep);
         //
 
@@ -239,7 +239,7 @@ function doldurTalepBilgileri(selectedID){
                 }
                 else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
-                    osgbfiyat+=tetkik.fiyat;
+                    osgbfiyat=osgbfiyat+tetkik.fiyat;
                     console.log("fiyat",osgbfiyat);
                     // $("#lbl_grp_tetkikler_"+tetkik.idTetkik).append("X");
                 }
