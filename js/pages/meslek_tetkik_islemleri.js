@@ -39,7 +39,7 @@ function setEditTetkikMeslek(id) {
 function silMeslekTetkikKayitlari(meslek) {
 
     var ref = firebase.database().ref("Meslektetkikler");
-
+    var meslekId = $("#drpMeslek").val();
     //ref.orderByChild("meslek").equalTo(meslek).remove();
 
 
