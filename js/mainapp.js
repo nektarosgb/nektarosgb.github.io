@@ -158,7 +158,7 @@ function loadCheckBoxList(lstChkID, idColumn, column, tablo,event) {
 
 function loadPrintTetkikler(){
     firebase.database().ref("tetkikler").once('value').then(function (snapshot) {
-        var sayac=0;
+        var sayac=1;
         var sayac2=0;
         var contain="<div class='calisan-tetkikler-group-container'>";
         snapshot.forEach(function (element) {
@@ -169,15 +169,15 @@ function loadPrintTetkikler(){
 
                 if(sayac%4==0 && sayac!=0)
                 {
+                    sayac2++;
                     contain+="</div>";
-                    if(sayac==4 || sayac2%2==0)
+                    if(sayac2%2==0)
                     {
                         contain+="<div class='takoz'></div><div class='calisan-tetkikler-group-container'>"
                     }
                     else{
                         contain +="<div class='calisan-tetkikler-group-container'>";
                     }
-                    sayac2++;
                 }
             
             sayac++;
