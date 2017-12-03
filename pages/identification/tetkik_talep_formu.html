@@ -5,9 +5,7 @@
 <div class="page_container">
     <button id="btnNew" onclick="clearAllFieldsTetkikTalepFormu();return false;" data-toggle="modal" data-target="#myModal" class="btn-primary">Yeni Kayıt</button>
 
-    <button type="button" onclick="showConfirmation();return false;" class="btn btn-large btn-primary" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-        Confirmation
-    </button>
+
 
     <div class="dropdown pull-right">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
@@ -243,6 +241,10 @@
                             <div class="panel-body">
                                 <button id="btn_TetkikTalepFormuKaydet" class="btn btn-success btn-block">Kaydet</button>
 
+                                <button type="button" onclick="showConfirmation();return false;" class="btn btn-success btn-block" data-html="true" data-original-title="Onaylıyormusunuz ?"
+                                    data-container="body" data-toggle="popover" data-placement="top" data-content='<button id="btn_TetkikTalepFormuKaydet" class="btn btn-success btn-block">Kaydet</button>'>
+                                    Kaydet
+                                </button>
 
                             </div>
 
