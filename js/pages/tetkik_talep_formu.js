@@ -13,7 +13,7 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnCariTuru").val($("#drpCariTuru").children("option:selected").text());
     });
     $("#btnYazdirHastane").click(function(){
-        var divToPrint=document.getElementById('modalHastane');
+        var divToPrint=document.getElementById('hastaneprint');
         
           var newWin=window.open('','Print-Window');
         
@@ -21,7 +21,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
           newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css">'+divToPrint.innerHTML+'</body></html>');
         
-        //   newWin.document.close();
+           newWin.document.close();
         
           setTimeout(function(){newWin.close();},10);
     });
