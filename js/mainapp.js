@@ -262,12 +262,17 @@ function validateFields(){
 function popoverBtnDeleteCommandHtml(rowid){
 
     //data-container=\"body\" 
-    var popoverDeleteCommandHtml="data-html=\"true\" data-original-title=\"Onaylıyormusunuz ?\" data-toggle=\"popover\" data-placement=\"top\" data-content='<button type=\"button\" class=\"btn btn-success btn-block command-delete\" data-row-id=\"" + rowid + "\">Seçili Kaydı Sil</button>'";
+    var popoverDeleteCommandHtml="data-html=\"true\" data-original-title=\"Onaylıyormusunuz ?\" data-toggle=\"popover\" data-placement=\"top\" data-content='<button type=\"button\" onclick=\"triggerDelete(this);return false;\" class=\"btn btn-success btn-block\" data-row-id=\"" + rowid + "\">Seçili Kaydı Sil</button>'";
     var btnhtml="<button id='btn"+rowid+"' type=\"button\" onclick='showConfirmation(this);' class=\"btn btn-xs btn-default\" "+popoverDeleteCommandHtml+"><span class=\"fa fa-trash-o\"></span></button>";
     return btnhtml;
 }
+
 function showConfirmation(btn){
     $("#"+btn.id).popover();
+}
+
+function triggerDelete(btn){
+    $("#tbl"+btn.id).trigger("click");
 }
 
 $('body').on('click', function (e) {

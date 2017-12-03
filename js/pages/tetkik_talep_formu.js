@@ -62,7 +62,8 @@ function initLoadedPage_tetkik_talep_formu() {
         formatters: {
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-pencil\"></span></button> " +               
-                popoverBtnDeleteCommandHtml(row.idTetkikTalepFormu);
+                popoverBtnDeleteCommandHtml(row.idTetkikTalepFormu)+
+                "<button id=\"tblbtn"+ row.idTetkikTalepFormu +"\" type=\"button\" class=\"btn btn-xs btn-default command-delete hide\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-trash-o\"></span></button>";
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
