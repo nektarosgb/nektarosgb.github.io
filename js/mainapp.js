@@ -169,7 +169,6 @@ function loadPrintTetkikler(){
 
                 if(sayac%4==0 && sayac!=0)
                 {
-                    sayac2++;
                     contain+="</div>";
                     if(sayac2%2==0)
                     {
@@ -178,6 +177,7 @@ function loadPrintTetkikler(){
                     else{
                         contain +="<div class='calisan-tetkikler-group-container'>";
                     }
+                    sayac2++;
                 }
             
             sayac++;
