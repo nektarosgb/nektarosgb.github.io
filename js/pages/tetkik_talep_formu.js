@@ -204,11 +204,25 @@ function doldurTalepBilgileri(selectedID){
             $("#drpCariHesapTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
 
             doldurCalisanBilgileri(talepformu.calisanKodu);
-
+            
+            var hastanefiyat=0;
+            var osgbfiyat=0;
 
             talepformu.seciliTetkikler.forEach(function(tetkik) {
                 $("#chkitem" + tetkik.tetkik).prop("checked", true);
+                if(tetkik.uygulamaTuru==="Hastane")
+                {
+                    hastanefiyat+=tetkik.fiyat;
+                    $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append("X");
+                }
+                else if(tetkik.uygulamaTuru==="Birim")
+                {
+                    osgbfiyat+=tetkik.fiyat;
+                    console.log("fiyat",osgbfiyat);
+                    // $("#lbl_grp_tetkikler_"+tetkik.idTetkik).append("X");
+                }
             });
+            $("#lbl_hst_tutar").append(hastanefiyat+"");
 
             hesaplaToplam();
     });

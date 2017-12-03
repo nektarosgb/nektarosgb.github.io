@@ -165,7 +165,7 @@ function loadPrintTetkikler(){
             var cleanelement = JSON.parse(JSON.stringify(element));
         
                 contain+="<div class='group-tetkikler-label'>"+cleanelement["tetkik"]+"</div>";
-                contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_"+cleanelement["idTetkik"]+"'1></label> </div>";
+                contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_1_"+cleanelement["idTetkik"]+"'></label> </div>";
 
                 if(sayac%4==0 && sayac!=0)
                 {
