@@ -184,11 +184,7 @@ function loadPrintTetkikler(){
                 $("#prnt_hastane").append(contain);
     });
 }
-function loadPrintTetkikler(tetkikadi)
-{
-    var str="";
 
-}
 
 
 function exceleAktar(gridID) {
