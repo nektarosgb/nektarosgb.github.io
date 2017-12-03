@@ -51,9 +51,12 @@ function initLoadedPage_calisan_islemleri() {
             // $(this).bootgrid("reload");
 
         }).end().find(".command-delete").on("click", function (e) {
-            var id = $(this).data("row-id");
-            firebase.database().ref().child("calisanlar").child(id).remove();
-            initLoadedPage_calisan_islemleri();
+            if(msgConfirmDialog())
+            {
+                var id = $(this).data("row-id");
+                firebase.database().ref().child("calisanlar").child(id).remove();
+                initLoadedPage_calisan_islemleri();
+            }
         });
     });
 
