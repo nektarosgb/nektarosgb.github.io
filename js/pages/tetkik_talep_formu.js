@@ -210,12 +210,12 @@ function doldurTalepBilgileri(selectedID){
 
             talepformu.seciliTetkikler.forEach(function(tetkik) {
                 $("#chkitem" + tetkik.tetkik).prop("checked", true);
-                if(tetkik.uygulamaTuru==="Hastane")
+                if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
                 {
                     hastanefiyat+=tetkik.fiyat;
                     $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append("X");
                 }
-                else if(tetkik.uygulamaTuru==="Birim")
+                else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
                     osgbfiyat+=tetkik.fiyat;
                     console.log("fiyat",osgbfiyat);
