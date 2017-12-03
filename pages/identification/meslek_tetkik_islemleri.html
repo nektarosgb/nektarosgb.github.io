@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label for="txtTetkik">Meslek</label>
 
-                    <select class="form-control" id="drpMeslek">
+                    <select class="form-control requireddrp" id="drpMeslek">
                         <option value="0">Seçiniz</option>
                     </select>
                 </div>
@@ -55,7 +55,7 @@
 
             </div>
             <div class="panel-footer">
-                <button onclick="kaydetMeslekTetkikBilgisi();return false;" class="btn btn-success btn-block">Kaydet</button>
+                <button onclick="if(validateFields()){kaydetMeslekTetkikBilgisi()};return false;" class="btn btn-success btn-block">Kaydet</button>
             </div>
         </div>
 

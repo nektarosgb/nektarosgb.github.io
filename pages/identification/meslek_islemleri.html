@@ -63,17 +63,17 @@
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label for="txtMeslek">Meslek</label>
-                                    <input type="text" class="form-control" id="txtMeslek" placeholder="">
+                                    <input type="text" class="form-control required" id="txtMeslek" placeholder="">
                                     <input type="hidden" id="hdnId" />
                                 </div>
 
                                 <div class="form-group">
                                     <label for="txtMeslekAciklama">Açıklama/Notlar</label>
-                                    <input type="text" class="form-control" id="txtMeslekAciklama" placeholder="...">
+                                    <input type="text" class="form-control required" id="txtMeslekAciklama" placeholder="...">
                                 </div>
                             </div>
                             <div class="panel-footer">
-                                <button onclick="kaydetMeslekBilgileri();return false;" class="btn btn-success btn-block">Kaydet</button>
+                                <button onclick="if(validateFields()){kaydetMeslekBilgileri()};return false;" class="btn btn-success btn-block">Kaydet</button>
                             </div>
                         </div>
 

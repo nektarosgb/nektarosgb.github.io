@@ -37,7 +37,7 @@
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label for="txtUygulamaTuru">Uygulama Türü</label>
-                                    <input type="text" class="form-control" id="txtUygulamaTuru" placeholder="">
+                                    <input type="text" class="form-control required" id="txtUygulamaTuru" placeholder="">
                                     <input type="hidden" id="hdnId" />
                                 </div>
 
@@ -47,7 +47,7 @@
                                 </div>
                             </div>
                             <div class="panel-footer">
-                                <button onclick="kaydetUygulamaTuruBilgileri();return false;" class="btn btn-success btn-block">Kaydet</button>
+                                <button onclick="if(validateFields()){kaydetUygulamaTuruBilgileri()};return false;" class="btn btn-success btn-block">Kaydet</button>
                             </div>
                         </div>
 

@@ -94,7 +94,9 @@ function initLoadedPage_tetkik_talep_formu() {
 
 
     $("#btn_TetkikTalepFormuKaydet").click(function () {
-
+        if(!validateFields()){
+            return false;
+        }
         var muayeneTuruKodu = $("#hdnIdMuayeneTuru").val();
         var muayeneTuru = $("#hdnMuayeneTuru").val();
 

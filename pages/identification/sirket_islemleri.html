@@ -70,7 +70,7 @@
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label for="txtSirketAdi">Şirket Adı</label>
-                                    <input type="text" class="form-control" id="txtSirketAdi" placeholder="ABC San. Tic. Aş.">
+                                    <input type="text" class="form-control required" id="txtSirketAdi" placeholder="ABC San. Tic. Aş.">
                                     <input type="hidden" id="hdnId" />
                                 </div>
 
@@ -91,12 +91,12 @@
 
                                 <div class="form-group">
                                     <label for="txtSirketIlgiliKisi">İlgili Kişi</label>
-                                    <input type="text" class="form-control" id="txtSirketIlgiliKisi" placeholder="İlgili Kişi Adı Soyadı">
+                                    <input type="text" class="form-control required" id="txtSirketIlgiliKisi" placeholder="İlgili Kişi Adı Soyadı">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="txtSirketTelefonCep">Mobil</label>
-                                    <input type="telephone" class="form-control" id="txtSirketTelefonCep" placeholder="(+90 232) 111 22 33">
+                                    <input type="telephone" class="form-control required" id="txtSirketTelefonCep" placeholder="(+90 232) 111 22 33">
                                 </div>
 
                                 <div class="form-group">
@@ -116,7 +116,7 @@
 
                             </div>
                             <div class="panel-footer">
-                                <button onclick="kaydetSirketBilgileri();return false;" class="btn btn-success btn-block">Kaydet</button>
+                                <button onclick="if(validateFields()){kaydetSirketBilgileri()};return false;" class="btn btn-success btn-block">Kaydet</button>
                             </div>
                         </div>
 
