@@ -258,33 +258,7 @@ function validateFields(){
 }
 
 
-// function kaydetTetkikBilgisi() {
-//     var d = new Date();
-//     var n = d.getTime()
-
-//     var tetkik = $("#txtTetkik").val();
-//     var idTetkik = generateID(tetkik);
-
-//     if($("#hdnId").val()!=='' ||$("#hdnId").val()!==null )
-//     idTetkik=$("#hdnId").val();
-
-//     var fiyat = $("#txtFiyat").val();
-//     var uygulamaTuru = $("input:radio[name='rdUygulamaTuru']:checked").val();
-//     var $input = $('input[name="rdUygulamaTuru"]:checked');
-//     var text = $('label[for=' + $input.attr('id') + ']').text();
-//     var uygulamaTuruAdi = "" + text;
-
-
-//     var veri = {
-//         "idTetkik": idTetkik,
-//         "tetkik": tetkik,
-//         "fiyat": fiyat,
-//         "uygulamaTuru": uygulamaTuru,
-//         "uygulamaTuruAdi": uygulamaTuruAdi,
-//         "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
-//     }
-
-//     kaydetVeritabani("tetkikler", idTetkik, veri);
-
-// }
+function showConfirmation(){
+    $('[data-toggle="popover"]').popover();
+}
 
