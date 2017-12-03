@@ -19,7 +19,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
           newWin.document.open();
         
-          newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+          newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css">'+divToPrint.innerHTML+'</body></html>');
         
           newWin.document.close();
         
