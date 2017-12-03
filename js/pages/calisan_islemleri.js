@@ -85,6 +85,9 @@ function initLoadedPage_calisan_islemleri() {
         }
     });
     $("#btn_CalisanKaydet").click( function() {
+        if(!validateFields()){
+            return false;
+        }
         //$("#frm_calisan").valid();
         var d = new Date();
         var n = d.getTime()
