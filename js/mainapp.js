@@ -163,7 +163,8 @@ function loadPrintTetkikler(){
         var contain="<div class='calisan-tetkikler-group-container'>";
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            if(sayac%5 !=0 || sayac==0)
+            var calisan_tetkikler_group_container="";
+            if(sayac%4 !=0 || sayac==0)
             {
                 contain+="<div class='group-tetkikler-label'>"+cleanelement["tetkik"]+"</div>";
                 contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_"+cleanelement["idTetkik"]+"'1></label> </div>";
