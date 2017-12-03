@@ -156,6 +156,40 @@ function loadCheckBoxList(lstChkID, idColumn, column, tablo,event) {
     });
 }
 
+function loadPrintTetkikler(){
+    firebase.database().ref(tetkikler).once('value').then(function (snapshot) {
+        prntVerileri[tetkikler]={};
+        var sayac=0;
+        var sayac2=0;
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+            var contain="<div class='calisan-tetkikler-group-container'>";
+            var calisan_tetkikler_group_container="";
+            if(sayac%4 !=0 || sayac==0)
+            {
+                contain+="<div class='group-tetkikler-label'>"+cleanelement["tetkik"]+"</div>";
+                contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_"+cleanelement["idTetkik"]+"'1></label> </div>";
+            }
+            else{
+                contain+="</div>";
+                if(sayac==4 || sayac2%2==0)
+                {
+                    contain+="<div class='takoz'></div>"
+                }
+                sayac2++;
+            }
+            sayac++;
+        });
+                // var li = $('<li class="list-group-item checkboxfit">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"'+event+' name="chk' + tablo+ '" value='+cleanelement[idColumn]+' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
+                $("#prnt_hastane").append(contain);
+    });
+}
+function loadPrintTetkikler(tetkikadi)
+{
+    var str="";
+
+}
+
 
 function exceleAktar(gridID) {
     $('#' + gridID).tableExport({ type: 'excel', fileName: 'NEKTAR' });

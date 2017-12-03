@@ -53,15 +53,15 @@ function initLoadedPage_calisan_islemleri() {
         }).end().find(".command-delete").on("click", function (e) {
 
             $('<div></div>').appendTo('body')
-            .html('<div><h6>Yes or No?</h6></div>').dialog({
+            .html('<div><h6>Silmek İstediğinizden Emin misiniz?</h6></div>').dialog({
                 modal: true, title: 'message', zIndex: 10000, autoOpen: true,
                 width: 'auto', resizable: false,
                 buttons: {
                     Yes: function () {
                         
-                var id = $(this).data("row-id");
-                firebase.database().ref().child("calisanlar").child(id).remove();
-                initLoadedPage_calisan_islemleri();
+                    var id = $(this).data("row-id");
+                    firebase.database().ref().child("calisanlar").child(id).remove();
+                    initLoadedPage_calisan_islemleri();
                         $(this).dialog("close");
                     },
                     No: function () {
