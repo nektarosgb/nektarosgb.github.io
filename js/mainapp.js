@@ -1,16 +1,5 @@
 $(function () {
-    $("#dialog").dialog({
-        autoOpen: false,
-        modal: true,
-        buttons : {
-             "Confirm" : function() {
-                 return true;          
-             },
-             "Cancel" : function() {
-                 return false;
-             }
-           }
-         });
+
 });
 
 
@@ -100,18 +89,7 @@ function msgConfirmDialog()
 //         }
 //   });
 
-  $("#dialog").dialog({
-    autoOpen: false,
-    modal: true,
-    buttons : {
-         "Confirm" : function() {
-             return true;          
-         },
-         "Cancel" : function() {
-             return false;
-         }
-       }
-     });
+
 }
 
 function dosyaYukle(dosya, klasor, id) {

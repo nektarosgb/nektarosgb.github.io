@@ -51,12 +51,29 @@ function initLoadedPage_calisan_islemleri() {
             // $(this).bootgrid("reload");
 
         }).end().find(".command-delete").on("click", function (e) {
-            if(msgConfirmDialog())
-            {
+
+            $('<div></div>').appendTo('body')
+            .html('<div><h6>Yes or No?</h6></div>')
+            .dialog({
+                modal: true, title: 'message', zIndex: 10000, autoOpen: true,
+                width: 'auto', resizable: false,
+                buttons: {
+                    Yes: function () {
+                        
                 var id = $(this).data("row-id");
                 firebase.database().ref().child("calisanlar").child(id).remove();
                 initLoadedPage_calisan_islemleri();
-            }
+                        $(this).dialog("close");
+                    },
+                    No: function () {
+                        $(this).dialog("close");
+                    }
+                },
+                close: function (event, ui) {
+                    $(this).remove();
+                }
+          });
+            
         });
     });
 
