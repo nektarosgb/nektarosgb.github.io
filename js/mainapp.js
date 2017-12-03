@@ -158,13 +158,12 @@ function loadCheckBoxList(lstChkID, idColumn, column, tablo,event) {
 
 function loadPrintTetkikler(){
     firebase.database().ref("tetkikler").once('value').then(function (snapshot) {
-        var sayac=0;
+        var sayac=-1;
         var sayac2=0;
         var contain="<div class='calisan-tetkikler-group-container'>";
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            var calisan_tetkikler_group_container="";
-            if(sayac%4 !=0 || sayac==0)
+            if(sayac%4 !=0 )
             {
                 contain+="<div class='group-tetkikler-label'>"+cleanelement["tetkik"]+"</div>";
                 contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_"+cleanelement["idTetkik"]+"'1></label> </div>";
