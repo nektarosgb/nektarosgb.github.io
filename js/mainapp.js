@@ -1,5 +1,16 @@
 $(function () {
-
+    $("#dialog").dialog({
+        autoOpen: false,
+        modal: true,
+        buttons : {
+             "Confirm" : function() {
+                 return true;          
+             },
+             "Cancel" : function() {
+                 return false;
+             }
+           }
+         });
 });
 
 
