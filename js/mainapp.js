@@ -69,25 +69,38 @@ function msgWarning(title, msg) {
 }
 function msgConfirmDialog()
 {
-    $('<div></div>').appendTo('body')
-    .html('<div><h6>Bu kayıdı Silmek İstediğinizden Emin misiniz?</h6></div>')
-    .dialog({
-        modal: true, title: 'message', zIndex: 10000, autoOpen: true,
-        width: 'auto', resizable: false,
-        buttons: {
-            Evet: function () {
-                $(this).dialog("close");
-                return true;
-            },
-            Hayır: function () {
-                $(this).dialog("close");
-                return false;
-            }
-        },
-        close: function (event, ui) {
-            $(this).remove();
-        }
-  });
+//     $('<div></div>').appendTo('body')
+//     .html('<div><h6>Bu kayıdı Silmek İstediğinizden Emin misiniz?</h6></div>')
+//     .dialog({
+//         modal: true, title: 'message', zIndex: 10000, autoOpen: true,
+//         width: 'auto', resizable: false,
+//         buttons: {
+//             Evet: function () {
+//                 $(this).dialog("close");
+//                 return true;
+//             },
+//             Hayır: function () {
+//                 $(this).dialog("close");
+//                 return false;
+//             }
+//         },
+//         close: function (event, ui) {
+//             $(this).remove();
+//         }
+//   });
+
+  $("#dialog").dialog({
+    autoOpen: false,
+    modal: true,
+    buttons : {
+         "Confirm" : function() {
+             return true;          
+         },
+         "Cancel" : function() {
+             return false;
+         }
+       }
+     });
 }
 
 function dosyaYukle(dosya, klasor, id) {
