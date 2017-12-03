@@ -12,6 +12,19 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnIdCariTuru").val(selectedID);
         $("#hdnCariTuru").val($("#drpCariTuru").children("option:selected").text());
     });
+    $("#btnYazdirHastane").click(function(){
+        var divToPrint=document.getElementById('modalHastane');
+        
+          var newWin=window.open('','Print-Window');
+        
+          newWin.document.open();
+        
+          newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+        
+          newWin.document.close();
+        
+          setTimeout(function(){newWin.close();},10);
+    });
 
     var gridCalisanlar = $("#grid-calisanlar").bootgrid({
         ajax: false,
