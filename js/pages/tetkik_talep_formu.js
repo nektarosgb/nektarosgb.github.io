@@ -165,6 +165,14 @@ function doldurCalisanBilgileri(selectedID) {
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
 
+        //Hastane Print Form
+        $("#lbl_grp_calisan_adsoyad").val(sirket.val().calisanAdi);
+        $("#lbl_grp_calisan_tckimlikno").val(sirket.val().calisanTCNo);
+        $("#lbl_grp_calisan_gsm").val(sirket.val().calisanTelefonCep);
+        $("#lbl_grp_calisan_telefon").val(sirket.val().calisanTelefon);
+        //$("#lbl_grp_calisan_gorevi").val(sirket.val().calisanTelefonCep);
+        //
+
         var isyeriKodu = snapshot.val().calisanIsyeriKodu;
 
         firebase.database().ref('/sirketler/' + isyeriKodu).once('value').then(function (sirket) {
@@ -177,6 +185,18 @@ function doldurCalisanBilgileri(selectedID) {
             $("#txtSirketEposta").val(sirket.val().sirketEposta);
             $("#txtSirketIsyeriHekimi").val(sirket.val().sirketIsyeriHekimi);
             $("#txtSirketIsyeriGuvenlikUzmani").val(sirket.val().sirketIsGuvenligiUzmani);
+
+            //Hastane Print
+            $("#lbl_grp_calisan_firmaadi").val(sirket.val().sirketAdi);
+            $("#lbl_grp_calisan_sgksicilno").val(sirket.val().sirketSGKSicilNo);
+            $("#lbl_grp_calisan_adres").val(sirket.val().sirketAdresi);
+            $("#lbl_grp_isyeri_telefon").val(sirket.val().sirketTelefon); lbl_grp_isyeri_telefon
+            $("#lbl_grp_calisan_eposta").val(sirket.val().sirketEposta);
+            $("#lbl_grp_calisan_yetkiliadi").val(sirket.val().sirketIlgiliKisi);
+            $("#lbl_grp_calisan_isyerihekimi").val(sirket.val().sirketIsyeriHekimi);
+            $("#lbl_grp_calisan_igu").val(sirket.val().sirketIsGuvenligiUzmani);
+            
+            //
         });
 
         var meslekKodu = snapshot.val().calisanMeslekKodu;
@@ -199,6 +219,8 @@ function doldurTalepBilgileri(selectedID){
 
             $("#drpMuayeneTuru option").selected=false;
             $("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
+
+            $("#lbl_grp_calisan_muayeneturu").append($("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").val());
 
             $("#drpCariHesapTuru option").selected=false;
             $("#drpCariHesapTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
