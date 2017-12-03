@@ -205,7 +205,7 @@ function doldurTalepBilgileri(selectedID){
 
             doldurCalisanBilgileri(talepformu.calisanKodu);
             
-            var hastanefiyat=0;
+            var hastanefiyat=parseFloat("0.00");
             var osgbfiyat=0;
 
             talepformu.seciliTetkikler.forEach(function(tetkik) {
@@ -213,7 +213,7 @@ function doldurTalepBilgileri(selectedID){
                 if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
                 {
                     hastanefiyat+=tetkik.fiyat;
-                    $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append("X");
+                    $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append(" X");
                 }
                 else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
