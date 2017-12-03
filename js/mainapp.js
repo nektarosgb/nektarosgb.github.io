@@ -157,7 +157,7 @@ function loadCheckBoxList(lstChkID, idColumn, column, tablo,event) {
 }
 
 function loadPrintTetkikler(){
-    firebase.database().ref(tetkikler).once('value').then(function (snapshot) {
+    firebase.database().ref("tetkikler").once('value').then(function (snapshot) {
         prntVerileri[tetkikler]={};
         var sayac=0;
         var sayac2=0;
