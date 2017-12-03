@@ -264,7 +264,7 @@ function validateFields(){
 function popoverBtnDeleteCommandHtml(rowid){
     
     
-    var popoverDeleteCommandHtml="data-trigger=\"focus\"  data-html=\"true\" data-original-title=\"Onaylıyormusunuz ?\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content='<button class=\"btn btn-success btn-block command-delete\" data-row-id=\"" + rowid + "\">Seçili Satırı Sil</button>'";
+    var popoverDeleteCommandHtml="data-trigger=\"focus\"  data-html=\"true\" data-original-title=\"Onaylıyormusunuz ?\" data-container=\"body\" data-toggle=\"popover\" data-placement=\"top\" data-content='<button class=\"btn btn-success btn-block command-delete\" data-row-id=\"" + rowid + "\">Seçili Kaydı Sil</button>'";
     var btnhtml="<button id='btn"+rowid+"' type=\"button\" onclick='showConfirmation(this);' class=\"btn btn-xs btn-default\" "+popoverDeleteCommandHtml+"><span class=\"fa fa-trash-o\"></span></button>";
     return btnhtml;
 }
