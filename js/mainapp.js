@@ -174,6 +174,9 @@ function loadPrintTetkikler(){
                 {
                     contain+="<div class='takoz'></div><div class='calisan-tetkikler-group-container'>"
                 }
+                else{
+                    contain +="<div class='calisan-tetkikler-group-container'>";
+                }
                 sayac2++;
             }
             sayac++;
