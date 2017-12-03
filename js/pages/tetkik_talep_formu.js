@@ -190,7 +190,7 @@ function doldurCalisanBilgileri(selectedID) {
             $("#lbl_grp_calisan_firmaadi").val(sirket.val().sirketAdi);
             $("#lbl_grp_calisan_sgksicilno").val(sirket.val().sirketSGKSicilNo);
             $("#lbl_grp_calisan_adres").val(sirket.val().sirketAdresi);
-            $("#lbl_grp_isyeri_telefon").val(sirket.val().sirketTelefon); lbl_grp_isyeri_telefon
+            $("#lbl_grp_isyeri_telefon").val(sirket.val().sirketTelefon); 
             $("#lbl_grp_calisan_eposta").val(sirket.val().sirketEposta);
             $("#lbl_grp_calisan_yetkiliadi").val(sirket.val().sirketIlgiliKisi);
             $("#lbl_grp_calisan_isyerihekimi").val(sirket.val().sirketIsyeriHekimi);
