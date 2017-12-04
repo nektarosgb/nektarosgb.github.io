@@ -81,37 +81,37 @@ width:138pt">
  <td colspan="16" height="21" class="xl170" width="676" style="height:15.95pt;
  width:510pt">İŞYERİNİN</td>
  <td colspan="4" rowspan="11" class="xl171" width="206" style="width:155pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl75" width="145" style="height:15.95pt;border-top:none;
  width:109pt">Ünvanı</td>
  <td colspan="15" class="xl170" width="531" style="border-left:none;width:401pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"> </td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl75" width="145" style="height:15.95pt;border-top:none;
  width:109pt">SGK Sicil No.</td>
  <td colspan="15" class="xl170" width="531" style="border-left:none;width:401pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_sgk"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl75" width="145" style="height:15.95pt;border-top:none;
  width:109pt">Adresi</td>
  <td colspan="15" class="xl170" width="531" style="border-left:none;width:401pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_adres"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl75" width="145" style="height:15.95pt;border-top:none;
  width:109pt">Tel ve faks</td>
  <td colspan="15" class="xl170" width="531" style="border-left:none;width:401pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_telfax"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl75" width="145" style="height:15.95pt;border-top:none;
  width:109pt">E-Posta</td>
  <td colspan="15" class="xl170" width="531" style="border-left:none;width:401pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_eposta"></td>
 </tr>
 <tr height="42" style="mso-height-source:userset;height:32.1pt">
  <td colspan="16" height="42" class="xl172" width="676" style="height:32.1pt;
@@ -179,34 +179,48 @@ width:138pt">
  <td colspan="4" height="21" class="xl75" width="284" style="height:15.95pt;
  width:214pt">Adı ve soyadı</td>
  <td colspan="16" class="xl170" width="598" style="border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_adsoyad"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl75" width="284" style="height:15.95pt;
  width:214pt">T.C.Kimlik No</td>
  <td colspan="16" class="xl170" width="598" style="border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_tc"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl75" width="284" style="height:15.95pt;
  width:214pt">Doğum Yeri ve Tarihi</td>
  <td colspan="9" class="xl170" width="279" style="border-left:none;width:211pt">&nbsp;</td>
- <td colspan="7" class="xl174" width="319" style="border-left:none;width:240pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td colspan="7" class="xl174" width="319" style="border-left:none;width:240pt"><input type="text" id="txt_sr_dogumyeri"></td>
+ <td class="xl74"><input type="text" id="txt_sr_dogumtarihi"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl75" width="284" style="height:15.95pt;
  width:214pt">Cinsiyeti</td>
  <td colspan="16" class="xl183" width="598" style="border-right:.5pt dotted black;
  border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74">
+            <ul id="chc_sr_cinsiyet" class="list-group">
+            </ul>
+    </div></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl75" width="284" style="height:15.95pt;
  width:214pt">Eğitim durumu</td>
  <td colspan="16" class="xl183" width="598" style="border-right:.5pt dotted black;
  border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74">
+
+        <div class="form-group">
+                <select class="form-control requireddrp" id="drp_sr_egitimdurumu">
+                    <option value="0">Seçiniz</option>
+                    <option value="1">Firma</option>
+                    <option value="2">Nakit</option>
+                    <option value="99">Boş</option>
+                </select>
+                <input type="hidden" id="hdn_sr_egitimdurumu" />
+            </div>
+ </td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl178" width="284" style="border-right:.5pt dotted black;
@@ -217,28 +231,28 @@ width:138pt">
  border-left:none;width:111pt">Çocuk sayısı</td>
  <td colspan="7" class="xl186" width="319" style="border-right:.5pt dotted black;
  border-left:none;width:240pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl178" width="284" style="border-right:.5pt dotted black;
  height:15.95pt;width:214pt">Ev Adresi</td>
  <td colspan="16" class="xl180" width="598" style="border-right:.5pt dotted black;
  border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl178" width="284" style="border-right:.5pt dotted black;
  height:15.95pt;width:214pt">Tel No.</td>
  <td colspan="16" class="xl183" width="598" style="border-right:.5pt dotted black;
  border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl178" width="284" style="border-right:.5pt dotted black;
  height:15.95pt;width:214pt">Mesleği</td>
  <td colspan="16" class="xl180" width="598" style="border-right:.5pt dotted black;
  border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl178" width="284" style="border-right:.5pt dotted black;
@@ -246,14 +260,14 @@ width:138pt">
  <td colspan="4" class="xl171" width="132" style="border-left:none;width:100pt">&nbsp;</td>
  <td colspan="12" class="xl186" width="466" style="border-right:.5pt dotted black;
  border-left:none;width:351pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="4" height="21" class="xl178" width="284" style="border-right:.5pt dotted black;
  height:15.95pt;width:214pt">Çalıştığı bölüm</td>
  <td colspan="16" class="xl180" width="598" style="border-right:.5pt dotted black;
  border-left:none;width:451pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="20" height="21" class="xl189" width="882" style="border-right:.5pt dotted black;
@@ -268,7 +282,7 @@ width:138pt">
  none">Yaptığı iş</td>
  <td colspan="3" class="xl194" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">Giriş-çıkış tarihi</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl178" width="213" style="border-right:.5pt dotted black;
@@ -277,7 +291,7 @@ width:138pt">
  border-left:none;width:394pt">&nbsp;</td>
  <td colspan="3" class="xl180" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl178" width="213" style="border-right:.5pt dotted black;
@@ -286,7 +300,7 @@ width:138pt">
  border-left:none;width:394pt">&nbsp;</td>
  <td colspan="3" class="xl180" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl178" width="213" style="border-right:.5pt dotted black;
@@ -295,54 +309,54 @@ width:138pt">
  border-left:none;width:394pt">&nbsp;</td>
  <td colspan="3" class="xl180" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="20" height="21" class="xl180" width="882" style="border-right:.5pt dotted black;
  height:15.95pt;width:665pt">Özgeçmişi</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl178" width="213" style="border-right:.5pt dotted black;
  height:15.95pt;width:160pt">Kan grubu</td>
  <td colspan="18" class="xl180" width="669" style="border-right:.5pt dotted black;
  border-left:none;width:505pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl178" width="213" style="border-right:.5pt dotted black;
  height:15.95pt;width:160pt">Konjenital/kronik hastalık</td>
  <td colspan="18" class="xl180" width="669" style="border-right:.5pt dotted black;
  border-left:none;width:505pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="20" height="21" class="xl178" width="882" style="border-right:.5pt dotted black;
  height:15.95pt;width:665pt">Bağışıklama<span style="mso-spacerun:yes">&nbsp;</span></td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl85" width="145" style="height:15.95pt;width:109pt"><span style="mso-spacerun:yes">&nbsp; </span>- Tetanoz</td>
  <td colspan="19" class="xl180" width="737" style="border-right:.5pt dotted black;
  border-left:none;width:556pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl85" width="145" style="height:15.95pt;width:109pt"><span style="mso-spacerun:yes">&nbsp; </span>- Hepatit</td>
  <td colspan="19" class="xl180" width="737" style="border-right:.5pt dotted black;
  border-left:none;width:556pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" class="xl85" width="145" style="height:15.95pt;width:109pt"><span style="mso-spacerun:yes">&nbsp; </span>- Diğer</td>
  <td colspan="19" class="xl180" width="737" style="border-right:.5pt dotted black;
  border-left:none;width:556pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="20" height="21" class="xl180" width="882" style="border-right:.5pt dotted black;
  height:15.95pt;width:665pt">Soygeçmişi</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="3" height="21" class="xl178" width="246" style="border-right:.5pt dotted black;
@@ -353,7 +367,7 @@ width:138pt">
  border-left:none;width:155pt">Kardeş</td>
  <td colspan="4" class="xl178" width="206" style="border-right:.5pt dotted black;
  border-left:none;width:155pt">Çocuk</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="3" height="21" class="xl180" width="246" style="border-right:.5pt dotted black;
@@ -364,12 +378,12 @@ width:138pt">
  border-left:none;width:155pt">&nbsp;</td>
  <td colspan="4" class="xl180" width="206" style="border-right:.5pt dotted black;
  border-left:none;width:155pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="20" height="21" class="xl180" width="882" style="border-right:.5pt dotted black;
  height:15.95pt;width:665pt">TIBBİ ANAMNEZ</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl180" width="629" style="border-right:.5pt dotted black;
@@ -378,7 +392,7 @@ width:138pt">
  <td colspan="4" class="xl186" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">Hayır</td>
  <td class="xl86" width="102" style="width:77pt">Evet</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl178" width="629" style="border-right:.5pt dotted black;
@@ -386,7 +400,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl178" width="629" style="border-right:.5pt dotted black;
@@ -394,7 +408,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl178" width="629" style="border-right:.5pt dotted black;
@@ -402,7 +416,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl178" width="629" style="border-right:.5pt dotted black;
@@ -410,7 +424,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl178" width="629" style="border-right:.5pt dotted black;
@@ -418,7 +432,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl178" width="629" style="border-right:.5pt dotted black;
@@ -426,7 +440,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl178" width="629" style="border-right:.5pt dotted black;
@@ -434,7 +448,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl180" width="629" style="border-right:.5pt dotted black;
@@ -443,7 +457,7 @@ width:138pt">
  <td colspan="4" class="xl186" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">Hayır</td>
  <td class="xl86" width="102" style="width:77pt">Evet</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -451,7 +465,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -459,7 +473,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -467,7 +481,7 @@ width:138pt">
  <td colspan="4" class="xl198" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -475,7 +489,7 @@ width:138pt">
  <td colspan="4" class="xl201" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl87" width="102" style="width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -483,7 +497,7 @@ width:138pt">
  <td colspan="4" class="xl201" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl88" width="102" style="border-top:none;width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -491,7 +505,7 @@ width:138pt">
  <td colspan="4" class="xl201" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl88" width="102" style="border-top:none;width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -499,7 +513,7 @@ width:138pt">
  <td colspan="4" class="xl201" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl88" width="102" style="border-top:none;width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl201" width="629" style="border-right:.5pt dotted black;
@@ -507,7 +521,7 @@ width:138pt">
  <td colspan="4" class="xl201" width="151" style="border-right:.5pt dotted black;
  border-left:none;width:113pt">&nbsp;</td>
  <td class="xl88" width="102" style="border-top:none;width:77pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="15" height="21" class="xl204" width="629" style="border-right:.5pt dotted black;
@@ -537,7 +551,7 @@ width:138pt">
  border-left:none;width:104pt">Evet ise tanı ?</td>
  <td colspan="3" class="xl178" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="42" style="mso-height-source:userset;height:32.1pt">
  <td colspan="9" height="42" class="xl180" width="437" style="border-right:.5pt dotted black;
@@ -550,7 +564,7 @@ width:138pt">
  border-left:none;width:104pt">Evet ise neden ?</td>
  <td colspan="3" class="xl178" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="42" style="mso-height-source:userset;height:32.1pt">
  <td colspan="9" height="42" class="xl180" width="437" style="border-right:.5pt dotted black;
@@ -563,7 +577,7 @@ width:138pt">
  border-left:none;width:104pt">Evet ise ne oldu ?</td>
  <td colspan="3" class="xl178" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="42" style="mso-height-source:userset;height:32.1pt">
  <td colspan="9" height="42" class="xl180" width="437" style="border-right:.5pt dotted black;
@@ -578,7 +592,7 @@ width:138pt">
  border-left:none;width:104pt">Evet ise sonuç ?</td>
  <td colspan="3" class="xl178" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="42" style="mso-height-source:userset;height:32.1pt">
  <td colspan="9" height="42" class="xl180" width="437" style="border-right:.5pt dotted black;
@@ -593,7 +607,7 @@ width:138pt">
    ve oranı ?</td>
  <td colspan="3" class="xl178" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="42" style="mso-height-source:userset;height:32.1pt">
  <td colspan="9" height="42" class="xl180" width="437" style="border-right:.5pt dotted black;
@@ -606,7 +620,7 @@ width:138pt">
  border-left:none;width:104pt">Evet ise nedir ?</td>
  <td colspan="3" class="xl178" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl207" width="213" style="border-right:.5pt dotted black;
@@ -616,7 +630,7 @@ width:138pt">
  <td class="xl89" width="33" style="width:25pt">&nbsp;</td>
  <td colspan="14" class="xl201" width="532" style="border-right:.5pt dotted black;
  border-left:none;width:401pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl201" width="213" style="border-right:.5pt dotted black;
@@ -630,7 +644,7 @@ width:138pt">
  border-left:none;width:149pt">.............ay/yıl içmiş</td>
  <td colspan="3" class="xl201" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">...........adet/gün içmiş</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl201" width="213" style="border-right:.5pt dotted black;
@@ -642,7 +656,7 @@ width:138pt">
  border-left:none;width:141pt">..........yıldır</td>
  <td colspan="8" class="xl201" width="346" style="border-right:.5pt dotted black;
  border-left:none;width:260pt">..............adet/gün</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl207" width="213" style="border-right:.5pt dotted black;
@@ -652,7 +666,7 @@ width:138pt">
  <td class="xl89" width="33" style="width:25pt">&nbsp;</td>
  <td colspan="14" class="xl201" width="532" style="border-right:.5pt dotted black;
  border-left:none;width:401pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl201" width="213" style="border-right:.5pt dotted black;
@@ -666,7 +680,7 @@ width:138pt">
  border-left:none;width:149pt">..............yıl içmiş</td>
  <td colspan="3" class="xl201" width="148" style="border-right:.5pt dotted black;
  border-left:none;width:111pt">................sıklıkla içmiş</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl201" width="213" style="border-right:.5pt dotted black;
@@ -678,26 +692,26 @@ width:138pt">
  border-left:none;width:141pt">..........yıldır</td>
  <td colspan="8" class="xl201" width="346" style="border-right:.5pt dotted black;
  border-left:none;width:260pt">..............sıklıkla</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="20" height="21" class="xl180" width="882" style="border-right:.5pt dotted black;
  height:15.95pt;width:665pt">FİZİK MUAYENE SONUÇLARI</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">a) Duyu organları</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>- Göz</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
@@ -705,81 +719,81 @@ width:138pt">
  Kulak-Burun-Boğaz</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>- Deri</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">b) Kardiyovasküler sistem muayenesi</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">c) Solunum sistemi muayenesi</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">d) Sindirim sistemi muayenesi</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">e) Ürogenital sistem muayenesi</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">f) Kas-iskelet sistemi muayenesi</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">g) Nörolojik muayene</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl201" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">Ğ) Psikiyatrik muayene</td>
  <td colspan="15" class="xl207" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl210" width="317" style="height:15.95pt;
  width:239pt">h) Diğer</td>
  <td colspan="15" class="xl211" width="565" style="border-left:none;width:426pt"><span style="mso-spacerun:yes">&nbsp;</span></td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl172" width="317" style="height:15.95pt;
  width:239pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>-TA :<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
  <td colspan="15" class="xl212" width="565" style="border-left:none;width:426pt">/<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>mm-Hg</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl172" width="317" style="height:15.95pt;
  width:239pt"><span style="mso-spacerun:yes">&nbsp;&nbsp; </span>-Nb<span style="mso-spacerun:yes">&nbsp; </span>:<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
  <td colspan="15" class="xl212" width="565" style="border-left:none;width:426pt">/<span style="mso-spacerun:yes">&nbsp; </span>dk.</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="2" height="21" class="xl172" width="213" style="height:15.95pt;
@@ -790,75 +804,75 @@ width:138pt">
  <td colspan="5" class="xl210" width="198" style="border-left:none;width:149pt">Vücut
  Kitle İndeksi :</td>
  <td colspan="3" class="xl214" width="148" style="border-left:none;width:111pt">#DIV/0!</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="20" height="21" class="xl180" width="882" style="border-right:.5pt dotted black;
  height:15.95pt;width:665pt">LABORATUVAR BULGULARI</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">a) Biyolojik analizler</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">- Kan</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">- İdrar</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">b) Radyolojik analizler</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">c) Fizyolojik analizler</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">- Odyometre</td>
  <td colspan="15" class="xl222" align="right" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">27.11.2017</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">- SFT</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">d) Psikolojik testler</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td colspan="5" height="21" class="xl178" width="317" style="border-right:.5pt dotted black;
  height:15.95pt;width:239pt">e) Diğer</td>
  <td colspan="15" class="xl180" width="565" style="border-right:.5pt dotted black;
  border-left:none;width:426pt">&nbsp;</td>
- <td class="xl74"></td>
+ <td class="xl74"><input type="text" id="txt_sr_unvan"></td>
 </tr>
 <tr height="21" style="mso-height-source:userset;height:15.95pt">
  <td height="21" colspan="21" class="xl74" style="height:15.95pt;mso-ignore:colspan"></td>
