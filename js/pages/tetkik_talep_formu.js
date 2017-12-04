@@ -166,10 +166,10 @@ function doldurCalisanBilgileri(selectedID) {
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
 
         //Hastane Print Form
-        $("#lbl_grp_calisan_adsoyad").val(snapshot.val().calisanAdi);
-        $("#lbl_grp_calisan_tckimlikno").val(snapshot.val().calisanTCNo);
-        $("#lbl_grp_calisan_gsm").val(snapshot.val().calisanTelefonCep);
-        $("#lbl_grp_calisan_telefon").val(snapshot.val().calisanTelefon);
+        $("#lbl_grp_calisan_adsoyad").append(snapshot.val().calisanAdi);
+        $("#lbl_grp_calisan_tckimlikno").append(snapshot.val().calisanTCNo);
+        $("#lbl_grp_calisan_gsm").append(snapshot.val().calisanTelefonCep);
+        $("#lbl_grp_calisan_telefon").append(snapshot.val().calisanTelefon);
         //$("#lbl_grp_calisan_gorevi").val(sirket.val().calisanTelefonCep);
         //
 
@@ -187,14 +187,14 @@ function doldurCalisanBilgileri(selectedID) {
             $("#txtSirketIsyeriGuvenlikUzmani").val(sirket.val().sirketIsGuvenligiUzmani);
 
             //Hastane Print
-            $("#lbl_grp_calisan_firmaadi").val(sirket.val().sirketAdi);
-            $("#lbl_grp_calisan_sgksicilno").val(sirket.val().sirketSGKSicilNo);
-            $("#lbl_grp_calisan_adres").val(sirket.val().sirketAdresi);
-            $("#lbl_grp_isyeri_telefon").val(sirket.val().sirketTelefon); 
-            $("#lbl_grp_calisan_eposta").val(sirket.val().sirketEposta);
-            $("#lbl_grp_calisan_yetkiliadi").val(sirket.val().sirketIlgiliKisi);
-            $("#lbl_grp_calisan_isyerihekimi").val(sirket.val().sirketIsyeriHekimi);
-            $("#lbl_grp_calisan_igu").val(sirket.val().sirketIsGuvenligiUzmani);
+            $("#lbl_grp_calisan_firmaadi").append(sirket.val().sirketAdi);
+            $("#lbl_grp_calisan_sgksicilno").append(sirket.val().sirketSGKSicilNo);
+            $("#lbl_grp_calisan_adres").append(sirket.val().sirketAdresi);
+            $("#lbl_grp_isyeri_telefon").append(sirket.val().sirketTelefon); 
+            $("#lbl_grp_calisan_eposta").append(sirket.val().sirketEposta);
+            $("#lbl_grp_calisan_yetkiliadi").append(sirket.val().sirketIlgiliKisi);
+            $("#lbl_grp_calisan_isyerihekimi").append(sirket.val().sirketIsyeriHekimi);
+            $("#lbl_grp_calisan_igu").append(sirket.val().sirketIsGuvenligiUzmani);
             
             //
         });
