@@ -234,7 +234,7 @@ function doldurTalepBilgileri(selectedID){
             doldurCalisanBilgileri(talepformu.calisanKodu);
             
             var hastanefiyat=parseFloat("0.00");
-            var osgbfiyat=0;
+            var osgbfiyat=parseFloat("0.00");
 
             talepformu.seciliTetkikler.forEach(function(tetkik) {
                 $("#chkitem" + tetkik.tetkik).prop("checked", true);
