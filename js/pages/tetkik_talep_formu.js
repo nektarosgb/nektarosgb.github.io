@@ -217,6 +217,7 @@ function clearPrint()
 {
     $(".calisan-bilgileri-label-container label").empty();
     $("#lbl_grp_calisan_firmacarivalue").empty();
+    $("#lbl_grp_calisan_hst_tutar").empty();
 }
 
 function doldurTalepBilgileri(selectedID){
@@ -248,7 +249,7 @@ function doldurTalepBilgileri(selectedID){
                     osgbfiyat=osgbfiyat+parseFloat(tetkik.fiyat);
                 }
             });
-            $("#lbl_grp_calisan_firmacarivalue").append(hastanefiyat+"");
+            $("#lbl_grp_calisan_hst_tutar").append(hastanefiyat+"");
 
             hesaplaToplam();
     });
