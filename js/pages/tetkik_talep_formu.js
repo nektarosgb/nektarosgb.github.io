@@ -215,20 +215,8 @@ function doldurCalisanBilgileri(selectedID) {
 }
 function clearPrint()
 {
-    // $("#lbl_grp_calisan_firmaadi").empty();
-    // $("#lbl_grp_calisan_sgksicilno").append(sirket.val().sirketSGKSicilNo);
-    // $("#lbl_grp_calisan_adres").append(sirket.val().sirketAdresi);
-    // $("#lbl_grp_isyeri_telefon").append(sirket.val().sirketTelefon); 
-    // $("#lbl_grp_calisan_eposta").append(sirket.val().sirketEposta);
-    // $("#lbl_grp_calisan_yetkiliadi").append(sirket.val().sirketIlgiliKisi);
-    // $("#lbl_grp_calisan_isyerihekimi").append(sirket.val().sirketIsyeriHekimi);
-    // $("#lbl_grp_calisan_igu").append(sirket.val().sirketIsGuvenligiUzmani);
-
-    // $("#lbl_grp_calisan_adsoyad").append(snapshot.val().calisanAdi);
-    // $("#lbl_grp_calisan_tckimlikno").append(snapshot.val().calisanTCNo);
-    // $("#lbl_grp_calisan_gsm").append(snapshot.val().calisanTelefonCep);
-    // $("#lbl_grp_calisan_telefon").append(snapshot.val().calisanTelefon);
     $(".calisan-bilgileri-label-container label").empty();
+    $("#lbl_grp_calisan_firmacarivalue").empty();
 }
 
 function doldurTalepBilgileri(selectedID){
@@ -253,12 +241,11 @@ function doldurTalepBilgileri(selectedID){
                 if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
                 {
                     hastanefiyat+=tetkik.fiyat;
-                    $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append("nbsbp;nbsbp X");
+                    $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append(" X");
                 }
                 else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
-                    osgbfiyat=osgbfiyat+tetkik.fiyat;
-                    console.log("fiyat",osgbfiyat);
+                    osgbfiyat=osgbfiyat+parsefloat(tetkik.fiyat);
                     // $("#lbl_grp_tetkikler_"+tetkik.idTetkik).append("X");
                 }
             });
