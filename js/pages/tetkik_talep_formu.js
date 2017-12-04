@@ -14,7 +14,7 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnCariTuru").val($("#drpCariTuru").children("option:selected").text());
     });
     $("#btnYazdirHastane").click(function(){
-        var divToPrint=document.getElementById('hastaneprint');
+        var divToPrint=document.getElementById('modalHastane');
         
           var newWin=window.open('','Print-Window');
         
