@@ -245,7 +245,7 @@ function doldurTalepBilgileri(selectedID){
                 }
                 else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
-                    osgbfiyat=osgbfiyat+parsefloat(tetkik.fiyat);
+                    osgbfiyat=osgbfiyat+parseFloat(tetkik.fiyat);
                     // $("#lbl_grp_tetkikler_"+tetkik.idTetkik).append("X");
                 }
             });
