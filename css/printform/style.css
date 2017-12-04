@@ -16,6 +16,7 @@
     height: 50px;
     width: 100px;
     float: left;
+    background-image: url('../images/image004.png');
 }
 .nektar-header-container{
     width: 330px;
