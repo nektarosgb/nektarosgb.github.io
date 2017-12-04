@@ -7,7 +7,6 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnMuayeneTuru").val($("#drpMuayeneTuru").children("option:selected").text());
     });
     loadPrintTetkikler();
-    clearPrint();
 
     $("#drpCariTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
@@ -71,7 +70,8 @@ function initLoadedPage_tetkik_talep_formu() {
         /* Executes after data is loaded and rendered */
         gridTalepler.find(".command-edit").on("click", function (e) {
             var lstVeri = listTable("tetkiktalepformlari");
-            var id = $(this).data("row-id");      
+            var id = $(this).data("row-id");   
+             clearPrint();   
             doldurTalepBilgileri(id);
             $('#myModal').modal('show');
             // $('#btnHastane').modal('show');
