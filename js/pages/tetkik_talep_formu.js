@@ -262,7 +262,7 @@ function doldurTalepBilgileri(selectedID){
                     // $("#lbl_grp_tetkikler_"+tetkik.idTetkik).append("X");
                 }
             });
-            $("#lbl_hst_tutar").append(hastanefiyat+"");
+            $("#lbl_grp_calisan_firmacarivalue").append(hastanefiyat+"");
 
             hesaplaToplam();
     });
