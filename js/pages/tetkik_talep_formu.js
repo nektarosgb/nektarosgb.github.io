@@ -226,7 +226,7 @@ function doldurTalepBilgileri(selectedID){
             $("#drpMuayeneTuru option").selected=false;
             $("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
 
-            $("#lbl_grp_calisan_muayeneturu").append($("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").val());
+            $("#lbl_grp_calisan_firmacarivalue").append($("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").val());
 
             $("#drpCariHesapTuru option").selected=false;
             $("#drpCariHesapTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
@@ -240,13 +240,12 @@ function doldurTalepBilgileri(selectedID){
                 $("#chkitem" + tetkik.tetkik).prop("checked", true);
                 if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
                 {
-                    hastanefiyat+=tetkik.fiyat;
+                    hastanefiyat+=parseFloat(tetkik.fiyat);
                     $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append(" X");
                 }
                 else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
                     osgbfiyat=osgbfiyat+parseFloat(tetkik.fiyat);
-                    // $("#lbl_grp_tetkikler_"+tetkik.idTetkik).append("X");
                 }
             });
             $("#lbl_grp_calisan_firmacarivalue").append(hastanefiyat+"");
