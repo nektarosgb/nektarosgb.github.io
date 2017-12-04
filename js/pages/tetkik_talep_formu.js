@@ -7,6 +7,7 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnMuayeneTuru").val($("#drpMuayeneTuru").children("option:selected").text());
     });
     loadPrintTetkikler();
+    clearPrint();
 
     $("#drpCariTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
