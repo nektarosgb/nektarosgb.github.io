@@ -21,7 +21,7 @@
     width:432px;
     height: 680px;
     font-size: 14px;
-    background-color: white;
+    background-color: white!important;
     border: solid 1px black;
 }
 .nektar-talep-container > .row>div{
@@ -40,7 +40,7 @@
     width: 330px;
     height: 50px;
     float: left;
-    color: white;
+    color: white!important;
     background-color: #1d8bca!important;
     box-shadow: inset 0 0 0 1000px #1d8bca!important;
     -webkit-print-color-adjust: exact; 
@@ -88,16 +88,18 @@
     height: 18px;
     font-size: 13px;
     float: left;
-    background-color: yellow;
+    background-color: yellow!important;
     font-weight: bold;
     text-align: center;
     margin-top: 10px;
+    -webkit-print-color-adjust: exact; 
 }
 .nektar-topik #hospital-name{
-    color: red;
+    color: red!important;
     float: left;
     text-align: left;
     padding-right: 2px;
+    -webkit-print-color-adjust: exact; 
 }
 .nektar-topik #form-name{
     float: left;
