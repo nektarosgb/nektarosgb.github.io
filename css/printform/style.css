@@ -5,6 +5,15 @@
     {
         display: none !important;
     }
+
+    .nektar-header-container{
+        width: 330px;
+        height: 50px;
+        float: left;
+        color: white;
+        background-color: #1d8bca;
+        box-shadow: inset 0 0 0 1000px #1d8bca;
+    }
 }
 
 .nektar-talep-container{
@@ -34,6 +43,7 @@
     background-color: #1d8bca;
     box-shadow: inset 0 0 0 1000px #1d8bca;
 }
+
 .nektar-talep-container > .row{
     margin-right: 0px;
     margin-left: 0px;
