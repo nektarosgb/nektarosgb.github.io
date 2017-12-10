@@ -40,6 +40,9 @@ function initLoadedPage_calisan_islemleri() {
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-pencil\"></span></button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-trash-o\"></span></button>";
+                    popoverBtnDeleteCommandHtml(row.idCalisan)+
+                    "<button id=\"tblbtndel"+ row.idCalisan +"\" type=\"button\" class=\"btn btn-xs btn-default command-delete hide\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-trash-o\"></span></button>";
+                    
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
@@ -51,28 +54,10 @@ function initLoadedPage_calisan_islemleri() {
             // $(this).bootgrid("reload");
 
         }).end().find(".command-delete").on("click", function (e) {
-
-            $('<div></div>').appendTo('body')
-            .html('<div><h6>Silmek İstediğinizden Emin misiniz?</h6></div>').dialog({
-                modal: true, title: 'message', zIndex: 10000, autoOpen: true,
-                width: 'auto', resizable: false,
-                buttons: {
-                    Yes: function () {
-                        
-                    var id = $(this).data("row-id");
-                    firebase.database().ref().child("calisanlar").child(id).remove();
-                    initLoadedPage_calisan_islemleri();
-                        $(this).dialog("close");
-                    },
-                    No: function () {
-                        $(this).dialog("close");
-                    }
-                },
-                close: function (event, ui) {
-                    $(this).remove();
-                }
-          });
-            
+     
+            var id = $(this).data("row-id");
+            firebase.database().ref().child("tetkiktalepformlari").child(id).remove();
+            initLoadedPage_tetkik_talep_formu();
         });
     });
 

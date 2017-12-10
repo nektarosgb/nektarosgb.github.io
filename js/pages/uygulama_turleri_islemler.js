@@ -7,6 +7,9 @@ function initLoadedPage_uygulama_turleri_islemleri() {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idUygulamaTuru + "\"><span class=\"fa fa-pencil\"></span></button> " +
                         "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idUygulamaTuru + "\"><span class=\"fa fa-trash-o\"></span></button>";
+
+                        popoverBtnDeleteCommandHtml(row.idUygulamaTuru)+
+                        "<button id=\"tblbtndel"+ row.idUygulamaTuru +"\" type=\"button\" class=\"btn btn-xs btn-default command-delete hide\" data-row-id=\"" + row.idUygulamaTuru + "\"><span class=\"fa fa-trash-o\"></span></button>";
                 }
             }
         }).on("loaded.rs.jquery.bootgrid", function () {
