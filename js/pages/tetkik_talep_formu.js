@@ -173,6 +173,9 @@ function doldurCalisanBilgileri(selectedID) {
         $("#lbl_grp_calisan_telefon").append(snapshot.val().calisanTelefon);
         //$("#lbl_grp_calisan_gorevi").val(sirket.val().calisanTelefonCep);
         //
+        $("#lbl_form_adsoyad").append(snapshot.val().calisanAdi);
+        $("#lbl_form_tc").append(snapshot.val().calisanTCNo);
+        $("#lbl_form_gsm").append(snapshot.val().calisanTelefonCep);
 
         var isyeriKodu = snapshot.val().calisanIsyeriKodu;
 
@@ -198,6 +201,11 @@ function doldurCalisanBilgileri(selectedID) {
             $("#lbl_grp_calisan_igu").append(sirket.val().sirketIsGuvenligiUzmani);
             
             //
+
+            // Nektar Print
+            
+        $("#lbl_form_firma").append(snapshot.val().sirketAdi);
+
         });
 
         var meslekKodu = snapshot.val().calisanMeslekKodu;
@@ -247,6 +255,7 @@ function doldurTalepBilgileri(selectedID){
                 else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
                     osgbfiyat=osgbfiyat+parseFloat(tetkik.fiyat);
+                    $("#lbl_grp_tetkikler_2_"+tetkik.idTetkik).append(" X");
                 }
             });
             $("#lbl_grp_calisan_hst_tutar").append(hastanefiyat+"");

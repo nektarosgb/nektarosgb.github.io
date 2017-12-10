@@ -184,6 +184,7 @@ function loadPrintTetkikler(){
         });
                 // var li = $('<li class="list-group-item checkboxfit">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"'+event+' name="chk' + tablo+ '" value='+cleanelement[idColumn]+' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
                 $("#prnt_hastane").append(contain);
+                $("#prnt_nektar").append(contain.replace('_1_','_2_'));
     });
 }
 

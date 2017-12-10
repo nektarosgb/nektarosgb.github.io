@@ -227,7 +227,8 @@
                             </div>
                         </div>
                         <br/>
-                        <button id="btnHastane" onclick="$('#myModal').modal('hide');return false;" data-toggle="modal" data-target="#modalHastane" class="btn-primary">Hastane Formu</button>
+                        <button id="btnHastane" onclick="$('#myModal').modal('hide');return false;" data-toggle="modal" data-target="#modalHastane" class="btn-primary">Gazi Tetkik Formu</button>
+                        <button id="btnHastane" onclick="$('#myModal').modal('hide');return false;" data-toggle="modal" data-target="#modalHastane" class="btn-primary">Nektar Tetkik Formu</button>
                         <br/>
                         <div class="panel panel-default">
                             <div class="panel-heading">Genel Toplam</div>
@@ -381,5 +382,56 @@
 
             </div>
         </div>
+    </div>
+    <div id="modalNektar" class="modal fade" role="document">
+        <button id="btnYazdirHastane" class="btn-primary no-print">Yazdır</button>
+  <div class="nektar-talep-container">
+  
+      <div class="nektar-logo">
+          
+      </div>
+      <div class="nektar-header-container">
+          <div class="nektar-header">NEKTAR</div>
+          <div class="nektar-header-desc">ORTAK SAĞLIK GÜVENLİK BİRİMİ</div>
+      </div>
+      <div class="nektar-topik">
+          <div id="hospital-name">GAZİ HASTANESİ</div>
+          <div id="form-name">SAĞLIK TETKİKLERİ TALEP FORMU</div>
+      </div>
+      <div class="calisan-bilgileri-container">
+              <div class="calisan-bilgileri-header">
+                      ÇALIŞAN BİLGİLERİ
+              </div>
+              <div class="calisan-bilgileri-isegiris  noborder-r">
+                  <label id="lbl_form_basvuruturu">İşe Giriş</label>
+              </div>
+              <div class="calisan-bilgileri-isegiris">
+                  <label id="lbl_tarih"></label>
+              </div>
+              <div class="calisan-bilgileri-label-container  noborder-r">
+                  <div class="calisan-label">AD SOYAD</div>
+                  <div class="calisan-label-aciklama"><label id="lbl_form_adsoyad"></label> </div>
+              </div>
+              <div class="calisan-bilgileri-label-container">
+                      <div class="calisan-label">T.C</div>
+                      <div class="calisan-label-aciklama"><label id="lbl_form_tc"></label> </div>
+              </div>
+              <div class="calisan-bilgileri-label-container  noborder-r  border-b">
+                      <div class="calisan-label">FİRMA ADI</div>
+                      <div class="calisan-label-aciklama"><label id="lbl_form_firma"></label> </div>
+              </div>
+              <div class="calisan-bilgileri-label-container  border-b">
+                      <div class="calisan-label">GSM</div>
+                      <div class="calisan-label-aciklama"><label id="lbl_form_gsm"></label> </div>
+              </div>
+      </div>
+      <div class="calisan-tetkiler-container" id="prnt_nektar">
+        
+     </div>
+      <div class="kase-imza">
+  
+      </div>
+  </div>
+  
     </div>
 </div>
