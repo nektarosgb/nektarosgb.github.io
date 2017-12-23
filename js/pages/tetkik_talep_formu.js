@@ -43,8 +43,8 @@ function initLoadedPage_tetkik_talep_formu() {
     $("#btnHastane").click(function(){
         var newWindow = window.open("", null, "height=800,width=600,status=yes,toolbar=no,menubar=no,location=no");  
         var divToPrint=document.getElementById('modalHastane');
-        newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css"> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> <link rel="stylesheet" href="dist/css/AdminLTE.min.css">'+divToPrint.innerHTML+'</body></html>');
-        setTimeout(function(){newWin.close();},10);
+        newWindow.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css"> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> <link rel="stylesheet" href="dist/css/AdminLTE.min.css">'+divToPrint.innerHTML+'</body></html>');
+        setTimeout(function(){newWindow.close();},10);
     });
 
     var gridCalisanlar = $("#grid-calisanlar").bootgrid({
