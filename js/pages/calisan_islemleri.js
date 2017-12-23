@@ -105,7 +105,6 @@ function initLoadedPage_calisan_islemleri() {
         var calisanMeslekKodu = $("#hdnIdMeslek").val();
         var calisanAdresi = $("#txtCalisanAdresi").val();
         var calisanTelefon = $("#txtCalisanTelefon").val();
-        var calisanSGKSicilNo = $("#txtCalisanSGKSicilNo").val();
         var calisanTCNo = $("#txtCalisanTCNo").val();
         var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
         var calisanEposta = $("#txtCalisanEposta").val();
@@ -113,7 +112,7 @@ function initLoadedPage_calisan_islemleri() {
         var calisanIsyeri = $("#txtCalisanIsyeri").val();
         var dosya = $("#fileCalisan")[0].files[0];
     
-        //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
+        //(Firma Adı, adresi, tel,İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
     
         var veri = {
             "idCalisan": idCalisan,
@@ -121,7 +120,6 @@ function initLoadedPage_calisan_islemleri() {
             "calisanMeslekKodu": calisanMeslekKodu,
             "calisanAdresi": calisanAdresi,
             "calisanTelefon": calisanTelefon,
-            "calisanSGKSicilNo": calisanSGKSicilNo,
             "calisanTCNo": calisanTCNo,
             "calisanTelefonCep": calisanTelefonCep,
             "calisanEposta": calisanEposta,
@@ -148,7 +146,6 @@ function setEditRowCalisan(id) {
         $("#txtCalisanAdi").val(snapshot.val().calisanAdi);
         $("#txtCalisanAdresi").val(snapshot.val().calisanAdresi);
         $("#txtCalisanTelefon").val(snapshot.val().calisanTelefon);
-        $("#txtCalisanSGKSicilNo").val(snapshot.val().calisanSGKSicilNo);
         $("#txtCalisanTCNo").val(snapshot.val().calisanTCNo);
         $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
@@ -179,7 +176,6 @@ function clearAllFieldsCalisan() {
     $("#txtCalisanAdi").val("");
     $("#txtCalisanAdresi").val('');
     $("#txtCalisanTelefon").val('');
-    $("#txtCalisanSGKSicilNo").val('');
     $("#txtCalisanTCNo").val('');
     $("#txtCalisanTelefonCep").val('');
     $("#txtCalisanEposta").val('');
