@@ -263,11 +263,13 @@ function doldurTalepBilgileri(selectedID){
                 if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
                 {
                     hastanefiyat+=parseFloat(tetkik.fiyat);
+                    $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).empty(" X");
                     $("#lbl_grp_tetkikler_1_"+tetkik.idTetkik).append(" X");
                 }
                 else if(tetkik.uygulamaTuru==="BirimdeYaplacak1511704375441")
                 {
                     osgbfiyat=osgbfiyat+parseFloat(tetkik.fiyat);
+                    $("#lbl_grp_tetkikler_2_"+tetkik.idTetkik).empty(" X");
                     $("#lbl_grp_tetkikler_2_"+tetkik.idTetkik).append(" X");
                 }
             });
