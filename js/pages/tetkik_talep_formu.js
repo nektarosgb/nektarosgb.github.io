@@ -78,6 +78,10 @@ function initLoadedPage_tetkik_talep_formu() {
     });
 
     var gridTalepler = $("#grid-tetkiktalepformlari").bootgrid({
+        searchSettings: {
+            delay: 100,
+            characters: 3
+        },
         ajax: false,
         formatters: {
             "commands": function (column, row) {
