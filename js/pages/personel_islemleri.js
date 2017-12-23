@@ -39,6 +39,7 @@ function initLoadedPage_personel_islemleri() {
     });
     
     setHeader("Personel İşlemleri");
+    $('.datepicker').datepicker();
 }
 
 
