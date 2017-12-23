@@ -31,14 +31,14 @@
     min-height: 22px;
 }
 .nektar-logo{
-    height: 50px;
-    width: 100px;
+    height: 65px;
+    width: 105px;
     float: left;
     background-image: url('../images/image004.png');
 }
 .nektar-header-container{
-    width: 330px;
-    height: 50px;
+    width: 325px;
+    height: 65px;
     float: left;
     color: white!important;
     background-color: #1d8bca!important;
