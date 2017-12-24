@@ -135,6 +135,7 @@ function initLoadedPage_tetkik_talep_formu() {
 
         var isyeriKodu = $("#hdnIdSirket").val();
         var isyeriAdi = $("#txtSirketAdi").val();
+        var kayitTarihi=$("#txtTetkikTalepKayitTarihi").val();
 
         var ucretToplami = parseFloat($("#txtUcretToplami").val());
 
@@ -167,7 +168,8 @@ function initLoadedPage_tetkik_talep_formu() {
             "ucretToplami": ucretToplami,
             "seciliTetkikler": seciliTetkikler,
             "tarih": bugun,
-            "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
+            "kayitTarihi":kayitTarihi
         }
 
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
@@ -323,5 +325,12 @@ function hesaplaToplam() {
 
 
 function clearAllFieldsTetkikTalepFormu(){
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+
+    $('#txtTetkikTalepKayitTarihi').val(today);
+
     return false;
 }
