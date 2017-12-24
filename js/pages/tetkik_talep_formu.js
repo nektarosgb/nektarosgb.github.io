@@ -1,6 +1,7 @@
 function initLoadedPage_tetkik_talep_formu() {
     loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler', ' onClick="hesaplaToplam();"');    
 
+    $('.datepicker').datepicker();
     $("#drpMuayeneTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
         $("#hdnIdMuayeneTuru").val(selectedID);
