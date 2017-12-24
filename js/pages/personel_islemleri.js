@@ -39,6 +39,13 @@ function initLoadedPage_personel_islemleri() {
     });
     
     setHeader("Personel İşlemleri");
+    
+        var now = new Date();
+        var day = ("0" + now.getDate()).slice(-2);
+        var month = ("0" + (now.getMonth() + 1)).slice(-2);
+        var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+
+$('#txtPersonelKayitTarihi').val(today);
     $('.datepicker').datepicker();
 }
 
@@ -51,7 +58,7 @@ function setEditRowPersonel(id) {
         $("#hdnId").val(snapshot.val().idPersonel);
         $("#txtPersonelAdi").val(snapshot.val().personelAdi);
         $("#txtPersonelGorevi").val(snapshot.val().personelGorevi);
-        $("#txtPersonelTelefon").val(snapshot.val().personelAdresi);
+        $("#txtPersonelKayitTarihi").val(snapshot.val().personelKayitTarihi);
         $("#txtPersonelTCNo").val(snapshot.val().personelTelefon);
         $("#txtPersonelTelefonCep").val(snapshot.val().personelTelefonCep);
         $("#txtPersonelEposta").val(snapshot.val().personelEposta);
@@ -72,7 +79,7 @@ function kaydetPersonelBilgileri() {
 
     var personelGorevi = $("#txtPersonelGorevi").val();
     var personelAdresi = $("#txtPersonelAdresi").val();
-    var personelTelefon = $("#txtPersonelTelefon").val();
+    var personelKayitTarihi = $("#txtPersonelKayitTarihi").val();
     var personelTCNo = $("#txtPersonelTCNo").val();
     var personelTelefonCep = $("#txtPersonelTelefonCep").val();
     var personelEposta = $("#txtPersonelEposta").val();
@@ -82,7 +89,7 @@ function kaydetPersonelBilgileri() {
         "personelAdi": personelAdi,
         "personelGorevi": personelGorevi,
         "personelAdresi": personelAdresi,
-        "personelTelefon": personelTelefon,
+        "personelKayitTarihi": personelKayitTarihi,
         "personelTCNo": personelTCNo,
         "personelTelefonCep": personelTelefonCep,
         "personelEposta": personelEposta,
@@ -98,7 +105,7 @@ function clearAllFieldsPersonel() {
     $("#hdnId").val('');
     $("#txtPersonelAdi").val("");
     $("#txtPersonelGorevi").val('');
-    $("#txtPersonelTelefon").val('');
+    $("#txtPersonelKayitTarihi").val('');
     $("#txtPersonelTCNo").val('');
     $("#txtPersonelTelefonCep").val('');
     $("#txtPersonelEposta").val('');
