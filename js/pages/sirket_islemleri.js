@@ -57,6 +57,7 @@ function initLoadedPage() {
             $("#txtSirketEposta").val(snapshot.val().sirketEposta);
             $("#txtSirketIsyeriHekimi").val(snapshot.val().sirketIsyeriHekimi);
             $("#txtSirketIsyeriGuvenlikUzmani").val(snapshot.val().sirketIsGuvenligiUzmani);
+            //sirketKayitTarihi
             $('#myModal').modal('show');
         });
         // ...
@@ -80,6 +81,7 @@ function initLoadedPage() {
         var sirketEposta = $("#txtSirketEposta").val();
         var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
         var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
+        var sirketKayitTarihi =new Date();
     
         //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
     
