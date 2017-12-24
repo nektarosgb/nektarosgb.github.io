@@ -96,6 +96,7 @@ function initLoadedPage() {
             "sirketEposta": sirketEposta,
             "sirketIsyeriHekimi": sirketIsyeriHekimi,
             "sirketIsGuvenligiUzmani": sirketIsGuvenligiUzmani,
+            "sirketKayitTarihi":sirketKayitTarihi,
             "kayitEden": firebase.auth().currentUser.uid
         }
     
