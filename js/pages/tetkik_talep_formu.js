@@ -175,7 +175,7 @@ function initLoadedPage_tetkik_talep_formu() {
         }
 
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
-
+        initLoadedPage_tetkik_talep_formu();
         return false;
     });
 
