@@ -87,7 +87,8 @@ function kaydetPersonelBilgileri() {
         "personelTCNo": personelTCNo,
         "personelTelefonCep": personelTelefonCep,
         "personelEposta": personelEposta,
-        "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+        "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
+        "kayitTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
     }
 
     kaydetVeritabani("personeller", idPersonel, veri);

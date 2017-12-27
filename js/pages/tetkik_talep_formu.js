@@ -170,7 +170,8 @@ function initLoadedPage_tetkik_talep_formu() {
             "seciliTetkikler": seciliTetkikler,
             "tarih": bugun,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
-            "kayitTarihi":kayitTarihi
+            "kayitTarihi":kayitTarihi,
+            "guncellemeTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
         }
 
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);

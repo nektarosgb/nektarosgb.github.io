@@ -97,7 +97,8 @@ function initLoadedPage() {
             "sirketIsyeriHekimi": sirketIsyeriHekimi,
             "sirketIsGuvenligiUzmani": sirketIsGuvenligiUzmani,
             "sirketKayitTarihi":sirketKayitTarihi,
-            "kayitEden": firebase.auth().currentUser.uid
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
+            "kayitTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
         }
     
         kaydetVeritabani("sirketler", idSirket, veri);

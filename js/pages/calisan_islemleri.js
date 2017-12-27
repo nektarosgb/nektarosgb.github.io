@@ -127,7 +127,8 @@ function initLoadedPage_calisan_islemleri() {
             "calisanEposta": calisanEposta,
             "calisanIsyeri": calisanIsyeri,
             "calisanIsyeriKodu": calisanIsyeriKodu,
-            "kayitEden": firebase.auth().currentUser.providerData[0]["email"]
+            "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
+            "kayitTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
         }
     
         kaydetVeritabani("calisanlar", idCalisan, veri);
