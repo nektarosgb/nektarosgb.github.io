@@ -135,6 +135,8 @@ function initLoadedPage_calisan_islemleri() {
         dosyaYukle(dosya, 'calisanlar', idCalisan);
     
         initLoadedPage_calisan_islemleri();
+
+        return false;
     });
 }
 
