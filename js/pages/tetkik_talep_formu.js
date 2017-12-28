@@ -156,6 +156,7 @@ function initLoadedPage_tetkik_talep_formu() {
         var idTetkikTalepFormu = generateID(calisanAdi + muayeneTuru);
 
         var bugun = new Date();
+        var kayittarihi=$("#txtTetkikTalepKayitTarihi").val();
 
         var veri = {
             "idTetkikTalepFormu": idTetkikTalepFormu,
@@ -168,10 +169,10 @@ function initLoadedPage_tetkik_talep_formu() {
             "isyeriAdi": isyeriAdi,
             "ucretToplami": ucretToplami,
             "seciliTetkikler": seciliTetkikler,
-            "tarih": bugun,
+            "tarih": kayittarihi,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
             "kayitTarihi":kayitTarihi,
-            "guncellemeTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
+            "guncellemeTarihi":bugun.getDate()+"/"+(bugun.getMonth()+1)+"/"+bugun.getFullYear(),
         }
 
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
