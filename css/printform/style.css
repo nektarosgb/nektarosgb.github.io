@@ -16,6 +16,10 @@
         -webkit-print-color-adjust: exact; 
     }
 }
+.center{
+    margin: auto;
+    width: 50%;
+}
 
 .nektar-talep-container{
     width:432px;
