@@ -96,6 +96,12 @@
 .calisan-bilgileri-container > table th {
     border: solid 1px black;
     font-weight: bold;
+    font-size: 11px;
+}
+.calisan-bilgileri-container > table td {
+    border: solid 1px black;
+    font-weight: bold;
+    font-size: 9px;
 }
 .nektar-topik{
     width: 100%;
