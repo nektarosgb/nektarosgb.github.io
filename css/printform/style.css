@@ -22,11 +22,12 @@
 }
 
 .nektar-talep-container{
-    width:432px;
+    width:434px;
     height: 680px;
     font-size: 14px;
     background-color: white!important;
     border: solid 1px black;
+    padding: 1px;
 }
 .nektar-talep-container > .row>div{
     border: solid 1px black;
