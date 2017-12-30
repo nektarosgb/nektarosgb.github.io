@@ -273,7 +273,8 @@ function doldurTalepBilgileri(selectedID){
             
             var hastanefiyat=parseFloat("0.00");
             var osgbfiyat=parseFloat("0.00");
-
+        if(talepformu.seciliTetkikler!=null)
+        {
             talepformu.seciliTetkikler.forEach(function(tetkik) {
                 $("#chkitem" + tetkik.tetkik).prop("checked", true);
                 if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
@@ -289,6 +290,7 @@ function doldurTalepBilgileri(selectedID){
                     $("#lbl_grp_tetkikler_2_"+tetkik.idTetkik).append(" X");
                 }
             });
+        }
             $("#lbl_grp_calisan_hst_tutar").append(hastanefiyat+"");
 
             hesaplaToplam();
