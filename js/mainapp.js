@@ -121,7 +121,7 @@ function kaydetVeritabani(tablo, id, veri) {
 function listTable(tablo) {
 
     return firebase.database().ref(tablo).once('value').then(function (snapshot) {
-        console.log(snapshot.val());
+        //console.log(snapshot.val());
     });
 }
 
