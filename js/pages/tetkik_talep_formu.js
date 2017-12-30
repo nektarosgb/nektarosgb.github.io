@@ -314,7 +314,7 @@ function hesaplaToplam() {
 
     var toplam = parseFloat("0.00");
 
-    $('input[type="checkbox"]:checked').each(function () {
+    $('input[type="checkbox"]:checked').each(function (e) {
 
         var idTetkik = this.value;
 
