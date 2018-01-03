@@ -1878,9 +1878,9 @@ td
 	border-bottom:.5pt dotted windowtext;
 	border-left:.5pt dotted windowtext;
 	white-space:normal;}
-#modalSaglik >table >tr >td{
+#modalSaglik table tr td{
 	text-align: left;
 }
-#modalSaglik >table >tr >th{
+#modalSaglik table tr th{
 	text-align: left;
 }
