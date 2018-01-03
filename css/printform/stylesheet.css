@@ -392,7 +392,10 @@ td
 	font-weight:700;
 	font-family:"Times New Roman", serif;
 	mso-font-charset:162;
-	vertical-align:middle;}
+	vertical-align:middle;
+	border-right: .5pt dotted black;
+	border-top: .5pt dotted black;
+}
 .xl91
 	{mso-style-parent:style57;
 	color:black;
@@ -1875,3 +1878,6 @@ td
 	border-bottom:.5pt dotted windowtext;
 	border-left:.5pt dotted windowtext;
 	white-space:normal;}
+#modalSaglik{
+	text-align: left;
+}
