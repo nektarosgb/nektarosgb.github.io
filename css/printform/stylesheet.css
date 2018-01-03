@@ -1842,7 +1842,10 @@ td
 	font-family:"Times New Roman", serif;
 	mso-font-charset:162;
 	text-align:left;
-	vertical-align:middle;}
+	vertical-align:middle;
+	border-right: .5pt dotted black;
+	border-top: .5pt dotted black;
+}
 .xl220
 	{mso-style-parent:style0;
 	color:black;
