@@ -65,11 +65,11 @@ function initLoadedPage() {
     
     function kaydetSirketBilgileri() {
         var d = new Date();
-        var n = d.getTime()
+        var n = d.getDate();
     
         var sirketAdi = $("#txtSirketAdi").val();
         var idSirket = generateID(sirketAdi);
-        var sirketKayitTarihi=Date.now();
+        var sirketKayitTarihi=d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
     
         if ($("#hdnId").val().trim().length >0){
             idSirket = $("#hdnId").val();
@@ -83,7 +83,8 @@ function initLoadedPage() {
         var sirketEposta = $("#txtSirketEposta").val();
         var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
         var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
-        var editime=Date.now();
+        var editime=d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
+        var timestamp=d.getDate();
     
         //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
     
@@ -100,7 +101,8 @@ function initLoadedPage() {
             "sirketIsGuvenligiUzmani": sirketIsGuvenligiUzmani,
             "sirketKayitTarihi":sirketKayitTarihi,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
-            "kayitTarihi":editime
+            "kayitTarihi":editime,
+            "TimeStamp": timestamp
         }
     
         kaydetVeritabani("sirketler", idSirket, veri);
