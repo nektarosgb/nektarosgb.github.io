@@ -69,9 +69,11 @@ function initLoadedPage() {
     
         var sirketAdi = $("#txtSirketAdi").val();
         var idSirket = generateID(sirketAdi);
+        var sirketKayitTarihi=Date.now();
     
         if ($("#hdnId").val().trim().length >0){
             idSirket = $("#hdnId").val();
+            sirketKayitTarihi =$('#hdnSirketKayitTarihi').val();
         }
         var sirketAdresi = $("#txtSirketAdresi").val();
         var sirketTelefon = $("#txtSirketTelefon").val();
@@ -81,7 +83,7 @@ function initLoadedPage() {
         var sirketEposta = $("#txtSirketEposta").val();
         var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
         var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
-        var sirketKayitTarihi =new Date();
+        var editime=Date.now();
     
         //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
     
@@ -98,7 +100,7 @@ function initLoadedPage() {
             "sirketIsGuvenligiUzmani": sirketIsGuvenligiUzmani,
             "sirketKayitTarihi":sirketKayitTarihi,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
-            "kayitTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
+            "kayitTarihi":editime
         }
     
         kaydetVeritabani("sirketler", idSirket, veri);
