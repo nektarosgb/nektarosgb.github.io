@@ -84,7 +84,7 @@ function initLoadedPage() {
         var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
         var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
         var editime=d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
-        var timestamp=d.getDate();
+        var timestamp=d.getTime();
     
         //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
     

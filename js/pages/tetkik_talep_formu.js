@@ -141,6 +141,7 @@ function initLoadedPage_tetkik_talep_formu() {
         var ucretToplami = parseFloat($("#txtUcretToplami").val());
 
         var seciliTetkikler = [];
+        var timestamp=d.getTime();
 
         $('input[type="checkbox"]:checked').each(function () {
 
@@ -173,6 +174,7 @@ function initLoadedPage_tetkik_talep_formu() {
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
             "kayitTarihi":kayitTarihi,
             "guncellemeTarihi":bugun.getDate()+"/"+(bugun.getMonth()+1)+"/"+bugun.getFullYear(),
+            "timestamp":timestamp
         }
 
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
