@@ -189,5 +189,6 @@ function clearAllFieldsCalisan() {
     $("#txtCalisanIsyeri").val('');
     $("#fileCalisan").val('');
     $("#hdnIdSirket").val('');
+    // $("#imgCalisan").remove('src');
     resimTemizle("imgCalisan");
 }

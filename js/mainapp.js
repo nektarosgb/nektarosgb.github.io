@@ -91,7 +91,8 @@ function resimGoster(klasor, id, imgID) {
 
 function resimTemizle(imgID) {
     var img = $("#" + imgID);
-    img.src = "";
+    // img.src = "";
+    img.remove('src');
 }
 
 function generateID(text){
