@@ -17,20 +17,23 @@ function loadRptTetkik(t1, t2) {
     var tetkikSay = 0;
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
 
-
-        tetkikSay += snapshot.seciliTetkikler.length;
+        if (snapshot.seciliTetkikler != null) {
+            tetkikSay += snapshot.seciliTetkikler.length;
+        }
     });
 
     $("#txtTetkikSayisi").text(tetkikSay);
 
     var toplamTutar = parseFloat("0.00");;
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
-        snapshot.seciliTetkikler.forEach(idTetkik => {
-            var txtfiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
-            var fiyat = parseFloat(txtfiyat);
+        if (snapshot.seciliTetkikler != null) {
+            snapshot.seciliTetkikler.forEach(idTetkik => {
+                var txtfiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
+                var fiyat = parseFloat(txtfiyat);
 
-            toplamTutar = toplamTutar + fiyat;
-        });
+                toplamTutar = toplamTutar + fiyat;
+            });
+        }
     });
 
     $("#txtTetkikToplamTutar").text(toplamTutar);
