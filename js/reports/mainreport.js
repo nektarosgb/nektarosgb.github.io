@@ -9,6 +9,7 @@ function initLoadedPage_main_report() {
         var t2 = $('.datepicker2').datepicker('getDate').getTime();
         loadRptYeniKayitlar(t1, t2);
         loadRptTetkik(t1, t2);
+        return false;
     });
 }
 
