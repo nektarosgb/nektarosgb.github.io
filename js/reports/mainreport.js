@@ -4,6 +4,10 @@ function initLoadedPage_main_report() {
     $('.datepicker1').datepicker();
     $('.datepicker2').datepicker();
 
+    loadListVerileri('idTetkik','tetkikler');
+    loadListVerileri('idUygulamaturu','uygulama_turleri');
+    loadListVerileri('idSirket','sirketler');
+
     $('#btnMainReportYukle').click(function () {
         var t1 = $('.datepicker1').datepicker('getDate').getTime();
         var t2 = $('.datepicker2').datepicker('getDate').getTime();
@@ -30,7 +34,6 @@ function loadRptTetkik(t1, t2) {
             snapshot.seciliTetkikler.forEach(idTetkik => {
                 var txtfiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
                 var fiyat = parseFloat(txtfiyat);
-
                 toplamTutar = toplamTutar + fiyat;
             });
         }

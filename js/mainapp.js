@@ -145,6 +145,17 @@ function LoadDrop(dropId, id, text, tablo, selected) {
 
 var chkListVerileri={};
 
+function loadListVerileri(idColumn, tablo) {
+    firebase.database().ref(tablo).once('value').then(function (snapshot) {
+        chkListVerileri[tablo]={};
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+            chkListVerileri[tablo][cleanelement[idColumn]]= cleanelement;
+        });
+    });
+}
+
+
 function loadCheckBoxList(lstChkID, idColumn, column, tablo,event) {
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
         chkListVerileri[tablo]={};
