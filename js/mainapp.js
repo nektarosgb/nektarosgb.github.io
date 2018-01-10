@@ -97,7 +97,7 @@ function resimTemizle(imgID) {
 
 function generateID(text) {
     var d = new Date();
-    var n = d.getTime()
+    var n = GetTimeStamp(d);
     text = text.replace(/[^\x00-\x7F]/g, "").split(' ').join('') + n;
     text = text.replace(/[{()}]/g, '');
     text = text.replace(/[\[\]']+/g, '');
