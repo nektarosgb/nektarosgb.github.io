@@ -133,7 +133,6 @@ function LoadDrop(dropId, id, text, tablo, selected) {
 
     $('#' + dropId)
         .find('option')
-        .empty()
         .end()
         .append('<option value="0">Seçiniz</option>');
 
