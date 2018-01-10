@@ -141,9 +141,10 @@ function initLoadedPage_tetkik_talep_formu() {
         var ucretToplami = parseFloat($("#txtUcretToplami").val());
 
         var seciliTetkikler = [];
+        var d=new Date();
         var timestamp=d.getTime();
 
-        $('input[type="checkbox"]:checked').each(function () {
+        $('#divtetkikler input[type="checkbox"]:checked').each(function () {
 
             var idTetkik = this.value;
 
