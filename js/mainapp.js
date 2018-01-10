@@ -81,11 +81,11 @@ function dosyaYukle(dosya, klasor, id) {
 function resimGoster(klasor, id, imgID) {
     var storageRef = firebase.storage().ref();
     storageRef.child(klasor).child(id).getDownloadURL().then(function (url) {
-        var img = $("#" + imgID);        
-        img.attr("src",url);
+        var img = $("#" + imgID);
+        img.attr("src", url);
     }).catch(function (error) {
         console.log(error);
-        img.attr("src","../css/images/no-picture.png");
+        img.attr("src", "../css/images/no-picture.png");
     });
 }
 
@@ -95,13 +95,13 @@ function resimTemizle(imgID) {
     img.remove('src');
 }
 
-function generateID(text){
+function generateID(text) {
     var d = new Date();
     var n = d.getTime()
-    text=text.replace(/[^\x00-\x7F]/g, "").split(' ').join('')+ n;
+    text = text.replace(/[^\x00-\x7F]/g, "").split(' ').join('') + n;
     text = text.replace(/[{()}]/g, '');
     text = text.replace(/[\[\]']+/g, '');
-    text = text.replace(/\(|\)/g,'')
+    text = text.replace(/\(|\)/g, '')
     return text;
 }
 
@@ -127,10 +127,8 @@ function listTable(tablo) {
 }
 
 function LoadDrop(dropId, id, text, tablo, selected) {
-    
-    $('#' + dropId)
-        .find('option')
-        .remove();
+
+    $('#' + dropId).children('option').remove();
 
     $('#' + dropId)
         .find('option')
@@ -149,60 +147,58 @@ function LoadDrop(dropId, id, text, tablo, selected) {
     });
 }
 
-var chkListVerileri={};
+var chkListVerileri = {};
 
 function loadListVerileri(idColumn, tablo) {
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
-        chkListVerileri[tablo]={};
+        chkListVerileri[tablo] = {};
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            chkListVerileri[tablo][cleanelement[idColumn]]= cleanelement;
+            chkListVerileri[tablo][cleanelement[idColumn]] = cleanelement;
         });
     });
 }
 
 
-function loadCheckBoxList(lstChkID, idColumn, column, tablo,event) {
+function loadCheckBoxList(lstChkID, idColumn, column, tablo, event) {
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
-        chkListVerileri[tablo]={};
+        chkListVerileri[tablo] = {};
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            var li = $('<li class="list-group-item checkboxfit">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"'+event+' name="chk' + tablo+ '" value='+cleanelement[idColumn]+' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
+            var li = $('<li class="list-group-item checkboxfit">' + cleanelement[column] + '<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"' + event + ' name="chk' + tablo + '" value=' + cleanelement[idColumn] + ' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
             $("#" + lstChkID).append(li);
-            chkListVerileri[tablo][cleanelement[idColumn]]= cleanelement;
+            chkListVerileri[tablo][cleanelement[idColumn]] = cleanelement;
         });
     });
 }
 
-function loadPrintTetkikler(){
+function loadPrintTetkikler() {
     firebase.database().ref("tetkikler").once('value').then(function (snapshot) {
-        var sayac=1;
-        var sayac2=0;
-        var contain="<div class='calisan-tetkikler-group-container'>";
+        var sayac = 1;
+        var sayac2 = 0;
+        var contain = "<div class='calisan-tetkikler-group-container'>";
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-        
-                contain+="<div class='group-tetkikler-label'>"+cleanelement["tetkik"]+"</div>";
-                contain+=" <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_1_"+cleanelement["idTetkik"]+"'></label> </div>";
 
-                if(sayac%4==0 && sayac!=0)
-                {
-                    contain+="</div>";
-                    if(sayac2%2==0)
-                    {
-                        contain+="<div class='takoz'></div><div class='calisan-tetkikler-group-container'>"
-                    }
-                    else{
-                        contain +="<div class='calisan-tetkikler-group-container'>";
-                    }
-                    sayac2++;
+            contain += "<div class='group-tetkikler-label'>" + cleanelement["tetkik"] + "</div>";
+            contain += " <div class='group-tetkikler-cevap'><label id='lbl_grp_tetkikler_1_" + cleanelement["idTetkik"] + "'></label> </div>";
+
+            if (sayac % 4 == 0 && sayac != 0) {
+                contain += "</div>";
+                if (sayac2 % 2 == 0) {
+                    contain += "<div class='takoz'></div><div class='calisan-tetkikler-group-container'>"
                 }
-            
+                else {
+                    contain += "<div class='calisan-tetkikler-group-container'>";
+                }
+                sayac2++;
+            }
+
             sayac++;
         });
-                // var li = $('<li class="list-group-item checkboxfit">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"'+event+' name="chk' + tablo+ '" value='+cleanelement[idColumn]+' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
-                $("#prnt_hastane").append(contain);
-                $("#prnt_nektar").append(contain.replace('_1_','_2_'));
+        // var li = $('<li class="list-group-item checkboxfit">'+cleanelement[column]+'<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"'+event+' name="chk' + tablo+ '" value='+cleanelement[idColumn]+' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
+        $("#prnt_hastane").append(contain);
+        $("#prnt_nektar").append(contain.replace('_1_', '_2_'));
     });
 }
 
@@ -229,74 +225,74 @@ function csvyeAktar(gridID) {
 }
 
 
-function validateRequiredFields(){
-    var allright=true;
-    $(".required").each(function(r){
-        if(this.value===""){
-            $("#"+this.id).addClass("invalid");
-            allright=false;
-        }else{
-            $("#"+this.id).removeClass("invalid");
-        }
-    }); 
-
-    $(".requireddrp").each(function(r){
-        if(this.value==="0"){
-            $("#"+this.id).addClass("invalid");
-            allright=false;
-        }else{
-            $("#"+this.id).removeClass("invalid");
-        }
-    }); 
-    
-    return allright;
-}
-
-function validateNumberFields(){
-
-    var allright=true;
-
-
-    $(".isnumber").each(function(n){
-        var num=parseFloat(this.value);
-        if(isNan(this.value) || num==0){
-            $("#"+this.id).addClass("invalid");
+function validateRequiredFields() {
+    var allright = true;
+    $(".required").each(function (r) {
+        if (this.value === "") {
+            $("#" + this.id).addClass("invalid");
             allright = false;
-        }else{
-            $("#"+this.id).removeClass("invalid");
+        } else {
+            $("#" + this.id).removeClass("invalid");
+        }
+    });
+
+    $(".requireddrp").each(function (r) {
+        if (this.value === "0") {
+            $("#" + this.id).addClass("invalid");
+            allright = false;
+        } else {
+            $("#" + this.id).removeClass("invalid");
         }
     });
 
     return allright;
 }
 
-function validateFields(){
-    var statusreq=validateRequiredFields();
-    var statusnum=validateRequiredFields();
+function validateNumberFields() {
+
+    var allright = true;
+
+
+    $(".isnumber").each(function (n) {
+        var num = parseFloat(this.value);
+        if (isNan(this.value) || num == 0) {
+            $("#" + this.id).addClass("invalid");
+            allright = false;
+        } else {
+            $("#" + this.id).removeClass("invalid");
+        }
+    });
+
+    return allright;
+}
+
+function validateFields() {
+    var statusreq = validateRequiredFields();
+    var statusnum = validateRequiredFields();
 
     return statusreq && statusnum;
 }
 
 
-function popoverBtnDeleteCommandHtml(rowid){
+function popoverBtnDeleteCommandHtml(rowid) {
 
     //data-container=\"body\" 
-    var popoverDeleteCommandHtml="data-html=\"true\" data-original-title=\"Onaylıyormusunuz ?\" data-toggle=\"popover\" data-placement=\"top\" data-content='<button id=\"btndel"+rowid+"\" type=\"button\" onclick=\"triggerDelete(this);return false;\" class=\"btn btn-success btn-block\" data-row-id=\"" + rowid + "\">Seçili Kaydı Sil</button>'";
-    var btnhtml="<button id='btn"+rowid+"' type=\"button\" onclick='showConfirmation(this);' class=\"btn btn-xs btn-default\" "+popoverDeleteCommandHtml+"><span class=\"fa fa-trash-o\"></span></button>";
+    var popoverDeleteCommandHtml = "data-html=\"true\" data-original-title=\"Onaylıyormusunuz ?\" data-toggle=\"popover\" data-placement=\"top\" data-content='<button id=\"btndel" + rowid + "\" type=\"button\" onclick=\"triggerDelete(this);return false;\" class=\"btn btn-success btn-block\" data-row-id=\"" + rowid + "\">Seçili Kaydı Sil</button>'";
+    var btnhtml = "<button id='btn" + rowid + "' type=\"button\" onclick='showConfirmation(this);' class=\"btn btn-xs btn-default\" " + popoverDeleteCommandHtml + "><span class=\"fa fa-trash-o\"></span></button>";
     return btnhtml;
 }
 
-function showConfirmation(btn){
-    $("#"+btn.id).popover();
+function showConfirmation(btn) {
+    $("#" + btn.id).popover();
 }
 
-function triggerDelete(btn){
-    $("#tbl"+btn.id).trigger("click");
+function triggerDelete(btn) {
+    $("#tbl" + btn.id).trigger("click");
 }
 
 $('body').on('click', function (e) {
     if ($(e.target).data('toggle') !== 'popover'
-        && $(e.target).parents('.popover.in').length === 0) { 
+        && $(e.target).parents('.popover.in').length === 0) {
         $('[data-toggle="popover"]').popover('hide');
     }
 });
