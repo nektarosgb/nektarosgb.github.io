@@ -5,6 +5,7 @@ function initLoadedPage_calisan_islemleri() {
     LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', '0');
     LoadDrop('drpMeslek', 'idMeslek', 'meslek', 'meslekler', '0');
 
+    $( "#drpIsyeri" ).unbind();
     $("#drpIsyeri").change(function () {
 
         var selectedID = this.selectedOptions[0].value;
@@ -19,6 +20,7 @@ function initLoadedPage_calisan_islemleri() {
         }
     });
 
+    $("#drpMeslek").unbind();
     $("#drpMeslek").change(function () {
 
         var selectedID = this.selectedOptions[0].value;
@@ -88,6 +90,8 @@ function initLoadedPage_calisan_islemleri() {
             txtCalisanTCNo:"Lütfen Çalışana Ait TC No Giriniz"
         }
     });
+
+    $( "#btn_CalisanKaydet" ).unbind();
     $("#btn_CalisanKaydet").click( function() {
         if(!validateFields()){
             return false;
