@@ -142,7 +142,6 @@ function initLoadedPage_calisan_islemleri() {
 
 
 function setEditRowCalisan(id) {
-    clearAllFieldsCalisan();
     firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
         if (snapshot == null) {
 
