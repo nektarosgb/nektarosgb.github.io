@@ -129,14 +129,17 @@ function listTable(tablo) {
 function LoadDrop(dropId, id, text, tablo, selected) {
 
     // $('#' + dropId).children('option').remove();
-    $('#' + dropId).empty();
-
-    $('#' + dropId)
-        .find('option')
-        .end()
-        .append('<option value="0">Seçiniz</option>');
+   
 
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
+
+        $('#' + dropId).empty();
+
+        $('#' + dropId)
+            .find('option')
+            .end()
+            .append('<option value="0">Seçiniz</option>');
+            
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             if (selected === cleanelement[id])
