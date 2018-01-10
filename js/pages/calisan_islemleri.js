@@ -158,12 +158,13 @@ function setEditRowCalisan(id) {
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
 
 
-        // $("#drpSirket").val(snapshot.val().calisanIsyeriKodu).change();
+        $("#drpIsyeri").val(snapshot.val().calisanIsyeriKodu).change();
+        $("#drpMeslek").val(snapshot.val().calisanMeslekKodu).change();
         ///$("#drpSirket").find("option[value=" + snapshot.val().calisanIsyeriKodu +"]").attr('selected', true);
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
         $('#drpMeslek').children('option').remove();
-        LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', snapshot.val().calisanIsyeriKodu);
-        LoadDrop('drpMeslek', 'idMeslek', 'meslek', 'meslekler', snapshot.val().calisanMeslekKodu);
+        // LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', snapshot.val().calisanIsyeriKodu);
+        // LoadDrop('drpMeslek', 'idMeslek', 'meslek', 'meslekler', snapshot.val().calisanMeslekKodu);
 
         $("#fileCalisan").val('');
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
