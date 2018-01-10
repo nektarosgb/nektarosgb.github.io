@@ -2,6 +2,8 @@ function initLoadedPage_tetkik_talep_formu() {
     loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkikler', ' onClick="hesaplaToplam();"');    
 
     $('.datepicker').datepicker();
+
+    $("#drpMuayeneTuru").unbind();
     $("#drpMuayeneTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
         $("#hdnIdMuayeneTuru").val(selectedID);
@@ -10,11 +12,13 @@ function initLoadedPage_tetkik_talep_formu() {
 
     loadPrintTetkikler();
 
+    $("#drpCariTuru").unbind();
     $("#drpCariTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
         $("#hdnIdCariHesapTuru").val(selectedID);
         $("#hdnCariHesapTuru").val($("#drpCariTuru").children("option:selected").text());
     });
+    $("#btnYazdirHastane").unbind();
     $("#btnYazdirHastane").click(function(){
         var divToPrint=document.getElementById('modalHastane');
         
@@ -28,6 +32,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
           setTimeout(function(){newWin.close();},10);
     });
+    $("#btnYazdirNektar").unbind();
     $("#btnYazdirNektar").click(function(){
         var divToPrint=document.getElementById('modalNektar');
         
@@ -122,6 +127,7 @@ function initLoadedPage_tetkik_talep_formu() {
 
 
 
+    $("#btn_TetkikTalepFormuKaydet").unbind();
     $("#btn_TetkikTalepFormuKaydet").click(function () {
         if(!validateFields()){
             return false;

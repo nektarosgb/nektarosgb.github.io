@@ -105,7 +105,10 @@ function generateID(text) {
     return text;
 }
 
+
+
 function kaydetVeritabani(tablo, id, veri) {
+    alert("geldi"+id);
     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
     }).catch(function (error) {
@@ -127,17 +130,14 @@ function listTable(tablo) {
 }
 
 function LoadDrop(dropId, id, text, tablo, selected) {
+    firebase.database().ref(tablo).once('value').then(function (snapshot) {
 
-    // $('#' + dropId).children('option').remove();
-    $('#' + dropId).empty();
-
-    $('#' + dropId)
+        $('#' + dropId).empty();
+        $('#' + dropId)
         .find('option')
-        .empty()
         .end()
         .append('<option value="0">Seçiniz</option>');
 
-    firebase.database().ref(tablo).once('value').then(function (snapshot) {
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             if (selected === cleanelement[id])
@@ -164,6 +164,7 @@ function loadListVerileri(idColumn, tablo) {
 function loadCheckBoxList(lstChkID, idColumn, column, tablo, event) {
     firebase.database().ref(tablo).once('value').then(function (snapshot) {
         chkListVerileri[tablo] = {};
+        $("#" + lstChkID).empty();
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             var li = $('<li class="list-group-item checkboxfit">' + cleanelement[column] + '<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"' + event + ' name="chk' + tablo + '" value=' + cleanelement[idColumn] + ' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
