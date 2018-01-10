@@ -148,7 +148,7 @@ function initLoadedPage_tetkik_talep_formu() {
         var ucretToplami = parseFloat($("#txtUcretToplami").val());
 
         var seciliTetkikler = [];
-        var d=new Date();
+        var d= new Date();
         var timestamp=d.getTime();
 
         $('#divtetkikler input[type="checkbox"]:checked').each(function () {
