@@ -198,7 +198,6 @@ function doldurCalisanBilgileri(selectedID) {
         $("#txtCalisanAdi").val(snapshot.val().calisanAdi);
         $("#txtCalisanAdresi").val(snapshot.val().calisanAdresi);
         $("#txtCalisanTelefon").val(snapshot.val().calisanTelefon);
-        $("#txtCalisanSGKSicilNo").val(snapshot.val().calisanSGKSicilNo);
         $("#txtCalisanTCNo").val(snapshot.val().calisanTCNo);
         $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
