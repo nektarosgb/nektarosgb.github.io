@@ -169,6 +169,7 @@ function initLoadedPage_tetkik_talep_formu() {
         var veri = {
             "idTetkikTalepFormu": idTetkikTalepFormu,
             "muayeneTuruKodu": muayeneTuruKodu,
+            "muayeneTuru":muayeneTuru,
             "cariHesapTuruKodu": cariHesapTuruKodu,
             "cariHesapTuru": cariHesapTuru,
             "calisanKodu": calisanKodu,
