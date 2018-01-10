@@ -159,7 +159,7 @@ function initLoadedPage_tetkik_talep_formu() {
         var idTetkikTalepFormu = generateID(calisanAdi + muayeneTuru);
 
         if ($("#hdnIdTetkikTalepFormu").val().trim().length > 0) {
-            idTetkikTalepFormu = $("#hdnId").val();
+            idTetkikTalepFormu = $("#hdnIdTetkikTalepFormu").val();
         }
 
         var bugun = new Date();
