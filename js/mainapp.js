@@ -128,11 +128,12 @@ function listTable(tablo) {
 
 function LoadDrop(dropId, id, text, tablo, selected) {
 
-    $('#' + dropId).children('option').remove();
+    // $('#' + dropId).children('option').remove();
+    $('#' + dropId).empty();
 
     $('#' + dropId)
         .find('option')
-        .remove()
+        .empty()
         .end()
         .append('<option value="0">Seçiniz</option>');
 
