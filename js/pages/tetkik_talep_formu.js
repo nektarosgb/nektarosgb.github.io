@@ -7,12 +7,13 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnIdMuayeneTuru").val(selectedID);
         $("#hdnMuayeneTuru").val($("#drpMuayeneTuru").children("option:selected").text());
     });
+
     loadPrintTetkikler();
 
     $("#drpCariTuru").change(function () {
         var selectedID = this.selectedOptions[0].value;
-        $("#hdnIdCariTuru").val(selectedID);
-        $("#hdnCariTuru").val($("#drpCariTuru").children("option:selected").text());
+        $("#hdnIdCariHesapTuru").val(selectedID);
+        $("#hdnCariHesapTuru").val($("#drpCariTuru").children("option:selected").text());
     });
     $("#btnYazdirHastane").click(function(){
         var divToPrint=document.getElementById('modalHastane');
