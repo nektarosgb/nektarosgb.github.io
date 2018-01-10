@@ -9,7 +9,7 @@ function initLoadedPage_main_report() {
     loadListVerileri('idSirket','sirketler');
 
     $('#btnMainReportYukle').click(function () {
-        var t1 = $('.datepicker1').datepicker('getDate').getTime();
+        var t1 = GetTimeStamp($('.datepicker1').datepicker('getDate'));//$('.datepicker1').datepicker('getDate').getTime();
         var t2 = $('.datepicker2').datepicker('getDate').getTime();
         loadRptYeniKayitlar(t1, t2);
         loadRptTetkik(t1, t2);

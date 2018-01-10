@@ -114,6 +114,7 @@ function kaydetVeritabani(tablo, id, veri) {
     }).catch(function (error) {
         msgInfo("Uyarı", "Kayıt tamamlanamadı. Lütfen girişlerinizi kontrol ediniz.");
         console.error("ERROR: " + error);
+        
     });
     //listTable(tablo);
     $("#myModal").modal('hide');
@@ -121,7 +122,12 @@ function kaydetVeritabani(tablo, id, veri) {
 
 
 
-
+function GetTimeStamp(dt)
+{
+    var newdate =$.datepicker.formatDate('dd/mm/yy', dt);
+    var timestmp =newdate.getTime()
+    return timestmp;
+}
 function listTable(tablo) {
 
     return firebase.database().ref(tablo).once('value').then(function (snapshot) {
