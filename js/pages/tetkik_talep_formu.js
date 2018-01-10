@@ -266,9 +266,12 @@ function clearPrint()
 }
 
 function doldurTalepBilgileri(selectedID){
+
+    
+
     firebase.database().ref('/tetkiktalepformlari/' + selectedID).once('value').then(function (snapshot) {
             var talepformu=snapshot.val();
-
+            $("#hdnIdTetkikTalepFormu").val(snapshot.val().idTetkikTalepFormu);
             $("#drpMuayeneTuru option").selected=false;
             $("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
 
