@@ -203,6 +203,7 @@ function doldurCalisanBilgileri(selectedID) {
         $("#txtCalisanTelefonCep").val(snapshot.val().calisanTelefonCep);
         $("#txtCalisanEposta").val(snapshot.val().calisanEposta);
         $("#txtCalisanIsyeri").val(snapshot.val().calisanIsyeri);
+        $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
 
         //Hastane Print Form
         $("#lbl_grp_calisan_adsoyad").append(snapshot.val().calisanAdi);
