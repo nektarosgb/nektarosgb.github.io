@@ -102,7 +102,7 @@ function initLoadedPage() {
             "sirketKayitTarihi":sirketKayitTarihi,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
             "kayitTarihi":editime,
-            "TimeStamp": timestamp
+            "timestamp": timestamp
         }
     
         kaydetVeritabani("sirketler", idSirket, veri);
