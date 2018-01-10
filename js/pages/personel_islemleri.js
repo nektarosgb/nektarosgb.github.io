@@ -62,7 +62,7 @@ function setEditRowPersonel(id) {
 
 function kaydetPersonelBilgileri() {
     var d = new Date();
-    var n = d.getTime()
+    var n = GetTimeStamp(d);
 
     var personelAdi = $("#txtPersonelAdi").val();
     var idPersonel = generateID(personelAdi);

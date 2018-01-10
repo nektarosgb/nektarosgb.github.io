@@ -54,7 +54,7 @@ function silMeslekTetkikKayitlari(meslek) {
 
 function kaydetMeslekTetkikBilgisi() {
     var d = new Date();
-    var n = d.getTime()
+    var n =GetTimeStamp(d);
 
     var meslek = $("#drpMeslek").val();
 

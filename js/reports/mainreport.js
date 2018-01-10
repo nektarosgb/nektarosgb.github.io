@@ -10,7 +10,7 @@ function initLoadedPage_main_report() {
 
     $('#btnMainReportYukle').click(function () {
         var t1 = GetTimeStamp($('.datepicker1').datepicker('getDate'));//$('.datepicker1').datepicker('getDate').getTime();
-        var t2 = $('.datepicker2').datepicker('getDate').getTime();
+        var t2 = GetTimeStamp($('.datepicker2').datepicker('getDate'));
         loadRptYeniKayitlar(t1, t2);
         loadRptTetkik(t1, t2);
         return false;

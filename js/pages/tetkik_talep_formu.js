@@ -149,7 +149,7 @@ function initLoadedPage_tetkik_talep_formu() {
 
         var seciliTetkikler = [];
         var d= new Date();
-        var timestamp=d.getTime();
+        var timestamp=GetTimeStamp(d);
 
         $('#divtetkikler input[type="checkbox"]:checked').each(function () {
 

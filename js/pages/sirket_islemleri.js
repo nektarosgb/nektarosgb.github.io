@@ -66,7 +66,7 @@ function initLoadedPage() {
     
     function kaydetSirketBilgileri() {
         var d = new Date();
-        var n = d.getDate();
+        var n = GetTimeStamp(d);
     
         var sirketAdi = $("#txtSirketAdi").val();
         var idSirket = generateID(sirketAdi);
@@ -85,7 +85,7 @@ function initLoadedPage() {
         var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
         var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
         var editime=d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
-        var timestamp=d.getTime();
+        var timestamp=n;
     
         //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
     

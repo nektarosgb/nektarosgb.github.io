@@ -61,7 +61,7 @@ function setEditTetkik(id) {
 
 function kaydetTetkikBilgisi() {
     var d = new Date();
-    var n = d.getTime()
+    var n =GetTimeStamp(d);
 
     var tetkik = $("#txtTetkik").val();
     var idTetkik = generateID(tetkik);;

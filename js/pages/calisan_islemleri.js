@@ -98,7 +98,7 @@ function initLoadedPage_calisan_islemleri() {
         }
         //$("#frm_calisan").valid();
         var d = new Date();
-        var n = d.getTime()
+        var n = GetTimeStamp(d);
     
         var calisanAdi = $("#txtCalisanAdi").val();
         var idCalisan = generateID(calisanAdi);
@@ -115,7 +115,7 @@ function initLoadedPage_calisan_islemleri() {
         var calisanIsyeriKodu = $("#hdnIdSirket").val();
         var calisanIsyeri = $("#txtCalisanIsyeri").val();
         var dosya = $("#fileCalisan")[0].files[0];
-        var timestamp=d.getTime();
+        var timestamp=GetTimeStamp(d);
     
         //(Firma Adı, adresi, tel,SGK sicil No,İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
     
@@ -132,7 +132,7 @@ function initLoadedPage_calisan_islemleri() {
             "calisanIsyeriKodu": calisanIsyeriKodu,
             "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
             "kayitTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
-            "timestamp":d.getTime()
+            "timestamp":GetTimeStamp(d)
         }
     
         kaydetVeritabani("calisanlar", idCalisan, veri);
