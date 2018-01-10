@@ -108,7 +108,6 @@ function generateID(text) {
 
 
 function kaydetVeritabani(tablo, id, veri) {
-    alert("geldi"+id);
     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
         msgInfo("Başarılı", "Kayıt tamamlandı. İşleminize devam edebilirsiniz..");
     }).catch(function (error) {
@@ -304,3 +303,5 @@ $('body').on('click', function (e) {
         $('[data-toggle="popover"]').popover('hide');
     }
 });
+
+
