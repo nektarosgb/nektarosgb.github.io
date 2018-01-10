@@ -316,7 +316,7 @@ function hesaplaToplam() {
 
     var toplam = parseFloat("0.00");
 
-    $('#divtetkikler:input[type="checkbox"]:checked').each(function (e) {
+    $('#divtetkikler input[type="checkbox"]:checked').each(function (e) {
 
         var idTetkik = this.value;
 
