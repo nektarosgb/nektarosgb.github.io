@@ -53,7 +53,7 @@ function setEditRowPersonel(id) {
         $("#txtPersonelAdi").val(snapshot.val().personelAdi);
         $("#txtPersonelGorevi").val(snapshot.val().personelGorevi);
         $("#txtPersonelKayitTarihi").val(snapshot.val().personelKayitTarihi);
-        $("#txtPersonelTCNo").val(snapshot.val().personelTelefon);
+        $("#txtPersonelTCNo").val(snapshot.val().personelTCNo);
         $("#txtPersonelTelefonCep").val(snapshot.val().personelTelefonCep);
         $("#txtPersonelEposta").val(snapshot.val().personelEposta);
         $('#myModal').modal('show');
