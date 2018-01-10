@@ -9,8 +9,8 @@ function initLoadedPage_main_report() {
     loadListVerileri('idSirket','sirketler');
 
     $('#btnMainReportYukle').click(function () {
-        var t1 =moment($('.datepicker1').datepicker('getDate')).format('DD-MM-YYYY').getTime();
-        var t2 =moment($('.datepicker2').datepicker('getDate')).format('DD-MM-YYYY').getTime();
+        var t1 = $('.datepicker1').datepicker('getDate').getTime();
+        var t2 = $('.datepicker2').datepicker('getDate').getTime();
         loadRptYeniKayitlar(t1, t2);
         loadRptTetkik(t1, t2);
         return false;
