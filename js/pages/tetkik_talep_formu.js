@@ -96,7 +96,7 @@ function initLoadedPage_tetkik_talep_formu() {
         gridTalepler.find(".command-edit").on("click", function (e) {
             var lstVeri = listTable("tetkiktalepformlari");
             var id = $(this).data("row-id");   
-             clearPrint();   
+            clearPrint();
             doldurTalepBilgileri(id);
             $('#myModal').modal('show');
             // $('#btnHastane').modal('show');
@@ -279,6 +279,8 @@ function doldurTalepBilgileri(selectedID){
 
             $("#drpCariHesapTuru option").selected=false;
             $("#drpCariHesapTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
+
+            $("#txtTetkikTalepKayitTarihi").val(talepformu.kayitTarihi);
 
             doldurCalisanBilgileri(talepformu.calisanKodu);
             
