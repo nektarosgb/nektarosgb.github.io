@@ -160,7 +160,7 @@ function setEditRowCalisan(id) {
         // $("#drpSirket").val(snapshot.val().calisanIsyeriKodu).change();
         ///$("#drpSirket").find("option[value=" + snapshot.val().calisanIsyeriKodu +"]").attr('selected', true);
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
-
+        $('#drpMeslek').children('option').remove();
         LoadDrop('drpIsyeri', 'idSirket', 'sirketAdi', 'sirketler', snapshot.val().calisanIsyeriKodu);
         LoadDrop('drpMeslek', 'idMeslek', 'meslek', 'meslekler', snapshot.val().calisanMeslekKodu);
 
