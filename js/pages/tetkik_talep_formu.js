@@ -154,8 +154,13 @@ function initLoadedPage_tetkik_talep_formu() {
 
         });
 
+        
 
         var idTetkikTalepFormu = generateID(calisanAdi + muayeneTuru);
+
+        if ($("#hdnIdTetkikTalepFormu").val().trim().length > 0) {
+            idTetkikTalepFormu = $("#hdnId").val();
+        }
 
         var bugun = new Date();
         var kayittarihi=$("#txtTetkikTalepKayitTarihi").val();
@@ -339,6 +344,7 @@ function clearAllFieldsTetkikTalepFormu(){
     var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
 
     $('#txtTetkikTalepKayitTarihi').val(today);
+    $("#hdnIdTetkikTalepFormu").val('');
 
     return false;
 }
