@@ -28,7 +28,7 @@ function initLoadedPage_meslek_tetkik_islemleri() {
             $('#myModal').modal('show');
         });
     });
-    LoadDrop('drpMeslek', 'idMeslek', 'meslek', 'meslekler', '');
+    LoadDrop('drpMeslekTetkik', 'idMeslek', 'meslek', 'meslekler', '');
     setHeader("Mesleğe Göre Tetkik Belirleme İşlemleri");
 }
 
@@ -39,7 +39,7 @@ function setEditTetkikMeslek(id) {
 function silMeslekTetkikKayitlari(meslek) {
 
     var ref = firebase.database().ref("Meslektetkikler");
-    var meslekId = $("#drpMeslek").val();
+    var meslekId = $("#drpMeslekTetkik").val();
     //ref.orderByChild("meslek").equalTo(meslek).remove();
 
 
