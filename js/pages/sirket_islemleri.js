@@ -58,6 +58,7 @@ function initLoadedPage() {
             $("#txtSirketIsyeriHekimi").val(snapshot.val().sirketIsyeriHekimi);
             $("#txtSirketIsyeriGuvenlikUzmani").val(snapshot.val().sirketIsGuvenligiUzmani);
             //sirketKayitTarihi
+            $('#hdnSirketKayitTarihi').val(snapshot.val().sirketKayitTarihi);
             $('#myModal').modal('show');
         });
         // ...
