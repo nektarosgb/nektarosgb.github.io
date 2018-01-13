@@ -123,7 +123,7 @@ function kaydetVeritabani(tablo, id, veri) {
 
 function GetTimeStamp(dt)
 {
-    var newdate =$.datepicker.formatDate('dd/mm/yy', dt);
+    var newdate =$.datepicker.formatDate('dd/MM/yy', dt);
     var timestmp =Date.parse(newdate);
     
     return timestmp;
