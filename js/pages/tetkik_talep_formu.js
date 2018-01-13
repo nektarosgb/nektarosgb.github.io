@@ -269,7 +269,7 @@ function doldurCalisanBilgileri(selectedID) {
 
 function clearPrint()
 {
-    $(".calisan-bilgileri-label-container > label").empty();
+    $(".lblval").empty();
     $("#lbl_grp_calisan_firmacarivalue").empty();
     $("#lbl_grp_calisan_hst_tutar").empty();
 }
