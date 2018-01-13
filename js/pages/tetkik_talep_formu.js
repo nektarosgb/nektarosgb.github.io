@@ -222,6 +222,12 @@ function doldurCalisanBilgileri(selectedID) {
         $("#lbl_form_tc").append(snapshot.val().calisanTCNo);
         $("#lbl_form_gsm").append(snapshot.val().calisanTelefonCep);
 
+        //Muayene Formu 
+        $("#lbl_pmp_adsoyad").append(snapshot.val().calisanAdi);
+        $("#lbl_pmp_tc").append(snapshot.val().calisanTCNo);
+        $("#lbl_pmp_tel").append(snapshot.val().calisanTelefonCep);
+        $("#lbl_pmp_adres").val(snapshot.val().calisanAdresi);
+
         var isyeriKodu = snapshot.val().calisanIsyeriKodu;
 
         firebase.database().ref('/sirketler/' + isyeriKodu).once('value').then(function (sirket) {
@@ -245,7 +251,14 @@ function doldurCalisanBilgileri(selectedID) {
             $("#lbl_grp_calisan_isyerihekimi").append(sirket.val().sirketIsyeriHekimi);
             $("#lbl_grp_calisan_igu").append(sirket.val().sirketIsGuvenligiUzmani);
             
-            //
+            //Periyodik Muayene Print
+
+            $("#lbl_pmp_unvan").val(sirket.val().sirketAdi);
+            $("#lbl_pmp_adres").val(sirket.val().sirketAdresi);
+            $("#lbl_pmp_tel").val(sirket.val().sirketTelefon);
+            $("#lbl_pmp_sicil").val(sirket.val().sirketSGKSicilNo);
+            $("#lbl_pmp_eposta").val(sirket.val().sirketEposta);
+
 
             // Nektar Print
             
