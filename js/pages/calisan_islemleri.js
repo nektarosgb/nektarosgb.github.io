@@ -93,8 +93,8 @@ function initLoadedPage_calisan_islemleri() {
 
     // $( "#btn_CalisanKaydet" ).unbind();
    
-}
-$("#btn_CalisanKaydet").click( function() {
+
+function CalisanKaydet() {
     if(!validateFields()){
         return false;
     }
@@ -143,7 +143,7 @@ $("#btn_CalisanKaydet").click( function() {
     // initLoadedPage_calisan_islemleri();
 
     return false;
-});
+}
 
 function setEditRowCalisan(id) {
     firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
