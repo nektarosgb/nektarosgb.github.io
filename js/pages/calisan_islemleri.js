@@ -77,7 +77,7 @@ function initLoadedPage_calisan_islemleri() {
 
     setHeader("Çalışan İşlemleri");
 
-    $("#frm_calisan").validate();
+    // $("#frm_calisan").validate();
     $("#frm_calisan").validate({
         rules: {
             txtCalisanAdi: "required",
