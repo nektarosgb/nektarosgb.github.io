@@ -142,7 +142,6 @@ function CalisanKaydet() {
 
      initLoadedPage_calisan_islemleri();
 
-    return false;
 }
 
 function setEditRowCalisan(id) {
