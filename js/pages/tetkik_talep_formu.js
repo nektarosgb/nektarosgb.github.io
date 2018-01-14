@@ -46,20 +46,21 @@ function initLoadedPage_tetkik_talep_formu() {
         
           setTimeout(function(){newWin.close();},10);
     });
-    $("#btnYazdirHastane").unbind();
-    $("#btnYazdirHastane").click(function(){
-        var divToPrint=document.getElementById('hastaneprint');
+    $("#btnYazdirSaglik").unbind();
+    $("#btnYazdirSaglik").click(function(){       
+         var divToPrint=document.getElementById('modalSaglik');
         
-          var newWin=window.open('','Print-Window');
-        
-          newWin.document.open();
-        
-          newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css"> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> <link rel="stylesheet" href="dist/css/AdminLTE.min.css">'+divToPrint.innerHTML+'</body></html>');
-        
-           newWin.document.close();
-        
-          setTimeout(function(){newWin.close();},10);
-    });
+    var newWin=window.open('','Print-Window');
+  
+    newWin.document.open();
+  
+    newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css"> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> <link rel="stylesheet" href="dist/css/AdminLTE.min.css">'+divToPrint.innerHTML+'</body></html>');
+  
+     newWin.document.close();
+  
+    setTimeout(function(){newWin.close();},10);
+});
+    
 
     $("#btnHastane").click(function(){
         var newWindow = window.open("", "", "height=800,width=600,status=yes,toolbar=no,menubar=no,location=no");  
