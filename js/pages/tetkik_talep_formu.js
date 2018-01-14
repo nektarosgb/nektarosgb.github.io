@@ -216,6 +216,8 @@ function doldurCalisanBilgileri(selectedID) {
         $("#lbl_grp_calisan_tckimlikno").append(snapshot.val().calisanTCNo);
         $("#lbl_grp_calisan_gsm").append(snapshot.val().calisanTelefonCep);
         $("#lbl_grp_calisan_telefon").append(snapshot.val().calisanTelefon);
+        
+        resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisanMuayene");
         //$("#lbl_grp_calisan_gorevi").val(sirket.val().calisanTelefonCep);
         //
         $("#lbl_form_adsoyad").append(snapshot.val().calisanAdi);
