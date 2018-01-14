@@ -92,58 +92,58 @@ function initLoadedPage_calisan_islemleri() {
     // });
 
     // $( "#btn_CalisanKaydet" ).unbind();
-    $("#btn_CalisanKaydet").click( function() {
-        if(!validateFields()){
-            return false;
-        }
-        //$("#frm_calisan").valid();
-        var d = new Date();
-        var n = GetTimeStamp(d);
-    
-        var calisanAdi = $("#txtCalisanAdi").val();
-        var idCalisan = generateID(calisanAdi);
-        if ($("#hdnId").val().trim().length > 0) {
-            idCalisan = $("#hdnId").val();
-        }
-    
-        var calisanMeslekKodu = $("#hdnIdMeslek").val();
-        var calisanAdresi = $("#txtCalisanAdresi").val();
-        var calisanTelefon = $("#txtCalisanTelefon").val();
-        var calisanTCNo = $("#txtCalisanTCNo").val();
-        var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
-        var calisanEposta = $("#txtCalisanEposta").val();
-        var calisanIsyeriKodu = $("#hdnIdSirket").val();
-        var calisanIsyeri = $("#txtCalisanIsyeri").val();
-        var dosya = $("#fileCalisan")[0].files[0];
-        var timestamp=GetTimeStamp(d);
-    
-        //(Firma Adı, adresi, tel,SGK sicil No,İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
-    
-        var veri = {
-            "idCalisan": idCalisan,
-            "calisanAdi": calisanAdi,
-            "calisanMeslekKodu": calisanMeslekKodu,
-            "calisanAdresi": calisanAdresi,
-            "calisanTelefon": calisanTelefon,
-            "calisanTCNo": calisanTCNo,
-            "calisanTelefonCep": calisanTelefonCep,
-            "calisanEposta": calisanEposta,
-            "calisanIsyeri": calisanIsyeri,
-            "calisanIsyeriKodu": calisanIsyeriKodu,
-            "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
-            "kayitTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
-            "timestamp":GetTimeStamp(d)
-        }
-    
-        kaydetVeritabani("calisanlar", idCalisan, veri);
-        dosyaYukle(dosya, 'calisanlar', idCalisan);
-    
-        initLoadedPage_calisan_islemleri();
-
-        return false;
-    });
+   
 }
+$("#btn_CalisanKaydet").click( function() {
+    if(!validateFields()){
+        return false;
+    }
+    //$("#frm_calisan").valid();
+    var d = new Date();
+    var n = GetTimeStamp(d);
 
+    var calisanAdi = $("#txtCalisanAdi").val();
+    var idCalisan = generateID(calisanAdi);
+    if ($("#hdnId").val().trim().length > 0) {
+        idCalisan = $("#hdnId").val();
+    }
+
+    var calisanMeslekKodu = $("#hdnIdMeslek").val();
+    var calisanAdresi = $("#txtCalisanAdresi").val();
+    var calisanTelefon = $("#txtCalisanTelefon").val();
+    var calisanTCNo = $("#txtCalisanTCNo").val();
+    var calisanTelefonCep = $("#txtCalisanTelefonCep").val();
+    var calisanEposta = $("#txtCalisanEposta").val();
+    var calisanIsyeriKodu = $("#hdnIdSirket").val();
+    var calisanIsyeri = $("#txtCalisanIsyeri").val();
+    var dosya = $("#fileCalisan")[0].files[0];
+    var timestamp=GetTimeStamp(d);
+
+    //(Firma Adı, adresi, tel,SGK sicil No,İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
+
+    var veri = {
+        "idCalisan": idCalisan,
+        "calisanAdi": calisanAdi,
+        "calisanMeslekKodu": calisanMeslekKodu,
+        "calisanAdresi": calisanAdresi,
+        "calisanTelefon": calisanTelefon,
+        "calisanTCNo": calisanTCNo,
+        "calisanTelefonCep": calisanTelefonCep,
+        "calisanEposta": calisanEposta,
+        "calisanIsyeri": calisanIsyeri,
+        "calisanIsyeriKodu": calisanIsyeriKodu,
+        "kayitEden": firebase.auth().currentUser.providerData[0]["email"],
+        "kayitTarihi":d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear(),
+        "timestamp":GetTimeStamp(d)
+    }
+
+    kaydetVeritabani("calisanlar", idCalisan, veri);
+    dosyaYukle(dosya, 'calisanlar', idCalisan);
+
+    // initLoadedPage_calisan_islemleri();
+
+    return false;
+});
 
 function setEditRowCalisan(id) {
     firebase.database().ref('/calisanlar/' + id).once('value').then(function (snapshot) {
