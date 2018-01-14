@@ -93,7 +93,7 @@ function initLoadedPage_calisan_islemleri() {
 
     // $( "#btn_CalisanKaydet" ).unbind();
    
-
+}
 function CalisanKaydet() {
     if(!validateFields()){
         return false;
