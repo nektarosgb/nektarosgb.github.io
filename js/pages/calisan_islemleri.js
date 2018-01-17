@@ -95,9 +95,9 @@ function initLoadedPage_calisan_islemleri() {
    
 }
 function CalisanKaydet() {
-    if(!validateFields()){
-        return false;
-    }
+    if(validateFields()){
+        
+    
     //$("#frm_calisan").valid();
     var d = new Date();
     var n = GetTimeStamp(d);
@@ -141,6 +141,10 @@ function CalisanKaydet() {
     dosyaYukle(dosya, 'calisanlar', idCalisan);
 
      initLoadedPage_calisan_islemleri();
+}
+else{
+    msgInfo("Başarısız İşlem", "Form Üzerinde Geçersiz Bir İşlem Yürütüldü. ");
+}
 
 }
 
