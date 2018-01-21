@@ -313,7 +313,7 @@ function doldurTalepBilgileri(selectedID){
             $("#hdnIdTetkikTalepFormu").val(snapshot.val().idTetkikTalepFormu);
             $("#drpMuayeneTuru option").selected=false;
             // $("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
-            $("#drpMuayeneTuru option").val(talepformu.muayeneTuruKodu);
+            $("#drpMuayeneTuru").val(talepformu.muayeneTuruKodu);
 
             $("#lbl_grp_calisan_firmacarivalue").append($("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").val());
 
