@@ -18,7 +18,7 @@ function initLoadedPage_tetkik_talep_formu() {
         $("#hdnIdCariHesapTuru").val(selectedID);
         $("#hdnCariHesapTuru").val($("#drpCariTuru").children("option:selected").text());
     });
-    $("#btnYazdirHastane").unbind();
+    // $("#btnYazdirHastane").unbind();
     $("#btnYazdirHastane").click(function(){
         var divToPrint=document.getElementById('modalHastane');
         
@@ -32,7 +32,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
           setTimeout(function(){newWin.close();},10);
     });
-    $("#btnYazdirNektar").unbind();
+    // $("#btnYazdirNektar").unbind();
     $("#btnYazdirNektar").click(function(){
         var divToPrint=document.getElementById('modalNektar');
         
@@ -46,7 +46,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
           setTimeout(function(){newWin.close();},10);
     });
-    $("#btnYazdirSaglik").unbind();
+    // $("#btnYazdirSaglik").unbind();
     $("#btnYazdirSaglik").click(function(){       
          var divToPrint=document.getElementById('modalSaglik');
         
