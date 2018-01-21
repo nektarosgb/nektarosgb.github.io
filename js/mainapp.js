@@ -85,7 +85,7 @@ function resimGoster(klasor, id, imgID) {
         img.attr("src", url);
     }).catch(function (error) {
         console.log(error);
-        img.attr("src", "../css/images/no-picture.png");
+        img.attr("src", "no-picture.png");
     });
 }
 
