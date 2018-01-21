@@ -90,9 +90,10 @@ function resimGoster(klasor, id, imgID) {
 }
 
 function resimTemizle(imgID) {
-    var img = $("#" + imgID);
+    // var img = $("#" + imgID);
+    $("#"+imgID).attr("src", "#");
     // img.src = "";
-    img.remove('src');
+    // img.remove('src');
 }
 
 function generateID(text) {
