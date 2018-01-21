@@ -290,7 +290,7 @@ function doldurCalisanBilgileri(selectedID) {
         firebase.database().ref('/meslekler/' + meslekKodu).once('value').then(function (meslek) {
             $("#txtCalisanMeslek").val(meslek.val().meslek);
         });
-
+        resimTemizle("imgCalisan");
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisan");
 
         $("#pnlIsciBilgileri").removeClass("hide");
