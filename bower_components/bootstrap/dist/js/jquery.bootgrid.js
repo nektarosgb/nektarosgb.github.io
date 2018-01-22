@@ -177,8 +177,8 @@
             for (var i = 0; i < that.columns.length; i++)
             {
                 column = that.columns[i];
-                if (column.searchable && column.visible &&
-                    column.converter.to(row[column.id]).search(searchPattern) > -1)
+                // column.converter.to(row[column.id]).search(searchPattern) > -1 YERİNE searchPattern.test(column.converter.to(row[column.id])) EKLENDİ
+                if (column.searchable && column.visible && searchPattern.test(column.converter.to(row[column.id])))
                 {
                     return true;
                 }
