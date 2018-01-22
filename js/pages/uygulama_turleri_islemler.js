@@ -3,6 +3,7 @@ function initLoadedPage_uygulama_turleri_islemleri() {
         $("#hdnId").val('');
         var grid = $("#grid-uygulamaTurleri").bootgrid({
             ajax: false,
+            caseSensitive: false,
             formatters: {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idUygulamaTuru + "\"><span class=\"fa fa-pencil\"></span></button> " +

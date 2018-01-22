@@ -3,6 +3,7 @@ function initLoadedPage() {
         $("#hdnId").val('');
         var grid = $("#grid-sirketler").bootgrid({
             ajax: false,
+            caseSensitive: false,
             formatters: {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idSirket + "\"><span class=\"fa fa-pencil\"></span></button> " +

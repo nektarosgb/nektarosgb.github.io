@@ -3,6 +3,7 @@ function initLoadedPage_meslek_islemleri() {
         $("#hdnId").val('');
         var grid = $("#grid-meslekler").bootgrid({
             ajax: false,
+            caseSensitive: false,
             formatters: {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idMeslek + "\"><span class=\"fa fa-pencil\"></span></button> " +

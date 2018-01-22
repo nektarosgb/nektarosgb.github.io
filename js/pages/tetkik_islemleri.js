@@ -3,6 +3,7 @@ function initLoadedPage_tetkik_islemleri() {
         $("#hdnId").val('');
         var grid = $("#grid-tetkikler").bootgrid({
             ajax: false,
+            caseSensitive: false,
             formatters: {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkik + "\"><span class=\"fa fa-pencil\"></span></button> " +
