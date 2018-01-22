@@ -38,6 +38,7 @@ function initLoadedPage_calisan_islemleri() {
 
     var grid = $("#grid-calisanlar").bootgrid({
         ajax: false,
+        caseSensitive: false,
         formatters: {
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-pencil\"></span></button> " +

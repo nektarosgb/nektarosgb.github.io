@@ -100,11 +100,13 @@ function initLoadedPage_tetkik_talep_formu() {
     });
 
     var gridTalepler = $("#grid-tetkiktalepformlari").bootgrid({
-        searchSettings: {
-            delay: 100,
-            characters: 3
-        },
+        // searchSettings: {
+        //     delay: 100,
+        //     characters: 3,
+        //     caseSensitive: false
+        // },
         ajax: false,
+        caseSensitive: false,
         formatters: {
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkikTalepFormu + "\"><span class=\"fa fa-pencil\"></span></button> " +               
