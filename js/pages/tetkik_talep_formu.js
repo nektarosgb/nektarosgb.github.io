@@ -28,7 +28,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
           newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css"> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> <link rel="stylesheet" href="dist/css/AdminLTE.min.css">'+divToPrint.innerHTML+'</body></html>');
         
-           newWin.document.close();
+        //    newWin.document.close();
         
           setTimeout(function(){newWin.close();},10);
     });
@@ -42,7 +42,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
           newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css"> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> <link rel="stylesheet" href="dist/css/AdminLTE.min.css">'+divToPrint.innerHTML+'</body></html>');
         
-           newWin.document.close();
+        //    newWin.document.close();
         
           setTimeout(function(){newWin.close();},10);
     });
@@ -56,7 +56,7 @@ function initLoadedPage_tetkik_talep_formu() {
   
     newWin.document.write('<html><body onload="window.print()">  <link rel="stylesheet" href="../../css/printform/style.css"> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"> <link rel="stylesheet" href="dist/css/AdminLTE.min.css">'+divToPrint.innerHTML+'</body></html>');
   
-     newWin.document.close();
+    //  newWin.document.close();
   
     setTimeout(function(){newWin.close();},10);
 });
