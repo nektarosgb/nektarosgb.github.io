@@ -30,7 +30,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
         //    newWin.document.close();
         
-          setTimeout(function(){newWin.close();},10);
+        //   setTimeout(function(){newWin.close();},10);
     });
     // $("#btnYazdirNektar").unbind();
     $("#btnYazdirNektar").click(function(){
@@ -44,7 +44,7 @@ function initLoadedPage_tetkik_talep_formu() {
         
         //    newWin.document.close();
         
-          setTimeout(function(){newWin.close();},10);
+        //   setTimeout(function(){newWin.close();},10);
     });
     // $("#btnYazdirSaglik").unbind();
     $("#btnYazdirSaglik").click(function(){       
@@ -58,7 +58,7 @@ function initLoadedPage_tetkik_talep_formu() {
   
     //  newWin.document.close();
   
-    setTimeout(function(){newWin.close();},10);
+    // setTimeout(function(){newWin.close();},10);
 });
     
 
