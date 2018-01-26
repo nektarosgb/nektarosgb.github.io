@@ -18,16 +18,17 @@ function initLoadedPage_main_report() {
 }
 
 function loadRptTetkik(t1, t2) {
-    
+
 
 
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var tetkikSay = 0;
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            if (cleanelement.seciliTetkikler != null) {
-                tetkikSay += cleanelement.seciliTetkikler.length;
-            }
+            cleanelement.seciliTetkikler.forEach(function (item) {
+                tetkikSay++;
+            });
+
         });
 
         $("#txtTetkikSayisi").text(tetkikSay);
@@ -35,23 +36,23 @@ function loadRptTetkik(t1, t2) {
     });
 
 
-    
+
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var toplamTutar = parseFloat("0.00");
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             if (cleanelement.seciliTetkikler != null) {
 
-                cleanelement.seciliTetkikler.forEach(function(item){
+                cleanelement.seciliTetkikler.forEach(function (item) {
                     var txtfiyat = item.fiyat;
                     var fiyat = parseFloat(txtfiyat);
                     toplamTutar = toplamTutar + fiyat;
                 });
 
                 cleanelement.seciliTetkikler.forEach(idTetkik => {
-                    
+
                 });
-                
+
             }
         });
         $("#txtTetkikToplamTutar").text(toplamTutar);
