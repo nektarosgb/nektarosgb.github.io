@@ -25,7 +25,11 @@ function loadRptTetkik(t1, t2) {
         var tetkikSay = 0;
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            cleanelement.seciliTetkikler.forEach(function (item) {
+            var array = $.map(cleanelement, function(value, index) {
+                return [value];
+            });
+
+            array.forEach(function (item) {
                 tetkikSay++;
             });
 
@@ -43,14 +47,14 @@ function loadRptTetkik(t1, t2) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             if (cleanelement.seciliTetkikler != null) {
 
-                cleanelement.seciliTetkikler.forEach(function (item) {
+                var array = $.map(cleanelement, function(value, index) {
+                    return [value];
+                });
+    
+                array.forEach(function (item) {
                     var txtfiyat = item.fiyat;
                     var fiyat = parseFloat(txtfiyat);
                     toplamTutar = toplamTutar + fiyat;
-                });
-
-                cleanelement.seciliTetkikler.forEach(idTetkik => {
-
                 });
 
             }
