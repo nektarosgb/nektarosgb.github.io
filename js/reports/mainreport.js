@@ -13,6 +13,11 @@ function initLoadedPage_main_report() {
         caseSensitive: false        
     });
 
+    var gridcarihesaplaragore = $("#grid-carihesaplaragore").bootgrid({
+        ajax: false,
+        caseSensitive: false        
+    });
+
     $('#btnMainReportYukle').click(function () {
         var t1 = GetTimeStamp($('.datepicker1').datepicker('getDate'));//$('.datepicker1').datepicker('getDate').getTime();
         var t2 = GetTimeStamp($('.datepicker2').datepicker('getDate'));
@@ -97,6 +102,13 @@ function loadRptTetkik(t1, t2) {
             return [value];
         });
         gridfirmalaragore.bootgrid("append", firmabasinaarr);
+
+
+        var carihesapagorearr = $.map(carihesapagore, function(value, index) {
+            return [value];
+        });
+
+        gridcarihesaplaragore.bootgrid("append", carihesapagorearr);
     });
 
 
