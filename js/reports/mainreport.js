@@ -22,15 +22,30 @@ function loadRptTetkik(t1, t2) {
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var tetkikSay = 0;
         var toplamTutar = parseFloat("0.00");
+
+        var firmabasina={};
+
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             if (cleanelement.seciliTetkikler != null) {
+
+                if(firmabasina[cleanelement.isyeriKodu]==null){
+                    firmabasina[cleanelement.isyeriKodu]={
+                        "isyeriKodu":cleanelement.isyeriKodu,
+                        "isyeriAdi":cleanelement.isyeriAdi,
+                        "talepFormuSay":0,
+                        "tetkikSay":0,
+                        "talepFormuTutar":0.0
+                    }
+                }
 
                 var array = $.map(cleanelement.seciliTetkikler, function(value, index) {
                     return [value];
                 });
 
                 tetkikSay+=array.length;
+                firmabasina[cleanelement.isyeriKodu]["talepFormuSay"]+=array.length;
+                firmabasina[cleanelement.isyeriKodu]["talepFormuSay"]++;
     
                 var aratop=parseFloat("0.00");
                 array.forEach(function (item) {
@@ -38,6 +53,7 @@ function loadRptTetkik(t1, t2) {
                     var fiyat = parseFloat(txtfiyat);
                     aratop = aratop + fiyat;
                 });
+                firmabasina[cleanelement.isyeriKodu]["talepFormuTutar"]+=aratop;
 
                 toplamTutar = toplamTutar + aratop;
             }
