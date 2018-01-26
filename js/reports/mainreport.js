@@ -11,7 +11,7 @@ function initLoadedPage_main_report() {
     var gridfirmalaragore = $("#grid-firmalaragore").bootgrid({
         ajax: false,
         caseSensitive: false        
-    })
+    });
 
     $('#btnMainReportYukle').click(function () {
         var t1 = GetTimeStamp($('.datepicker1').datepicker('getDate'));//$('.datepicker1').datepicker('getDate').getTime();
