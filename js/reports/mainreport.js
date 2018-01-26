@@ -31,6 +31,13 @@ function loadRptTetkik(t1, t2) {
         caseSensitive: false        
     });
 
+
+    var gridmuayeneturunegore = $("#grid-muayeneturunegore").bootgrid({
+        ajax: false,
+        caseSensitive: false        
+    });
+
+
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var tetkikSay = 0;
         var toplamTutar = parseFloat("0.00");
@@ -38,6 +45,7 @@ function loadRptTetkik(t1, t2) {
         var firmabasina={};
         var carihesapagore={};
         var muayeneTuruneGore={};
+
 
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
@@ -111,6 +119,12 @@ function loadRptTetkik(t1, t2) {
         });
 
         gridcarihesaplaragore.bootgrid("append", carihesapagorearr);
+
+        var muayeneTuruneGorearr = $.map(muayeneTuruneGore, function(value, index) {
+            return [value];
+        });
+
+        gridmuayeneturunegore.bootgrid("append",muayeneTuruneGorearr);
     });
 
 
