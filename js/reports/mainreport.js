@@ -8,6 +8,11 @@ function initLoadedPage_main_report() {
     loadListVerileri('idUygulamaturu', 'uygulama_turleri');
     loadListVerileri('idSirket', 'sirketler');
 
+    var gridfirmalaragore = $("#grid-firmalaragore").bootgrid({
+        ajax: false,
+        caseSensitive: false        
+    })
+
     $('#btnMainReportYukle').click(function () {
         var t1 = GetTimeStamp($('.datepicker1').datepicker('getDate'));//$('.datepicker1').datepicker('getDate').getTime();
         var t2 = GetTimeStamp($('.datepicker2').datepicker('getDate'));
@@ -87,6 +92,11 @@ function loadRptTetkik(t1, t2) {
         });
         $("#txtTetkikSayisi").text(tetkikSay);
         $("#txtTetkikToplamTutar").text(toplamTutar);
+
+        var firmabasinaarr = $.map(firmabasina, function(value, index) {
+            return [value];
+        });
+        gridfirmalaragore.bootgrid("append", firmabasinaarr);
     });
 
 
