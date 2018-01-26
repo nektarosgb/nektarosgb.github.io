@@ -4,9 +4,9 @@ function initLoadedPage_main_report() {
     $('.datepicker1').datepicker();
     $('.datepicker2').datepicker();
 
-    loadListVerileri('idTetkik','tetkikler');
-    loadListVerileri('idUygulamaturu','uygulama_turleri');
-    loadListVerileri('idSirket','sirketler');
+    loadListVerileri('idTetkik', 'tetkikler');
+    loadListVerileri('idUygulamaturu', 'uygulama_turleri');
+    loadListVerileri('idSirket', 'sirketler');
 
     $('#btnMainReportYukle').click(function () {
         var t1 = GetTimeStamp($('.datepicker1').datepicker('getDate'));//$('.datepicker1').datepicker('getDate').getTime();
@@ -24,7 +24,7 @@ function loadRptTetkik(t1, t2) {
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
 
         snapshot.forEach(function (element) {
-            var cleanelement = JSON.parse(JSON.stringify(element));            
+            var cleanelement = JSON.parse(JSON.stringify(element));
             if (cleanelement.seciliTetkikler != null) {
                 tetkikSay += cleanelement.seciliTetkikler.length;
             }
@@ -48,22 +48,22 @@ function loadRptTetkik(t1, t2) {
         $("#txtTetkikToplamTutar").text(toplamTutar);
     });
 
-    
+
 
 }
 
 function loadRptYeniKayitlar(t1, t2) {
     var firmasay = 0;
     firebase.database().ref('sirketler').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
-        
+
         snapshot.forEach(function (element) {
             firmasay++;
         });
         $("#txtSirketSayisi").text(firmasay);
-        
+
     });
 
-    
+
 
     var calisansay = 0;
     firebase.database().ref('calisanlar').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
@@ -73,20 +73,17 @@ function loadRptYeniKayitlar(t1, t2) {
         $("#txtCalisanSayisi").text(calisansay);
     });
 
-    
+
 
 
     var tetkikFormuSayisi = 0;
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
 
         snapshot.forEach(function (element) {
-            var cleanelement = JSON.parse(JSON.stringify(element));            
-            if (cleanelement.seciliTetkikler != null) {
-                tetkikSay += cleanelement.seciliTetkikler.length;
-            }
+            tetkikFormuSayisi++;
         });
 
-        $("#txtTetkikSayisi").text(tetkikSay);
+        $("#txtTetkikFormuSayisi").text(tetkikFormuSayisi);
 
     });
 
