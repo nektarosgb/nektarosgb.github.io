@@ -8,15 +8,7 @@ function initLoadedPage_main_report() {
     loadListVerileri('idUygulamaturu', 'uygulama_turleri');
     loadListVerileri('idSirket', 'sirketler');
 
-    var gridfirmalaragore = $("#grid-firmalaragore").bootgrid({
-        ajax: false,
-        caseSensitive: false        
-    });
-
-    var gridcarihesaplaragore = $("#grid-carihesaplaragore").bootgrid({
-        ajax: false,
-        caseSensitive: false        
-    });
+    
 
     $('#btnMainReportYukle').click(function () {
         var t1 = GetTimeStamp($('.datepicker1').datepicker('getDate'));//$('.datepicker1').datepicker('getDate').getTime();
@@ -28,6 +20,16 @@ function initLoadedPage_main_report() {
 }
 
 function loadRptTetkik(t1, t2) {
+
+    var gridfirmalaragore = $("#grid-firmalaragore").bootgrid({
+        ajax: false,
+        caseSensitive: false        
+    });
+
+    var gridcarihesaplaragore = $("#grid-carihesaplaragore").bootgrid({
+        ajax: false,
+        caseSensitive: false        
+    });
 
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var tetkikSay = 0;
