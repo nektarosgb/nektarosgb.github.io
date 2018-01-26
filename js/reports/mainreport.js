@@ -29,9 +29,7 @@ function loadRptTetkik(t1, t2) {
                 return [value];
             });
 
-            array.forEach(function (item) {
-                tetkikSay++;
-            });
+            tetkikSay+=array.length;
 
         });
 
