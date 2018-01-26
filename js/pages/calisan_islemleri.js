@@ -42,7 +42,7 @@ function initLoadedPage_calisan_islemleri() {
         formatters: {
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-pencil\"></span></button> " +
-                    "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-trash-o\"></span></button>";
+                    // "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-trash-o\"></span></button>";
                     popoverBtnDeleteCommandHtml(row.idCalisan)+
                     "<button id=\"tblbtndel"+ row.idCalisan +"\" type=\"button\" class=\"btn btn-xs btn-default command-delete hide\" data-row-id=\"" + row.idCalisan + "\"><span class=\"fa fa-trash-o\"></span></button>";
                     
