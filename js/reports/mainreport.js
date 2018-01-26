@@ -32,12 +32,14 @@ function loadRptTetkik(t1, t2) {
 
                 tetkikSay+=array.length;
     
+                var aratop=parseFloat("0.00");
                 array.forEach(function (item) {
                     var txtfiyat = ""+item.fiyat;
                     var fiyat = parseFloat(txtfiyat);
-                    toplamTutar = toplamTutar + fiyat;
+                    aratop = aratop + fiyat;
                 });
 
+                toplamTutar = toplamTutar + aratop;
             }
         });
         $("#txtTetkikSayisi").text(tetkikSay);
