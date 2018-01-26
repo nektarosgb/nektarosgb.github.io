@@ -52,7 +52,7 @@ function loadRptTetkik(t1, t2) {
                 });
     
                 array.forEach(function (item) {
-                    var txtfiyat = item.fiyat;
+                    var txtfiyat = ""+item.fiyat;
                     var fiyat = parseFloat(txtfiyat);
                     toplamTutar = toplamTutar + fiyat;
                 });
