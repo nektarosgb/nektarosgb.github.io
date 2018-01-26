@@ -37,6 +37,11 @@ function loadRptTetkik(t1, t2) {
         caseSensitive: false        
     });
 
+    var griduygulamaturunegore = $("#grid-uygulamaturunegore").bootgrid({
+        ajax: false,
+        caseSensitive: false        
+    });
+
 
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var tetkikSay = 0;
@@ -45,6 +50,7 @@ function loadRptTetkik(t1, t2) {
         var firmabasina={};
         var carihesapagore={};
         var muayeneTuruneGore={};
+        var uygulamaTuruneGore={};
 
 
         snapshot.forEach(function (element) {
@@ -81,6 +87,8 @@ function loadRptTetkik(t1, t2) {
                     };
                 }
 
+                
+
                 var array = $.map(cleanelement.seciliTetkikler, function(value, index) {
                     return [value];
                 });
@@ -98,6 +106,19 @@ function loadRptTetkik(t1, t2) {
                     var txtfiyat = ""+item.fiyat;
                     var fiyat = parseFloat(txtfiyat);
                     aratop = aratop + fiyat;
+
+                    if(uygulamaTuruneGore[item.uygulamaTuru]==null){
+                        uygulamaTuruneGore[item.uygulamaTuru]={
+                            "uygulamaTuruKodu":item.uygulamaTuru,
+                            "uygulamaTuru":item.uygulamaTuru,
+                            "tetkikSay":0,
+                            "talepFormuTutar":0.0
+                        };
+                    }
+
+                    uygulamaTuruneGore[item.uygulamaTuru]["tetkikSay"]++;
+                    uygulamaTuruneGore[item.uygulamaTuru]["talepFormuTutar"]+=fiyat;
+
                 });
                 firmabasina[cleanelement.isyeriKodu]["talepFormuTutar"]+=aratop;
                 carihesapagore[cleanelement.cariHesapTuruKodu]["talepFormuTutar"]+=aratop;
@@ -125,6 +146,21 @@ function loadRptTetkik(t1, t2) {
         });
 
         gridmuayeneturunegore.bootgrid("append",muayeneTuruneGorearr);
+
+
+        firebase.database().ref('uygulama_turleri').once('value').then(function (snapshot) {
+            snapshot.forEach(function (element) {
+                var cleanelement = JSON.parse(JSON.stringify(element));
+                uygulamaTuruneGore[cleanelement.idUygulamaTuru]["uygulamaTuru"]=cleanelement.uygulamaTuru;
+            });
+
+            var uygulamaTuruneGorearr = $.map(uygulamaTuruneGore, function(value, index) {
+                return [value];
+            });
+    
+            griduygulamaturunegore.bootgrid("append",uygulamaTuruneGorearr);
+
+        });
     });
 
 
