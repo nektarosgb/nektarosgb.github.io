@@ -20,7 +20,7 @@ function initLoadedPage_main_report() {
 function loadRptTetkik(t1, t2) {
     var tetkikSay = 0;
 
-    firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").endAt(t2).once('value').then(function (snapshot) {
+    firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").once('value').then(function (snapshot) {
 
         if (snapshot.seciliTetkikler != null) {
             tetkikSay += snapshot.seciliTetkikler.length;
