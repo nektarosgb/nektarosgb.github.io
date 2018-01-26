@@ -24,6 +24,8 @@ function loadRptTetkik(t1, t2) {
         var toplamTutar = parseFloat("0.00");
 
         var firmabasina={};
+        var carihesapagore={};
+        var muayeneTuruneGore={};
 
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
@@ -36,7 +38,27 @@ function loadRptTetkik(t1, t2) {
                         "talepFormuSay":0,
                         "tetkikSay":0,
                         "talepFormuTutar":0.0
-                    }
+                    };
+                }
+
+                if(carihesapagore[cleanelement.cariHesapTuruKodu]==null){
+                    carihesapagore[cleanelement.cariHesapTuruKodu]={
+                        "cariHesapTuruKodu":cleanelement.cariHesapTuruKodu,
+                        "cariHesapTuru":cleanelement.cariHesapTuru,
+                        "talepFormuSay":0,
+                        "tetkikSay":0,
+                        "talepFormuTutar":0.0
+                    };
+                }
+
+                if(muayeneTuruneGore[cleanelement.muayeneTuruKodu]==null){
+                    muayeneTuruneGore[cleanelement.muayeneTuruKodu]={
+                        "muayeneTuruKodu":cleanelement.muayeneTuruKodu,
+                        "muayeneTuru":cleanelement.muayeneTuru,
+                        "talepFormuSay":0,
+                        "tetkikSay":0,
+                        "talepFormuTutar":0.0
+                    };
                 }
 
                 var array = $.map(cleanelement.seciliTetkikler, function(value, index) {
@@ -46,6 +68,10 @@ function loadRptTetkik(t1, t2) {
                 tetkikSay+=array.length;
                 firmabasina[cleanelement.isyeriKodu]["tetkikSay"]+=array.length;
                 firmabasina[cleanelement.isyeriKodu]["talepFormuSay"]++;
+                carihesapagore[cleanelement.cariHesapTuruKodu]["tetkikSay"]+=array.length;
+                carihesapagore[cleanelement.cariHesapTuruKodu]["talepFormuSay"]++;
+                muayeneTuruneGore[cleanelement.muayeneTuruKodu]["tetkikSay"]+=array.length;
+                muayeneTuruneGore[cleanelement.muayeneTuruKodu]["talepFormuSay"]++;
     
                 var aratop=parseFloat("0.00");
                 array.forEach(function (item) {
@@ -54,7 +80,8 @@ function loadRptTetkik(t1, t2) {
                     aratop = aratop + fiyat;
                 });
                 firmabasina[cleanelement.isyeriKodu]["talepFormuTutar"]+=aratop;
-
+                carihesapagore[cleanelement.cariHesapTuruKodu]["talepFormuTutar"]+=aratop;
+                muayeneTuruneGore[cleanelement.muayeneTuruKodu]["talepFormuTutar"]+=aratop;
                 toplamTutar = toplamTutar + aratop;
             }
         });
