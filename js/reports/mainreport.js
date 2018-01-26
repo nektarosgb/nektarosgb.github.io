@@ -25,7 +25,7 @@ function loadRptTetkik(t1, t2) {
         var tetkikSay = 0;
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-            var array = $.map(cleanelement, function(value, index) {
+            var array = $.map(cleanelement.seciliTetkikler, function(value, index) {
                 return [value];
             });
 
@@ -45,7 +45,7 @@ function loadRptTetkik(t1, t2) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             if (cleanelement.seciliTetkikler != null) {
 
-                var array = $.map(cleanelement, function(value, index) {
+                var array = $.map(cleanelement.seciliTetkikler, function(value, index) {
                     return [value];
                 });
     
