@@ -141,7 +141,7 @@ function CalisanKaydet() {
     // kaydetVeritabani("calisanlar", idCalisan, veri);
     // dosyaYukle(dosya, 'calisanlar', idCalisan);
 
-      initLoadedPage_calisan_islemleri();
+    //   initLoadedPage_calisan_islemleri();
 }
 else{
     msgInfo("Başarısız İşlem", "Form Üzerinde Geçersiz Bir İşlem Yürütüldü. ");
