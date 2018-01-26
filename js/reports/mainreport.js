@@ -55,24 +55,39 @@ function loadRptTetkik(t1, t2) {
 function loadRptYeniKayitlar(t1, t2) {
     var firmasay = 0;
     firebase.database().ref('sirketler').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
-        firmasay++;
+        
+        snapshot.forEach(function (element) {
+            firmasay++;
+        });
+        $("#txtSirketSayisi").text(firmasay);
+        
     });
 
-    $("#txtSirketSayisi").text(firmasay);
+    
 
     var calisansay = 0;
     firebase.database().ref('calisanlar').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
-        calisansay++;
+        snapshot.forEach(function (element) {
+            calisansay++;
+        });
+        $("#txtCalisanSayisi").text(calisansay);
     });
 
-    $("#txtCalisanSayisi").text(calisansay);
+    
 
 
     var tetkikFormuSayisi = 0;
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
-        tetkikFormuSayisi++;
-    });
 
-    $("#txtTetkikFormuSayisi").text(tetkikFormuSayisi);
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));            
+            if (cleanelement.seciliTetkikler != null) {
+                tetkikSay += cleanelement.seciliTetkikler.length;
+            }
+        });
+
+        $("#txtTetkikSayisi").text(tetkikSay);
+
+    });
 
 }
