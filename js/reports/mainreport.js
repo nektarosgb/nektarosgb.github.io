@@ -44,7 +44,7 @@ function loadRptTetkik(t1, t2) {
                 });
 
                 tetkikSay+=array.length;
-                firmabasina[cleanelement.isyeriKodu]["talepFormuSay"]+=array.length;
+                firmabasina[cleanelement.isyeriKodu]["tetkikSay"]+=array.length;
                 firmabasina[cleanelement.isyeriKodu]["talepFormuSay"]++;
     
                 var aratop=parseFloat("0.00");
