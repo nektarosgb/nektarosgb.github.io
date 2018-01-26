@@ -19,27 +19,8 @@ function initLoadedPage_main_report() {
 
 function loadRptTetkik(t1, t2) {
 
-
-
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var tetkikSay = 0;
-        snapshot.forEach(function (element) {
-            var cleanelement = JSON.parse(JSON.stringify(element));
-            var array = $.map(cleanelement.seciliTetkikler, function(value, index) {
-                return [value];
-            });
-
-            tetkikSay+=array.length;
-
-        });
-
-        $("#txtTetkikSayisi").text(tetkikSay);
-
-    });
-
-
-
-    firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
         var toplamTutar = parseFloat("0.00");
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
@@ -48,6 +29,8 @@ function loadRptTetkik(t1, t2) {
                 var array = $.map(cleanelement.seciliTetkikler, function(value, index) {
                     return [value];
                 });
+
+                tetkikSay+=array.length;
     
                 array.forEach(function (item) {
                     var txtfiyat = ""+item.fiyat;
@@ -57,6 +40,7 @@ function loadRptTetkik(t1, t2) {
 
             }
         });
+        $("#txtTetkikSayisi").text(tetkikSay);
         $("#txtTetkikToplamTutar").text(toplamTutar);
     });
 
