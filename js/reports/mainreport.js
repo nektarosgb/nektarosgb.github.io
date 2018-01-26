@@ -20,17 +20,6 @@ function initLoadedPage_main_report() {
 function loadRptTetkik(t1, t2) {
     var tetkikSay = 0;
 
-    firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").once('value').then(function (snapshot) {
-
-        snapshot.forEach(function (element) {
-            var cleanelement = JSON.parse(JSON.stringify(element));            
-            if (cleanelement.seciliTetkikler != null) {
-                tetkikSay += cleanelement.seciliTetkikler.length;
-            }
-        });
-
-        
-    });
 
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
 
@@ -41,17 +30,10 @@ function loadRptTetkik(t1, t2) {
             }
         });
 
+        $("#txtTetkikSayisi").text(tetkikSay);
+
     });
 
-
-    firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
-
-        if (snapshot.seciliTetkikler != null) {
-            tetkikSay += snapshot.seciliTetkikler.length;
-        }
-    });
-
-    $("#txtTetkikSayisi").text(tetkikSay);
 
     var toplamTutar = parseFloat("0.00");;
     firebase.database().ref('tetkiktalepformlari').orderByChild("timestamp").startAt(t1).endAt(t2).once('value').then(function (snapshot) {
@@ -62,9 +44,11 @@ function loadRptTetkik(t1, t2) {
                 toplamTutar = toplamTutar + fiyat;
             });
         }
+
+        $("#txtTetkikToplamTutar").text(toplamTutar);
     });
 
-    $("#txtTetkikToplamTutar").text(toplamTutar);
+    
 
 }
 
