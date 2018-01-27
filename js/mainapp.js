@@ -90,7 +90,7 @@ function resimGoster(klasor, id, imgID) {
 
 function resimTemizle(imgID) {
     // var img = $("#" + imgID);
-    $("#"+imgID).attr("src", "#");
+    $("#"+imgID).attr("src", "../css/images/no-picture.png");
     // img.src = "";
     // img.remove('src');
 }
