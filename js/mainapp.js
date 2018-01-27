@@ -105,7 +105,13 @@ function generateID(text) {
     return text;
 }
 
-
+$("#a_signout").click(function(){
+    firebase.auth().signOut().then(function() {
+        Response.redirect("index.html");
+      }).catch(function(error) {
+          alert("Hata :" +error);
+      });
+});
 
 function kaydetVeritabani(tablo, id, veri) {
     firebase.database().ref(tablo + '/' + id).set(veri).then(function (deneme) {
