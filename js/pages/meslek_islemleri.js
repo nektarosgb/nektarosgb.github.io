@@ -7,8 +7,6 @@ function initLoadedPage_meslek_islemleri() {
             formatters: {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idMeslek + "\"><span class=\"fa fa-pencil\"></span></button> " +
-                        "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idMeslek + "\"><span class=\"fa fa-trash-o\"></span></button>";
-
                         popoverBtnDeleteCommandHtml(row.idMeslek)+
                         "<button id=\"tblbtndel"+ row.idMeslek +"\" type=\"button\" class=\"btn btn-xs btn-default command-delete hide\" data-row-id=\"" + row.idMeslek + "\"><span class=\"fa fa-trash-o\"></span></button>";
                 }

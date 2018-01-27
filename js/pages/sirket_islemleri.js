@@ -7,7 +7,7 @@ function initLoadedPage() {
             formatters: {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idSirket + "\"><span class=\"fa fa-pencil\"></span></button> " +
-                        "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idSirket + "\"><span class=\"fa fa-trash-o\"></span></button>";
+                        // "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idSirket + "\"><span class=\"fa fa-trash-o\"></span></button>";
                         popoverBtnDeleteCommandHtml(row.idSirket)+
                         "<button id=\"tblbtndel"+ row.idSirket +"\" type=\"button\" class=\"btn btn-xs btn-default command-delete hide\" data-row-id=\"" + row.idSirket + "\"><span class=\"fa fa-trash-o\"></span></button>";
                 }

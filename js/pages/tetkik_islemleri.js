@@ -7,7 +7,7 @@ function initLoadedPage_tetkik_islemleri() {
             formatters: {
                 "commands": function (column, row) {
                     return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.idTetkik + "\"><span class=\"fa fa-pencil\"></span></button> " +
-                        "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idTetkik + "\"><span class=\"fa fa-trash-o\"></span></button>";
+                        // "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.idTetkik + "\"><span class=\"fa fa-trash-o\"></span></button>";
 
                         popoverBtnDeleteCommandHtml(row.idTetkik)+
                         "<button id=\"tblbtndel"+ row.idTetkik +"\" type=\"button\" class=\"btn btn-xs btn-default command-delete hide\" data-row-id=\"" + row.idTetkik + "\"><span class=\"fa fa-trash-o\"></span></button>";
