@@ -368,7 +368,7 @@ function doldurTalepBilgileri(selectedID){
 // }
 function secTetkiktlerMeslegeGore(meslekKodu) {
     $("input[type='checkbox']").prop("checked", false);
-    firebase.database().ref('tetkiktalepformlari').equalTo(meslekKodu).once('value').then(function (snapshot) {
+    firebase.database().ref('/tetkiktalepformlari').equalTo(meslekKodu).once('value').then(function (snapshot) {
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
             var chcItems = cleanelement['seciliTetkikler'];
