@@ -333,7 +333,7 @@ function doldurTalepBilgileri(selectedID){
         if(talepformu.seciliTetkikler!=null)
         {
             talepformu.seciliTetkikler.forEach(function(tetkik) {
-                $("#chkitem" + tetkik.tetkik).prop("checked", true);
+                $("#chkitem" + tetkik.idTetkik).prop("checked", true);
                 if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
                 {
                     hastanefiyat+=parseFloat(tetkik.fiyat);
