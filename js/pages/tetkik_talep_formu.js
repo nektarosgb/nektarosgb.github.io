@@ -286,8 +286,10 @@ function doldurCalisanBilgileri(selectedID) {
         });
 
         var meslekKodu = snapshot.val().calisanMeslekKodu;
+        var kayitId=snapshot.val().idCalisan;
 
-        secTetkiktlerMeslegeGore(meslekKodu);
+        // secTetkiktlerMeslegeGore(meslekKodu);
+        secTetkiktlerMeslegeGore(kayitId);
 
         firebase.database().ref('/meslekler/' + meslekKodu).once('value').then(function (meslek) {
             $("#txtCalisanMeslek").val(meslek.val().meslek);
@@ -352,13 +354,27 @@ function doldurTalepBilgileri(selectedID){
     });
 }
 
+// function secTetkiktlerMeslegeGore(meslekKodu) {
+//     $("input[type='checkbox']").prop("checked", false);
+//     firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekKodu).once('value').then(function (snapshot) {
+//         snapshot.forEach(function (element) {
+//             var cleanelement = JSON.parse(JSON.stringify(element));
+
+//             $("#chkitem" + cleanelement.tetkik).prop("checked", true);
+//         });
+
+//         hesaplaToplam();
+//     });
+// }
 function secTetkiktlerMeslegeGore(meslekKodu) {
     $("input[type='checkbox']").prop("checked", false);
-    firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekKodu).once('value').then(function (snapshot) {
+    firebase.database().ref('tetkiktalepformlari').equalTo(meslekKodu).once('value').then(function (snapshot) {
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
-
-            $("#chkitem" + cleanelement.tetkik).prop("checked", true);
+            var chcItems = cleanelement['seciliTetkikler'];
+            chcItems.forEach(function (items) {
+                $("#chkitem" + items.idTetkik).prop("checked", true);
+            });
         });
 
         hesaplaToplam();
