@@ -185,6 +185,19 @@ function loadCheckBoxList(lstChkID, idColumn, column, tablo, event) {
         });
     });
 }
+function loadCheckedList(lstChkID, idColumn, column, tablo, event) {
+    tablo= 'tetkiktalepformlari';
+    firebase.database().ref(tablo).once('value').then(function (snapshot) {
+        chkListVerileri[tablo] = {};
+        $("#" + lstChkID).empty();
+        snapshot.forEach(function (element) {
+            var cleanelement = JSON.parse(JSON.stringify(element));
+            var li = $('<li class="list-group-item checkboxfit">' + cleanelement[column] + '<div class="material-switch pull-left"><input id="chkitem' + cleanelement[idColumn] + '"' + event + ' name="chk' + tablo + '" value=' + cleanelement[idColumn] + ' type="checkbox" /><label for="chkitem' + cleanelement[idColumn] + '" class="label-success"></label></div></li>');
+            $("#" + lstChkID).append(li);
+            chkListVerileri[tablo][cleanelement[idColumn]] = cleanelement;
+        });
+    });
+}
 
 function loadPrintTetkikler() {
     firebase.database().ref("tetkikler").once('value').then(function (snapshot) {
