@@ -1,5 +1,5 @@
 function initLoadedPage_tetkik_talep_formu() {
-    loadCheckedList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkiktalepformlari', ' onClick="hesaplaToplam();"');    
+    loadCheckBoxList('lstTetkikler', 'idTetkik', 'tetkik', 'tetkiktalepformlari', ' onClick="hesaplaToplam();"');    
 
     $('.datepicker').datepicker();
 
