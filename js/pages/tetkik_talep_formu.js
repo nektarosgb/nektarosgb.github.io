@@ -216,6 +216,7 @@ function initLoadedPage_tetkik_talep_formu() {
 }
 
 function doldurCalisanBilgileri(selectedID,secMeslegeGore) {
+    clearPrint();
     firebase.database().ref('/calisanlar/' + selectedID).once('value').then(function (snapshot) {
 
         $("#hdnIdCalisan").val(snapshot.val().idCalisan);
@@ -229,23 +230,23 @@ function doldurCalisanBilgileri(selectedID,secMeslegeGore) {
         $("#hdnIdSirket").val(snapshot.val().calisanIsyeriKodu);
 
         //Hastane Print Form
-        $("#lbl_grp_calisan_adsoyad").append(snapshot.val().calisanAdi);
-        $("#lbl_grp_calisan_tckimlikno").append(snapshot.val().calisanTCNo);
-        $("#lbl_grp_calisan_gsm").append(snapshot.val().calisanTelefonCep);
-        $("#lbl_grp_calisan_telefon").append(snapshot.val().calisanTelefon);
+        $("#lbl_grp_calisan_adsoyad").empty().append(snapshot.val().calisanAdi);
+        $("#lbl_grp_calisan_tckimlikno").empty().append(snapshot.val().calisanTCNo);
+        $("#lbl_grp_calisan_gsm").empty().append(snapshot.val().calisanTelefonCep);
+        $("#lbl_grp_calisan_telefon").empty().append(snapshot.val().calisanTelefon);
         
         resimGoster("calisanlar", snapshot.val().idCalisan, "imgCalisanMuayene");
         //$("#lbl_grp_calisan_gorevi").val(sirket.val().calisanTelefonCep);
         //
-        $("#lbl_form_adsoyad").append(snapshot.val().calisanAdi);
-        $("#lbl_form_tc").append(snapshot.val().calisanTCNo);
-        $("#lbl_form_gsm").append(snapshot.val().calisanTelefonCep);
+        $("#lbl_form_adsoyad").empty().append(snapshot.val().calisanAdi);
+        $("#lbl_form_tc").empty().append(snapshot.val().calisanTCNo);
+        $("#lbl_form_gsm").empty().append(snapshot.val().calisanTelefonCep);
 
         //Muayene Formu 
-        $("#lbl_pmp_adsoyad").append(snapshot.val().calisanAdi);
-        $("#lbl_pmp_tc").append(snapshot.val().calisanTCNo);
-        $("#lbl_pmp_tel").append(snapshot.val().calisanTelefonCep);
-        $("#lbl_pmp_adres").val(snapshot.val().calisanAdresi);
+        $("#lbl_pmp_adsoyad").empty().append(snapshot.val().calisanAdi);
+        $("#lbl_pmp_tc").empty().append(snapshot.val().calisanTCNo);
+        $("#lbl_pmp_tel").empty().append(snapshot.val().calisanTelefonCep);
+        $("#lbl_pmp_adres").empty().val(snapshot.val().calisanAdresi);
 
         var isyeriKodu = snapshot.val().calisanIsyeriKodu;
 
@@ -261,22 +262,22 @@ function doldurCalisanBilgileri(selectedID,secMeslegeGore) {
             $("#txtSirketIsyeriGuvenlikUzmani").val(sirket.val().sirketIsGuvenligiUzmani);
 
             //Hastane Print
-            $("#lbl_grp_calisan_firmaadi").append(sirket.val().sirketAdi);
-            $("#lbl_grp_calisan_sgksicilno").append(sirket.val().sirketSGKSicilNo);
-            $("#lbl_grp_calisan_adres").append(sirket.val().sirketAdresi);
-            $("#lbl_grp_isyeri_telefon").append(sirket.val().sirketTelefon); 
-            $("#lbl_grp_calisan_eposta").append(sirket.val().sirketEposta);
-            $("#lbl_grp_calisan_yetkiliadi").append(sirket.val().sirketIlgiliKisi);
-            $("#lbl_grp_calisan_isyerihekimi").append(sirket.val().sirketIsyeriHekimi);
-            $("#lbl_grp_calisan_igu").append(sirket.val().sirketIsGuvenligiUzmani);
+            $("#lbl_grp_calisan_firmaadi").empty().append(sirket.val().sirketAdi);
+            $("#lbl_grp_calisan_sgksicilno").empty().append(sirket.val().sirketSGKSicilNo);
+            $("#lbl_grp_calisan_adres").empty().append(sirket.val().sirketAdresi);
+            $("#lbl_grp_isyeri_telefon").empty().append(sirket.val().sirketTelefon); 
+            $("#lbl_grp_calisan_eposta").empty().append(sirket.val().sirketEposta);
+            $("#lbl_grp_calisan_yetkiliadi").empty().append(sirket.val().sirketIlgiliKisi);
+            $("#lbl_grp_calisan_isyerihekimi").empty().append(sirket.val().sirketIsyeriHekimi);
+            $("#lbl_grp_calisan_igu").empty().append(sirket.val().sirketIsGuvenligiUzmani);
             
             //Periyodik Muayene Print
 
-            $("#lbl_pmp_unvan").val(sirket.val().sirketAdi);
-            $("#lbl_pmp_adres").val(sirket.val().sirketAdresi);
-            $("#lbl_pmp_tel").val(sirket.val().sirketTelefon);
-            $("#lbl_pmp_sicil").val(sirket.val().sirketSGKSicilNo);
-            $("#lbl_pmp_eposta").val(sirket.val().sirketEposta);
+            $("#lbl_pmp_unvan").empty().val(sirket.val().sirketAdi);
+            $("#lbl_pmp_adres").empty().val(sirket.val().sirketAdresi);
+            $("#lbl_pmp_tel").empty().val(sirket.val().sirketTelefon);
+            $("#lbl_pmp_sicil").empty().val(sirket.val().sirketSGKSicilNo);
+            $("#lbl_pmp_eposta").empty().val(sirket.val().sirketEposta);
 
 
             // Nektar Print
@@ -312,8 +313,6 @@ function clearPrint()
 }
 
 function doldurTalepBilgileri(selectedID){
-
-    
 
     firebase.database().ref('/tetkiktalepformlari/' + selectedID).once('value').then(function (snapshot) {
             var talepformu=snapshot.val();
