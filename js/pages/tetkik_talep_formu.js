@@ -82,7 +82,7 @@ function initLoadedPage_tetkik_talep_formu() {
             var lstVeri = listTable("calisanlar");
             var id = $(this).data("row-id");      
             $("#pnlIsciBilgileri").removeClass("hide");      
-            doldurCalisanBilgileri(id);
+            doldurCalisanBilgileri(id,true);
 
         }).end();
     });
@@ -215,7 +215,7 @@ function initLoadedPage_tetkik_talep_formu() {
 
 }
 
-function doldurCalisanBilgileri(selectedID) {
+function doldurCalisanBilgileri(selectedID,secMeslegeGore) {
     firebase.database().ref('/calisanlar/' + selectedID).once('value').then(function (snapshot) {
 
         $("#hdnIdCalisan").val(snapshot.val().idCalisan);
@@ -286,10 +286,13 @@ function doldurCalisanBilgileri(selectedID) {
         });
 
         var meslekKodu = snapshot.val().calisanMeslekKodu;
-        var kayitId=snapshot.val().idCalisan;
+        //var kayitId=snapshot.val().idCalisan;
 
-        // secTetkiktlerMeslegeGore(meslekKodu);
-        secTetkiktlerMeslegeGore(kayitId);
+        if(secMeslegeGore){
+            secTetkiktlerMeslegeGore(meslekKodu);
+        }
+        
+        //secTetkiktlerMeslegeGore(kayitId);
 
         firebase.database().ref('/meslekler/' + meslekKodu).once('value').then(function (meslek) {
             $("#txtCalisanMeslek").val(meslek.val().meslek);
@@ -326,7 +329,7 @@ function doldurTalepBilgileri(selectedID){
 
             $("#txtTetkikTalepKayitTarihi").val(talepformu.kayitTarihi);
 
-            doldurCalisanBilgileri(talepformu.calisanKodu);
+            doldurCalisanBilgileri(talepformu.calisanKodu,false);
             
             var hastanefiyat=parseFloat("0.00");
             var osgbfiyat=parseFloat("0.00");
