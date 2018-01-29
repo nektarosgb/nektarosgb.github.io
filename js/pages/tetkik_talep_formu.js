@@ -335,6 +335,7 @@ function doldurTalepBilgileri(selectedID){
             var osgbfiyat=parseFloat("0.00");
         if(talepformu.seciliTetkikler!=null)
         {
+            $("input[type='checkbox']").prop("checked", false);
             talepformu.seciliTetkikler.forEach(function(tetkik) {
                 $("#chkitem" + tetkik.idTetkik).prop("checked", true);
                 if(tetkik.uygulamaTuru==="GaziHastanesi1511704386506")
@@ -359,6 +360,7 @@ function doldurTalepBilgileri(selectedID){
 
 function secTetkiktlerMeslegeGore(meslekKodu) {
     $("input[type='checkbox']").prop("checked", false);
+
     firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekKodu).once('value').then(function (snapshot) {
         snapshot.forEach(function (element) {
             var cleanelement = JSON.parse(JSON.stringify(element));
