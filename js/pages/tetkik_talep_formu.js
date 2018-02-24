@@ -337,6 +337,7 @@ function doldurTalepBilgileri(selectedID){
             
             var hastanefiyat=parseFloat("0.00");
             var osgbfiyat=parseFloat("0.00");
+            
         if(talepformu.seciliTetkikler!=null)
         {
             $("input[type='checkbox']").prop("checked", false);
