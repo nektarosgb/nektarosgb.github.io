@@ -152,6 +152,8 @@ function initLoadedPage_tetkik_talep_formu() {
         var muayeneTuruKodu = $("#hdnIdMuayeneTuru").val();
         var muayeneTuru = $("#hdnMuayeneTuru").val();
 
+
+
         var cariHesapTuruKodu = $("#hdnIdCariHesapTuru").val();
         var cariHesapTuru = $("#hdnCariHesapTuru").val();
 
@@ -319,7 +321,9 @@ function doldurTalepBilgileri(selectedID){
             var talepformu=snapshot.val();
             $("#hdnIdTetkikTalepFormu").val(snapshot.val().idTetkikTalepFormu);
             $("#drpMuayeneTuru option").selected=false;
-            // $("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
+            //$("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
+            
+            $("#hdnMuayeneTuru").val(talepformu.muayeneTuru);
             $("#drpMuayeneTuru").val(talepformu.muayeneTuruKodu);
             $("#hdnIdMuayeneTuru").val(talepformu.muayeneTuruKodu);
 
@@ -337,7 +341,7 @@ function doldurTalepBilgileri(selectedID){
             
             var hastanefiyat=parseFloat("0.00");
             var osgbfiyat=parseFloat("0.00");
-            
+
         if(talepformu.seciliTetkikler!=null)
         {
             $("input[type='checkbox']").prop("checked", false);
