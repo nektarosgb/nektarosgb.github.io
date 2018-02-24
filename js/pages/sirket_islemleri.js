@@ -85,7 +85,15 @@ function initLoadedPage() {
         var sirketEposta = $("#txtSirketEposta").val();
         var sirketIsyeriHekimi = $("#txtSirketIsyeriHekimi").val();
         var sirketIsGuvenligiUzmani = $("#txtSirketIsGuvenligiUzmani").val();
-        var editime=d.getDate()+"/"+(d.getMonth()+1)+"/"+d.getFullYear();
+        var dd=d.getDate();
+        var mm=(d.getMonth()+1);
+        if(dd<10){
+            dd='0'+dd;
+        } 
+        if(mm<10){
+            mm='0'+mm;
+        }
+        var editime=dd+"/"+mm+"/"+d.getFullYear();
         var timestamp=n;
     
         //(Firma Adı, adresi, tel, SGK sicil No, İlgili Kişi, Cep, Email ve İşyeri Hekimi, İş güvenliği Uzmanı)
