@@ -182,8 +182,10 @@ function initLoadedPage_tetkik_talep_formu() {
 
         var idTetkikTalepFormu = generateID(calisanAdi + muayeneTuru);
 
+        var doingUpdate=false;
         if ($("#hdnIdTetkikTalepFormu").val().trim().length > 0) {
             idTetkikTalepFormu = $("#hdnIdTetkikTalepFormu").val();
+            doingUpdate=true;
         }
 
         var bugun = new Date();
@@ -319,7 +321,11 @@ function doldurTalepBilgileri(selectedID){
             $("#drpMuayeneTuru option").selected=false;
             // $("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").selected=true;
             $("#drpMuayeneTuru").val(talepformu.muayeneTuruKodu);
+            $("#hdnIdMuayeneTuru").val(talepformu.muayeneTuruKodu);
+
             $("#drpCariTuru").val(talepformu.cariHesapTuruKodu);
+            $("#hdnIdCariHesapTuru").val(talepformu.cariHesapTuruKodu);
+            
             $("#lbl_grp_calisan_firmacarivalue").append($("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").val());
 
             $("#drpCariHesapTuru option").selected=false;
@@ -391,14 +397,10 @@ function hesaplaToplam() {
     var toplam = parseFloat("0.00");
 
     $('#divtetkikler input[type="checkbox"]:checked').each(function (e) {
-
         var idTetkik = this.value;
-
         var txtfiyat = chkListVerileri["tetkikler"][idTetkik]["fiyat"];
         var fiyat = parseFloat(txtfiyat);
-
         toplam = toplam + fiyat;
-
     });
 
     $("#txtUcretToplami").val("" + toplam.toFixed(2));
