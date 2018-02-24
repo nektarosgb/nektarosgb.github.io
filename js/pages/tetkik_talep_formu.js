@@ -328,6 +328,7 @@ function doldurTalepBilgileri(selectedID){
             $("#hdnIdMuayeneTuru").val(talepformu.muayeneTuruKodu);
 
             $("#drpCariTuru").val(talepformu.cariHesapTuruKodu);
+            $("#hdnCariHesapTuru").val(talepformu.cariHesapTuru);
             $("#hdnIdCariHesapTuru").val(talepformu.cariHesapTuruKodu);
             
             $("#lbl_grp_calisan_firmacarivalue").append($("#drpMuayeneTuru option[value="+talepformu.muayeneTuruKodu+"]").val());
