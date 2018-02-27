@@ -7236,7 +7236,7 @@ function Datepicker() {
 		prevText: "Prev", // Display text for previous month link
 		nextText: "Next", // Display text for next month link
 		currentText: "Today", // Display text for current month link
-		monthNames: [ "Ocak","Şubat","Mart","Nian","Mayıs","Haziran",
+		monthNames: [ "Ocak","Şubat","Mart","Nisan","Mayıs","Haziran",
 			"Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık" ], // Names of months for drop-down and formatting
 		monthNamesShort: [ "Ock", "Şbt", "Mar", "Nis", "May", "Haz", "Tem", "Ağs", "Eyl", "Ekm", "Kas", "Arl" ], // For formatting
 		dayNames: [ "Pazar", "Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi" ], // For formatting
