@@ -2631,10 +2631,6 @@ input[type="search"] {
 .form-group {
   margin-bottom: 15px;
 }
-.zorunlu{
-  color:red;
-  font-weight: bold;
-}
 .radio,
 .checkbox {
   position: relative;

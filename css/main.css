@@ -5,3 +5,8 @@
 .rowpadding{
     padding: 15px!important;
 }
+
+.zorunlu{
+    color:red;
+    font-weight: bold;
+  }
