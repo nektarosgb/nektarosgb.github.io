@@ -67,17 +67,17 @@
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <div class="form-group">
-                                    <label for="txtCalisanAdi">Çalışan Adı Soyadı</label>
-                                    <input type="text" class="form-control required" id="txtCalisanAdi" name="txtCalisanAdi" placeholder="Çalışan Adı Giriniz"><label>(*)</label>
+                                    <label for="txtCalisanAdi">Çalışan Adı Soyadı</label><label class="zorunlu">(*)</label>
+                                    <input type="text" class="form-control required" id="txtCalisanAdi" name="txtCalisanAdi" placeholder="Çalışan Adı Giriniz">
                                     <input type="hidden" id="hdnId" />
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="drpMeslek">Meslek</label>
+                                    <label for="drpMeslek">Meslek</label><label class="zorunlu">(*)</label>
                                     <select class="form-control requireddrp" id="drpMeslek" name="drpMeslek">
                                         <option value="0">Seçiniz</option>
                                     </select>
-                                    <label>(*)</label>
+                                    
                                     <input type="hidden" id="hdnIdMeslek" />
                                 </div>
 
@@ -92,14 +92,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="txtCalisanTCNo">TC Kimlik Numarası</label>
-                                    <input type="text" class="form-control required isnumber" id="txtCalisanTCNo" name="txtCalisanTCNo" placeholder="TC Kimlik Numarası"><label>(*)</label>
+                                    <label for="txtCalisanTCNo">TC Kimlik Numarası</label><label class="zorunlu">(*)</label>
+                                    <input type="text" class="form-control required isnumber" id="txtCalisanTCNo" name="txtCalisanTCNo" placeholder="TC Kimlik Numarası">
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="txtCalisanTelefonCep">Mobil</label>
-                                    <input type="telephone" class="form-control required isnumber" id="txtCalisanTelefonCep" placeholder="(+90 232) 111 22 33"><label>(*)</label>
+                                    <label for="txtCalisanTelefonCep">Mobil</label><label class="zorunlu">(*)</label>
+                                    <input type="telephone" class="form-control required isnumber" id="txtCalisanTelefonCep" placeholder="(+90 232) 111 22 33">
                                 </div>
 
                                 <div class="form-group">
@@ -108,10 +108,10 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="drpIsyeri">İşyeri</label>
+                                    <label for="drpIsyeri">İşyeri</label><label class="zorunlu">(*)</label>
                                     <select class="form-control requireddrp" id="drpIsyeri">
                                         <option value="0">Seçiniz</option>
-                                    </select><label>(*)</label>
+                                    </select>
                                     <input type="hidden" id="hdnIdSirket" />
                                 </div>
                                 <div class="form-group hidden">
