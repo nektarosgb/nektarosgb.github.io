@@ -1881,6 +1881,7 @@ td
 	white-space:normal;}
 #modalSaglik table tr td{
 	text-align: left;
+	border:solid 1px black;
 }
 #modalSaglik table tr th{
 	text-align: left;
