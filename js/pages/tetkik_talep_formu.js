@@ -142,7 +142,11 @@ function initLoadedPage_tetkik_talep_formu() {
         gridTalepler.bootgrid("append", rows);
     });
 
-
+    $(document).keypress(function(e) {
+        if(e.which == 13) {
+            alert('You pressed enter!');
+        }
+    });
 
     $("#btn_TetkikTalepFormuKaydet").unbind();
     $("#btn_TetkikTalepFormuKaydet").click(function () {
