@@ -35,6 +35,16 @@ function initLoadedPage_tetkik_islemleri() {
             snapshot.forEach(function (element) {
                 var cleanelement = JSON.parse(JSON.stringify(element));
                 cleanelement['id'] = rows.length + 1;
+                firebase.database().ref('uygulama_turleri').once('value').then(function(snp){
+                    snp.forEach(function(items){
+                        var item=JSON.parse(JSON.stringify(items));
+                        if(item!=null)
+                        {
+                            if(cleanelement['uygulamaTuru']==item['idUygulamaTuru'])
+                            cleanelement['uygulamaTuru']=item['uygulamaTuru'];
+                        }
+                    });
+                });
                 rows.push(cleanelement);
             });
             grid.bootgrid("append", rows);
