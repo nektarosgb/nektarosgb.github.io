@@ -145,11 +145,14 @@ function initLoadedPage_tetkik_talep_formu() {
     $(document).keypress(function(e) {
         if(e.which == 13) {
             alert('You pressed enter!');
+            TalepFormuKaydet();
         }
     });
 
     $("#btn_TetkikTalepFormuKaydet").unbind();
-    $("#btn_TetkikTalepFormuKaydet").click(function () {
+    function TalepFormuKaydet()
+    {
+
         if(!validateFields()){
             return false;
         }
@@ -219,6 +222,9 @@ function initLoadedPage_tetkik_talep_formu() {
         kaydetVeritabani("tetkiktalepformlari", idTetkikTalepFormu, veri);
         initLoadedPage_tetkik_talep_formu();
         return false;
+    }
+    $("#btn_TetkikTalepFormuKaydet").click(function () {
+        TalepFormuKaydet();
     });
 
 }
