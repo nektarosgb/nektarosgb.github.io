@@ -8,8 +8,8 @@ function initLoadedPage_meslek_tetkik_islemleri() {
             rows.push(cleanelement);
         });
     });
-    $("#drpMeslek").change(function () {
-        var meslekId = $("#drpMeslek").val();
+    $("#drpMeslekTetkik").change(function () {
+        var meslekId = $("#drpMeslekTetkik").val();
         $("input[type='checkbox']").prop("checked", false);
         firebase.database().ref('Meslektetkikler').orderByChild('meslek').equalTo(meslekId).once('value').then(function (snapshot) {
             if (snapshot == null) {
