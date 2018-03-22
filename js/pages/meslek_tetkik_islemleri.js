@@ -56,7 +56,7 @@ function kaydetMeslekTetkikBilgisi() {
     var d = new Date();
     var n =GetTimeStamp(d);
 
-    var meslek = $("#drpMeslek").val();
+    var meslek = $("#drpMeslekTetkik").val();
 
     silMeslekTetkikKayitlari( meslek);
 
